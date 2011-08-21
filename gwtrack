@@ -173,7 +173,7 @@ class TrackGui(QtGui.QMainWindow):
         self.questView.setColumnWidth(1, metrics.width("Mini-mission") + 10)
         self.questView.setColumnWidth(2, 20)
         self.questView.setColumnWidth(3, metrics.width("Necromancer (P)") + 30)
-        self.questView.setColumnWidth(4, metrics.width("Canthan") + 10)
+        self.questView.setColumnWidth(4, metrics.width("Canthan") + 30)
         self.questView.setColumnWidth(5, metrics.width("100,000") + 10)
         self.questView.setColumnWidth(6, metrics.width("100,000") + 10)
         self.questView.setColumnWidth(7, metrics.width("Complete") + 10)
@@ -238,7 +238,11 @@ class TrackGui(QtGui.QMainWindow):
             'Paragon':      QtGui.QIcon("icons/Paragon-tango-icon-20.png"),
             'Ranger':       QtGui.QIcon("icons/Ranger-tango-icon-20.png"),
             'Ritualist':    QtGui.QIcon("icons/Ritualist-tango-icon-20.png"),
-            'Warrior':      QtGui.QIcon("icons/Warrior-tango-icon-20.png")
+            'Warrior':      QtGui.QIcon("icons/Warrior-tango-icon-20.png"),
+
+            'Tyrian':       QtGui.QIcon("icons/Tyria.png"),
+            'Canthan':      QtGui.QIcon("icons/Cantha.png"),
+            'Elonian':      QtGui.QIcon("icons/Elona.png")
         }
 
     def closeEvent(self, event):
@@ -259,9 +263,12 @@ class TrackGui(QtGui.QMainWindow):
         item = QtGui.QTreeWidgetItem(areaGroup)
         item.setText(0, area.name)
 
-    def addChar(self, charName, fileName):
+    def addChar(self, charName, charType, fileName):
         idx = self.charSelect.count() - 2
-        self.charSelect.insertItem(idx, charName, fileName)
+        try:
+            self.charSelect.insertItem(idx, self.icons[charType], charName, fileName)
+        except KeyError:
+            self.charSelect.insertItem(idx, charName, fileName)
         return idx
 
     def onAreaChange(self):
@@ -298,6 +305,9 @@ class TrackGui(QtGui.QMainWindow):
                 except KeyError: pass
             if quest.char_type is not None:
                 item.setText(4, quest.char_type)
+                try:
+                    item.setIcon(4, self.icons[quest.char_type])
+                except KeyError: pass
             if quest.xp:
                 item.setText(5, locale.format("%d", quest.xp, grouping=True))
             else:
@@ -385,7 +395,7 @@ class TrackGui(QtGui.QMainWindow):
                 db.commit()
                 db.close()
 
-                idx = self.addChar(dialog.savedName()[0], fname)
+                idx = self.addChar(dialog.savedName()[0], dialog.savedType()[0], fname)
                 self.charSelect.setCurrentIndex(idx)
                 self.onCharSelected(idx)
             else:
@@ -475,9 +485,12 @@ if __name__ == '__main__':
         db = sqlite3.connect(DATA_BASE + char)
         csr = db.cursor()
         csr.execute("SELECT value FROM config WHERE key='Name'")
-        chars.append((csr.fetchone()[0], char))
+        name = csr.fetchone()[0]
+        csr.execute("SELECT value FROM config WHERE key='Type'")
+        ctype = csr.fetchone()[0]
+        chars.append((name, ctype, char))
     for char in sorted(chars, key=lambda c: c[0].lower()):
-        gui.addChar(char[0], char[1])
+        gui.addChar(char[0], char[1], char[2])
     if len(chars) > 0:
         gui.charSelect.setCurrentIndex(0)
         gui.onCharSelected(0)

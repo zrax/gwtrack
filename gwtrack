@@ -31,6 +31,7 @@ class QuestInfo:
         self.gold = 0
         self.profession = None
         self.profession_lock = PROFESSION_ANY
+        self.char_type = None
 
         try:
             self.repeat = info['Repeatable']
@@ -61,6 +62,10 @@ class QuestInfo:
             else:
                 print "%s: Error: Unsupported Profession_Lock: %s" % (name, profession_lock)
                 sys.exit(1)
+        except KeyError: pass
+
+        try:
+            self.char_type = info['Character_Type']
         except KeyError: pass
 
 
@@ -103,15 +108,16 @@ class TrackGui(QtGui.QMainWindow):
         self.areaView.setHeaderHidden(True)
         self.questView = QtGui.QTreeWidget(vsplit)
         self.questView.setRootIsDecorated(False)
-        self.questView.setHeaderLabels(["Quest", "Type", "R", "Profession", "XP", "Gold", "Status"])
+        self.questView.setHeaderLabels(["Quest", "Type", "R", "Profession", "Char", "XP", "Gold", "Status"])
         metrics = QtGui.QFontMetrics(self.questView.headerItem().font(0))
         self.questView.setColumnWidth(0, 240)
         self.questView.setColumnWidth(1, metrics.width("Mini-mission") + 10)
         self.questView.setColumnWidth(2, 20)
-        self.questView.setColumnWidth(3, metrics.width("Elementalist (P)") + 30)
-        self.questView.setColumnWidth(4, metrics.width("100,000") + 10)
+        self.questView.setColumnWidth(3, metrics.width("Necromancer (P)") + 30)
+        self.questView.setColumnWidth(4, metrics.width("Canthan") + 10)
         self.questView.setColumnWidth(5, metrics.width("100,000") + 10)
-        self.questView.setColumnWidth(6, metrics.width("Complete") + 10)
+        self.questView.setColumnWidth(6, metrics.width("100,000") + 10)
+        self.questView.setColumnWidth(7, metrics.width("Complete") + 10)
 
         wikiPane = QtGui.QWidget(vsplit)
         wikiLayout = QtGui.QGridLayout(wikiPane)
@@ -186,8 +192,12 @@ class TrackGui(QtGui.QMainWindow):
         if areaName not in self.areas:
             return
 
-        for quest in self.areas[areaName].quests:
+        self.questView.setSortingEnabled(False)
+        for idx in xrange(len(self.areas[areaName].quests)):
+            quest = self.areas[areaName].quests[idx]
+
             item = QtGui.QTreeWidgetItem(self.questView)
+            item.setData(0, QtCore.Qt.UserRole, idx)
             item.setText(0, quest.name)
             item.setText(1, quest.quest_type)
             if quest.quest_type == 'Primary':
@@ -204,22 +214,25 @@ class TrackGui(QtGui.QMainWindow):
                 try:
                     item.setIcon(3, self.icons[quest.profession])
                 except KeyError: pass
+            if quest.char_type is not None:
+                item.setText(4, quest.char_type)
             if quest.xp:
-                item.setText(4, locale.format("%d", quest.xp, grouping=True))
-            else:
-                item.setText(4, "---")
-            if quest.gold:
-                item.setText(5, locale.format("%d", quest.gold, grouping=True))
+                item.setText(5, locale.format("%d", quest.xp, grouping=True))
             else:
                 item.setText(5, "---")
+            if quest.gold:
+                item.setText(6, locale.format("%d", quest.gold, grouping=True))
+            else:
+                item.setText(6, "---")
 
+        self.questView.setSortingEnabled(True)
         self.currentArea = self.areas[areaName]
 
     def onQuestChange(self):
         if not self.questView.currentItem() or not self.currentArea:
             return
 
-        idx = self.questView.indexOfTopLevelItem(self.questView.currentItem())
+        idx = self.questView.currentItem().data(0, QtCore.Qt.UserRole).toInt()[0]
         self.wikiView.load(QtCore.QUrl(WIKI_URL + self.currentArea.quests[idx].wiki))
 
     def onUrlChanged(self, url):

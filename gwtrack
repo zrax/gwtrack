@@ -167,7 +167,7 @@ class TrackGui(QtGui.QMainWindow):
         self.areaView.setHeaderHidden(True)
         self.questView = QtGui.QTreeWidget(vsplit)
         self.questView.setRootIsDecorated(False)
-        self.questView.setHeaderLabels(["Quest", "Type", "R", "Profession", "Campaign", "XP", "Gold", "Status"])
+        self.questView.setHeaderLabels(["Quest", "Type", "R", "Profession", "Character", "XP", "Gold", "Status"])
         metrics = QtGui.QFontMetrics(self.questView.headerItem().font(0))
         self.questView.setColumnWidth(0, 240)
         self.questView.setColumnWidth(1, metrics.width("Mini-mission") + 10)

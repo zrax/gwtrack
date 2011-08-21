@@ -157,7 +157,7 @@ class TrackGui(QtGui.QMainWindow):
 
         base = QtGui.QWidget(self)
         layout = QtGui.QGridLayout(base)
-        layout.setMargin(4)
+        layout.setMargin(0)
 
         split = QtGui.QSplitter(base)
         vsplit = QtGui.QSplitter(split)
@@ -192,9 +192,15 @@ class TrackGui(QtGui.QMainWindow):
         self.location.setSizePolicy(QtGui.QSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Fixed))
         wikiToolbar.addWidget(self.location)
         self.refresh = wikiToolbar.addAction(QtGui.QIcon("icons/view-refresh.png"), "Refresh")
-        self.wikiView = QtWebKit.QWebView(wikiPane)
+        wikiFrame = QtGui.QFrame(wikiPane)
+        frameLayout = QtGui.QGridLayout(wikiFrame)
+        frameLayout.setMargin(0)
+        wikiFrame.setFrameShape(QtGui.QFrame.StyledPanel)
+        wikiFrame.setFrameShadow(QtGui.QFrame.Sunken)
+        self.wikiView = QtWebKit.QWebView(wikiFrame)
+        frameLayout.addWidget(self.wikiView, 0, 0)
         wikiLayout.addWidget(wikiToolbar, 0, 0)
-        wikiLayout.addWidget(self.wikiView, 1, 0)
+        wikiLayout.addWidget(wikiFrame, 1, 0)
 
         vsplit.addWidget(self.questView)
         vsplit.addWidget(wikiPane)

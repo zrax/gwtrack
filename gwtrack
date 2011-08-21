@@ -28,6 +28,7 @@ class QuestInfo:
         # Optional fields
         self.repeat = False
         self.xp = 0
+        self.sp = 0
         self.gold = 0
         self.profession = None
         self.profession_lock = PROFESSION_ANY
@@ -43,7 +44,9 @@ class QuestInfo:
         try:
             self.xp = info['XP']
         except KeyError: pass
-
+        try:
+            self.sp = info['SP']
+        except KeyError: pass
         try:
             self.gold = info['Gold']
         except KeyError: pass
@@ -65,7 +68,7 @@ class QuestInfo:
         except KeyError: pass
 
         try:
-            self.char_type = info['Character_Type']
+            self.char_type = info['Character']
         except KeyError: pass
 
 

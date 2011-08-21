@@ -178,6 +178,7 @@ class TrackGui(QtGui.QMainWindow):
         self.questView.setColumnWidth(6, metrics.width("100,000") + 10)
         self.questView.setColumnWidth(7, metrics.width("Complete") + 10)
         self.questView.header().setSortIndicator(0, QtCore.Qt.AscendingOrder)
+        self.questView.setContextMenuPolicy(QtCore.Qt.CustomContextMenu)
 
         wikiPane = QtGui.QWidget(vsplit)
         wikiLayout = QtGui.QGridLayout(wikiPane)
@@ -217,6 +218,7 @@ class TrackGui(QtGui.QMainWindow):
 
         self.areaView.itemSelectionChanged.connect(self.onAreaChange)
         self.questView.itemSelectionChanged.connect(self.onQuestChange)
+        self.questView.customContextMenuRequested.connect(self.onQuestMenu)
         self.back.triggered.connect(self.wikiView.back)
         self.fwd.triggered.connect(self.wikiView.forward)
         self.refresh.triggered.connect(self.wikiView.reload)
@@ -305,28 +307,39 @@ class TrackGui(QtGui.QMainWindow):
             else:
                 item.setText(6, "---")
 
-            if self.currentChar:
-                csr = self.currentChar.cursor()
-                csr.execute("SELECT state FROM status WHERE area_name=? and quest_name=?",
-                            (areaName, quest.name))
-                row = csr.fetchone()
-                if row:
-                    item.setText(7, row[0])
-                    if row[0] == 'Done':
-                        item.setBackground(7, QtGui.QColor(0xC0, 0xE0, 0xC0))
-                    elif row[0] == 'Complete':
-                        item.setBackground(7, QtGui.QColor(0xC0, 0xE0, 0xFF))
-                    elif row[0] == 'Active':
-                        item.setBackground(7, QtGui.QColor(0xFF, 0xE0, 0xC0))
-                    elif row[0] == 'N/A':
-                        item.setBackground(7, QtGui.QColor(0xE0, 0xE0, 0xE0))
-
             item.setTextAlignment(5, QtCore.Qt.AlignRight)
             item.setTextAlignment(6, QtCore.Qt.AlignRight)
             item.setTextAlignment(7, QtCore.Qt.AlignHCenter)
 
+            self.updateStatus(item)
+
         self.questView.setSortingEnabled(True)
         self.currentArea = self.areas[areaName]
+
+    def updateStatus(self, item):
+        if self.currentChar is None:
+            return
+
+        areaName = str(self.areaView.currentItem().text(0))
+        if areaName not in self.areas:
+            return
+
+        csr = self.currentChar.cursor()
+        csr.execute("SELECT state FROM status WHERE quest_name=?",
+                    ("%s::%s" % (areaName, str(item.text(0))),))
+        row = csr.fetchone()
+        if row:
+            item.setText(7, row[0])
+            if row[0] == 'Done':
+                item.setBackground(7, QtGui.QColor(0xC0, 0xE0, 0xC0))
+            elif row[0] == 'Complete':
+                item.setBackground(7, QtGui.QColor(0xC0, 0xE0, 0xFF))
+            elif row[0] == 'Active':
+                item.setBackground(7, QtGui.QColor(0xFF, 0xE0, 0xC0))
+            elif row[0] == 'N/A':
+                item.setBackground(7, QtGui.QColor(0xE0, 0xE0, 0xE0))
+            else:
+                item.setBackground(7, item.background(0))
 
     def onQuestChange(self):
         if not self.questView.currentItem() or not self.currentArea:
@@ -352,7 +365,7 @@ class TrackGui(QtGui.QMainWindow):
             if self.currentChar:
                 self.currentChar.close()
                 self.currentChar = None
-            self.onQuestChange()
+            self.onAreaChange()
         elif not self.charSelect.itemData(idx).toString():
             # Selected the add character item
             dialog = AddCharDialog(self)
@@ -363,7 +376,7 @@ class TrackGui(QtGui.QMainWindow):
                 db = sqlite3.connect(DATA_BASE + fname)
                 csr = db.cursor()
                 csr.execute("CREATE TABLE config (key TEXT, value TEXT)")
-                csr.execute("CREATE TABLE status (area_name TEXT, quest_name TEXT, state TEXT)")
+                csr.execute("CREATE TABLE status (quest_name TEXT UNIQUE, state TEXT)")
                 csr.execute("INSERT INTO config (key, value) VALUES ('Version', '1')")
                 csr.execute("INSERT INTO config (key, value) VALUES ('Name', ?)", dialog.savedName())
                 csr.execute("INSERT INTO config (key, value) VALUES ('Type', ?)", dialog.savedType())
@@ -382,8 +395,54 @@ class TrackGui(QtGui.QMainWindow):
             if self.currentChar:
                 self.currentChar.close()
             self.currentChar = sqlite3.connect(str(DATA_BASE + self.charSelect.itemData(idx).toString()))
-            self.onQuestChange()
+            self.onAreaChange()
         self.currentCharIdx = idx
+
+    def onQuestMenu(self, pos):
+        item = self.questView.itemAt(pos)
+        if item is None or self.currentChar is None:
+            return
+
+        areaName = str(self.areaView.currentItem().text(0))
+        if areaName not in self.areas:
+            return
+        questName = "%s::%s" % (areaName, str(item.text(0)))
+
+        menu = QtGui.QMenu()
+        noState = menu.addAction("(Clear)")
+        activeState = menu.addAction("Active")
+        completeState = menu.addAction("Complete")
+        doneState = menu.addAction("Done")
+        naState = menu.addAction("N/A")
+        action = menu.exec_(self.questView.viewport().mapToGlobal(pos))
+
+        if action == noState:
+            csr = self.currentChar.cursor()
+            csr.execute("REPLACE INTO status (quest_name, state) VALUES (?, ?)",
+                        (questName, ""))
+            self.currentChar.commit()
+        elif action == activeState:
+            csr = self.currentChar.cursor()
+            csr.execute("REPLACE INTO status (quest_name, state) VALUES (?, ?)",
+                        (questName, "Active"))
+            self.currentChar.commit()
+        elif action == completeState:
+            csr = self.currentChar.cursor()
+            csr.execute("REPLACE INTO status (quest_name, state) VALUES (?, ?)",
+                        (questName, "Complete"))
+            self.currentChar.commit()
+        elif action == doneState:
+            csr = self.currentChar.cursor()
+            csr.execute("REPLACE INTO status (quest_name, state) VALUES (?, ?)",
+                        (questName, "Done"))
+            self.currentChar.commit()
+        elif action == naState:
+            csr = self.currentChar.cursor()
+            csr.execute("REPLACE INTO status (quest_name, state) VALUES (?, ?)",
+                        (questName, "N/A"))
+            self.currentChar.commit()
+
+        self.updateStatus(item)
 
 
 if __name__ == '__main__':

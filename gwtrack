@@ -9,6 +9,9 @@ PROFESSION_UNLOCKED = 2
 
 WIKI_URL = "http://wiki.guildwars.com/wiki/"
 
+HOME_BASE = os.getenv('USERPROFILE') or os.getenv('HOME')
+DATA_BASE = HOME_BASE + os.path.sep + '.gwtrack' + os.path.sep
+
 class QuestInfo:
     def __init__(self, info, name):
         self.name = name
@@ -94,6 +97,59 @@ class QuestArea:
         self.quests = sorted(self.quests, key=lambda q: q.name)
 
 
+class AddCharDialog(QtGui.QDialog):
+    def __init__(self, parent):
+        QtGui.QDialog.__init__(self, parent)
+
+        layout = QtGui.QGridLayout(self)
+        layout.setMargin(8)
+        layout.addWidget(QtGui.QLabel("Name: ", self), 0, 0)
+        self.charName = QtGui.QLineEdit(self)
+        layout.addWidget(self.charName, 0, 1)
+        layout.addWidget(QtGui.QLabel("Type: ", self), 1, 0)
+        self.charType = QtGui.QComboBox(self)
+        self.charType.addItem("Tyrian")
+        self.charType.addItem("Canthan")
+        self.charType.addItem("Elonian")
+        layout.addWidget(self.charType, 1, 1)
+        layout.addWidget(QtGui.QLabel("Profession: ", self), 2, 0)
+        self.profession = QtGui.QComboBox(self)
+        self.profession.addItem("Assassin")
+        self.profession.addItem("Dervish")
+        self.profession.addItem("Elementalist")
+        self.profession.addItem("Mesmer")
+        self.profession.addItem("Monk")
+        self.profession.addItem("Necromancer")
+        self.profession.addItem("Paragon")
+        self.profession.addItem("Ranger")
+        self.profession.addItem("Ritualist")
+        self.profession.addItem("Warrior")
+        layout.addWidget(self.profession, 2, 1)
+        layout.addWidget(QtGui.QLabel("2nd Profession: ", self), 3, 0)
+        self.secondProfession = QtGui.QComboBox(self)
+        self.secondProfession.addItem("Assassin")
+        self.secondProfession.addItem("Dervish")
+        self.secondProfession.addItem("Elementalist")
+        self.secondProfession.addItem("Mesmer")
+        self.secondProfession.addItem("Monk")
+        self.secondProfession.addItem("Necromancer")
+        self.secondProfession.addItem("Paragon")
+        self.secondProfession.addItem("Ranger")
+        self.secondProfession.addItem("Ritualist")
+        self.secondProfession.addItem("Warrior")
+        layout.addWidget(self.secondProfession, 3, 1)
+        buttons = QtGui.QDialogButtonBox(QtGui.QDialogButtonBox.Ok | QtGui.QDialogButtonBox.Cancel)
+        layout.addWidget(buttons, 4, 0, 1, 2)
+
+        buttons.accepted.connect(self.accept)
+        buttons.rejected.connect(self.reject)
+
+    def savedName(self):        return (str(self.charName.text()),)
+    def savedType(self):        return (str(self.charType.currentText()),)
+    def savedProfession(self):  return (str(self.profession.currentText()),)
+    def savedProfession2(self): return (str(self.secondProfession.currentText()),)
+
+
 class TrackGui(QtGui.QMainWindow):
     def __init__(self):
         QtGui.QMainWindow.__init__(self)
@@ -146,8 +202,18 @@ class TrackGui(QtGui.QMainWindow):
         layout.addWidget(split, 0, 0)
         self.setCentralWidget(base)
 
+        toolbar = self.addToolBar("MainToolbar")
+        toolbar.setToolButtonStyle(QtCore.Qt.ToolButtonTextOnly)
+        toolbar.addWidget(QtGui.QLabel(" Character: ", self))
+        self.charSelect = QtGui.QComboBox(self)
+        self.charSelect.insertSeparator(0)
+        self.charSelect.addItem("Add New Character...")
+        toolbar.addWidget(self.charSelect)
+
         self.areas = {}
         self.currentArea = None
+        self.currentChar = None
+        self.currentCharIdx = -1
 
         self.areaView.itemSelectionChanged.connect(self.onAreaChange)
         self.questView.itemSelectionChanged.connect(self.onQuestChange)
@@ -155,6 +221,7 @@ class TrackGui(QtGui.QMainWindow):
         self.fwd.triggered.connect(self.wikiView.forward)
         self.refresh.triggered.connect(self.wikiView.reload)
         self.wikiView.urlChanged.connect(self.onUrlChanged)
+        self.charSelect.activated[int].connect(self.onCharSelected)
 
         self.icons = {
             'q_pri':        QtGui.QIcon("icons/Tango-quest-icon-primary.png"),
@@ -172,6 +239,10 @@ class TrackGui(QtGui.QMainWindow):
             'Warrior':      QtGui.QIcon("icons/Warrior-tango-icon-20.png")
         }
 
+    def closeEvent(self, event):
+        if self.currentChar:
+            self.currentChar.close()
+
     def addArea(self, area):
         self.areas[area.name] = area
 
@@ -185,6 +256,11 @@ class TrackGui(QtGui.QMainWindow):
             areaGroup.setText(0, area.campaign)
         item = QtGui.QTreeWidgetItem(areaGroup)
         item.setText(0, area.name)
+
+    def addChar(self, charName, fileName):
+        idx = self.charSelect.count() - 2
+        self.charSelect.insertItem(idx, charName, fileName)
+        return idx
 
     def onAreaChange(self):
         self.questView.clear()
@@ -229,6 +305,26 @@ class TrackGui(QtGui.QMainWindow):
             else:
                 item.setText(6, "---")
 
+            if self.currentChar:
+                csr = self.currentChar.cursor()
+                csr.execute("SELECT state FROM status WHERE area_name=? and quest_name=?",
+                            (areaName, quest.name))
+                row = csr.fetchone()
+                if row:
+                    item.setText(7, row[0])
+                    if row[0] == 'Done':
+                        item.setBackground(7, QtGui.QColor(0xC0, 0xE0, 0xC0))
+                    elif row[0] == 'Complete':
+                        item.setBackground(7, QtGui.QColor(0xC0, 0xE0, 0xFF))
+                    elif row[0] == 'Active':
+                        item.setBackground(7, QtGui.QColor(0xFF, 0xE0, 0xC0))
+                    elif row[0] == 'N/A':
+                        item.setBackground(7, QtGui.QColor(0xE0, 0xE0, 0xE0))
+
+            item.setTextAlignment(5, QtCore.Qt.AlignRight)
+            item.setTextAlignment(6, QtCore.Qt.AlignRight)
+            item.setTextAlignment(7, QtCore.Qt.AlignHCenter)
+
         self.questView.setSortingEnabled(True)
         self.currentArea = self.areas[areaName]
 
@@ -251,6 +347,44 @@ class TrackGui(QtGui.QMainWindow):
             else:
                 idx += 1
 
+    def onCharSelected(self, idx):
+        if idx < 0:
+            if self.currentChar:
+                self.currentChar.close()
+                self.currentChar = None
+            self.onQuestChange()
+        elif not self.charSelect.itemData(idx).toString():
+            # Selected the add character item
+            dialog = AddCharDialog(self)
+            if dialog.exec_() == QtGui.QDialog.Accepted:
+                fname = dialog.savedName()[0].lower().replace(' ', '_') + '.db'
+
+                # Initialize the database
+                db = sqlite3.connect(DATA_BASE + fname)
+                csr = db.cursor()
+                csr.execute("CREATE TABLE config (key TEXT, value TEXT)")
+                csr.execute("CREATE TABLE status (area_name TEXT, quest_name TEXT, state TEXT)")
+                csr.execute("INSERT INTO config (key, value) VALUES ('Version', '1')")
+                csr.execute("INSERT INTO config (key, value) VALUES ('Name', ?)", dialog.savedName())
+                csr.execute("INSERT INTO config (key, value) VALUES ('Type', ?)", dialog.savedType())
+                csr.execute("INSERT INTO config (key, value) VALUES ('Profession1', ?)", dialog.savedProfession())
+                csr.execute("INSERT INTO config (key, value) VALUES ('Profession2', ?)", dialog.savedProfession2())
+                db.commit()
+                db.close()
+
+                idx = self.addChar(dialog.savedName()[0], fname)
+                self.charSelect.setCurrentIndex(idx)
+                self.onCharSelected(idx)
+            else:
+                self.charSelect.setCurrentIndex(self.currentCharIdx)
+        else:
+            # Selected an actual character
+            if self.currentChar:
+                self.currentChar.close()
+            self.currentChar = sqlite3.connect(str(DATA_BASE + self.charSelect.itemData(idx).toString()))
+            self.onQuestChange()
+        self.currentCharIdx = idx
+
 
 if __name__ == '__main__':
     app = QtGui.QApplication(sys.argv)
@@ -258,6 +392,9 @@ if __name__ == '__main__':
 
     questList = os.listdir('quests')
     for quest in questList:
+        if not quest.endswith('.yaml'):
+            continue
+
         qf = open('quests/' + quest, 'rb')
         info = yaml.load(qf)
         if 'Name' in info:
@@ -267,6 +404,24 @@ if __name__ == '__main__':
         gui.addArea(QuestArea(info, area_name))
         qf.close()
     gui.areaView.sortItems(0, QtCore.Qt.AscendingOrder)
+
+    if not os.path.exists(DATA_BASE):
+        os.mkdir(DATA_BASE)
+    charList = os.listdir(DATA_BASE)
+    chars = []
+    for char in charList:
+        if not char.endswith('.db'):
+            continue
+
+        db = sqlite3.connect(DATA_BASE + char)
+        csr = db.cursor()
+        csr.execute("SELECT value FROM config WHERE key='Name'")
+        chars.append((csr.fetchone()[0], char))
+    for char in sorted(chars, key=lambda c: c[0].lower()):
+        gui.addChar(char[0], char[1])
+    if len(chars) > 0:
+        gui.charSelect.setCurrentIndex(0)
+        gui.onCharSelected(0)
 
     gui.show()
     sys.exit(app.exec_())

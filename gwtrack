@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import os, sys, yaml, sqlite, locale
+import os, sys, yaml, sqlite3, locale
 from PyQt4 import QtCore, QtGui, QtWebKit
 
 PROFESSION_ANY      = 0
@@ -118,6 +118,7 @@ class TrackGui(QtGui.QMainWindow):
         self.questView.setColumnWidth(5, metrics.width("100,000") + 10)
         self.questView.setColumnWidth(6, metrics.width("100,000") + 10)
         self.questView.setColumnWidth(7, metrics.width("Complete") + 10)
+        self.questView.header().setSortIndicator(0, QtCore.Qt.AscendingOrder)
 
         wikiPane = QtGui.QWidget(vsplit)
         wikiLayout = QtGui.QGridLayout(wikiPane)

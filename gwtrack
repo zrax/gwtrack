@@ -1,0 +1,224 @@
+#!/usr/bin/env python
+
+import os, sys, yaml, sqlite, locale
+from PyQt4 import QtCore, QtGui, QtWebKit
+
+PROFESSION_ANY      = 0
+PROFESSION_PRIMARY  = 1
+PROFESSION_UNLOCKED = 2
+
+WIKI_URL = "http://wiki.guildwars.com/wiki/"
+
+class QuestInfo:
+    def __init__(self, info, name):
+        self.name = name
+
+        # Required fields
+        try:
+            self.wiki = info['Wiki']
+        except KeyError:
+            self.wiki = name.replace(' ', '_')
+
+        try:
+            self.quest_type = info['Type']
+        except KeyError:
+            print "%s: Error: No quest type specified" % name
+            sys.exit(1)
+
+        # Optional fields
+        self.repeat = False
+        self.xp = 0
+        self.gold = 0
+        self.profession = None
+        self.profession_lock = PROFESSION_ANY
+
+        try:
+            self.repeat = info['Repeatable']
+            if type(self.repeat) != bool:
+                print "%s: Error: Invalid value specified for Repeatable: %s" % (name, self.repeat)
+                sys.exit(1)
+        except KeyError: pass
+
+        try:
+            self.xp = info['XP']
+        except KeyError: pass
+
+        try:
+            self.gold = info['Gold']
+        except KeyError: pass
+
+        try:
+            self.profession = info['Profession']
+        except KeyError: pass
+        try:
+            profession_lock = info['Profession_Lock']
+            if profession_lock == 'Any':
+                self.profession_lock = PROFESSION_ANY
+            elif profession_lock == 'Primary':
+                self.profession_lock = PROFESSION_PRIMARY
+            elif profession_lock == 'Unlocked':
+                self.profession_lock = PROFESSION_UNLOCKED
+            else:
+                print "%s: Error: Unsupported Profession_Lock: %s" % (name, profession_lock)
+                sys.exit(1)
+        except KeyError: pass
+
+
+class QuestArea:
+    def __init__(self, info, name):
+        self.name = name
+
+        try:
+            self.campaign = info['Campaign']
+        except KeyError:
+            print "%s: Error: No campaign specified" % name
+            sys.exit(1)
+
+        try:
+            quest_list = info['Quests']
+        except KeyError:
+            quest_list = None
+
+        self.quests = []
+        if quest_list is not None:
+            for quest in quest_list.keys():
+                self.quests.append(QuestInfo(quest_list[quest], quest))
+        self.quests = sorted(self.quests, key=lambda q: q.name)
+
+
+class TrackGui(QtGui.QMainWindow):
+    def __init__(self):
+        QtGui.QMainWindow.__init__(self)
+        self.setWindowTitle("Guild Wars Quest Tracker")
+
+        base = QtGui.QWidget(self)
+        layout = QtGui.QGridLayout(base)
+        layout.setMargin(4)
+
+        split = QtGui.QSplitter(base)
+        vsplit = QtGui.QSplitter(split)
+        vsplit.setOrientation(QtCore.Qt.Vertical)
+        self.areaView = QtGui.QTreeWidget(split)
+        self.areaView.setRootIsDecorated(True)
+        self.areaView.setHeaderHidden(True)
+        self.questView = QtGui.QTreeWidget(vsplit)
+        self.questView.setRootIsDecorated(False)
+        self.questView.setHeaderLabels(["Quest", "Type", "R", "Profession", "XP", "Gold", "Status"])
+        metrics = QtGui.QFontMetrics(self.questView.headerItem().font(0))
+        self.questView.setColumnWidth(0, 240)
+        self.questView.setColumnWidth(1, metrics.width("Mini-mission") + 10)
+        self.questView.setColumnWidth(2, 20)
+        self.questView.setColumnWidth(3, metrics.width("Elementalist (P)") + 30)
+        self.questView.setColumnWidth(4, metrics.width("100,000") + 10)
+        self.questView.setColumnWidth(5, metrics.width("100,000") + 10)
+        self.questView.setColumnWidth(6, metrics.width("Complete") + 10)
+        self.wikiView = QtWebKit.QWebView(vsplit)
+
+        vsplit.addWidget(self.questView)
+        vsplit.addWidget(self.wikiView)
+        split.addWidget(self.areaView)
+        split.addWidget(vsplit)
+        layout.addWidget(split, 0, 0)
+        self.setCentralWidget(base)
+
+        self.areas = {}
+        self.currentArea = None
+
+        self.areaView.itemSelectionChanged.connect(self.onAreaChange)
+        self.questView.itemSelectionChanged.connect(self.onQuestChange)
+
+        self.icons = {
+            'q_pri':        QtGui.QIcon("icons/Tango-quest-icon-primary.png"),
+            'q_rep':        QtGui.QIcon("icons/Tango-quest-icon-repeatable.png"),
+
+            'Assassin':     QtGui.QIcon("icons/Assassin-tango-icon-20.png"),
+            'Dervish':      QtGui.QIcon("icons/Dervish-tango-icon-20.png"),
+            'Elementalist': QtGui.QIcon("icons/Elementalist-tango-icon-20.png"),
+            'Mesmer':       QtGui.QIcon("icons/Mesmer-tango-icon-20.png"),
+            'Monk':         QtGui.QIcon("icons/Monk-tango-icon-20.png"),
+            'Necromancer':  QtGui.QIcon("icons/Necromancer-tango-icon-20.png"),
+            'Paragon':      QtGui.QIcon("icons/Paragon-tango-icon-20.png"),
+            'Ranger':       QtGui.QIcon("icons/Ranger-tango-icon-20.png"),
+            'Ritualist':    QtGui.QIcon("icons/Ritualist-tango-icon-20.png"),
+            'Warrior':      QtGui.QIcon("icons/Warrior-tango-icon-20.png")
+        }
+
+    def addArea(self, area):
+        self.areas[area.name] = area
+
+        # Find or create the campaign group
+        for idx in xrange(self.areaView.topLevelItemCount()):
+            if self.areaView.topLevelItem(idx).text(0) == area.campaign:
+                areaGroup = self.areaView.topLevelItem(idx)
+                break
+        else:
+            areaGroup = QtGui.QTreeWidgetItem(self.areaView)
+            areaGroup.setText(0, area.campaign)
+        item = QtGui.QTreeWidgetItem(areaGroup)
+        item.setText(0, area.name)
+
+    def onAreaChange(self):
+        self.questView.clear()
+        if not self.areaView.currentItem():
+            return
+
+        # Load the quests in the area
+        areaName = str(self.areaView.currentItem().text(0))
+        if areaName not in self.areas:
+            return
+
+        for quest in self.areas[areaName].quests:
+            item = QtGui.QTreeWidgetItem(self.questView)
+            item.setText(0, quest.name)
+            item.setText(1, quest.quest_type)
+            if quest.quest_type == 'Primary':
+                item.setIcon(1, self.icons['q_pri'])
+            if quest.repeat:
+                item.setIcon(2, self.icons['q_rep'])
+            if quest.profession is not None:
+                prof = quest.profession
+                if quest.profession_lock == PROFESSION_PRIMARY:
+                    prof += " (P)"
+                elif quest.profession_lock == PROFESSION_UNLOCKED:
+                    prof = "(%s)" % quest.profession
+                item.setText(3, prof)
+                try:
+                    item.setIcon(3, self.icons[quest.profession])
+                except KeyError: pass
+            if quest.xp:
+                item.setText(4, locale.format("%d", quest.xp, grouping=True))
+            else:
+                item.setText(4, "---")
+            if quest.gold:
+                item.setText(5, locale.format("%d", quest.gold, grouping=True))
+            else:
+                item.setText(5, "---")
+
+        self.currentArea = self.areas[areaName]
+
+    def onQuestChange(self):
+        if not self.questView.currentItem() or not self.currentArea:
+            return
+
+        idx = self.questView.indexOfTopLevelItem(self.questView.currentItem())
+        self.wikiView.load(QtCore.QUrl(WIKI_URL + self.currentArea.quests[idx].wiki))
+
+
+if __name__ == '__main__':
+    app = QtGui.QApplication(sys.argv)
+    gui = TrackGui()
+
+    questList = os.listdir('quests')
+    for quest in questList:
+        qf = open('quests/' + quest, 'rb')
+        info = yaml.load(qf)
+        if 'Name' in info:
+            area_name = info['Name']
+        else:
+            area_name = quest
+        gui.addArea(QuestArea(info, area_name))
+        qf.close()
+    gui.areaView.sortItems(0, QtCore.Qt.AscendingOrder)
+
+    gui.show()
+    sys.exit(app.exec_())

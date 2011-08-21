@@ -1,0 +1,30 @@
+Name: Battle Isles
+Campaign: Core
+Quests:
+    Alliance Battles: {
+        Wiki: "Alliance_Battles_(Zaishen_quest)",
+        Type: Secondary,
+        Repeatable: True,
+        Gold: 1000
+    }
+    Codex Arena: {
+        Wiki: "Codex_Arena_(Zaishen_quest)",
+        Type: Secondary,
+        Repeatable: True,
+        Gold: 1000
+    }
+    Guild vs Guild: {
+        Wiki: "Guild_Versus_Guild_(Zaishen_quest)",
+        Type: Secondary,
+        Repeatable: True,
+        Gold: 1500
+    }
+    The Nameless Masters: {
+        Type: Secondary
+    }
+    The Path of the Zaishen Elite: {
+        Type: Secondary
+    }
+    The Team Trials: {
+        Type: Secondary
+    }

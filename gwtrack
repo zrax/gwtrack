@@ -112,10 +112,25 @@ class TrackGui(QtGui.QMainWindow):
         self.questView.setColumnWidth(4, metrics.width("100,000") + 10)
         self.questView.setColumnWidth(5, metrics.width("100,000") + 10)
         self.questView.setColumnWidth(6, metrics.width("Complete") + 10)
-        self.wikiView = QtWebKit.QWebView(vsplit)
+
+        wikiPane = QtGui.QWidget(vsplit)
+        wikiLayout = QtGui.QGridLayout(wikiPane)
+        wikiLayout.setMargin(0)
+        wikiToolbar = QtGui.QToolBar(wikiPane)
+        self.back = wikiToolbar.addAction(QtGui.QIcon("icons/arrow-left.png"), "Back")
+        self.fwd = wikiToolbar.addAction(QtGui.QIcon("icons/arrow-right.png"), "Forward")
+        wikiToolbar.addSeparator()
+        self.location = QtGui.QComboBox(wikiPane)
+        self.location.setEditable(True)
+        self.location.setSizePolicy(QtGui.QSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Fixed))
+        wikiToolbar.addWidget(self.location)
+        self.refresh = wikiToolbar.addAction(QtGui.QIcon("icons/view-refresh.png"), "Refresh")
+        self.wikiView = QtWebKit.QWebView(wikiPane)
+        wikiLayout.addWidget(wikiToolbar, 0, 0)
+        wikiLayout.addWidget(self.wikiView, 1, 0)
 
         vsplit.addWidget(self.questView)
-        vsplit.addWidget(self.wikiView)
+        vsplit.addWidget(wikiPane)
         split.addWidget(self.areaView)
         split.addWidget(vsplit)
         layout.addWidget(split, 0, 0)
@@ -126,6 +141,10 @@ class TrackGui(QtGui.QMainWindow):
 
         self.areaView.itemSelectionChanged.connect(self.onAreaChange)
         self.questView.itemSelectionChanged.connect(self.onQuestChange)
+        self.back.triggered.connect(self.wikiView.back)
+        self.fwd.triggered.connect(self.wikiView.forward)
+        self.refresh.triggered.connect(self.wikiView.reload)
+        self.wikiView.urlChanged.connect(self.onUrlChanged)
 
         self.icons = {
             'q_pri':        QtGui.QIcon("icons/Tango-quest-icon-primary.png"),
@@ -202,6 +221,18 @@ class TrackGui(QtGui.QMainWindow):
 
         idx = self.questView.indexOfTopLevelItem(self.questView.currentItem())
         self.wikiView.load(QtCore.QUrl(WIKI_URL + self.currentArea.quests[idx].wiki))
+
+    def onUrlChanged(self, url):
+        self.location.lineEdit().setText(url.toString())
+        self.location.insertItem(0, url.toString())
+
+        # Remove duplicate history
+        idx = 1
+        while idx < self.location.count():
+            if self.location.itemText(idx) == url.toString():
+                self.location.removeItem(idx)
+            else:
+                idx += 1
 
 
 if __name__ == '__main__':

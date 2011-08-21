@@ -1,0 +1,335 @@
+Name: Ascalon
+Campaign: Prophecies
+Quests:
+    A Cure for Ralena: {
+        Type: Secondary,
+        Character: Tyrian,
+        Profession: Mesmer,
+        XP: 300
+    }
+    A Mission of Peace: {
+        Type: Secondary,
+        Character: Tyrian,
+        XP: 250
+    }
+    "Althea's Ashes": {
+        Type: Secondary,
+        Character: Tyrian,
+        XP: 2000
+    }
+    Army Life: {
+        Type: Secondary,
+        Character: Tyrian,
+        Profession: Warrior,
+        XP: 250
+    }
+    "Barradin's Advance": {
+        Type: Secondary,
+        Character: Tyrian,
+        XP: 250
+    }
+    "Barradin's Stand": {
+        Type: Secondary,
+        Character: Tyrian,
+        XP: 500
+    }
+    Caravan in Trouble: {
+        Type: Secondary,
+        Character: Tyrian,
+        XP: 250
+    }
+    Casualty Report: {
+        Type: Secondary,
+        Character: Tyrian,
+        XP: 150
+    }
+    Charr Reinforcements: {
+        Type: Secondary,
+        Character: Tyrian,
+        Profession: Ranger,
+        XP: 500
+    }
+    Cities of Ascalon: {
+        Type: Secondary,
+        Character: Tyrian,
+        XP: 1000
+    }
+    Counting the Fallen: {
+        Type: Secondary,
+        Character: Tyrian,
+        XP: 500
+    }
+    Death in the Ruins: {
+        Type: Secondary,
+        Character: Tyrian,
+        Profession: Necromancer,
+        XP: 250
+    }
+    Defend the Wall: {
+        Type: Primary,
+        Character: Tyrian,
+        XP: 500
+    }
+    Deliver a Message to My Wife: {
+        Type: Secondary,
+        Character: Tyrian,
+        XP: 500
+    }
+    Elemental Knowledge: {
+        Type: Secondary,
+        Character: Tyrian,
+        Profession: Elementalist,
+        XP: 250
+    }
+    Endangered Species: {
+        Type: Secondary,
+        Character: Tyrian,
+        Profession: Ranger,
+        XP: 200
+    }
+    Experimental Elixir: {
+        Type: Secondary,
+        Character: Tyrian,
+        Profession: Mesmer,
+        XP: 500
+    }
+    Fallen Soldiers: {
+        Type: Secondary,
+        Character: Tyrian,
+        Profession: Necromancer,
+        XP: 250
+    }
+    Family Ties: {
+        Wiki: "Family_Ties_(Prophecies_quest)",
+        Type: Secondary,
+        Character: Tyrian,
+        XP: 500
+    }
+    Fires in the East: {
+        Type: Secondary,
+        Character: Tyrian,
+        XP: 500
+    }
+    Fires in the North: {
+        Type: Secondary,
+        Character: Tyrian,
+        XP: 1000
+    }
+    Frontier Gate Fugitives: {
+        Type: Secondary,
+        Character: Tyrian,
+        XP: 1000
+    }
+    Garfazz Bloodfang: {
+        Wiki: "Garfazz_Bloodfang_(quest)",
+        Type: Secondary,
+        Character: Tyrian,
+        XP: 500
+    }
+    Gargoyle Trouble: {
+        Type: Secondary,
+        Character: Tyrian,
+        Profession: Warrior,
+        XP: 200
+    }
+    Hammer and Anvil: {
+        Type: Secondary,
+        Character: Tyrian,
+        XP: 500
+    }
+    Helping the People of Ascalon: {
+        Type: Secondary,
+        Character: Tyrian,
+        XP: 200
+    }
+    In Memory of Paulus: {
+        Type: Secondary,
+        Character: Tyrian,
+        Profession: Monk,
+        XP: 300
+    }
+    Into the Breach: {
+        Type: Secondary,
+        Character: Tyrian,
+        Profession: Warrior,
+        XP: 300
+    }
+    Mesmerizing the Enemy: {
+        Type: Secondary,
+        Character: Tyrian,
+        Profession: Mesmer,
+        XP: 200
+    }
+    Military Matters: {
+        Type: Secondary,
+        Character: Tyrian,
+        Profession: Warrior,
+        XP: 250
+    }
+    "Oberan's Rage": {
+        Type: Secondary,
+        Character: Tyrian,
+        Profession: Necromancer,
+        XP: 350
+    }
+    Protecting Ascalon: {
+        Type: Secondary,
+        Character: Tyrian,
+        Profession: Monk,
+        XP: 300
+    }
+    "Rastin's Ritual": {
+        Type: Secondary,
+        Character: Tyrian,
+        XP: 500,
+        Gold: 50
+    }
+    Recruits for Hollis: {
+        Type: Secondary,
+        Character: Tyrian,
+        XP: 500
+    }
+    Regent Valley Defense: {
+        Type: Secondary,
+        Character: Tyrian,
+        XP: 500
+    }
+    Replacement Healers: {
+        Type: Secondary,
+        Character: Tyrian,
+        Profession: Monk,
+        XP: 500
+    }
+    Ruins of Surmia: {
+        Wiki: "Ruins_of_Surmia_(quest)",
+        Type: Primary,
+        Character: Tyrian,
+        XP: 500
+    }
+    Scavengers in Old Ascalon: {
+        Type: Secondary,
+        Character: Tyrian,
+        XP: 500
+    }
+    Scorched Earth: {
+        Wiki: "Scorched_Earth_(Prophecies_quest)",
+        Type: Secondary,
+        Character: Tyrian,
+        Profession: Elementalist,
+        XP: 200
+    }
+    "Shalev's Task": {
+        Type: Secondary,
+        Character: Tyrian,
+        Profession: Elementalist,
+        XP: 300
+    }
+    Sowing Seeds: {
+        Type: Secondary,
+        Character: Tyrian,
+        Profession: Monk,
+        XP: 200
+    }
+    Supplies for the Duke: {
+        Type: Secondary,
+        Character: Tyrian,
+        XP: 300
+    }
+    "Symon's History of Ascalon": {
+        Type: Secondary,
+        Character: Tyrian,
+        XP: 2000
+    }
+    "The Ambassador's Quandary": {
+        Type: Secondary,
+        Character: Tyrian,
+        XP: 500
+    }
+    The Charr Patrol: {
+        Type: Secondary,
+        Character: Tyrian,
+        Profession: Ranger,
+        XP: 250
+    }
+    The Charr Staging Area: {
+        Type: Secondary,
+        Character: Tyrian,
+        Profession: Ranger,
+        XP: 300
+    }
+    "The Duke's Daughter": {
+        Type: Secondary,
+        Character: Tyrian,
+        XP: 2000
+    }
+    "The Geomancer's Test": {
+        Type: Secondary,
+        Character: Tyrian,
+        Profession: Elementalist,
+        XP: 500
+    }
+    "The King's Message": {
+        Type: Secondary,
+        Character: Tyrian,
+        XP: 100,
+        Gold: 50
+    }
+    The Krytan Ambassador: {
+        Type: Primary,
+        Character: Tyrian,
+        XP: 500
+    }
+    The Red-Cloaked Deserter: {
+        Type: Secondary,
+        Character: Tyrian,
+        XP: 1000
+    }
+    The Siege of Piken Square: {
+        Type: Secondary,
+        Character: Tyrian,
+        XP: 500
+    }
+    The Stolen Artifact: {
+        Type: Secondary,
+        Character: Tyrian,
+        Profession: Necromancer,
+        XP: 200
+    }
+    The Titan Source: {
+        Type: Secondary,
+        XP: 50000
+    }
+    "The Titan Source (Hard mode)": {
+        Type: Secondary,
+        XP: 75000,
+        Gold: 10000
+    }
+    The Troublesome Artifact: {
+        Type: Secondary,
+        Character: Tyrian,
+        XP: 500,
+        Gold: 100
+    }
+    The Way of the Geomancer: {
+        Type: Secondary,
+        Character: Tyrian,
+        Profession: Elementalist,
+        XP: 500
+    }
+    Trying Times: {
+        Type: Secondary,
+        Character: Tyrian,
+        Profession: Mesmer,
+        XP: 300
+    }
+    Unnatural Creatures: {
+        Type: Secondary,
+        Character: Tyrian,
+        Profession: Mesmer,
+        XP: 250
+    }
+    Vanguard Equipment: {
+        Type: Secondary,
+        Character: Tyrian,
+        XP: 500
+    }

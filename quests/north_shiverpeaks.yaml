@@ -1,0 +1,122 @@
+Name: Northern Shiverpeaks
+Campaign: Prophecies
+Quests:
+    A Heart of Ice: {
+        Type: Secondary,
+        Character: Tyrian,
+        Profession: Elementalist,
+        XP: 350,
+        Reward: [Skills]
+    }
+    Helping the Dwarves: {
+        Type: Secondary,
+        Character: Tyrian,
+        XP: 250
+    }
+    Hungry Devourer: {
+        Type: Secondary,
+        Character: Tyrian,
+        XP: 400,
+        Reward: [Skills]
+    }
+    Iron Horse War Machine: {
+        Type: Secondary,
+        Character: Tyrian,
+        XP: 500,
+        Reward: [Items]
+    }
+    "Minaar's Trouble": {
+        Type: Secondary,
+        Character: Tyrian,
+        XP: 500,
+        Reward: [Items]
+    }
+    "Minaar's Worry": {
+        Type: Secondary,
+        Character: Tyrian,
+        XP: 500,
+        Reward: [Items]
+    }
+    "Oswalt's Epitaph": {
+        Type: Secondary,
+        Character: Tyrian,
+        XP: 500,
+        Reward: [Gold, Items]
+    }
+    Renegade Necromancer: {
+        Type: Secondary,
+        Character: Tyrian,
+        Profession: Necromancer,
+        XP: 350,
+        Reward: [Skills]
+    }
+    Securing the Vale: {
+        Type: Secondary,
+        Character: Tyrian,
+        Profession: Warrior,
+        XP: 500,
+        Reward: [Skills]
+    }
+    Shiverpeak Stragglers: {
+        Type: Secondary,
+        Character: Tyrian,
+        XP: 500,
+        Reward: [Gold, Items]
+    }
+    Stone Summit Beastmasters: {
+        Type: Secondary,
+        Character: Tyrian,
+        Profession: Ranger,
+        XP: 350,
+        Reward: [Skills]
+    }
+    The Deserters: {
+        Type: Secondary,
+        Character: Tyrian,
+        XP: 500,
+        Reward: [Skills]
+    }
+    The Missing Artisan: {
+        Type: Secondary,
+        Character: Tyrian,
+        XP: 500
+    }
+    The Road to Borlis Pass: {
+        Type: Secondary,
+        Character: Tyrian,
+        XP: 500,
+        Reward: [Items]
+    }
+    The Stone Summit Champion: {
+        Type: Secondary,
+        Character: Tyrian,
+        Profession: Mesmer,
+        XP: 350,
+        Reward: [Skills]
+    }
+    The Way is Blocked: {
+        Type: Primary,
+        Character: Tyrian,
+        XP: 500
+    }
+    The Wayward Monk: {
+        Type: Secondary,
+        Character: Tyrian,
+        Profession: Monk,
+        XP: 350,
+        Reward: [Skills]
+    }
+    "To Kryta: Journey's End": {
+        Type: Primary,
+        XP: 500
+    }
+    "To Kryta: Refugees": {
+        Type: Primary,
+        Character: Tyrian,
+        XP: 500
+    }
+    "To Kryta: The Ice Cave": {
+        Type: Primary,
+        Character: Tyrian,
+        XP: 500
+    }

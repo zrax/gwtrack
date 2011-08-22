@@ -222,7 +222,7 @@ Quests:
         Type: Secondary,
         Character: Tyrian,
         XP: 150,
-        Reward: [Quest_Items]
+        Reward: [Items]
     }
     The Elementalist Experiment: {
         Type: Secondary,

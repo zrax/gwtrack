@@ -20,7 +20,6 @@ REWARD_ATTRIB     = 4  # A
 REWARD_ZAISHEN    = 5  # Z
 REWARD_FACTION    = 6  # F
 REWARD_PROFESSION = 7  # 2
-REWARD_QUEST      = 8  # Q
 REWARD_MAX        = 9
 
 class QuestInfo:
@@ -96,8 +95,6 @@ class QuestInfo:
                 self.reward[REWARD_FACTION] = True
             if 'Profession' in reward_list:
                 self.reward[REWARD_PROFESSION] = True
-            if 'Quest_Items' in reward_list:
-                self.reward[REWARD_QUEST] = True
         except KeyError: pass
 
     def rewardString(self):
@@ -108,8 +105,7 @@ class QuestInfo:
                 'A' if self.reward[REWARD_ATTRIB] else ' ',
                 'Z' if self.reward[REWARD_ZAISHEN] else ' ',
                 'F' if self.reward[REWARD_FACTION] else ' ',
-                '2' if self.reward[REWARD_PROFESSION] else ' ',
-                'Q' if self.reward[REWARD_QUEST] else ' ']
+                '2' if self.reward[REWARD_PROFESSION] else ' ']
         return ''.join(conv)
 
     def rewardTip(self):
@@ -130,8 +126,6 @@ class QuestInfo:
             conv.append('Faction')
         if self.reward[REWARD_PROFESSION]:
             conv.append('Profession')
-        if self.reward[REWARD_QUEST]:
-            conv.append('Quest Items')
         return ', '.join(conv)
 
 
@@ -245,7 +239,7 @@ class TrackGui(QtGui.QMainWindow):
         else:
             self.fixed_font = QtGui.QFont('Monospace', fontSize)
         metrics = QtGui.QFontMetrics(self.fixed_font)
-        self.questView.setColumnWidth(6, metrics.width("XXXXXXXXX") + 10)
+        self.questView.setColumnWidth(6, metrics.width("XXXXXXXX") + 10)
         self.questView.header().setSortIndicator(0, QtCore.Qt.AscendingOrder)
         self.questView.setContextMenuPolicy(QtCore.Qt.CustomContextMenu)
 

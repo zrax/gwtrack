@@ -1,0 +1,300 @@
+Name: Kaineng City
+Campaign: Factions
+Quests:
+    A Meeting With the Emperor: {
+        Type: Primary,
+        XP: 3000,
+        Reward: [Gold]
+    }
+    A Monstrous Revelation: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items]
+    }
+    An End to Suffering: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items]
+    }
+    Assassination Attempt: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items]
+    }
+    Assist the Guards: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items]
+    }
+    Battle in the Sewers: {
+        Type: Primary,
+        XP: 3000,
+        Reward: [Gold, Skill_Points]
+    }
+    Captured: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items]
+    }
+    Capturing the Orrian Tome: {
+        Type: Secondary,
+        Character: Canthan,
+        XP: 2500
+    }
+    Chaos in Kryta: {
+        Type: Secondary,
+        XP: 1000
+    }
+    Charting the Forests: {
+        Type: Secondary,
+        XP: 5000,
+        Reward: [Gold, Items, Faction]
+    }
+    Charting the Jade Sea: {
+        Type: Secondary,
+        XP: 5000,
+        Reward: [Gold, Items, Faction]
+    }
+    Chasing Zenmai: {
+        Type: Secondary,
+        XP: 1500
+    }
+    Closer to the Stars: {
+        Type: Primary,
+        XP: 3000,
+        Reward: [Gold, Skill_Points]
+    }
+    Drink from the Chalice of Corruption: {
+        Type: Secondary,
+        XP: 3500,
+        Reward: [Gold]
+    }
+    Eliminate the Am Fah: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items]
+    }
+    Eliminate the Jade Brotherhood: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items]
+    }
+    Feed the Hungry: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items]
+    }
+    Finding The Oracle: {
+        Type: Primary,
+        XP: 3000,
+        Reward: [Gold]
+    }
+    Gain Zenmai: {
+        Type: Secondary,
+        XP: 1500
+    }
+    Going Home: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items]
+    }
+    Housing for Refugees: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items]
+    }
+    "I Feel the Earth Move Under Cantha's Feet": {
+        Type: Primary,
+        XP: 2500
+    }
+    Imperial Assistance: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items]
+    }
+    It Ends Here: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items]
+    }
+    Journey to Cavalon: {
+        Type: Primary,
+        XP: 4000,
+        Reward: [Skill_Points, Faction]
+    }
+    Journey to House zu Heltzer: {
+        Type: Primary,
+        XP: 4000,
+        Reward: [Skill_Points, Faction]
+    }
+    Lambs to the Slaughter: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items]
+    }
+    Little Lost Bear: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items]
+    }
+    Luxury Goods: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items]
+    }
+    Masters of Corruption: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items]
+    }
+    Mayhem in the Market: {
+        Type: Primary,
+        Character: Canthan,
+        XP: 3000,
+        Reward: [Gold, Skill_Points]
+    }
+    Medical Emergency: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items]
+    }
+    "Minister's Test": {
+        Type: Secondary,
+        Character: Canthan,
+        XP: 2500,
+        Reward: [Skills]
+    }
+    Missing Daughter: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items]
+    }
+    Naga Oil: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold]
+    }
+    Passing the Buck: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items]
+    }
+    Problem Salving: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items]
+    }
+    Raze the Roost: {
+        Type: Secondary,
+        XP: 10000,
+        Reward: [Items]
+    }
+    Red Tape: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items]
+    }
+    Refuse to Drink: {
+        Type: Secondary,
+        XP: 3500,
+        Reward: [Gold]
+    }
+    Seek out Brother Tosai: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold]
+    }
+    Seeking Shelter: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items]
+    }
+    Stemming the Tide: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items]
+    }
+    Straight to the Top: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items]
+    }
+    Street Justice: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items]
+    }
+    Sunspears in Cantha: {
+        Type: Mini-mission,
+        XP: 1000
+    }
+    The Afflicted Guard: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items]
+    }
+    The Challenge: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items]
+    }
+    The Count's Daughter: {
+        Type: Primary,
+        XP: 3000,
+        Reward: [Gold, Skill_Points]
+    }
+    The Drunken Master: {
+        Type: Secondary,
+        XP: 2000,
+        Reward: [Gold, Items]
+    }
+    The Emperor in Peril: {
+        Type: Secondary,
+        XP: 2000,
+        Reward: [Gold]
+    }
+    The Missing Corpses: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items]
+    }
+    The Missing Link: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items]
+    }
+    The Plot Thickens: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold]
+    }
+    The Search for a Cure: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold]
+    }
+    The Shadow Blades: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items]
+    }
+    The Xunlai Agent: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items]
+    }
+    To Tahnnakai Temple: {
+        Type: Primary,
+        XP: 3000,
+        Reward: [Gold, Skill_Points]
+    }
+    Too High a Price: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items]
+    }
+    Welcome to Cantha: {
+        Type: Primary,
+        XP: 3000,
+        Reward: [Gold, Skill_Points]
+    }

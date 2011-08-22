@@ -1,0 +1,23 @@
+Name: "Zinn's Task"
+Campaign: Others
+Quests:
+    "Deactivating N.O.X.": {
+        Type: Secondary,
+        Reward: [Items]
+    }
+    "Deactivating P.O.X.": {
+        Type: Secondary,
+        Reward: [Items]
+    }
+    "Deactivating R.O.X.": {
+        Type: Secondary,
+        Reward: [Items]
+    }
+    Trial of Zinn: {
+        Type: Secondary
+    }
+    "Zinn's Task": {
+        Type: Secondary,
+        XP: 50000,
+        Reward: [Gold, Items]
+    }

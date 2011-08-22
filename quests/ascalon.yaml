@@ -338,15 +338,6 @@ Quests:
         XP: 200,
         Reward: [Skills]
     }
-    The Titan Source: {
-        Type: Secondary,
-        XP: 50000
-    }
-    "The Titan Source (Hard mode)": {
-        Type: Secondary,
-        XP: 75000,
-        Reward: [Gold, Zaishen]
-    }
     The Troublesome Artifact: {
         Type: Secondary,
         Character: Tyrian,

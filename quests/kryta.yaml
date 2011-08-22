@@ -1,0 +1,121 @@
+Name: Kryta
+Campaign: Prophecies
+Quests:
+    A Very Grentchie Wintersday: {
+        Type: Festival,
+        XP: 5000,
+        Reward: [Items]
+    }
+    Bandit Trouble: {
+        Type: Secondary,
+        XP: 500,
+        Reward: [Items]
+    }
+    Blankets for the Settlers: {
+        Type: Secondary,
+        XP: 500,
+        Reward: [Items]
+    }
+    Duties of a Lionguard: {
+        Type: Secondary,
+        XP: 500
+    }
+    Graven Images: {
+        Type: Secondary,
+        XP: 600,
+        Reward: [Skills]
+    }
+    "Malaquire's Test": {
+        Type: Secondary,
+        Character: Tyrian,
+        XP: 500,
+        Reward: [Skills]
+    }
+    "Merchant's Plea": {
+        Type: Secondary,
+        XP: 500
+    }
+    "Mhenlo's Request": {
+        Type: Secondary,
+        XP: 1000
+    }
+    Orrian Excavation: {
+        Type: Secondary,
+        Character: Tyrian,
+        XP: 400
+    }
+    Report to the White Mantle: {
+        Type: Primary,
+        XP: 500,
+        Reward: [Items]
+    }
+    Reversing the Skales: {
+        Type: Secondary,
+        XP: 500,
+        Reward: [Items]
+    }
+    Sunspears in Kryta: {
+        Type: Mini-mission,
+        XP: 1000
+    }
+    The Ascalon Settlement: {
+        Type: Secondary,
+        Character: Tyrian,
+        XP: 500,
+        Reward: [Skills]
+    }
+    The False Gods: {
+        Type: Secondary,
+        XP: 750,
+        Reward: [Skills]
+    }
+    The Greatest Snowman Ever Made: {
+        Type: Festival,
+        XP: 5000,
+        Reward: [Items]
+    }
+    The Hot Springs Murders: {
+        Type: Secondary,
+        XP: 500,
+        Reward: [Skills]
+    }
+    The Last Hog: {
+        Type: Secondary,
+        Character: Tyrian,
+        XP: 500,
+        Reward: [Skills]
+    }
+    The Lost Princess: {
+        Type: Secondary,
+        XP: 500,
+        Reward: [Skills]
+    }
+    The Royal Papers: {
+        Type: Secondary,
+        XP: 750,
+        Reward: [Skills]
+    }
+    The Undead Hordes: {
+        Type: Secondary,
+        XP: 500,
+        Reward: [Skills]
+    }
+    The Villainy of Galrath: {
+        Type: Secondary,
+        XP: 4000,
+        Reward: [Items]
+    }
+    "The Villainy of Galrath (Hard mode)": {
+        Type: Secondary,
+        XP: 30000,
+        Reward: [Gold]
+    }
+    The Weaver of Nebo: {
+        Type: Secondary,
+        XP: 500,
+        Reward: [Gold]
+    }
+    What Lies Beneath: {
+        Type: Primary,
+        XP: 2500
+    }

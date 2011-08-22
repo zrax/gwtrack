@@ -1,0 +1,58 @@
+Name: Maguuma Jungle
+Campaign: Prophecies
+Quests:
+    "A Brother's Fury": {
+        Type: Primary,
+        XP: 500,
+        Reward: [Items]
+    }
+    Blood And Smoke: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Skills]
+    }
+    Dropping Eaves: {
+        Type: Secondary,
+        XP: 500,
+        Reward: [Skills]
+    }
+    Eye For Profit: {
+        Type: Secondary,
+        XP: 500,
+        Reward: [Skills]
+    }
+    Mysterious Message: {
+        Wiki: "Mysterious_Message_(Prophecies_quest)",
+        Type: Secondary,
+        XP: 500,
+        Reward: [Skills]
+    }
+    Passage Through The Dark River: {
+        Type: Primary,
+        XP: 500,
+        Reward: [Items]
+    }
+    The Price of Steel: {
+        Type: Secondary,
+        XP: 500,
+        Reward: [Skills]
+    }
+    Urgent Warning: {
+        Type: Primary,
+        XP: 500,
+        Reward: [Items]
+    }
+    "White Mantle Wrath: A Helping Hand": {
+        Type: Primary,
+        XP: 500,
+        Reward: [Items]
+    }
+    "White Mantle Wrath: Demagogue's Vanguard": {
+        Type: Primary,
+        XP: 500,
+        Reward: [Items]
+    }
+    Wisdom of the Druids: {
+        Type: Secondary,
+        XP: 500
+    }

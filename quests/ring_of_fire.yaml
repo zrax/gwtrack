@@ -1,0 +1,7 @@
+Name: Ring of Fire
+Campaign: Prophecies
+Quests:
+    Final Blow: {
+        Type: Primary,
+        XP: 500
+    }

@@ -1,0 +1,139 @@
+Name: Echovald Forest
+Campaign: Factions
+Quests:
+    A New Escort: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items, Faction]
+    }
+    Artistic Endeavors: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items, Faction]
+    }
+    Befriending the Kurzicks: {
+        Type: Primary,
+        XP: 10000,
+        Reward: [Gold]
+    }
+    Defend Fort Aspenwood: {
+        Type: Primary,
+        XP: 3000,
+        Reward: [Gold]
+    }
+    Discord Wallow Lyre: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items, Faction]
+    }
+    Duel of the Houses: {
+        Type: Secondary,
+        Repeatable: True,
+        XP: 2000,
+        Reward: [Gold, Faction]
+    }
+    Envoy of the Dredge: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items, Faction]
+    }
+    "In the Army Now (Kurzick)": {
+        Type: Secondary,
+        Repeatable: True,
+        XP: 2000,
+        Reward: [Gold, Faction]
+    }
+    Into the Whirlpool: {
+        Type: Primary,
+        XP: 4000,
+        Reward: [Gold, Skill_Points, Faction]
+    }
+    Invoking the Saints: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items, Faction]
+    }
+    Kurzick Supply Lines: {
+        Type: Secondary,
+        Repeatable: True,
+        XP: 2000,
+        Reward: [Gold, Faction]
+    }
+    Melodic Gaki Flute: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items, Faction]
+    }
+    Revolt of the Dredge: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items, Faction]
+    }
+    Rhythm Drinker Drum: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items, Faction]
+    }
+    Scouting Ferndale: {
+        Type: Secondary,
+        Repeatable: True,
+        XP: 2000,
+        Reward: [Gold, Faction]
+    }
+    Securing Echovald Forest: {
+        Type: Secondary,
+        Repeatable: True,
+        XP: 2000,
+        Reward: [Gold, Faction]
+    }
+    Song and Stone: {
+        Type: Secondary,
+        XP: 5000,
+        Reward: [Gold, Items, Faction]
+    }
+    Temple of the Dredge: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items, Faction]
+    }
+    The Ancient Forest: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items, Faction]
+    }
+    The Beak of Darkness: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Faction]
+    }
+    The Convocation: {
+        Type: Primary,
+        XP: 3000,
+        Reward: [Gold, Skill_Points]
+    }
+    The Defenders of the Forest: {
+        Type: Primary,
+        XP: 4000,
+        Reward: [Gold, Skill_Points, Faction]
+    }
+    The Experimental Weaponsmith: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items, Faction]
+    }
+    The Jade Quarry: {
+        Wiki: "The_Jade_Quarry_(Kurzick_quest)",
+        Type: Primary,
+        XP: 3000,
+        Reward: [Gold]
+    }
+    Wardens On the March: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items, Faction]
+    }
+    Wicked Wardens: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items, Faction]
+    }

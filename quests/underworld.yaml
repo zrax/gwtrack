@@ -1,0 +1,60 @@
+Name: The Underworld
+Campaign: Core
+Quests:
+    Clear the Chamber: {
+        Type: Secondary,
+        Repeatable: True,
+        XP: 5000
+    }
+    Demon Assassin: {
+        Type: Secondary,
+        Repeatable: True,
+        XP: 10000
+    }
+    Escort of Souls: {
+        Type: Secondary,
+        Repeatable: True,
+        XP: 10000
+    }
+    Imprisoned Spirits: {
+        Type: Secondary,
+        Repeatable: True,
+        XP: 10000
+    }
+    "Restoring Grenth's Monuments": {
+        Type: Secondary,
+        Repeatable: True,
+        XP: 10000
+    }
+    Servants of Grenth: {
+        Type: Secondary,
+        Repeatable: True,
+        XP: 10000
+    }
+    Terrorweb Queen: {
+        Wiki: "Terrorweb_Queen_(quest)",
+        Type: Secondary,
+        Repeatable: True,
+        XP: 10000
+    }
+    The Four Horsemen: {
+        Type: Secondary,
+        Repeatable: True,
+        XP: 10000
+    }
+    The Nightman Cometh: {
+        Type: Secondary,
+        Repeatable: True,
+        XP: 15000,
+        Reward: [Gold]
+    }
+    Unwanted Guests: {
+        Type: Secondary,
+        Repeatable: True,
+        XP: 10000
+    }
+    Wrathful Spirits: {
+        Type: Secondary,
+        Repeatable: True,
+        XP: 10000
+    }

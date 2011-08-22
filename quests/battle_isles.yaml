@@ -13,7 +13,7 @@ Quests:
         Repeatable: True,
         Reward: [Gold, Faction, Zaishen]
     }
-    Guild vs Guild: {
+    Guild versus Guild: {
         Wiki: "Guild_Versus_Guild_(Zaishen_quest)",
         Type: Secondary,
         Repeatable: True,
@@ -24,6 +24,46 @@ Quests:
     }
     The Path of the Zaishen Elite: {
         Type: Secondary
+    }
+    "The Path to Combat: Codex Arena": {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Items]
+    }
+    "The Path to Combat: Guild Battles": {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Items]
+    }
+    "The Path to Combat: Heroes' Ascent": {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Items]
+    }
+    "The Path to Combat: Random Arenas": {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Items]
+    }
+    "The Path to Victory: Codex Arena": {
+        Type: Secondary,
+        XP: 5000,
+        Reward: [Items]
+    }
+    "The Path to Victory: Guild Battles": {
+        Type: Secondary,
+        XP: 5000,
+        Reward: [Items]
+    }
+    "The Path to Victory: Heroes' Ascent": {
+        Type: Secondary,
+        XP: 5000,
+        Reward: [Items]
+    }
+    "The Path to Victory: Random Arenas": {
+        Type: Secondary,
+        XP: 5000,
+        Reward: [Items]
     }
     The Team Trials: {
         Type: Secondary

@@ -1,0 +1,58 @@
+Name: Fissure of Woe
+Campaign: Core
+Quests:
+    A Gift of Griffons: {
+        Type: Secondary,
+        Repeatable: True,
+        XP: 10000
+    }
+    Army of Darkness: {
+        Type: Secondary,
+        Repeatable: True,
+        XP: 10000
+    }
+    Defend the Temple of War: {
+        Type: Secondary,
+        Repeatable: True,
+        XP: 10000
+    }
+    Khobay the Betrayer: {
+        Type: Secondary,
+        Repeatable: True,
+        XP: 10000
+    }
+    Restore the Temple of War: {
+        Type: Secondary,
+        Repeatable: True,
+        XP: 10000
+    }
+    Slaves of Menzies: {
+        Type: Secondary,
+        Repeatable: True,
+        XP: 10000
+    }
+    The Eternal Forgemaster: {
+        Type: Secondary,
+        Repeatable: True,
+        XP: 5000
+    }
+    The Hunt: {
+        Type: Secondary,
+        Repeatable: True,
+        XP: 10000
+    }
+    The Wailing Lord: {
+        Type: Secondary,
+        Repeatable: True,
+        XP: 10000
+    }
+    Tower of Courage: {
+        Type: Secondary,
+        Repeatable: True,
+        XP: 5000
+    }
+    Tower of Strength: {
+        Type: Secondary,
+        Repeatable: True,
+        XP: 10000
+    }

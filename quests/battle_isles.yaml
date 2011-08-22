@@ -5,19 +5,19 @@ Quests:
         Wiki: "Alliance_Battles_(Zaishen_quest)",
         Type: Secondary,
         Repeatable: True,
-        Gold: 1000
+        Reward: [Gold, Faction, Zaishen]
     }
     Codex Arena: {
         Wiki: "Codex_Arena_(Zaishen_quest)",
         Type: Secondary,
         Repeatable: True,
-        Gold: 1000
+        Reward: [Gold, Faction, Zaishen]
     }
     Guild vs Guild: {
         Wiki: "Guild_Versus_Guild_(Zaishen_quest)",
         Type: Secondary,
         Repeatable: True,
-        Gold: 1500
+        Reward: [Gold, Faction, Zaishen]
     }
     The Nameless Masters: {
         Type: Secondary

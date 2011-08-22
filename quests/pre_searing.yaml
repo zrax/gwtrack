@@ -4,7 +4,8 @@ Quests:
     A Gift for Althea: {
         Type: Secondary,
         Character: Tyrian,
-        XP: 250
+        XP: 250,
+        Reward: [Items]
     }
     "A Mesmer's Burden": {
         Type: Secondary,
@@ -76,28 +77,32 @@ Quests:
     Across the Wall: {
         Type: Secondary,
         Character: Tyrian,
-        XP: 250
+        XP: 250,
+        Reward: [Items]
     }
     Adventure with an Ally: {
         Type: Secondary,
         Character: Tyrian,
-        XP: 100
+        XP: 100,
+        Reward: [Skills]
     }
     Bandit Raid: {
         Type: Secondary,
         Character: Tyrian,
-        XP: 250
+        XP: 250,
+        Reward: [Items]
     }
     Charr at the Gate: {
         Type: Secondary,
         Character: Tyrian,
-        XP: 200
+        XP: 200,
+        Reward: [Items]
     }
     Charr in the Catacombs: {
         Type: Secondary,
         Character: Tyrian,
         XP: 250,
-        Gold: 100
+        Reward: [Gold]
     }
     Domination Magic: {
         Wiki: "Domination_Magic_(quest)",
@@ -111,7 +116,8 @@ Quests:
         Character: Tyrian,
         Profession: Elementalist,
         Profession_Lock: Primary,
-        XP: 500
+        XP: 500,
+        Reward: [Skills]
     }
     Further Adventures: {
         Type: Primary,
@@ -134,63 +140,71 @@ Quests:
     "Little Thom's Big Cloak": {
         Type: Secondary,
         Character: Tyrian,
-        XP: 250
+        XP: 250,
+        Reward: [Items]
     }
     Mesmer Test: {
         Type: Primary,
         Character: Tyrian,
         Profession: Mesmer,
         Profession_Lock: Primary,
-        XP: 500
+        XP: 500,
+        Reward: [Skills]
     }
     Message from a Friend: {
         Type: Primary,
         Character: Tyrian,
         XP: 100,
-        Gold: 10
+        Reward: [Gold]
     }
     Monk Test: {
         Type: Primary,
         Character: Tyrian,
         Profession: Monk,
         Profession_Lock: Primary,
-        XP: 500
+        XP: 500,
+        Reward: [Skills]
     }
     Necromancer Test: {
         Type: Primary,
         Character: Tyrian,
         Profession: Necromancer,
         Profession_Lock: Primary,
-        XP: 500
+        XP: 500,
+        Reward: [Skills]
     }
     Opposition to the King: {
         Type: Secondary,
         Character: Tyrian,
-        XP: 500,
+        XP: 500
     }
     Poor Tenant: {
         Type: Secondary,
         Character: Tyrian,
-        XP: 500
+        XP: 500,
+        Reward: [Items]
     }
     Protection Prayers: {
         Wiki: "Protection_Prayers_(quest)",
         Type: Secondary,
         Character: Tyrian,
         Profession: Monk,
-        XP: 250
+        XP: 250,
+        Reward: [Skills]
     }
     Ranger Test: {
         Type: Primary,
         Character: Tyrian,
         Profession: Ranger,
         Profession_Lock: Primary,
-        XP: 500
+        XP: 500,
+        Reward: [Skills]
     }
     Rites of Remembrance: {
         Type: Secondary,
         Character: Tyrian,
-        XP: 250
+        XP: 250,
+        Reward: [Items]
     }
     The Accursed Path: {
         Type: Secondary,
@@ -207,7 +221,8 @@ Quests:
     The Egg Hunter: {
         Type: Secondary,
         Character: Tyrian,
-        XP: 150
+        XP: 150,
+        Reward: [Quest_Items]
     }
     The Elementalist Experiment: {
         Type: Secondary,
@@ -219,7 +234,8 @@ Quests:
     "The Hunter's Horn": {
         Type: Secondary,
         Character: Tyrian,
-        XP: 500
+        XP: 500,
+        Reward: [Items]
     }
     "The Necromancer's Novice": {
         Type: Secondary,
@@ -231,7 +247,8 @@ Quests:
     The Orchard: {
         Type: Secondary,
         Character: Tyrian,
-        XP: 250
+        XP: 250,
+        Reward: [Items]
     }
     The Path to Glory: {
         Type: Primary,
@@ -241,7 +258,8 @@ Quests:
     The Poison Devourer: {
         Type: Secondary,
         Character: Tyrian,
-        XP: 250
+        XP: 250,
+        Reward: [Items]
     }
     The Power of Blood: {
         Type: Secondary,
@@ -252,7 +270,8 @@ Quests:
     The Prize Moa Bird: {
         Type: Secondary,
         Character: Tyrian,
-        XP: 250
+        XP: 250,
+        Reward: [Items]
     }
     "The Ranger's Companion": {
         Type: Secondary,
@@ -266,7 +285,8 @@ Quests:
         Character: Tyrian,
         Profession: Mesmer,
         Profession_Lock: Unlocked,
-        XP: 250
+        XP: 250,
+        Reward: [Items]
     }
     The Supremacy of Air: {
         Type: Secondary,
@@ -277,7 +297,8 @@ Quests:
     The True King: {
         Type: Secondary,
         Character: Tyrian,
-        XP: 750
+        XP: 750,
+        Reward: [Items]
     }
     The Vineyard Problem: {
         Type: Secondary,
@@ -288,97 +309,102 @@ Quests:
     The Wayward Wizard: {
         Type: Secondary,
         Character: Tyrian,
-        XP: 250
+        XP: 250,
+        Reward: [Items]
     }
     The Worm Problem: {
         Type: Secondary,
         Character: Tyrian,
-        XP: 250
+        XP: 250,
+        Reward: [Items]
     }
     Tithe for Ashford Abbey: {
         Type: Secondary,
         Character: Tyrian,
         XP: 250,
-        SP: 1
+        Reward: [Skill_Points]
     }
     Trouble in the Woods: {
         Type: Secondary,
         Character: Tyrian,
-        XP: 500
+        XP: 500,
+        Reward: [Items]
     }
     Unnatural Growths: {
         Type: Secondary,
         Character: Tyrian,
         Profession: Ranger,
-        XP: 250
+        XP: 250,
+        Reward: [Skills]
     }
     Unsettling Rumors: {
         Type: Primary,
         Character: Tyrian,
-        XP: 250
+        XP: 250,
+        Reward: [Items]
     }
     "Vanguard Annihilation: Bandits": {
         Type: Vanguard,
         Character: Tyrian,
         Repeatable: True,
         XP: 1000,
-        Gold: 50
+        Reward: [Gold]
     }
     "Vanguard Annihilation: Charr": {
         Type: Vanguard,
         Character: Tyrian,
         Repeatable: True,
         XP: 1000,
-        Gold: 50
+        Reward: [Gold]
     }
     "Vanguard Annihilation: Undead": {
         Type: Vanguard,
         Character: Tyrian,
         Repeatable: True,
         XP: 1000,
-        Gold: 50
+        Reward: [Gold]
     }
     "Vanguard Bounty: Blazefiend Griefblade": {
         Type: Vanguard,
         Character: Tyrian,
         Repeatable: True,
         XP: 1000,
-        Gold: 50
+        Reward: [Gold]
     }
     "Vanguard Bounty: Countess Nadya": {
         Type: Vanguard,
         Character: Tyrian,
         Repeatable: True,
         XP: 1000,
-        Gold: 50
+        Reward: [Gold]
     }
     "Vanguard Bounty: Utini Wupwup": {
         Type: Vanguard,
         Character: Tyrian,
         Repeatable: True,
         XP: 1000,
-        Gold: 50
+        Reward: [Gold]
     }
     "Vanguard Rescue: Farmer Hamnet": {
         Type: Vanguard,
         Character: Tyrian,
         Repeatable: True,
         XP: 1000,
-        Gold: 50
+        Reward: [Gold]
     }
     "Vanguard Rescue: Footman Tate": {
         Type: Vanguard,
         Character: Tyrian,
         Repeatable: True,
         XP: 1000,
-        Gold: 50
+        Reward: [Gold]
     }
     "Vanguard Rescue: Save the Ascalonian Noble": {
         Type: Vanguard,
         Character: Tyrian,
         Repeatable: True,
         XP: 1000,
-        Gold: 50
+        Reward: [Gold]
     }
     War Preparations: {
         Type: Primary,
@@ -396,5 +422,6 @@ Quests:
         Character: Tyrian,
         Profession: Warrior,
         Profession_Lock: Primary,
-        XP: 500
+        XP: 500,
+        Reward: [Skills]
     }

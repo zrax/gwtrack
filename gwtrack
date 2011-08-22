@@ -12,6 +12,15 @@ WIKI_URL = "http://wiki.guildwars.com/wiki/"
 HOME_BASE = os.getenv('USERPROFILE') or os.getenv('HOME')
 DATA_BASE = HOME_BASE + os.path.sep + '.gwtrack' + os.path.sep
 
+REWARD_GOLD    = 0  # G
+REWARD_ITEMS   = 1  # I
+REWARD_SKILLS  = 2  # S
+REWARD_POINTS  = 3  # P
+REWARD_ZAISHEN = 4  # Z
+REWARD_FACTION = 5  # F
+REWARD_QUEST   = 6  # Q
+REWARD_MAX     = 7
+
 class QuestInfo:
     def __init__(self, info, name):
         self.name = name
@@ -31,11 +40,10 @@ class QuestInfo:
         # Optional fields
         self.repeat = False
         self.xp = 0
-        self.sp = 0
-        self.gold = 0
         self.profession = None
         self.profession_lock = PROFESSION_ANY
         self.char_type = None
+        self.reward = [False for i in xrange(REWARD_MAX)]
 
         try:
             self.repeat = info['Repeatable']
@@ -46,12 +54,6 @@ class QuestInfo:
 
         try:
             self.xp = info['XP']
-        except KeyError: pass
-        try:
-            self.sp = info['SP']
-        except KeyError: pass
-        try:
-            self.gold = info['Gold']
         except KeyError: pass
 
         try:
@@ -73,6 +75,44 @@ class QuestInfo:
         try:
             self.char_type = info['Character']
         except KeyError: pass
+
+        try:
+            reward_list = info['Reward']
+            if 'Gold' in reward_list:
+                self.reward[REWARD_GOLD] = True
+            if 'Items' in reward_list:
+                self.reward[REWARD_ITEMS] = True
+            if 'Skills' in reward_list:
+                self.reward[REWARD_SKILLS] = True
+            if 'Skill_Points' in reward_list:
+                self.reward[REWARD_POINTS] = True
+            if 'Zaishen' in reward_list:
+                self.reward[REWARD_ZAISHEN] = True
+            if 'Faction' in reward_list:
+                self.reward[REWARD_FACTION] = True
+            if 'Quest_Items' in reward_list:
+                self.reward[REWARD_QUEST] = True
+        except KeyError: pass
+
+    def rewardString(self):
+        conv = ['G' if self.reward[REWARD_GOLD] else ' ',
+                'I' if self.reward[REWARD_ITEMS] else ' ',
+                'S' if self.reward[REWARD_SKILLS] else ' ',
+                'P' if self.reward[REWARD_POINTS] else ' ',
+                'Z' if self.reward[REWARD_ZAISHEN] else ' ',
+                'F' if self.reward[REWARD_FACTION] else ' ',
+                'Q' if self.reward[REWARD_QUEST] else ' ']
+        return ''.join(conv)
+
+    def rewardTip(self):
+        conv = ['Gold' if self.reward[REWARD_GOLD] else ' ',
+                'Items' if self.reward[REWARD_ITEMS] else ' ',
+                'Skills' if self.reward[REWARD_SKILLS] else ' ',
+                'Skill Points' if self.reward[REWARD_POINTS] else ' ',
+                'Zaishen Coins' if self.reward[REWARD_ZAISHEN] else ' ',
+                'Faction' if self.reward[REWARD_FACTION] else ' ',
+                'Quest Items' if self.reward[REWARD_QUEST] else ' ']
+        return ', '.join(conv)
 
 
 class QuestArea:
@@ -167,7 +207,7 @@ class TrackGui(QtGui.QMainWindow):
         self.areaView.setHeaderHidden(True)
         self.questView = QtGui.QTreeWidget(vsplit)
         self.questView.setRootIsDecorated(False)
-        self.questView.setHeaderLabels(["Quest", "Type", "R", "Profession", "Character", "XP", "Gold", "Status"])
+        self.questView.setHeaderLabels(["Quest", "Type", "R", "Profession", "Character", "XP", "Reward", "Status"])
         metrics = QtGui.QFontMetrics(self.questView.headerItem().font(0))
         self.questView.setColumnWidth(0, 240)
         self.questView.setColumnWidth(1, metrics.width("Mini-mission") + 10)
@@ -175,8 +215,17 @@ class TrackGui(QtGui.QMainWindow):
         self.questView.setColumnWidth(3, metrics.width("Necromancer (P)") + 30)
         self.questView.setColumnWidth(4, metrics.width("Canthan") + 30)
         self.questView.setColumnWidth(5, metrics.width("100,000") + 10)
-        self.questView.setColumnWidth(6, metrics.width("100,000") + 10)
         self.questView.setColumnWidth(7, metrics.width("Complete") + 10)
+
+        fontSize = self.questView.headerItem().font(0).pointSize()
+        if sys.platform == 'darwin':
+            self.fixed_font = QtGui.QFont('Menlo', fontSize)
+        elif os.name == 'nt':
+            self.fixed_font = QtGui.QFont('Courier New', fontSize)
+        else:
+            self.fixed_font = QtGui.QFont('Monospace', fontSize)
+        metrics = QtGui.QFontMetrics(self.fixed_font)
+        self.questView.setColumnWidth(6, metrics.width("XXXXXXX") + 10)
         self.questView.header().setSortIndicator(0, QtCore.Qt.AscendingOrder)
         self.questView.setContextMenuPolicy(QtCore.Qt.CustomContextMenu)
 
@@ -302,6 +351,7 @@ class TrackGui(QtGui.QMainWindow):
                 item.setIcon(1, self.icons['q_pri'])
             if quest.repeat:
                 item.setIcon(2, self.icons['q_rep'])
+                item.setStatusTip(2, "Repeatable")
             if quest.profession is not None:
                 prof = quest.profession
                 if quest.profession_lock == PROFESSION_PRIMARY:
@@ -321,13 +371,11 @@ class TrackGui(QtGui.QMainWindow):
                 item.setText(5, locale.format("%d", quest.xp, grouping=True))
             else:
                 item.setText(5, "---")
-            if quest.gold:
-                item.setText(6, locale.format("%d", quest.gold, grouping=True))
-            else:
-                item.setText(6, "---")
+            item.setText(6, quest.rewardString())
+            item.setStatusTip(6, quest.rewardTip())
+            item.setFont(6, self.fixed_font)
 
             item.setTextAlignment(5, QtCore.Qt.AlignRight)
-            item.setTextAlignment(6, QtCore.Qt.AlignRight)
             item.setTextAlignment(7, QtCore.Qt.AlignHCenter)
 
             self.updateStatus(item)

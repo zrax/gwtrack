@@ -12,14 +12,16 @@ WIKI_URL = "http://wiki.guildwars.com/wiki/"
 HOME_BASE = os.getenv('USERPROFILE') or os.getenv('HOME')
 DATA_BASE = HOME_BASE + os.path.sep + '.gwtrack' + os.path.sep
 
-REWARD_GOLD    = 0  # G
-REWARD_ITEMS   = 1  # I
-REWARD_SKILLS  = 2  # S
-REWARD_POINTS  = 3  # P
-REWARD_ZAISHEN = 4  # Z
-REWARD_FACTION = 5  # F
-REWARD_QUEST   = 6  # Q
-REWARD_MAX     = 7
+REWARD_GOLD       = 0  # G
+REWARD_ITEMS      = 1  # I
+REWARD_SKILLS     = 2  # S
+REWARD_POINTS     = 3  # P
+REWARD_ATTRIB     = 4  # A
+REWARD_ZAISHEN    = 5  # Z
+REWARD_FACTION    = 6  # F
+REWARD_PROFESSION = 7  # 2
+REWARD_QUEST      = 8  # Q
+REWARD_MAX        = 9
 
 class QuestInfo:
     def __init__(self, info, name):
@@ -86,10 +88,14 @@ class QuestInfo:
                 self.reward[REWARD_SKILLS] = True
             if 'Skill_Points' in reward_list:
                 self.reward[REWARD_POINTS] = True
+            if 'Attribute_Points' in reward_list:
+                self.reward[REWARD_ATTRIB] = True
             if 'Zaishen' in reward_list:
                 self.reward[REWARD_ZAISHEN] = True
             if 'Faction' in reward_list:
                 self.reward[REWARD_FACTION] = True
+            if 'Profession' in reward_list:
+                self.reward[REWARD_PROFESSION] = True
             if 'Quest_Items' in reward_list:
                 self.reward[REWARD_QUEST] = True
         except KeyError: pass
@@ -99,19 +105,33 @@ class QuestInfo:
                 'I' if self.reward[REWARD_ITEMS] else ' ',
                 'S' if self.reward[REWARD_SKILLS] else ' ',
                 'P' if self.reward[REWARD_POINTS] else ' ',
+                'A' if self.reward[REWARD_ATTRIB] else ' ',
                 'Z' if self.reward[REWARD_ZAISHEN] else ' ',
                 'F' if self.reward[REWARD_FACTION] else ' ',
+                '2' if self.reward[REWARD_PROFESSION] else ' ',
                 'Q' if self.reward[REWARD_QUEST] else ' ']
         return ''.join(conv)
 
     def rewardTip(self):
-        conv = ['Gold' if self.reward[REWARD_GOLD] else ' ',
-                'Items' if self.reward[REWARD_ITEMS] else ' ',
-                'Skills' if self.reward[REWARD_SKILLS] else ' ',
-                'Skill Points' if self.reward[REWARD_POINTS] else ' ',
-                'Zaishen Coins' if self.reward[REWARD_ZAISHEN] else ' ',
-                'Faction' if self.reward[REWARD_FACTION] else ' ',
-                'Quest Items' if self.reward[REWARD_QUEST] else ' ']
+        conv = []
+        if self.reward[REWARD_GOLD]:
+            conv.append('Gold')
+        if self.reward[REWARD_ITEMS]:
+            conv.append('Items')
+        if self.reward[REWARD_SKILLS]:
+            conv.append('Skills')
+        if self.reward[REWARD_POINTS]:
+            conv.append('Skill Points')
+        if self.reward[REWARD_ATTRIB]:
+            conv.append('Attribute Points')
+        if self.reward[REWARD_ZAISHEN]:
+            conv.append('Zaishen Coins')
+        if self.reward[REWARD_FACTION]:
+            conv.append('Faction')
+        if self.reward[REWARD_PROFESSION]:
+            conv.append('Profession')
+        if self.reward[REWARD_QUEST]:
+            conv.append('Quest Items')
         return ', '.join(conv)
 
 
@@ -214,7 +234,7 @@ class TrackGui(QtGui.QMainWindow):
         self.questView.setColumnWidth(2, 20)
         self.questView.setColumnWidth(3, metrics.width("Necromancer (P)") + 30)
         self.questView.setColumnWidth(4, metrics.width("Canthan") + 30)
-        self.questView.setColumnWidth(5, metrics.width("100,000") + 10)
+        self.questView.setColumnWidth(5, metrics.width("50,000") + 10)
         self.questView.setColumnWidth(7, metrics.width("Complete") + 10)
 
         fontSize = self.questView.headerItem().font(0).pointSize()
@@ -225,7 +245,7 @@ class TrackGui(QtGui.QMainWindow):
         else:
             self.fixed_font = QtGui.QFont('Monospace', fontSize)
         metrics = QtGui.QFontMetrics(self.fixed_font)
-        self.questView.setColumnWidth(6, metrics.width("XXXXXXX") + 10)
+        self.questView.setColumnWidth(6, metrics.width("XXXXXXXXX") + 10)
         self.questView.header().setSortIndicator(0, QtCore.Qt.AscendingOrder)
         self.questView.setContextMenuPolicy(QtCore.Qt.CustomContextMenu)
 

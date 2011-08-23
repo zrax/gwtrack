@@ -1,6 +1,11 @@
 Name: Istan
 Campaign: Nightfall
 Quests:
+    A Burning Desire: {
+        Type: Festival,
+        XP: 2000,
+        Reward: [Gold, Items]
+    }
     A Decayed Monument: {
         Type: Secondary,
         Character: Elonian,
@@ -199,6 +204,11 @@ Quests:
         Character: Elonian,
         XP: 2000,
         Reward: [Gold]
+    }
+    Douse Your Enthusiasm: {
+        Type: Festival,
+        XP: 2000,
+        Reward: [Gold, Items, Rank]
     }
     Down on the Bayou: {
         Type: Secondary,

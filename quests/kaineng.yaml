@@ -55,10 +55,6 @@ Quests:
         XP: 5000,
         Reward: [Gold, Items, Faction]
     }
-    Chasing Zenmai: {
-        Type: Secondary,
-        XP: 1500
-    }
     Closer to the Stars: {
         Type: Primary,
         XP: 3000,
@@ -91,7 +87,8 @@ Quests:
     }
     Gain Zenmai: {
         Type: Secondary,
-        XP: 1500
+        XP: 1500,
+        Reward: [Hero]
     }
     Going Home: {
         Type: Secondary,

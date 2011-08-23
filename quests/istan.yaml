@@ -1,0 +1,664 @@
+Name: Istan
+Campaign: Nightfall
+Quests:
+    A Decayed Monument: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 2000,
+        Reward: [Gold, Rank]
+    }
+    A Delayed Delivery: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 1500,
+        Reward: [Gold, Items, Rank]
+    }
+    "A Father's Fate": {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 500,
+        Reward: [Gold]
+    }
+    A Friend in Need: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 250,
+        Reward: [Gold]
+    }
+    A Ghostly Request: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 2000,
+        Reward: [Gold, Items, Rank]
+    }
+    A Hidden Threat: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 500,
+        Reward: [Gold, Rank]
+    }
+    A Land of Heroes: {
+        Type: Primary,
+        XP: 2500,
+        Reward: [Rank]
+    }
+    A Leap of Faith: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 1500,
+        Reward: [Gold, Rank]
+    }
+    A Loose Cannon: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 500,
+        Reward: [Gold]
+    }
+    A Message Home: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 1500,
+        Reward: [Gold]
+    }
+    A Mysterious Missive: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 1500,
+        Reward: [Gold, Items, Rank]
+    }
+    A Peaceful Solution: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 500,
+        Reward: [Gold, Items, Rank]
+    }
+    A Perplexing Plague: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 1500,
+        Reward: [Gold, Items, Rank]
+    }
+    A Personal Vault: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 500
+    }
+    A Sticky Operation: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 1500,
+        Reward: [Gold, Items, Rank]
+    }
+    A Stolen Spore: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 1500,
+        Reward: [Gold, Items, Rank]
+    }
+    A Troubling Theory: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 1500,
+        Reward: [Gold, Items, Rank]
+    }
+    All for One and One for Justice: {
+        Type: Mini-mission,
+        XP: 1500,
+        Reward: [Hero]
+    }
+    Anger of the Stone Face: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 1000,
+        Reward: [Gold]
+    }
+    Armored Transport: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 500,
+        Reward: [Gold, Items, Rank]
+    }
+    Assault on Beknur Harbor: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 2000,
+        Reward: [Gold, Items, Rank]
+    }
+    Bad Tide Rising: {
+        Type: Mini-mission,
+        Character: Elonian,
+        XP: 1000,
+        Reward: [Gold, Rank]
+    }
+    Battle Preparations: {
+        Type: Primary,
+        XP: 1500,
+        Reward: [Items, Rank]
+    }
+    "Big News, Small Package": {
+        Type: Primary,
+        Character: Elonian,
+        XP: 1000,
+        Reward: [Gold, Rank, Hero]
+    }
+    Catch of the Day: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 1000,
+        Reward: [Gold, Rank]
+    }
+    Chasing Zenmai: {
+        Type: Secondary,
+        XP: 1500,
+        Reward: [Hero]
+    }
+    Choose Your Secondary Profession: {
+        Wiki: "Choose_Your_Secondary_Profession_(Nightfall_quest)",
+        Type: Primary,
+        Character: Elonian,
+        XP: 500,
+        Reward: [Gold]
+    }
+    Command Training: {
+        Type: Secondary,
+        XP: 250,
+        Reward: [Gold]
+    }
+    Corsair Invasion: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 1500,
+        Reward: [Gold, Items, Rank]
+    }
+    Corsair Vengeance: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 1500,
+        Reward: [Gold, Items, Rank]
+    }
+    Crypt-ology: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 1500,
+        Reward: [Gold]
+    }
+    "Defender's Choice": {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 1500,
+        Reward: [Gold, Items, Rank]
+    }
+    Diamond in the Rough: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 1000,
+        Reward: [Gold]
+    }
+    Double Dog Dare: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 2000,
+        Reward: [Gold]
+    }
+    Down on the Bayou: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 1500,
+        Reward: [Gold, Rank]
+    }
+    Feast of Bokka: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 1500,
+        Reward: [Gold]
+    }
+    Find the Stolen Presents: {
+        Type: Festival,
+        XP: 5000,
+        Reward: [Gold, Items]
+    }
+    First Born: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 1500,
+        Reward: [Gold]
+    }
+    "Flamingo-ing... going... gone.": {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 1500,
+        Reward: [Gold, Rank]
+    }
+    Following the Trail: {
+        Type: Primary,
+        Character: Elonian,
+        XP: 1000,
+        Reward: [Gold, Rank]
+    }
+    Fury of a Grieving Heart: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 1500,
+        Reward: [Gold]
+    }
+    Ghosts in the Graveyard: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 1500,
+        Reward: [Gold, Items, Rank]
+    }
+    Hog Hunt: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 1000,
+        Reward: [Gold, Rank]
+    }
+    Hole of Istan: {
+        Type: Primary,
+        XP: 2500
+    }
+    Honing your Skills: {
+        Type: Primary,
+        Character: Elonian,
+        XP: 500,
+        Reward: [Gold, Rank]
+    }
+    How the Grentches Stole Wintersday: {
+        Type: Festival,
+        XP: 1000,
+        Reward: [Items]
+    }
+    Identity Theft: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 500,
+        Reward: [Gold, Items, Rank]
+    }
+    Into Chahbek Village: {
+        Type: Primary,
+        Character: Elonian,
+        Reward: [Hero]
+    }
+    Isle of the Dead: {
+        Wiki: "Isle_of_the_Dead_(quest)",
+        Type: Primary,
+        Character: Elonian,
+        XP: 1000,
+        Reward: [Gold, Rank]
+    }
+    "Jedur, the Youngest Child": {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 1500,
+        Reward: [Gold]
+    }
+    Leaving a Legacy: {
+        Type: Primary,
+        Character: Elonian,
+        XP: 2000,
+        Reward: [Gold, Rank, Hero]
+    }
+    "Loyal 'til the End": {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 1500,
+        Reward: [Gold, Rank]
+    }
+    Map-Travel Inventor: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 250,
+        Reward: [Gold]
+    }
+    Material Girl: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 500,
+        Reward: [Gold, Items, Rank]
+    }
+    "Misela, the Middle Child": {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 1500,
+        Reward: [Gold]
+    }
+    Missing Shipment: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 500,
+        Reward: [Gold, Items, Rank]
+    }
+    "Moa'vu'Kaal, Awakened": {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 1500,
+        Reward: [Gold, Items, Rank]
+    }
+    Money on the Side: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 500,
+        Reward: [Gold]
+    }
+    "Mutu, the Oldest Child": {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 1500,
+        Reward: [Gold]
+    }
+    Need More Stuff: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 500,
+        Reward: [Gold, Items, Rank]
+    }
+    Never Fight Alone: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 250,
+        Reward: [Gold]
+    }
+    One Good Turn Deserves Another: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 500,
+        Reward: [Gold, Items]
+    }
+    Plague in Cantha: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold]
+    }
+    Primary Training: {
+        Type: Primary,
+        Character: Elonian,
+        XP: 250,
+        Reward: [Items, Rank]
+    }
+    Proof of Courage: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 500,
+        Reward: [Gold, Rank]
+    }
+    Quality Steel: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 500,
+        Reward: [Gold, Items, Rank]
+    }
+    Quarry Quandry: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 1000,
+        Reward: [Gold, Items, Rank]
+    }
+    Queen of the Quarry: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 1000,
+        Reward: [Gold, Items, Rank]
+    }
+    Quiz the Recruits: {
+        Type: Primary,
+        Character: Elonian,
+        XP: 250
+    }
+    "Rally the Recruits (Tutorial)": {
+        Type: Primary,
+        Character: Elonian,
+        XP: 2000
+    }
+    Re-enlist Rojis: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 1500,
+        Reward: [Gold, Items, Rank]
+    }
+    Rising Suns: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 1000,
+        Reward: [Gold, Items, Rank]
+    }
+    "Rising in the Ranks: First Spear": {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 2000,
+        Reward: [Attribute_Points]
+    }
+    "Rising in the Ranks: Master Sergeant": {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 2000,
+        Reward: [Attribute_Points]
+    }
+    Save the Reindeer: {
+        Type: Festival,
+        XP: 5000,
+        Reward: [Gold, Items]
+    }
+    Scholarly Affairs: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 250,
+        Reward: [Gold, Items, Rank]
+    }
+    Second Born: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 1500,
+        Reward: [Gold]
+    }
+    Secondary Training: {
+        Type: Primary,
+        Character: Elonian,
+        XP: 500,
+        Reward: [Gold, Items, Rank]
+    }
+    Secret Passage: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 1000,
+        Reward: [Gold]
+    }
+    "Securing Champion's Dawn": {
+        Type: Primary,
+        XP: 1500,
+        Reward: [Rank]
+    }
+    Signs and Portents: {
+        Type: Primary,
+        Character: Elonian,
+        XP: 1500,
+        Reward: [Gold, Rank, Hero]
+    }
+    Skale and Magic Compass: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 1000,
+        Reward: [Gold]
+    }
+    Skree Hatchling Season: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 1000,
+        Reward: [Gold, Items, Rank]
+    }
+    Special Delivery: {
+        Type: Primary,
+        Character: Elonian,
+        XP: 1000,
+        Reward: [Gold, Rank]
+    }
+    Spreading the Wintersday Spirit: {
+        Type: Festival,
+        XP: 5000,
+        Reward: [Gold, Items]
+    }
+    Stone-Faced Orders: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 1000,
+        Reward: [Gold, Transcendent_Glory]  # Who knows, maybe it'll be important some day
+    }
+    Student Jin: {
+        Type: Secondary,
+        XP: 1500,
+        Reward: [Gold, Hero]
+    }
+    Student Sousuke: {
+        Type: Secondary,
+        XP: 1500,
+        Reward: [Gold, Hero]
+    }
+    Suwash the Pirate: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 500,
+        Reward: [Gold, Rank]
+    }
+    "Take the Shortcut (Skip Tutorial)": {
+        Type: Primary,
+        Character: Elonian,
+        XP: 2000,
+        Reward: [Hero]
+    }
+    Terror in Tyria: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold]
+    }
+    The Council is Called: {
+        Type: Primary,
+        XP: 2000,
+        Reward: [Gold, Rank]
+    }
+    The Cult of the Stone Face: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 1000,
+        Reward: [Gold, Eternal_Bliss]  # Who knows, maybe it'll be important some day
+    }
+    The Cyclone Palace: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 2000,
+        Reward: [Gold, Items, Rank]
+    }
+    The Gift of Giving: {
+        Type: Festival,
+        XP: 1000,
+        Reward: [Items]
+    }
+    The Honorable General: {
+        Type: Primary,
+        Character: Elonian,
+        XP: 2000,
+        Reward: [Gold, Items, Rank]
+    }
+    The Iron Truth: {
+        Type: Primary,
+        Character: Elonian,
+        XP: 1500,
+        Reward: [Gold, Rank]
+    }
+    The Lone Raider: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 1500,
+        Reward: [Gold, Items, Rank]
+    }
+    The Time is Nigh: {
+        Type: Primary,
+        XP: 1500,
+        Reward: [Gold, Rank]
+    }
+    "The Toy's Story": {
+        Type: Secondary,
+        XP: 1000,
+        Reward: [Items]
+    }
+    Third Born: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 1500,
+        Reward: [Gold]
+    }
+    To Ask For More: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 1500,
+        Reward: [Gold]
+    }
+    To Dye For: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 500,
+        Reward: [Gold, Items, Rank]
+    }
+    To See the Sights: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 500,
+        Reward: [Gold]
+    }
+    Trade Relations: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 1500,
+        Reward: [Gold]
+    }
+    Trial by Fire: {
+        Type: Primary,
+        Character: Elonian,
+        XP: 1500,
+        Reward: [Gold, Rank]
+    }
+    Voices in the Night: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 1000,
+        Reward: [Gold, Items, Rank]
+    }
+    Wandered Off Again: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 1500,
+        Reward: [Gold]
+    }
+    "War Preparations (Ghost Reconnaissance)": {
+        Type: Primary,
+        Character: Elonian,
+        XP: 1500,
+        Reward: [Gold, Rank]
+    }
+    "War Preparations (Recruit Training)": {
+        Type: Primary,
+        Character: Elonian,
+        XP: 1500,
+        Reward: [Gold, Rank]
+    }
+    "War Preparations (Wind and Water)": {
+        Type: Primary,
+        Character: Elonian,
+        XP: 1500,
+        Reward: [Gold, Rank]
+    }
+    "What Do You Do with a Drunken Shauben?": {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 1500,
+        Reward: [Gold, Items, Rank]
+    }
+    White Mist: {
+        Type: Festival,
+        XP: 1000,
+        Reward: [Items]
+    }
+    Zaishen Elite: {
+        Wiki: "Zaishen_Elite_(quest)",
+        Type: Secondary,
+        XP: 1500,
+        Reward: [Gold, Rank]
+    }

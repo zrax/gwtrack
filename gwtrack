@@ -17,10 +17,12 @@ REWARD_ITEMS      = 1  # I
 REWARD_SKILLS     = 2  # S
 REWARD_POINTS     = 3  # P
 REWARD_ATTRIB     = 4  # A
-REWARD_ZAISHEN    = 5  # Z
+REWARD_RANK       = 5  # R
 REWARD_FACTION    = 6  # F
-REWARD_PROFESSION = 7  # 2
-REWARD_MAX        = 9
+REWARD_ZAISHEN    = 7  # Z
+REWARD_HERO       = 8  # H
+REWARD_PROFESSION = 9  # 2
+REWARD_MAX        = 10
 
 class QuestInfo:
     def __init__(self, info, name):
@@ -89,10 +91,14 @@ class QuestInfo:
                 self.reward[REWARD_POINTS] = True
             if 'Attribute_Points' in reward_list:
                 self.reward[REWARD_ATTRIB] = True
-            if 'Zaishen' in reward_list:
-                self.reward[REWARD_ZAISHEN] = True
+            if 'Rank' in reward_list:
+                self.reward[REWARD_RANK] = True
             if 'Faction' in reward_list:
                 self.reward[REWARD_FACTION] = True
+            if 'Zaishen' in reward_list:
+                self.reward[REWARD_ZAISHEN] = True
+            if 'Hero' in reward_list:
+                self.reward[REWARD_HERO] = True
             if 'Profession' in reward_list:
                 self.reward[REWARD_PROFESSION] = True
         except KeyError: pass
@@ -103,8 +109,10 @@ class QuestInfo:
                 'S' if self.reward[REWARD_SKILLS] else ' ',
                 'P' if self.reward[REWARD_POINTS] else ' ',
                 'A' if self.reward[REWARD_ATTRIB] else ' ',
-                'Z' if self.reward[REWARD_ZAISHEN] else ' ',
+                'R' if self.reward[REWARD_RANK] else ' ',
                 'F' if self.reward[REWARD_FACTION] else ' ',
+                'Z' if self.reward[REWARD_ZAISHEN] else ' ',
+                'H' if self.reward[REWARD_HERO] else ' ',
                 '2' if self.reward[REWARD_PROFESSION] else ' ']
         return ''.join(conv)
 
@@ -120,10 +128,14 @@ class QuestInfo:
             conv.append('Skill Points')
         if self.reward[REWARD_ATTRIB]:
             conv.append('Attribute Points')
-        if self.reward[REWARD_ZAISHEN]:
-            conv.append('Zaishen Coins')
+        if self.reward[REWARD_RANK]:
+            conv.append('Rank Points')
         if self.reward[REWARD_FACTION]:
             conv.append('Faction')
+        if self.reward[REWARD_ZAISHEN]:
+            conv.append('Zaishen Coins')
+        if self.reward[REWARD_HERO]:
+            conv.append('Hero')
         if self.reward[REWARD_PROFESSION]:
             conv.append('Profession')
         return ', '.join(conv)
@@ -239,7 +251,7 @@ class TrackGui(QtGui.QMainWindow):
         else:
             self.fixed_font = QtGui.QFont('Monospace', fontSize)
         metrics = QtGui.QFontMetrics(self.fixed_font)
-        self.questView.setColumnWidth(6, metrics.width("XXXXXXXX") + 10)
+        self.questView.setColumnWidth(6, metrics.width("XXXXXXXXXX") + 10)
         self.questView.header().setSortIndicator(0, QtCore.Qt.AscendingOrder)
         self.questView.setContextMenuPolicy(QtCore.Qt.CustomContextMenu)
 

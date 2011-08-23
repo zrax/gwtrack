@@ -67,6 +67,12 @@ Quests:
         XP: 7500,
         Reward: [Gold]
     }
+    Straight to the Heart: {
+        Type: Festival,
+        Repeatable: True,
+        XP: 1000,
+        Reward: [Items]
+    }
     "Tekks's War": {
         Type: Secondary,
         Repeatable: True,
@@ -111,6 +117,12 @@ Quests:
         Repeatable: True,
         XP: 7500,
         Reward: [Gold]
+    }
+    The Strength of Snow: {
+        Type: Festival,
+        Repeatable: True,
+        XP: 1000,
+        Reward: [Items]
     }
     Veiled Threat: {
         Type: Secondary,

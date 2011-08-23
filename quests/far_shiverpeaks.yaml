@@ -1,0 +1,248 @@
+Name: Far Shiverpeaks
+Campaign: Eye of the North
+Quests:
+    A Gate Too Far: {
+        Type: Primary,
+        Repeatable: True,
+        XP: 2500,
+        Reward: [Rank]
+    }
+    "A Hunter's Pride": {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Rank, Skills, Items]
+    }
+    Against the Destroyers: {
+        Type: Primary,
+        XP: 10000,
+        Reward: [Rank]
+    }
+    Anything You Can Do: {
+        Type: Secondary,
+        XP: 15000,
+        Reward: [Gold, Rank]
+    }
+    "Attack on Jalis's Camp": {
+        Type: Mini-mission,
+        Reward: [Rank, Items, Skills]
+    }
+    Bear Club for Men: {
+        Type: Secondary,
+        Reward: [Rank, Skills]
+    }
+    Bear Club for Women: {
+        Type: Secondary,
+        Reward: [Rank, Skills]
+    }
+    Blood Washes Blood: {
+        Type: Primary,
+        Repeatable: True,
+        XP: 2500,
+        Reward: [Rank]
+    }
+    Charr-broiled Plans: {
+        Type: Festival,
+        XP: 2000,
+        Reward: [Gold, Rank, Items]
+    }
+    Charr Invaders: {
+        Type: Secondary,
+        XP: 10000,
+        Reward: [Rank, Skills]
+    }
+    Cold as Ice: {
+        Type: Secondary,
+        Reward: [Rank, Skills, Items]
+    }
+    Curse of the Nornbear: {
+        Type: Primary,
+        Repeatable: True,
+        XP: 2500,
+        Reward: [Rank, Heroes]
+    }
+    "Deeprunner's Map": {
+        Type: Secondary,
+        XP: 15000,
+        Reward: [Rank, Skills]
+    }
+    Destructive Research: {
+        Type: Secondary,
+        Reward: [Rank, Skills]
+    }
+    "Final Round, Championship Edition: Fight!": {
+        Type: Secondary,
+        Repeatable: True,
+        Reward: [Items]
+    }
+    "Final Round: Fight!": {
+        Type: Secondary,
+        Reward: [Rank, Items, Skills]
+    }
+    Flames of the Bear Spirit: {
+        Type: Primary,
+        XP: 2000,
+        Reward: [Rank]
+    }
+    Haunted: {
+        Type: Secondary,
+        XP: 15000
+    }
+    Heart of the Shiverpeaks: {
+        Wiki: "Heart_of_the_Shiverpeaks_(quest)",
+        Type: Secondary,
+        XP: 2000,
+        Reward: [Rank]
+    }
+    Hero Tutorial: {
+        Type: Secondary,
+        XP: 1000,
+        Reward: [Items]
+    }
+    In the Service of Revenge: {
+        Type: Secondary,
+        Reward: [Items, Rank, Skills]
+    }
+    "Kilroy's Punchout Tournament": {
+        Type: Mini-mission,
+        Repeatable: True,
+        Reward: [Rank]
+    }
+    "Kilroy Stonekin's Punch-Out Extravaganza!": {
+        Type: Mini-mission,
+        Repeatable: True,
+        XP: 2500,
+        Reward: [Gold]
+    }
+    "Krak's Cavalry": {
+        Type: Secondary,
+        Reward: [Gold, Rank, Skills]
+    }
+    Leader of the Pack: {
+        Type: Secondary,
+        Reward: [Items, Rank, Skills]
+    }
+    Lost Treasure of King Hundar: {
+        Type: Secondary,
+        Repeatable: True,
+        XP: 2500,
+        Reward: [Gold]
+    }
+    Mano a Norn-o: {
+        Type: Secondary,
+        Reward: [Items, Rank, Skills]
+    }
+    Nornhood: {
+        Type: Secondary,
+        XP: 15000
+    }
+    Northern Allies: {
+        Type: Secondary,
+        XP: 10000,
+        Reward: [Rank, Items]
+    }
+    "Prenuptial Disagreement (female)": {
+        Type: Secondary,
+        Reward: [Rank, Items, Skills]
+    }
+    "Prenuptial Disagreement (male)": {
+        Type: Secondary,
+        Reward: [Rank, Items, Skills]
+    }
+    Punch the Clown: {
+        Type: Secondary,
+        Reward: [Rank, Skills]
+    }
+    "Round 1: Fight!": {
+        Type: Secondary,
+        Repeatable: True
+    }
+    "Round 2: Fight!": {
+        Type: Secondary,
+        Repeatable: True
+    }
+    "Round 3: Fight!": {
+        Type: Secondary,
+        Repeatable: True
+    }
+    "Round 4: Fight!": {
+        Type: Secondary,
+        Repeatable: True
+    }
+    "Round 5: Fight!": {
+        Type: Secondary,
+        Repeatable: True
+    }
+    Search for the Ebon Vanguard: {
+        Type: Primary,
+        XP: 2000,
+        Reward: [Rank]
+    }
+    "Service: In Defense of the Eye": {
+        Type: Mini-mission,
+        Reward: [Rank, Skills, Items]
+    }
+    "Service: Practice, Dummy": {
+        Type: Mini-mission,
+        Reward: [Rank, Skills]
+    }
+    Shadows in the Night: {
+        Type: Secondary,
+        Reward: [Rank, Skills, Items]
+    }
+    Snowball Dominance: {
+        Type: Festival,
+        Repeatable: True,
+        XP: 5000,
+        Reward: [Gold, Rank, Items]
+    }
+    The Big Unfriendly Jotun: {
+        Type: Secondary,
+        Reward: [Gold, Rank, Skills]
+    }
+    The Destroyer Challenge: {
+        Type: Secondary,
+        Reward: [Items, Rank, Skills]
+    }
+    The Great Norn Alemoot: {
+        Type: Secondary,
+        XP: 15000,
+        Reward: [Rank, Skills]
+    }
+    The Knowledgeable Asura: {
+        Type: Secondary,
+        XP: 10000,
+        Reward: [Rank, Items]
+    }
+    The Three Wise Norn: {
+        Type: Festival,
+        XP: 1000,
+        Reward: [Gold, Rank, Items]
+    }
+    The Throwdown in a Norn Town: {
+        Type: Mini-mission,
+        Reward: [Rank, Items, Skills]
+    }
+    "Then and Now, Here and There": {
+        Type: Secondary,
+        XP: 15000,
+        Reward: [Items]
+    }
+    Tracking the Nornbear: {
+        Type: Secondary,
+        XP: 2000,
+        Reward: [Rank]
+    }
+    Truthseeker: {
+        Type: Secondary,
+        Reward: [Rank, Skills]
+    }
+    Vision of the Raven Spirit: {
+        Type: Primary,
+        XP: 2000,
+        Reward: [Rank]
+    }
+    "Worthy Deeds (Done Dirt Cheap)": {
+        Type: Secondary,
+        XP: 15000,
+        Reward: [Rank, Skills]
+    }

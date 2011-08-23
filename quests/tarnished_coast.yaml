@@ -1,0 +1,135 @@
+Name: Tarnished Coast
+Campaign: Eye of the North
+Quests:
+    A Little Help: {
+        Type: Primary,
+        XP: 2000,
+        Reward: [Rank]
+    }
+    Finding Gadd: {
+        Type: Primary,
+        XP: 2000,
+        Reward: [Rank]
+    }
+    Finding the Bloodstone: {
+        Type: Primary,
+        Repeatable: True,
+        XP: 2500,
+        Reward: [Rank, Heroes]
+    }
+    Frogstomp: {
+        Type: Secondary,
+        XP: 5000,
+        Reward: [Gold]
+    }
+    Genius Operated Living Enchanted Manifestation: {
+        Type: Primary,
+        Repeatable: True,
+        XP: 2500,
+        Reward: [Rank]
+    }
+    Give Peace a Chance: {
+        Type: Secondary,
+        XP: 10000,
+        Reward: [Heroes]
+    }
+    Insidious Remnants: {
+        Type: Secondary,
+        XP: 10000,
+        Reward: [Gold, Rank]
+    }
+    Lab Space: {
+        Type: Secondary,
+        XP: 2000,
+        Reward: [Rank]
+    }
+    Moths to a Flame: {
+        Type: Secondary,
+        XP: 12500,
+        Reward: [Gold, Rank]
+    }
+    O Brave New World: {
+        Type: Secondary,
+        Reward: [Rank, Skills, Items]
+    }
+    "Polymock: Defeat Blarp": {
+        Type: Secondary,
+        Reward: [Rank, Items]
+    }
+    "Polymock: Defeat Dune Teardrinker": {
+        Type: Secondary,
+        Reward: [Rank, Items, Skills]
+    }
+    "Polymock: Defeat Fonk": {
+        Type: Secondary,
+        Reward: [Rank, Items]
+    }
+    "Polymock: Defeat Grulhammer Silverfist": {
+        Type: Secondary,
+        Reward: [Rank, Items, Skills]
+    }
+    "Polymock: Defeat Master Hoff": {
+        Type: Secondary,
+        Reward: [Rank, Items, Skills]
+    }
+    "Polymock: Defeat Necromancer Volumandus": {
+        Type: Secondary,
+        Reward: [Rank, Items, Skills]
+    }
+    "Polymock: Defeat Plurgg": {
+        Type: Secondary,
+        Reward: [Rank, Items]
+    }
+    "Polymock: Defeat Yulma": {
+        Type: Secondary,
+        Reward: [Rank, Items]
+    }
+    The Asura Trap: {
+        Type: Secondary,
+        XP: 7500,
+        Reward: [Gold, Rank]
+    }
+    The Cipher of Balthazar: {
+        Type: Secondary,
+        Reward: [Rank, Skills]
+    }
+    The Cipher of Dwayna: {
+        Type: Secondary,
+        Reward: [Rank, Skills]
+    }
+    The Cipher of Grenth: {
+        Type: Secondary,
+        Reward: [Rank, Skills]
+    }
+    The Cipher of Kormir: {
+        Type: Secondary,
+        Reward: [Rank, Skills, Items]
+    }
+    The Cipher of Lyssa: {
+        Type: Secondary,
+        Reward: [Rank, Skills]
+    }
+    The Cipher of Melandru: {
+        Type: Secondary,
+        Reward: [Rank, Skills]
+    }
+    The Elusive Golemancer: {
+        Type: Primary,
+        Repeatable: True,
+        XP: 2500,
+        Reward: [Rank]
+    }
+    "The Justiciar's End": {
+        Type: Secondary,
+        XP: 15000,
+        Reward: [Rank, Items]
+    }
+    The Path to Revelations: {
+        Type: Secondary,
+        Reward: [Rank, Skills, Items]
+    }
+    Turning the Page: {
+        Type: Secondary,
+        XP: 5000,
+        Reward: [Gold, Rank]
+    }

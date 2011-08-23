@@ -69,37 +69,37 @@ Quests:
     Finding a Purpose: {
         Type: Secondary,
         XP: 2500,
-        Reward: [Hero]
+        Reward: [Heroes]
     }
     Gain Goren: {
         Type: Secondary,
         XP: 2500,
-        Reward: [Hero]
+        Reward: [Heroes]
     }
     Gain Jin: {
         Type: Secondary,
         XP: 2500,
-        Reward: [Hero]
+        Reward: [Heroes]
     }
     Gain Margrid: {
         Type: Secondary,
         XP: 2500,
-        Reward: [Hero]
+        Reward: [Heroes]
     }
     Gain Master of Whispers: {
         Type: Secondary,
         XP: 2500,
-        Reward: [Hero]
+        Reward: [Heroes]
     }
     Gain Norgu: {
         Type: Secondary,
         XP: 2500,
-        Reward: [Hero]
+        Reward: [Heroes]
     }
     Gain Sousuke: {
         Type: Secondary,
         XP: 2500,
-        Reward: [Hero]
+        Reward: [Heroes]
     }
     Good Demon Hunting: {
         Type: Secondary,

@@ -109,7 +109,7 @@ Quests:
     All for One and One for Justice: {
         Type: Mini-mission,
         XP: 1500,
-        Reward: [Hero]
+        Reward: [Heroes]
     }
     Anger of the Stone Face: {
         Type: Secondary,
@@ -144,7 +144,7 @@ Quests:
         Type: Primary,
         Character: Elonian,
         XP: 1000,
-        Reward: [Gold, Rank, Hero]
+        Reward: [Gold, Rank, Heroes]
     }
     Catch of the Day: {
         Type: Secondary,
@@ -155,7 +155,7 @@ Quests:
     Chasing Zenmai: {
         Type: Secondary,
         XP: 1500,
-        Reward: [Hero]
+        Reward: [Heroes]
     }
     Choose Your Secondary Profession: {
         Wiki: "Choose_Your_Secondary_Profession_(Nightfall_quest)",
@@ -287,7 +287,7 @@ Quests:
     Into Chahbek Village: {
         Type: Primary,
         Character: Elonian,
-        Reward: [Hero]
+        Reward: [Heroes]
     }
     Isle of the Dead: {
         Wiki: "Isle_of_the_Dead_(quest)",
@@ -306,7 +306,7 @@ Quests:
         Type: Primary,
         Character: Elonian,
         XP: 2000,
-        Reward: [Gold, Rank, Hero]
+        Reward: [Gold, Rank, Heroes]
     }
     "Loyal 'til the End": {
         Type: Secondary,
@@ -481,7 +481,7 @@ Quests:
         Type: Primary,
         Character: Elonian,
         XP: 1500,
-        Reward: [Gold, Rank, Hero]
+        Reward: [Gold, Rank, Heroes]
     }
     Skale and Magic Compass: {
         Type: Secondary,
@@ -515,12 +515,12 @@ Quests:
     Student Jin: {
         Type: Secondary,
         XP: 1500,
-        Reward: [Gold, Hero]
+        Reward: [Gold, Heroes]
     }
     Student Sousuke: {
         Type: Secondary,
         XP: 1500,
-        Reward: [Gold, Hero]
+        Reward: [Gold, Heroes]
     }
     Suwash the Pirate: {
         Type: Secondary,
@@ -532,7 +532,7 @@ Quests:
         Type: Primary,
         Character: Elonian,
         XP: 2000,
-        Reward: [Hero]
+        Reward: [Heroes]
     }
     Terror in Tyria: {
         Type: Secondary,

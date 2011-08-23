@@ -89,7 +89,7 @@ Quests:
     "Goren's Stuff: Part 1": {
         Type: Secondary,
         XP: 2000,
-        Reward: [Hero]
+        Reward: [Heroes]
     }
     "Goren's Stuff: Part 2": {
         Type: Secondary,
@@ -200,7 +200,7 @@ Quests:
     The Role of a Lifetime: {
         Type: Secondary,
         XP: 2000,
-        Reward: [Hero]
+        Reward: [Heroes]
     }
     The Scourge of Vabbi: {
         Type: Secondary,

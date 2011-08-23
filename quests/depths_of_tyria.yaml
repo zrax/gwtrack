@@ -1,0 +1,126 @@
+Name: Depths of Tyria
+Campaign: Eye of the North
+Quests:
+    A Time for Heroes: {
+        Type: Primary,
+        Repeatable: True,
+        XP: 2500,
+        Reward: [Rank]
+    }
+    Cold Vengeance: {
+        Type: Secondary,
+        Repeatable: True,
+        XP: 10000,
+        Reward: [Gold]
+    }
+    Crystal Method: {
+        Type: Secondary,
+        Repeatable: True,
+        XP: 2500,
+        Reward: [Gold]
+    }
+    Defending the Breach: {
+        Type: Secondary,
+        Repeatable: True,
+        XP: 5000,
+        Reward: [Gold]
+    }
+    "Destruction's Depths": {
+        Type: Primary,
+        Repeatable: True,
+        XP: 2500,
+        Reward: [Rank]
+    }
+    Dredging the Depths: {
+        Type: Secondary,
+        Repeatable: True,
+        XP: 7500,
+        Reward: [Gold]
+    }
+    "Giriff's War": {
+        Type: Secondary,
+        Repeatable: True,
+        XP: 5000,
+        Reward: [Gold]
+    }
+    "Kathandrax's Crusher": {
+        Type: Secondary,
+        Repeatable: True,
+        XP: 7500,
+        Reward: [Gold]
+    }
+    Little Workshop of Horrors: {
+        Type: Secondary,
+        Repeatable: True,
+        XP: 7500,
+        Reward: [Gold]
+    }
+    Lost Souls: {
+        Type: Secondary,
+        Repeatable: True,
+        XP: 7500,
+        Reward: [Gold]
+    }
+    Scrambled Reinforcements: {
+        Type: Secondary,
+        Repeatable: True,
+        XP: 7500,
+        Reward: [Gold]
+    }
+    "Tekks's War": {
+        Type: Secondary,
+        Repeatable: True,
+        XP: 5000,
+        Reward: [Gold]
+    }
+    Temple of the Damned: {
+        Type: Secondary,
+        Repeatable: True,
+        XP: 7500,
+        Reward: [Gold]
+    }
+    The Anvil of Dragrimmar: {
+        Type: Secondary,
+        Repeatable: True,
+        XP: 5000,
+        Reward: [Gold]
+    }
+    "The Arrow's Point": {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold]
+    }
+    The Beginning of the End: {
+        Type: Primary,
+        Repeatable: True,
+        Reward: [Heroes]
+    }
+    "The Blade's Essence": {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold]
+    }
+    The Last Hierophant: {
+        Type: Secondary,
+        Repeatable: True,
+        XP: 15000,
+        Reward: [Gold]
+    }
+    The Misanthropic Jotun Principle: {
+        Type: Secondary,
+        Repeatable: True,
+        XP: 7500,
+        Reward: [Gold]
+    }
+    Veiled Threat: {
+        Type: Secondary,
+        Repeatable: True,
+        XP: 7500,
+        Reward: [Gold]
+    }
+    Watch it Jiggle: {
+        Type: Secondary,
+        Repeatable: True,
+        XP: 5000,
+        Reward: [Gold]
+    }

@@ -20,7 +20,7 @@ REWARD_ATTRIB     = 4  # A
 REWARD_RANK       = 5  # R
 REWARD_FACTION    = 6  # F
 REWARD_ZAISHEN    = 7  # Z
-REWARD_HERO       = 8  # H
+REWARD_HEROES     = 8  # H
 REWARD_PROFESSION = 9  # 2
 REWARD_MAX        = 10
 
@@ -97,8 +97,8 @@ class QuestInfo:
                 self.reward[REWARD_FACTION] = True
             if 'Zaishen' in reward_list:
                 self.reward[REWARD_ZAISHEN] = True
-            if 'Hero' in reward_list:
-                self.reward[REWARD_HERO] = True
+            if 'Heroes' in reward_list:
+                self.reward[REWARD_HEROES] = True
             if 'Profession' in reward_list:
                 self.reward[REWARD_PROFESSION] = True
         except KeyError: pass
@@ -112,7 +112,7 @@ class QuestInfo:
                 'R' if self.reward[REWARD_RANK] else ' ',
                 'F' if self.reward[REWARD_FACTION] else ' ',
                 'Z' if self.reward[REWARD_ZAISHEN] else ' ',
-                'H' if self.reward[REWARD_HERO] else ' ',
+                'H' if self.reward[REWARD_HEROES] else ' ',
                 '2' if self.reward[REWARD_PROFESSION] else ' ']
         return ''.join(conv)
 
@@ -134,8 +134,8 @@ class QuestInfo:
             conv.append('Faction')
         if self.reward[REWARD_ZAISHEN]:
             conv.append('Zaishen Coins')
-        if self.reward[REWARD_HERO]:
-            conv.append('Hero')
+        if self.reward[REWARD_HEROES]:
+            conv.append('Heroes')
         if self.reward[REWARD_PROFESSION]:
             conv.append('Profession')
         return ', '.join(conv)

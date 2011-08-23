@@ -88,7 +88,7 @@ Quests:
     Gain Zenmai: {
         Type: Secondary,
         XP: 1500,
-        Reward: [Hero]
+        Reward: [Heroes]
     }
     Going Home: {
         Type: Secondary,

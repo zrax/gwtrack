@@ -75,7 +75,7 @@ Quests:
     Centaur Blackmail: {
         Type: Primary,
         XP: 2500,
-        Reward: [Gold, Hero]
+        Reward: [Gold, Heroes]
     }
     Centaur Concerns: {
         Type: Secondary,
@@ -177,7 +177,7 @@ Quests:
     "No Me, No Kormir": {
         Type: Primary,
         XP: 2500,
-        Reward: [Gold, Hero]
+        Reward: [Gold, Heroes]
     }
     Old Woman River: {
         Type: Secondary,
@@ -237,7 +237,7 @@ Quests:
     To Kill a Demon: {
         Type: Primary,
         XP: 2500,
-        Reward: [Gold, Hero]
+        Reward: [Gold, Heroes]
     }
     "To Vabbi!": {
         Type: Primary,

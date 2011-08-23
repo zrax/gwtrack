@@ -1,0 +1,250 @@
+Name: Vabbi
+Campaign: Nightfall
+Quests:
+    A Brief Introduction: {
+        Type: Secondary,
+        XP: 2000,
+        Reward: [Gold, Rank]
+    }
+    A Sound of Ancient Horns: {
+        Type: Secondary,
+        XP: 2000,
+        Reward: [Gold, Items]
+    }
+    "All's Well That Ends Well": {
+        Type: Primary,
+        XP: 2000,
+        Reward: [Gold, Rank]
+    }
+    Attack at the Kodash: {
+        Type: Primary,
+        XP: 2500,
+        Reward: [Gold, Rank]
+    }
+    "Between a Rock...": {
+        Type: Secondary,
+        XP: 4000,
+        Reward: [Gold, Rank]
+    }
+    Botanical Research: {
+        Type: Secondary,
+        XP: 2000,
+        Reward: [Gold, Items]
+    }
+    Brains or Brawn: {
+        Type: Secondary,
+        XP: 2000,
+        Reward: [Gold, Rank]
+    }
+    Calling the Order: {
+        Type: Primary,
+        XP: 2000,
+        Reward: [Gold, Rank]
+    }
+    Coffer of Joko: {
+        Type: Secondary,
+        XP: 1500,
+        Reward: [Gold, Items, Rank]
+    }
+    Crossing the Desolation: {
+        Type: Primary,
+        XP: 2500,
+        Reward: [Gold, Rank]
+    }
+    Data Mining: {
+        Type: Secondary,
+        XP: 2000,
+        Reward: [Gold, Items]
+    }
+    Desperate Measures: {
+        Type: Secondary,
+        XP: 2000,
+        Reward: [Gold, Rank]
+    }
+    Destroy the Harpies: {
+        Type: Secondary,
+        XP: 2000,
+        Reward: [Gold, Items]
+    }
+    Extinction: {
+        Type: Secondary,
+        XP: 2000,
+        Reward: [Gold, Items]
+    }
+    For Your Ears Only: {
+        Type: Secondary,
+        XP: 1500,
+        Reward: [Gold]
+    }
+    Garden Chores: {
+        Type: Secondary,
+        XP: 1000,
+        Reward: [Gold, Items]
+    }
+    Gift of the Djinn: {
+        Type: Secondary,
+        XP: 4000,
+        Reward: [Gold, Items]
+    }
+    "Goren's Stuff: Part 1": {
+        Type: Secondary,
+        XP: 2000,
+        Reward: [Hero]
+    }
+    "Goren's Stuff: Part 2": {
+        Type: Secondary,
+        XP: 2000,
+        Reward: [Gold]
+    }
+    Greed and Regret: {
+        Type: Primary,
+        XP: 2000,
+        Reward: [Gold, Rank]
+    }
+    Guard Rescue: {
+        Type: Secondary,
+        XP: 2000,
+        Reward: [Gold, Items]
+    }
+    "Heart or Mind: Garden in Danger": {
+        Type: Primary,
+        XP: 2500,
+        Reward: [Gold, Rank]
+    }
+    "Heart or Mind: Ronjok in Danger": {
+        Type: Primary,
+        XP: 2500,
+        Reward: [Gold, Rank]
+    }
+    In Defense of Theatre: {
+        Type: Secondary,
+        XP: 4000,
+        Reward: [Gold, Items, Rank]
+    }
+    Interception: {
+        Type: Secondary,
+        XP: 2000,
+        Reward: [Gold, Items]
+    }
+    "Norgu's Nightfall": {
+        Type: Secondary,
+        XP: 2000,
+        Reward: [Gold, Rank]
+    }
+    Old Friends: {
+        Type: Secondary,
+        XP: 1000,
+        Reward: [Gold]
+    }
+    "One Man's Dream": {
+        Type: Secondary,
+        XP: 2000,
+        Reward: [Gold, Items]
+    }
+    Plague of Frogs: {
+        Type: Secondary,
+        XP: 2000,
+        Reward: [Gold, Items]
+    }
+    Pledge of the Merchant Princes: {
+        Type: Primary,
+        XP: 2000,
+        Reward: [Gold, Rank]
+    }
+    Population Control: {
+        Type: Secondary,
+        XP: 2000,
+        Reward: [Gold, Items]
+    }
+    Protect the Learned: {
+        Type: Secondary,
+        XP: 4000,
+        Reward: [Gold, Items, Rank]
+    }
+    Puzzling Parchment: {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items]
+    }
+    Rally The Princes: {
+        Type: Primary,
+        XP: 4000,
+        Reward: [Gold, Items]
+    }
+    Reclaiming the Temple: {
+        Type: Secondary,
+        XP: 2000,
+        Reward: [Gold, Rank]
+    }
+    Scorched Earth: {
+        Wiki: "Scorched_Earth_(Nightfall_quest)",
+        Type: Secondary,
+        XP: 2000,
+        Reward: [Gold, Items]
+    }
+    Summertime for Bokka: {
+        Type: Secondary,
+        XP: 2000,
+        Reward: [Gold, Items]
+    }
+    The Hanging Gardener: {
+        Type: Secondary,
+        XP: 2000,
+        Reward: [Gold, Items]
+    }
+    The Madness of Prophecy: {
+        Type: Secondary,
+        XP: 2000,
+        Reward: [Gold, Rank]
+    }
+    The Role of a Lifetime: {
+        Type: Secondary,
+        XP: 2000,
+        Reward: [Hero]
+    }
+    The Scourge of Vabbi: {
+        Type: Secondary,
+        XP: 2000,
+        Reward: [Gold, Rank]
+    }
+    The Search for Enlightenment: {
+        Type: Secondary,
+        XP: 2000,
+        Reward: [Gold, Rank]
+    }
+    The Search for Survivors: {
+        Type: Secondary,
+        XP: 2000,
+        Reward: [Gold, Rank]
+    }
+    The Show Must Go On: {
+        Type: Secondary,
+        XP: 2000,
+        Reward: [Gold, Items]
+    }
+    To the Rescue: {
+        Wiki: "To_the_Rescue_(Nightfall_quest)",
+        Type: Secondary,
+        XP: 2000,
+        Reward: [Gold, Items, Rank]
+    }
+    Valley of the Rifts: {
+        Type: Secondary,
+        XP: 2000,
+        Reward: [Gold, Items, Rank]
+    }
+    Warning Kehanni: {
+        Type: Primary,
+        XP: 2000,
+        Reward: [Gold, Rank]
+    }
+    "Which Way Did He Go?": {
+        Type: Secondary,
+        XP: 1500,
+        Reward: [Gold, Items]
+    }
+    "Worst. Performance. Ever.": {
+        Type: Secondary,
+        XP: 2000,
+        Reward: [Gold, Items]
+    }

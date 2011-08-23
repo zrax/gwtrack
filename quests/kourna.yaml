@@ -1,0 +1,266 @@
+Name: Kourna
+Campaign: Nightfall
+Quests:
+    A Bushel of Trouble: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items, Rank]
+    }
+    "A Fool's Luck": {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Rank]
+    }
+    A Little Recon: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items, Rank]
+    }
+    A Message for Janeera: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items]
+    }
+    A Prescription for Conscription: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Rank]
+    }
+    A Question of Morality: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items, Rank]
+    }
+    "A Thorn in Varesh's Side": {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Rank]
+    }
+    Ancestral Anguish: {
+        Type: Secondary,
+        XP: 4000,
+        Reward: [Gold, Items, Rank]
+    }
+    And a Hero Shall Lead Them: {
+        Type: Primary,
+        XP: 2500,
+        Reward: [Gold, Rank]
+    }
+    "Battle of Turai's Procession": {
+        Type: Secondary,
+        XP: 4000,
+        Reward: [Gold, Items, Rank]
+    }
+    "Building the Base: Prisoners of War": {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Rank]
+    }
+    "Building the Base: The Interrogation": {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Rank]
+    }
+    "Building the Base: The Meeting": {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Rank]
+    }
+    Capturing the Signet of Capture: {
+        Type: Secondary,
+        Character: Elonian,
+        XP: 2500,
+        Reward: [Gold, Rank, Skills]
+    }
+    Centaur Blackmail: {
+        Type: Primary,
+        XP: 2500,
+        Reward: [Gold, Hero]
+    }
+    Centaur Concerns: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items]
+    }
+    Drake in a Cage: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items, Rank]
+    }
+    Drakes on the Plain: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items]
+    }
+    Eavesdropping: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Rank]
+    }
+    Estate Planning: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items, Rank]
+    }
+    Family Ties: {
+        Wiki: "Family_Ties_(Nightfall_quest)",
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items, Rank]
+    }
+    Feeding Frenzy: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items, Rank]
+    }
+    Fish in a Barrel: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items]
+    }
+    For a Price: {
+        Type: Primary,
+        XP: 2500,
+        Reward: [Gold, Items]
+    }
+    Herds to the Slaughter: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Rank]
+    }
+    "Hunted!": {
+        Type: Primary,
+        XP: 2500,
+        Reward: [Gold, Rank]
+    }
+    Insatiable Appetite: {
+        Type: Secondary,
+        Repeatable: True,
+        Reward: [Items]
+    }
+    "Koss's Elixir": {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items, Rank]
+    }
+    Koss Goes Recruiting: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Rank]
+    }
+    "Melonni's Meditations": {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Rank]
+    }
+    Melonni Goes Recruiting: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Rank]
+    }
+    "Mirza's Last Stand": {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items, Rank]
+    }
+    Mysterious Message: {
+        Wiki: "Mysterious_Message_(Nightfall_quest)",
+        Type: Primary,
+        XP: 2500,
+        Reward: [Gold, Rank]
+    }
+    "No Me, No Kormir": {
+        Type: Primary,
+        XP: 2500,
+        Reward: [Gold, Hero]
+    }
+    Old Woman River: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Rank]
+    }
+    Secrets in the Shadow: {
+        Type: Primary,
+        XP: 2500,
+        Reward: [Gold, Items]
+    }
+    Tendering an Offer: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items, Rank]
+    }
+    The Battle of Jahai: {
+        Type: Mini-mission,
+        Reward: [Gold]
+    }
+    The Command Post: {
+        Type: Secondary,
+        XP: 4000,
+        Reward: [Gold, Rank]
+    }
+    The Dejarin Estate: {
+        Type: Secondary,
+        XP: 4000,
+        Reward: [Gold, Items, Rank]
+    }
+    The Foolhardy Father: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items, Rank]
+    }
+    The Great Escape: {
+        Type: Primary,
+        XP: 2500,
+        Reward: [Gold, Rank]
+    }
+    The Great Zehtuka: {
+        Wiki: "The_Great_Zehtuka_(quest)",
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items]
+    }
+    The Tools of War: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Rank]
+    }
+    The Young Lady Vanishes: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items, Rank]
+    }
+    To Kill a Demon: {
+        Type: Primary,
+        XP: 2500,
+        Reward: [Gold, Hero]
+    }
+    "To Vabbi!": {
+        Type: Primary,
+        XP: 2500,
+        Reward: [Gold, Rank]
+    }
+    Total Corruption: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items, Rank]
+    }
+    Troubled Lands: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items, Rank]
+    }
+    Undead Defenders: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Rank]
+    }
+    Weird Waters: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items]
+    }
+    "You Can Run...": {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items]
+    }

@@ -1,0 +1,178 @@
+Name: Realm of Torment
+Campaign: Nightfall
+Quests:
+    A Fleshy Operation: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items, Rank]
+    }
+    A Flickering Flame: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items, Rank]
+    }
+    A History of Violence: {
+        Type: Secondary,
+        XP: 4500,
+        Reward: [Gold, Items, Rank]
+    }
+    All Alone in the Darkness: {
+        Type: Primary,
+        XP: 2500,
+        Reward: [Gold, Rank]
+    }
+    Bad Fortune: {
+        Type: Secondary,
+        XP: 4500,
+        Reward: [Gold, Items, Rank]
+    }
+    Blueprint of the Fall: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items, Rank]
+    }
+    Breaking the Broken: {
+        Type: Secondary,
+        XP: 4500,
+        Reward: [Gold, Items, Rank]
+    }
+    Cover Your Tracks: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items]
+    }
+    Dark Gateway: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items, Rank]
+    }
+    Dismember the Titans: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items, Rank]
+    }
+    Drink of the Gods: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items]
+    }
+    Escape from the Torment: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items, Rank]
+    }
+    Faded Memory: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items, Rank]
+    }
+    Finding a Purpose: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Hero]
+    }
+    Gain Goren: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Hero]
+    }
+    Gain Jin: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Hero]
+    }
+    Gain Margrid: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Hero]
+    }
+    Gain Master of Whispers: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Hero]
+    }
+    Gain Norgu: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Hero]
+    }
+    Gain Sousuke: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Hero]
+    }
+    Good Demon Hunting: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items]
+    }
+    Holding the Line: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items]
+    }
+    Into the Fire: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold]
+    }
+    Invasion From Within: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Rank]
+    }
+    Know Thine Enemy: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items]
+    }
+    "Kormir's Crusade": {
+        Type: Primary,
+        XP: 2500,
+        Reward: [Gold, Rank]
+    }
+    Money Back Guarantee: {
+        Type: Secondary,
+        Reward: [Items]
+    }
+    Open Season: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Rank]
+    }
+    The Apostate: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Rank]
+    }
+    The Last Patrol: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold]
+    }
+    The Missing Patrol: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold]
+    }
+    The Oddbodies: {
+        Wiki: "The_Oddbodies_(quest)",
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold]
+    }
+    The Troubled Keeper: {
+        Type: Secondary,
+        XP: 4000,
+        Reward: [Gold, Items, Rank]
+    }
+    They Only Come Out at Night: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Rank]
+    }
+    Uncharted Territory: {
+        Type: Primary,
+        XP: 2500,
+        Reward: [Gold, Rank]
+    }

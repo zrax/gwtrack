@@ -148,6 +148,11 @@ Quests:
         XP: 2500,
         Reward: [Gold, Rank]
     }
+    Last of the Breed: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items]
+    }
     "Melonni's Meditations": {
         Type: Secondary,
         XP: 2500,

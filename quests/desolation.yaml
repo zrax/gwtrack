@@ -1,0 +1,123 @@
+Name: The Desolation
+Campaign: Nightfall
+Quests:
+    "A Deal's a Deal": {
+        Type: Primary,
+        XP: 2500,
+        Reward: [Gold, Rank]
+    }
+    A New Guide: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items, Rank]
+    }
+    A Show of Force: {
+        Type: Secondary,
+        XP: 4000,
+        Reward: [Gold, Rank]
+    }
+    A Tasty Morsel: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Rank]
+    }
+    Destroy the Ungrateful Slaves: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items]
+    }
+    Family Soul: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items]
+    }
+    Forgotten Retribution: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Rank]
+    }
+    Getting Even: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items, Rank]
+    }
+    Horde of Darkness: {
+        Type: Primary,
+        XP: 2500,
+        Reward: [Gold, Rank]
+    }
+    Pilgrimage: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items]
+    }
+    Raising an Army: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items]
+    }
+    Refuse the King: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items]
+    }
+    Requiem for a Brain: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items]
+    }
+    Return of the Undead King: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items]
+    }
+    She Hungers: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items]
+    }
+    Sticks and Stones: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items]
+    }
+    Strange Bedfellows: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items]
+    }
+    Temple of the Monoliths: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Rank]
+    }
+    The Cold Touch of the Past: {
+        Type: Secondary,
+        XP: 4000,
+        Reward: [Gold, Rank]
+    }
+    The Growing Threat: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items, Rank]
+    }
+    The Hallowed Point: {
+        Type: Secondary,
+        XP: 4000,
+        Reward: [Gold, Rank]
+    }
+    Under New Management: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items]
+    }
+    Vanishing Spirits: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items]
+    }
+    Wayward Guide: {
+        Type: Secondary,
+        XP: 2500,
+        Reward: [Gold, Items]
+    }

@@ -1,0 +1,61 @@
+Name: Hearts of the North
+Campaign: Others
+Quests:
+    A Vengeance of Blades: {
+        Type: Mini-mission,
+        Repeatable: True,
+        XP: 5000,
+        Reward: [Gold, Rank, Items]
+    }
+    Auspicious Beginnings: {
+        Type: Mini-mission,
+        Repeatable: True,
+        XP: 5000,
+        Reward: [Gold, Rank, Items]
+    }
+    Norn Catering: {
+        Type: Primary,
+        XP: 5000,
+        Reward: [Gold, Rank]
+    }
+    Reunion: {
+        Type: Primary,
+        XP: 1000,
+        Reward: [Gold]
+    }
+    Rise: {
+        Type: Mini-mission,
+        Repeatable: True,
+        XP: 5000,
+        Reward: [Gold, Rank, Items]
+    }
+    Shadows in the Jungle: {
+        Type: Mini-mission,
+        Repeatable: True,
+        XP: 5000,
+        Reward: [Gold, Rank, Items]
+    }
+    The Arrowhead: {
+        Type: Primary,
+        XP: 1000,
+        Reward: [Gold]
+    }
+    The Broken Sword: {
+        Type: Primary,
+        XP: 1000,
+        Reward: [Gold]
+    }
+    "The Mantle's Guise": {
+        Type: Primary,
+        XP: 1000,
+        Reward: [Gold]
+    }
+    The Tarnished Emblem: {
+        Type: Primary,
+        XP: 1000,
+        Reward: [Gold]
+    }
+    The Wedding: {
+        Type: Primary,
+        Reward: [Hero]
+    }

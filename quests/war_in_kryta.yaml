@@ -1,0 +1,162 @@
+Name: War in Kryta
+Campaign: Others
+Quests:
+    "A Good Deed.": {
+        Type: Secondary,
+        XP: 5000,
+        Reward: [Gold, Rank]
+    }
+    A Little Help From Above: {
+        Type: Secondary,
+        XP: 10000,
+        Reward: [Gold, Items]
+    }
+    Asuran Allies: {
+        Type: Primary
+    }
+    Ebon Vanguard Allies: {
+        Type: Primary
+    }
+    Mustering a Response: {
+        Type: Secondary,
+        XP: 15000,
+        Reward: [Gold, Items]
+    }
+    Riverside Assassination: {
+        Type: Secondary,
+        XP: 10000,
+        Reward: [Gold, Items]
+    }
+    Temple of the Intolerable: {
+        Type: Secondary,
+        XP: 10000,
+        Reward: [Gold, Items]
+    }
+    "The Battle for Lion's Arch": {
+        Type: Secondary,
+        XP: 30000,
+        Reward: [Gold, Items]
+    }
+    The War in Kryta: {
+        Type: Primary
+    }
+    "Wanted: Amalek the Unmerciful": {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items]
+    }
+    "Wanted: Barthimus the Provident": {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items]
+    }
+    "Wanted: Calamitous": {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items]
+    }
+    "Wanted: Carnak the Hungry": {
+        Type: Secondary,
+        XP: 2000,
+        Reward: [Gold, Items]
+    }
+    "Wanted: Cerris": {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items]
+    }
+    "Wanted: Destor the Truth Seeker": {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items]
+    }
+    "Wanted: Greves the Overbearing": {
+        Type: Secondary,
+        XP: 2000,
+        Reward: [Gold, Items]
+    }
+    "Wanted: Inquisitor Bauer": {
+        Type: Secondary,
+        XP: 5000,
+        Reward: [Gold, Items]
+    }
+    "Wanted: Inquisitor Lashona": {
+        Type: Secondary,
+        XP: 5000,
+        Reward: [Gold, Items]
+    }
+    "Wanted: Inquisitor Lovisa": {
+        Type: Secondary,
+        XP: 5000,
+        Reward: [Gold, Items]
+    }
+    "Wanted: Insatiable Vakar": {
+        Type: Secondary,
+        XP: 2000,
+        Reward: [Gold, Items]
+    }
+    "Wanted: Joh the Hostile": {
+        Type: Secondary,
+        XP: 1000,
+        Reward: [Gold, Items]
+    }
+    "Wanted: Justiciar Amilyn": {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items]
+    }
+    "Wanted: Justiciar Kasandra": {
+        Type: Secondary,
+        XP: 5000,
+        Reward: [Gold, Items]
+    }
+    "Wanted: Justiciar Kimii": {
+        Type: Secondary,
+        XP: 5000,
+        Reward: [Gold, Items]
+    }
+    "Wanted: Justiciar Marron": {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items]
+    }
+    "Wanted: Justiciar Sevaan": {
+        Type: Secondary,
+        XP: 5000,
+        Reward: [Gold, Items]
+    }
+    "Wanted: Lev the Condemned": {
+        Type: Secondary,
+        XP: 2000,
+        Reward: [Gold, Items]
+    }
+    "Wanted: Maximilian the Meticulous": {
+        Type: Secondary,
+        XP: 1000,
+        Reward: [Gold, Items]
+    }
+    "Wanted: Sarnia the Red-Handed": {
+        Type: Secondary,
+        XP: 1000,
+        Reward: [Gold, Items]
+    }
+    "Wanted: Selenas the Blunt": {
+        Type: Secondary,
+        XP: 1000,
+        Reward: [Gold, Items]
+    }
+    "Wanted: Valis the Rampant": {
+        Type: Secondary,
+        XP: 1000,
+        Reward: [Gold, Items]
+    }
+    "Wanted: Vess the Disputant": {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items]
+    }
+    "Wanted: Zaln the Jaded": {
+        Type: Secondary,
+        XP: 3000,
+        Reward: [Gold, Items]
+    }

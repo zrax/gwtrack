@@ -1,11 +1,6 @@
 Name: Istan
 Campaign: Nightfall
 Quests:
-    A Burning Desire: {
-        Type: Festival,
-        XP: 2000,
-        Reward: [Gold, Items]
-    }
     A Decayed Monument: {
         Type: Secondary,
         Character: Elonian,
@@ -205,11 +200,6 @@ Quests:
         XP: 2000,
         Reward: [Gold]
     }
-    Douse Your Enthusiasm: {
-        Type: Festival,
-        XP: 2000,
-        Reward: [Gold, Items, Rank]
-    }
     Down on the Bayou: {
         Type: Secondary,
         Character: Elonian,
@@ -221,11 +211,6 @@ Quests:
         Character: Elonian,
         XP: 1500,
         Reward: [Gold]
-    }
-    Find the Stolen Presents: {
-        Type: Festival,
-        XP: 5000,
-        Reward: [Gold, Items]
     }
     First Born: {
         Type: Secondary,
@@ -272,11 +257,6 @@ Quests:
         Character: Elonian,
         XP: 500,
         Reward: [Gold, Rank]
-    }
-    How the Grentches Stole Wintersday: {
-        Type: Festival,
-        XP: 1000,
-        Reward: [Items]
     }
     Identity Theft: {
         Type: Secondary,
@@ -443,11 +423,6 @@ Quests:
         XP: 2000,
         Reward: [Attribute_Points]
     }
-    Save the Reindeer: {
-        Type: Festival,
-        XP: 5000,
-        Reward: [Gold, Items]
-    }
     Scholarly Affairs: {
         Type: Secondary,
         Character: Elonian,
@@ -501,11 +476,6 @@ Quests:
         XP: 1000,
         Reward: [Gold, Rank]
     }
-    Spreading the Wintersday Spirit: {
-        Type: Festival,
-        XP: 5000,
-        Reward: [Gold, Items]
-    }
     Stone-Faced Orders: {
         Type: Secondary,
         Character: Elonian,
@@ -555,11 +525,6 @@ Quests:
         Character: Elonian,
         XP: 2000,
         Reward: [Gold, Items, Rank]
-    }
-    The Gift of Giving: {
-        Type: Festival,
-        XP: 1000,
-        Reward: [Items]
     }
     The Honorable General: {
         Type: Primary,
@@ -660,11 +625,6 @@ Quests:
         Character: Elonian,
         XP: 1500,
         Reward: [Gold, Items, Rank]
-    }
-    White Mist: {
-        Type: Festival,
-        XP: 1000,
-        Reward: [Items]
     }
     Zaishen Elite: {
         Wiki: "Zaishen_Elite_(quest)",

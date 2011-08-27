@@ -1,0 +1,95 @@
+Name: Wintersday
+Campaign: Festivals
+Quests:
+    A Very Grentchie Wintersday: {
+        Type: Festival,
+        XP: 5000,
+        Reward: [Items]
+    }
+    Charr-broiled Plans: {
+        Type: Festival,
+        XP: 2000,
+        Reward: [Gold, Rank, Items]
+    }
+    Fighting in a Winter Wonderland: {
+        Type: Festival,
+        Repeatable: True,
+        XP: 5000,
+        Reward: [Gold, Items]
+    }
+    Find the Stolen Presents: {
+        Type: Festival,
+        XP: 5000,
+        Reward: [Gold, Items]
+    }
+    How the Grentches Stole Wintersday: {
+        Type: Festival,
+        XP: 1000,
+        Reward: [Items]
+    }
+    "In Grenth's Defense": {
+        Type: Festival,
+        Repeatable: True,
+        XP: 1000,
+        Reward: [Items]
+    }
+    "Operation: Crush Spirits": {
+        Type: Festival,
+        Repeatable: True,
+        XP: 5000,
+        Reward: [Gold, Items]
+    }
+    Save the Reindeer: {
+        Type: Festival,
+        XP: 5000,
+        Reward: [Gold, Items]
+    }
+    Snowball Dominance: {
+        Type: Festival,
+        Repeatable: True,
+        XP: 5000,
+        Reward: [Gold, Rank, Items]
+    }
+    Spreading the Wintersday Spirit: {
+        Type: Festival,
+        XP: 5000,
+        Reward: [Gold, Items]
+    }
+    Straight to the Heart: {
+        Type: Festival,
+        Repeatable: True,
+        XP: 1000,
+        Reward: [Items]
+    }
+    The Gift of Giving: {
+        Type: Festival,
+        XP: 1000,
+        Reward: [Items]
+    }
+    The Greatest Snowman Ever Made: {
+        Type: Festival,
+        XP: 5000,
+        Reward: [Items]
+    }
+    The Strength of Snow: {
+        Type: Festival,
+        Repeatable: True,
+        XP: 1000,
+        Reward: [Items]
+    }
+    The Three Wise Norn: {
+        Type: Festival,
+        XP: 1000,
+        Reward: [Gold, Rank, Items]
+    }
+    White Mist: {
+        Type: Festival,
+        XP: 1000,
+        Reward: [Items]
+    }
+    "You're a Mean One, Mr. Grenth": {
+        Type: Festival,
+        Repeatable: True,
+        XP: 1000,
+        Reward: [Items]
+    }

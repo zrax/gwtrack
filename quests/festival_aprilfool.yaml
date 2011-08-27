@@ -1,0 +1,9 @@
+Name: "April Fools' Day"
+Campaign: Festivals
+Quests:
+    Annihilator: {
+        Type: Secondary,
+        Repeatable: True,
+        XP: 2029,
+        Reward: [Gold, Rank]
+    }

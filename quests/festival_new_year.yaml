@@ -1,0 +1,38 @@
+Name: Canthan New Year
+Campaign: Festivals
+Quests:
+    A Burning Desire: {
+        Type: Festival,
+        XP: 2000,
+        Reward: [Gold, Items]
+    }
+    Douse Your Enthusiasm: {
+        Type: Festival,
+        XP: 2000,
+        Reward: [Gold, Items, Rank]
+    }
+    Fire in the Sky: {
+        Type: Festival,
+        XP: 2000,
+        Reward: [Gold, Items]
+    }
+    Hopeless Romantic: {
+        Type: Festival,
+        XP: 5000,
+        Reward: [Gold, Items]
+    }
+    Just My Luck: {
+        Type: Festival,
+        XP: 5000,
+        Reward: [Gold, Items]
+    }
+    The Big Bang: {
+        Type: Festival,
+        XP: 5000,
+        Reward: [Gold, Items]
+    }
+    The Knights Who Say Nian: {
+        Type: Festival,
+        XP: 5000,
+        Reward: [Gold, Items]
+    }

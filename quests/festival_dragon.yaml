@@ -1,0 +1,23 @@
+Name: Dragon Festival
+Campaign: Festivals
+Quests:
+    A Strange Request: {
+        Type: Festival,
+        XP: 100,
+        Reward: [Gold, Items]
+    }
+    Darkness at Kaitan: {
+        Type: Festival,
+        XP: 100,
+        Reward: [Gold, Items]
+    }
+    The Rampaging Yetis: {
+        Type: Festival,
+        XP: 100,
+        Reward: [Gold, Items]
+    }
+    The Shrine of Maat: {
+        Type: Festival,
+        XP: 100,
+        Reward: [Gold, Items]
+    }

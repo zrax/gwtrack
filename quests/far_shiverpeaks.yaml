@@ -40,11 +40,6 @@ Quests:
         XP: 2500,
         Reward: [Rank]
     }
-    Charr-broiled Plans: {
-        Type: Festival,
-        XP: 2000,
-        Reward: [Gold, Rank, Items]
-    }
     Charr Invaders: {
         Type: Secondary,
         XP: 10000,
@@ -189,12 +184,6 @@ Quests:
         Type: Secondary,
         Reward: [Rank, Skills, Items]
     }
-    Snowball Dominance: {
-        Type: Festival,
-        Repeatable: True,
-        XP: 5000,
-        Reward: [Gold, Rank, Items]
-    }
     The Big Unfriendly Jotun: {
         Type: Secondary,
         Reward: [Gold, Rank, Skills]
@@ -212,11 +201,6 @@ Quests:
         Type: Secondary,
         XP: 10000,
         Reward: [Rank, Items]
-    }
-    The Three Wise Norn: {
-        Type: Festival,
-        XP: 1000,
-        Reward: [Gold, Rank, Items]
     }
     The Throwdown in a Norn Town: {
         Type: Mini-mission,

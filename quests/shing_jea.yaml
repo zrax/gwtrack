@@ -7,11 +7,6 @@ Quests:
         XP: 1500,
         Reward: [Gold, Items]
     }
-    A Common Enemy: {
-        Type: Festival,
-        XP: 1000,
-        Reward: [Items]
-    }
     A Formal Introduction: {
         Type: Primary,
         Character: Canthan,
@@ -23,11 +18,6 @@ Quests:
         Character: Canthan,
         XP: 3000,
         Reward: [Gold]
-    }
-    A Strange Request: {
-        Type: Festival,
-        XP: 100,
-        Reward: [Gold, Items]
     }
     Advanced Defense Techniques: {
         Type: Secondary,
@@ -132,32 +122,17 @@ Quests:
         XP: 2500,
         Reward: [Gold, Items]
     }
-    Clear the Roads to Shing Jea Monastery: {
-        Type: Festival,
-        XP: 250,
-        Reward: [Items]
-    }
     Condition Removal: {
         Type: Secondary,
         Character: Canthan,
         XP: 500,
         Reward: [Gold]
     }
-    Darkness at Kaitan: {
-        Type: Festival,
-        XP: 100,
-        Reward: [Gold, Items]
-    }
     Death with Honor: {
         Type: Secondary,
         Character: Canthan,
         XP: 3000,
         Reward: [Gold, Items]
-    }
-    Defend Aerie: {
-        Type: Festival,
-        XP: 500,
-        Reward: [Items]
     }
     Defense Against Hexes: {
         Type: Secondary,
@@ -193,11 +168,6 @@ Quests:
         XP: 2000,
         Reward: [Gold, Items]
     }
-    Fire in the Sky: {
-        Type: Festival,
-        XP: 2000,
-        Reward: [Gold, Items]
-    }
     Forming a Party: {
         Type: Secondary,
         Character: Canthan,
@@ -212,21 +182,11 @@ Quests:
         XP: 1000,
         Reward: [Gold]
     }
-    Hopeless Romantic: {
-        Type: Festival,
-        XP: 5000,
-        Reward: [Gold, Items]
-    }
     Journey to the Master: {
         Type: Primary,
         Character: Canthan,
         XP: 1500,
         Reward: [Gold]
-    }
-    Just My Luck: {
-        Type: Festival,
-        XP: 5000,
-        Reward: [Gold, Items]
     }
     Little Creatures: {
         Type: Primary,
@@ -628,11 +588,6 @@ Quests:
         XP: 1500,
         Reward: [Gold, Items]
     }
-    The Big Bang: {
-        Type: Festival,
-        XP: 5000,
-        Reward: [Gold, Items]
-    }
     The Bog Beast of Bokku: {
         Type: Secondary,
         XP: 2500,
@@ -668,20 +623,10 @@ Quests:
         XP: 2500,
         Reward: [Gold, Items]
     }
-    The Knights Who Say Nian: {
-        Type: Festival,
-        XP: 5000,
-        Reward: [Gold, Items]
-    }
     The Naga Source: {
         Type: Secondary,
         Character: Canthan,
         XP: 2500,
-        Reward: [Gold, Items]
-    }
-    The Rampaging Yetis: {
-        Type: Festival,
-        XP: 100,
         Reward: [Gold, Items]
     }
     The Red Frog: {
@@ -703,11 +648,6 @@ Quests:
         Character: Canthan,
         XP: 1500,
         Reward: [Gold]
-    }
-    The Shrine of Maat: {
-        Type: Festival,
-        XP: 100,
-        Reward: [Gold, Items]
     }
     The Sickened Village: {
         Type: Secondary,

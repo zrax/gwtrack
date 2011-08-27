@@ -1,0 +1,59 @@
+Name: Halloween
+Campaign: Festivals
+Quests:
+    An Ingenious Plan: {
+        Type: Festival,
+        XP: 15000,
+        Reward: [Gold, Items]
+    }
+    Commandeering a Mortal Vessel: {
+        Type: Festival,
+        XP: 10000,
+        Reward: [Gold, Items]
+    }
+    "Don't Fear the Reapers": {
+        Type: Festival,
+        XP: 15000,
+        Reward: [Items]
+    }
+    Every Bit Helps: {
+        Type: Festival,
+        Repeatable: True,
+        XP: 10000,
+        Reward: [Gold, Items]
+    }
+    Heirlooms of the Mad King: {
+        Type: Festival,
+        XP: 5000,
+        Reward: [Gold, Items]
+    }
+    Open the Flood Gates of Death: {
+        Type: Festival,
+        XP: 10000,
+        Reward: [Gold, Items]
+    }
+    Something Wicked This Way Comes: {
+        Type: Festival,
+        XP: 5000,
+        Reward: [Items]
+    }
+    Stemming the Skeletal Tide: {
+        Type: Festival,
+        XP: 10000,
+        Reward: [Gold, Items]
+    }
+    The Killing Joke: {
+        Type: Festival,
+        XP: 15000,
+        Reward: [Gold, Items]
+    }
+    The Waiting Game: {
+        Type: Festival,
+        XP: 15000,
+        Reward: [Gold, Items]
+    }
+    "Til Death Do Us Part...": {
+        Type: Festival,
+        XP: 5000,
+        Reward: [Gold, Items]
+    }

@@ -1,11 +1,6 @@
 Name: Kryta
 Campaign: Prophecies
 Quests:
-    A Very Grentchie Wintersday: {
-        Type: Festival,
-        XP: 5000,
-        Reward: [Items]
-    }
     Bandit Trouble: {
         Type: Secondary,
         XP: 500,
@@ -68,11 +63,6 @@ Quests:
         Type: Secondary,
         XP: 750,
         Reward: [Skills]
-    }
-    The Greatest Snowman Ever Made: {
-        Type: Festival,
-        XP: 5000,
-        Reward: [Items]
     }
     The Hot Springs Murders: {
         Type: Secondary,

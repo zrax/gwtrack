@@ -496,6 +496,12 @@ class TrackGui(QtGui.QMainWindow):
             self.currentChar = sqlite3.connect(str(DATA_BASE + self.charSelect.itemData(idx).toString()))
 
             csr = self.currentChar.cursor()
+            csr.execute("SELECT value FROM config WHERE key='Version'")
+            dbver = int(csr.fetchone()[0])
+            if dbver > 1:
+                QtGui.QMessageBox.critical(self, "Error", "Error: Character version too new")
+                sys.exit(1)
+
             csr.execute("SELECT value FROM config WHERE key='Profession1'")
             prof = csr.fetchone()[0]
             self.profSelect.setText(prof)

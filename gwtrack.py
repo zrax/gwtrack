@@ -32,7 +32,7 @@ class QuestInfo:
         try:
             self.wiki = info['Wiki']
         except KeyError:
-            self.wiki = name.replace(' ', '_')
+            self.wiki = name.replace(' ', '_').replace('?', '%3F')
 
         try:
             self.quest_type = info['Type']
@@ -439,11 +439,12 @@ class TrackGui(QtGui.QMainWindow):
             return
 
         idx = self.questView.currentItem().data(0, QtCore.Qt.UserRole).toInt()[0]
-        self.wikiView.load(QtCore.QUrl(WIKI_URL + self.currentArea.quests[idx].wiki))
+        url = QtCore.QUrl.fromEncoded(WIKI_URL + self.currentArea.quests[idx].wiki)
+        self.wikiView.load(url)
 
     def onUrlChanged(self, url):
-        self.location.lineEdit().setText(url.toString())
         self.location.insertItem(0, url.toString())
+        self.location.setCurrentIndex(0)
 
         # Remove duplicate history
         idx = 1

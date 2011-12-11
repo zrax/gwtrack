@@ -1,59 +1,50 @@
 Name: Domain of Anguish
 Campaign: Nightfall
 Quests:
-    Breaching the Stygian Veil: {
-        Type: Secondary,
-        Repeatable: True,
-        XP: 10000,
+    Breaching the Stygian Veil:
+        Type: Secondary
+        Repeatable: True
+        XP: 10000
         Reward: [Gold, Rank]
-    }
-    Brood Wars: {
-        Type: Secondary,
-        Repeatable: True,
-        XP: 10000,
+    Brood Wars:
+        Type: Secondary
+        Repeatable: True
+        XP: 10000
         Reward: [Gold, Rank]
-    }
-    Deathbringer Company: {
-        Type: Secondary,
-        Repeatable: True,
-        XP: 10000,
+    Deathbringer Company:
+        Type: Secondary
+        Repeatable: True
+        XP: 10000
         Reward: [Gold, Rank]
-    }
-    Foundry Breakout: {
-        Type: Secondary,
-        Repeatable: True,
-        XP: 10000,
+    Foundry Breakout:
+        Type: Secondary
+        Repeatable: True
+        XP: 10000
         Reward: [Gold, Rank]
-    }
-    Mallyx the Unyielding: {
-        Wiki: "Mallyx_the_Unyielding_(quest)",
-        Type: Secondary,
-        Repeatable: True,
-        XP: 30000,
+    Mallyx the Unyielding:
+        Wiki: "Mallyx_the_Unyielding_(quest)"
+        Type: Secondary
+        Repeatable: True
+        XP: 30000
         Reward: [Gold, Items, Rank]
-    }
-    "The City of Torc'qua": {
-        Type: Secondary,
-        Repeatable: True,
-        XP: 10000,
+    "The City of Torc'qua":
+        Type: Secondary
+        Repeatable: True
+        XP: 10000
         Reward: [Gold, Rank]
-    }
-    The Foundry of Failed Creations: {
-        Wiki: "The_Foundry_of_Failed_Creations_(quest)",
-        Type: Secondary,
-        Repeatable: True,
-        XP: 10000,
+    The Foundry of Failed Creations:
+        Wiki: "The_Foundry_of_Failed_Creations_(quest)"
+        Type: Secondary
+        Repeatable: True
+        XP: 10000
         Reward: [Gold, Rank]
-    }
-    The Rifts Between Us: {
-        Type: Secondary,
-        Repeatable: True,
-        XP: 10000,
+    The Rifts Between Us:
+        Type: Secondary
+        Repeatable: True
+        XP: 10000
         Reward: [Gold, Rank]
-    }
-    "To the Rescue!": {
-        Type: Secondary,
-        Repeatable: True,
-        XP: 10000,
+    "To the Rescue!":
+        Type: Secondary
+        Repeatable: True
+        XP: 10000
         Reward: [Gold, Rank]
-    }

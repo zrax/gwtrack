@@ -1,794 +1,682 @@
 Name: Shing Jea Island
 Campaign: Factions
 Quests:
-    A Belt Pouch: {
-        Type: Secondary,
-        Character: Canthan,
-        XP: 1500,
+    A Belt Pouch:
+        Type: Secondary
+        Character: Canthan
+        XP: 1500
         Reward: [Gold, Items]
-    }
-    A Formal Introduction: {
-        Type: Primary,
-        Character: Canthan,
-        XP: 2000,
+    A Formal Introduction:
+        Type: Primary
+        Character: Canthan
+        XP: 2000
         Reward: [Gold, Skill_Points]
-    }
-    "A Master's Burden": {
-        Type: Primary,
-        Character: Canthan,
-        XP: 3000,
+    "A Master's Burden":
+        Type: Primary
+        Character: Canthan
+        XP: 3000
         Reward: [Gold]
-    }
-    Advanced Defense Techniques: {
-        Type: Secondary,
-        Character: Canthan,
-        XP: 500,
+    Advanced Defense Techniques:
+        Type: Secondary
+        Character: Canthan
+        XP: 500
         Reward: [Gold]
-    }
-    "An Audience with Master Togo (assassin)": {
-        Type: Primary,
-        Character: Canthan,
-        XP: 600,
+    "An Audience with Master Togo (assassin)":
+        Type: Primary
+        Character: Canthan
+        XP: 600
         Reward: [Gold]
-    }
-    "An Audience with Master Togo (elementalist)": {
-        Type: Primary,
-        Character: Canthan,
-        XP: 600,
+    "An Audience with Master Togo (elementalist)":
+        Type: Primary
+        Character: Canthan
+        XP: 600
         Reward: [Gold]
-    }
-    "An Audience with Master Togo (mesmer)": {
-        Type: Primary,
-        Character: Canthan,
-        XP: 600,
+    "An Audience with Master Togo (mesmer)":
+        Type: Primary
+        Character: Canthan
+        XP: 600
         Reward: [Gold]
-    }
-    "An Audience with Master Togo (monk)": {
-        Type: Primary,
-        Character: Canthan,
-        XP: 600,
+    "An Audience with Master Togo (monk)":
+        Type: Primary
+        Character: Canthan
+        XP: 600
         Reward: [Gold]
-    }
-    "An Audience with Master Togo (necromancer)": {
-        Type: Primary,
-        Character: Canthan,
-        XP: 600,
+    "An Audience with Master Togo (necromancer)":
+        Type: Primary
+        Character: Canthan
+        XP: 600
         Reward: [Gold]
-    }
-    "An Audience with Master Togo (ranger)": {
-        Type: Primary,
-        Character: Canthan,
-        XP: 600,
+    "An Audience with Master Togo (ranger)":
+        Type: Primary
+        Character: Canthan
+        XP: 600
         Reward: [Gold]
-    }
-    "An Audience with Master Togo (ritualist)": {
-        Type: Primary,
-        Character: Canthan,
-        XP: 600,
+    "An Audience with Master Togo (ritualist)":
+        Type: Primary
+        Character: Canthan
+        XP: 600
         Reward: [Gold]
-    }
-    "An Audience with Master Togo (warrior)": {
-        Type: Primary,
-        Character: Canthan,
-        XP: 600,
+    "An Audience with Master Togo (warrior)":
+        Type: Primary
+        Character: Canthan
+        XP: 600
         Reward: [Gold]
-    }
-    An Unwelcome Guest: {
-        Type: Secondary,
-        Character: Canthan,
-        XP: 4000,
+    An Unwelcome Guest:
+        Type: Secondary
+        Character: Canthan
+        XP: 4000
         Reward: [Gold, Attribute_Points]
-    }
-    Appearance of the Naga: {
-        Type: Secondary,
-        Character: Canthan,
-        XP: 1500,
+    Appearance of the Naga:
+        Type: Secondary
+        Character: Canthan
+        XP: 1500
         Reward: [Gold, Items]
-    }
-    Assassin Insignia: {
-        Type: Secondary,
-        Character: Canthan,
-        Profession: Assassin,
-        Profession_Lock: Primary,
-        XP: 2000,
+    Assassin Insignia:
+        Type: Secondary
+        Character: Canthan
+        Profession: Assassin
+        Profession_Lock: Primary
+        XP: 2000
         Reward: [Gold, Items]
-    }
-    Cash Crops: {
-        Type: Secondary,
-        Character: Canthan,
-        XP: 1500,
+    Cash Crops:
+        Type: Secondary
+        Character: Canthan
+        XP: 1500
         Reward: [Gold, Items]
-    }
-    "Choose Your Secondary Profession": {
-        Wiki: "Choose_Your_Secondary_Profession_(Factions_quest)",
-        Type: Primary,
-        Character: Canthan,
-        XP: 3500,
+    "Choose Your Secondary Profession":
+        Wiki: "Choose_Your_Secondary_Profession_(Factions_quest)"
+        Type: Primary
+        Character: Canthan
+        XP: 3500
         Reward: [Gold, Items]
-    }
-    Cleansing the Shrine: {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Mesmer,
-        Profession_Lock: Unlocked,
-        XP: 1000,
+    Cleansing the Shrine:
+        Type: Primary
+        Character: Canthan
+        Profession: Mesmer
+        Profession_Lock: Unlocked
+        XP: 1000
         Reward: [Gold]
-    }
-    Cleansing the Steel: {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Assassin,
-        Profession_Lock: Primary,
-        XP: 2500,
+    Cleansing the Steel:
+        Type: Primary
+        Character: Canthan
+        Profession: Assassin
+        Profession_Lock: Primary
+        XP: 2500
         Reward: [Gold, Items]
-    }
-    Condition Removal: {
-        Type: Secondary,
-        Character: Canthan,
-        XP: 500,
+    Condition Removal:
+        Type: Secondary
+        Character: Canthan
+        XP: 500
         Reward: [Gold]
-    }
-    Death with Honor: {
-        Type: Secondary,
-        Character: Canthan,
-        XP: 3000,
+    Death with Honor:
+        Type: Secondary
+        Character: Canthan
+        XP: 3000
         Reward: [Gold, Items]
-    }
-    Defense Against Hexes: {
-        Type: Secondary,
-        Character: Canthan,
-        XP: 500,
+    Defense Against Hexes:
+        Type: Secondary
+        Character: Canthan
+        XP: 500
         Reward: [Gold]
-    }
-    Disenchantment Course: {
-        Type: Secondary,
-        Character: Canthan,
-        XP: 500,
+    Disenchantment Course:
+        Type: Secondary
+        Character: Canthan
+        XP: 500
         Reward: [Gold]
-    }
-    Disruption: {
-        Type: Secondary,
-        Character: Canthan,
-        XP: 500,
+    Disruption:
+        Type: Secondary
+        Character: Canthan
+        XP: 500
         Reward: [Gold]
-    }
-    Dual Strike: {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Assassin,
-        Profession_Lock: Unlocked,
-        XP: 1500,
+    Dual Strike:
+        Type: Primary
+        Character: Canthan
+        Profession: Assassin
+        Profession_Lock: Unlocked
+        XP: 1500
         Reward: [Gold, Items]
-    }
-    Elementalist Insignia: {
-        Type: Secondary,
-        Character: Canthan,
-        Profession: Elementalist,
-        Profession_Lock: Primary,
-        XP: 2000,
+    Elementalist Insignia:
+        Type: Secondary
+        Character: Canthan
+        Profession: Elementalist
+        Profession_Lock: Primary
+        XP: 2000
         Reward: [Gold, Items]
-    }
-    Forming a Party: {
-        Type: Secondary,
-        Character: Canthan,
-        XP: 1000,
+    Forming a Party:
+        Type: Secondary
+        Character: Canthan
+        XP: 1000
         Reward: [Gold, Items]
-    }
-    Free the Fur: {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Ranger,
-        Profession_Lock: Unlocked,
-        XP: 1000,
+    Free the Fur:
+        Type: Primary
+        Character: Canthan
+        Profession: Ranger
+        Profession_Lock: Unlocked
+        XP: 1000
         Reward: [Gold]
-    }
-    Journey to the Master: {
-        Type: Primary,
-        Character: Canthan,
-        XP: 1500,
+    Journey to the Master:
+        Type: Primary
+        Character: Canthan
+        XP: 1500
         Reward: [Gold]
-    }
-    Little Creatures: {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Necromancer,
-        Profession_Lock: Unlocked,
-        XP: 1000,
+    Little Creatures:
+        Type: Primary
+        Character: Canthan
+        Profession: Necromancer
+        Profession_Lock: Unlocked
+        XP: 1000
         Reward: [Gold]
-    }
-    "Lo Sha's Gift": {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Mesmer,
-        Profession_Lock: Unlocked,
-        XP: 1500,
+    "Lo Sha's Gift":
+        Type: Primary
+        Character: Canthan
+        Profession: Mesmer
+        Profession_Lock: Unlocked
+        XP: 1500
         Reward: [Gold, Items]
-    }
-    Locate Jinzo: {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Assassin,
-        Profession_Lock: Unlocked,
-        XP: 100,
+    Locate Jinzo:
+        Type: Primary
+        Character: Canthan
+        Profession: Assassin
+        Profession_Lock: Unlocked
+        XP: 100
         Reward: [Gold]
-    }
-    Locate Mei Ling: {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Mesmer,
-        Profession_Lock: Unlocked,
-        XP: 100,
+    Locate Mei Ling:
+        Type: Primary
+        Character: Canthan
+        Profession: Mesmer
+        Profession_Lock: Unlocked
+        XP: 100
         Reward: [Gold]
-    }
-    Locate Professor Gai: {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Ritualist,
-        Profession_Lock: Unlocked,
-        XP: 100,
+    Locate Professor Gai:
+        Type: Primary
+        Character: Canthan
+        Profession: Ritualist
+        Profession_Lock: Unlocked
+        XP: 100
         Reward: [Gold]
-    }
-    Locate Reng Ku: {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Necromancer,
-        Profession_Lock: Unlocked,
-        XP: 100,
+    Locate Reng Ku:
+        Type: Primary
+        Character: Canthan
+        Profession: Necromancer
+        Profession_Lock: Unlocked
+        XP: 100
         Reward: [Gold]
-    }
-    Locate Ronsu: {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Elementalist,
-        Profession_Lock: Unlocked,
-        XP: 100,
+    Locate Ronsu:
+        Type: Primary
+        Character: Canthan
+        Profession: Elementalist
+        Profession_Lock: Unlocked
+        XP: 100
         Reward: [Gold]
-    }
-    Locate Sister Tai: {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Monk,
-        Profession_Lock: Unlocked,
-        XP: 100,
+    Locate Sister Tai:
+        Type: Primary
+        Character: Canthan
+        Profession: Monk
+        Profession_Lock: Unlocked
+        XP: 100
         Reward: [Gold]
-    }
-    Locate Sujun: {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Ranger,
-        Profession_Lock: Unlocked,
-        XP: 100,
+    Locate Sujun:
+        Type: Primary
+        Character: Canthan
+        Profession: Ranger
+        Profession_Lock: Unlocked
+        XP: 100
         Reward: [Gold]
-    }
-    Locate Talon Silverwing: {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Warrior,
-        Profession_Lock: Unlocked,
-        XP: 100,
+    Locate Talon Silverwing:
+        Type: Primary
+        Character: Canthan
+        Profession: Warrior
+        Profession_Lock: Unlocked
+        XP: 100
         Reward: [Gold]
-    }
-    Looking For Trouble: {
-        Type: Primary,
-        Character: Canthan,
-        XP: 2000,
+    Looking For Trouble:
+        Type: Primary
+        Character: Canthan
+        XP: 2000
         Reward: [Gold]
-    }
-    Lost Treasure: {
-        Type: Secondary,
-        Character: Canthan,
-        XP: 4000,
+    Lost Treasure:
+        Type: Secondary
+        Character: Canthan
+        XP: 4000
         Reward: [Gold, Attribute_Points]
-    }
-    Mantid Hatchlings: {
-        Type: Secondary,
-        Character: Canthan,
-        XP: 2000,
+    Mantid Hatchlings:
+        Type: Secondary
+        Character: Canthan
+        XP: 2000
         Reward: [Skills]
-    }
-    Mesmer Insignia: {
-        Type: Secondary,
-        Character: Canthan,
-        Profession: Mesmer,
-        Profession_Lock: Primary,
-        XP: 2000,
+    Mesmer Insignia:
+        Type: Secondary
+        Character: Canthan
+        Profession: Mesmer
+        Profession_Lock: Primary
+        XP: 2000
         Reward: [Gold, Items]
-    }
-    Minions Gone Wild: {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Ritualist,
-        Profession_Lock: Unlocked,
-        XP: 1000,
+    Minions Gone Wild:
+        Type: Primary
+        Character: Canthan
+        Profession: Ritualist
+        Profession_Lock: Unlocked
+        XP: 1000
         Reward: [Gold]
-    }
-    Monk Insignia: {
-        Type: Secondary,
-        Character: Canthan,
-        Profession: Monk,
-        Profession_Lock: Primary,
-        XP: 2000,
+    Monk Insignia:
+        Type: Secondary
+        Character: Canthan
+        Profession: Monk
+        Profession_Lock: Primary
+        XP: 2000
         Reward: [Gold, Items]
-    }
-    Necromancer Insignia: {
-        Type: Secondary,
-        Character: Canthan,
-        Profession: Necromancer,
-        Profession_Lock: Primary,
-        XP: 2000,
+    Necromancer Insignia:
+        Type: Secondary
+        Character: Canthan
+        Profession: Necromancer
+        Profession_Lock: Primary
+        XP: 2000
         Reward: [Gold, Items]
-    }
-    "Old Friends, Dark Times": {
-        Type: Secondary,
-        Character: Canthan,
-        Profession: Necromancer,
-        Profession_Lock: Primary,
-        XP: 2500,
+    "Old Friends, Dark Times":
+        Type: Secondary
+        Character: Canthan
+        Profession: Necromancer
+        Profession_Lock: Primary
+        XP: 2500
         Reward: [Gold, Items]
-    }
-    Opening Strike: {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Assassin,
-        Profession_Lock: Unlocked,
-        XP: 1000,
+    Opening Strike:
+        Type: Primary
+        Character: Canthan
+        Profession: Assassin
+        Profession_Lock: Unlocked
+        XP: 1000
         Reward: [Gold]
-    }
-    Pest Control: {
-        Type: Secondary,
-        Character: Canthan,
-        XP: 1500,
+    Pest Control:
+        Type: Secondary
+        Character: Canthan
+        XP: 1500
         Reward: [Gold, Items]
-    }
-    Power Surge: {
-        Type: Secondary,
-        Character: Canthan,
-        Profession: Ritualist,
-        Profession_Lock: Primary,
-        XP: 2500,
+    Power Surge:
+        Type: Secondary
+        Character: Canthan
+        Profession: Ritualist
+        Profession_Lock: Primary
+        XP: 2500
         Reward: [Gold, Items]
-    }
-    "Quimang's Last Stand": {
-        Type: Secondary,
-        Character: Canthan,
-        XP: 4000,
+    "Quimang's Last Stand":
+        Type: Secondary
+        Character: Canthan
+        XP: 4000
         Reward: [Gold, Items]
-    }
-    Ranger Insignia: {
-        Type: Secondary,
-        Character: Canthan,
-        Profession: Ranger,
-        Profession_Lock: Primary,
-        XP: 2000,
+    Ranger Insignia:
+        Type: Secondary
+        Character: Canthan
+        Profession: Ranger
+        Profession_Lock: Primary
+        XP: 2000
         Reward: [Gold, Items]
-    }
-    Reaping the Naga: {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Necromancer,
-        Profession_Lock: Unlocked,
-        XP: 1500,
+    Reaping the Naga:
+        Type: Primary
+        Character: Canthan
+        Profession: Necromancer
+        Profession_Lock: Unlocked
+        XP: 1500
         Reward: [Gold, Items]
-    }
-    Revenge of the Yeti: {
-        Type: Secondary,
-        Character: Canthan,
-        XP: 3000,
+    Revenge of the Yeti:
+        Type: Secondary
+        Character: Canthan
+        XP: 3000
         Reward: [Gold, Items]
-    }
-    Ritualist Insignia: {
-        Type: Secondary,
-        Character: Canthan,
-        Profession: Ritualist,
-        Profession_Lock: Primary,
-        XP: 2000,
+    Ritualist Insignia:
+        Type: Secondary
+        Character: Canthan
+        Profession: Ritualist
+        Profession_Lock: Primary
+        XP: 2000
         Reward: [Gold, Items]
-    }
-    Seek Out Headmaster Amara: {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Monk,
-        Profession_Lock: Primary,
-        XP: 250,
+    Seek Out Headmaster Amara:
+        Type: Primary
+        Character: Canthan
+        Profession: Monk
+        Profession_Lock: Primary
+        XP: 250
         Reward: [Gold]
-    }
-    Seek Out Headmaster Greico: {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Ranger,
-        Profession_Lock: Primary,
-        XP: 250,
+    Seek Out Headmaster Greico:
+        Type: Primary
+        Character: Canthan
+        Profession: Ranger
+        Profession_Lock: Primary
+        XP: 250
         Reward: [Gold]
-    }
-    Seek Out Headmaster Kaa: {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Mesmer,
-        Profession_Lock: Primary,
-        XP: 250,
+    Seek Out Headmaster Kaa:
+        Type: Primary
+        Character: Canthan
+        Profession: Mesmer
+        Profession_Lock: Primary
+        XP: 250
         Reward: [Gold]
-    }
-    Seek Out Headmaster Kuju: {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Necromancer,
-        Profession_Lock: Primary,
-        XP: 250,
+    Seek Out Headmaster Kuju:
+        Type: Primary
+        Character: Canthan
+        Profession: Necromancer
+        Profession_Lock: Primary
+        XP: 250
         Reward: [Gold]
-    }
-    Seek Out Headmaster Lee: {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Assassin,
-        Profession_Lock: Primary,
-        XP: 250,
+    Seek Out Headmaster Lee:
+        Type: Primary
+        Character: Canthan
+        Profession: Assassin
+        Profession_Lock: Primary
+        XP: 250
         Reward: [Gold]
-    }
-    Seek Out Headmaster Quin: {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Ritualist,
-        Profession_Lock: Primary,
-        XP: 250,
+    Seek Out Headmaster Quin:
+        Type: Primary
+        Character: Canthan
+        Profession: Ritualist
+        Profession_Lock: Primary
+        XP: 250
         Reward: [Gold]
-    }
-    Seek Out Headmaster Vhang: {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Elementalist,
-        Profession_Lock: Primary,
-        XP: 250,
+    Seek Out Headmaster Vhang:
+        Type: Primary
+        Character: Canthan
+        Profession: Elementalist
+        Profession_Lock: Primary
+        XP: 250
         Reward: [Gold]
-    }
-    Seek Out Headmaster Zhan: {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Warrior,
-        Profession_Lock: Primary,
-        XP: 250,
+    Seek Out Headmaster Zhan:
+        Type: Primary
+        Character: Canthan
+        Profession: Warrior
+        Profession_Lock: Primary
+        XP: 250
         Reward: [Gold]
-    }
-    Seeking a Cure: {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Monk,
-        Profession_Lock: Unlocked,
-        XP: 1500,
+    Seeking a Cure:
+        Type: Primary
+        Character: Canthan
+        Profession: Monk
+        Profession_Lock: Unlocked
+        XP: 1500
         Reward: [Gold, Items]
-    }
-    Sentimental Treasures: {
-        Type: Secondary,
-        Character: Canthan,
-        XP: 2500,
+    Sentimental Treasures:
+        Type: Secondary
+        Character: Canthan
+        XP: 2500
         Reward: [Gold, Items]
-    }
-    Shackled Spirits: {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Ritualist,
-        Profession_Lock: Unlocked,
-        XP: 1500,
+    Shackled Spirits:
+        Type: Primary
+        Character: Canthan
+        Profession: Ritualist
+        Profession_Lock: Unlocked
+        XP: 1500
         Reward: [Gold, Items]
-    }
-    Skill Chaining: {
-        Type: Secondary,
-        Character: Canthan,
-        XP: 500,
+    Skill Chaining:
+        Type: Secondary
+        Character: Canthan
+        XP: 500
         Reward: [Gold]
-    }
-    Skin the Snake: {
-        Type: Secondary,
-        Character: Canthan,
-        XP: 2500,
+    Skin the Snake:
+        Type: Secondary
+        Character: Canthan
+        XP: 2500
         Reward: [Gold, Items]
-    }
-    Snaring Course: {
-        Type: Secondary,
-        Character: Canthan,
-        XP: 500,
+    Snaring Course:
+        Type: Secondary
+        Character: Canthan
+        XP: 500
         Reward: [Gold]
-    }
-    Spark of Interest: {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Elementalist,
-        Profession_Lock: Unlocked,
-        XP: 1000,
+    Spark of Interest:
+        Type: Primary
+        Character: Canthan
+        Profession: Elementalist
+        Profession_Lock: Unlocked
+        XP: 1000
         Reward: [Gold]
-    }
-    Sparring Elements: {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Elementalist,
-        Profession_Lock: Unlocked,
-        XP: 1500,
+    Sparring Elements:
+        Type: Primary
+        Character: Canthan
+        Profession: Elementalist
+        Profession_Lock: Unlocked
+        XP: 1500
         Reward: [Gold, Items]
-    }
-    "Speak with Headmaster Amara (Monk)": {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Monk,
-        Profession_Lock: Unlocked,
+    "Speak with Headmaster Amara (Monk)":
+        Type: Primary
+        Character: Canthan
+        Profession: Monk
+        Profession_Lock: Unlocked
         XP: 50
-    }
-    "Speak with Headmaster Greico (Ranger)": {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Ranger,
-        Profession_Lock: Unlocked,
+    "Speak with Headmaster Greico (Ranger)":
+        Type: Primary
+        Character: Canthan
+        Profession: Ranger
+        Profession_Lock: Unlocked
         XP: 50
-    }
-    "Speak with Headmaster Kaa (Mesmer)": {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Mesmer,
-        Profession_Lock: Unlocked,
+    "Speak with Headmaster Kaa (Mesmer)":
+        Type: Primary
+        Character: Canthan
+        Profession: Mesmer
+        Profession_Lock: Unlocked
         XP: 50
-    }
-    "Speak with Headmaster Kuju (Necromancer)": {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Necromancer,
-        Profession_Lock: Unlocked,
+    "Speak with Headmaster Kuju (Necromancer)":
+        Type: Primary
+        Character: Canthan
+        Profession: Necromancer
+        Profession_Lock: Unlocked
         XP: 50
-    }
-    "Speak with Headmaster Lee (Assassin)": {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Assassin,
-        Profession_Lock: Unlocked,
+    "Speak with Headmaster Lee (Assassin)":
+        Type: Primary
+        Character: Canthan
+        Profession: Assassin
+        Profession_Lock: Unlocked
         XP: 50
-    }
-    "Speak with Headmaster Quin (Ritualist)": {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Ritualist,
-        Profession_Lock: Unlocked,
+    "Speak with Headmaster Quin (Ritualist)":
+        Type: Primary
+        Character: Canthan
+        Profession: Ritualist
+        Profession_Lock: Unlocked
         XP: 50
-    }
-    "Speak with Headmaster Vhang (Elementalist)": {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Elementalist,
-        Profession_Lock: Unlocked,
+    "Speak with Headmaster Vhang (Elementalist)":
+        Type: Primary
+        Character: Canthan
+        Profession: Elementalist
+        Profession_Lock: Unlocked
         XP: 50
-    }
-    "Speak with Headmaster Zhan (Warrior)": {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Warrior,
-        Profession_Lock: Unlocked,
+    "Speak with Headmaster Zhan (Warrior)":
+        Type: Primary
+        Character: Canthan
+        Profession: Warrior
+        Profession_Lock: Unlocked
         XP: 50
-    }
-    Stale Mate: {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Monk,
-        Profession_Lock: Unlocked,
-        XP: 1000,
+    Stale Mate:
+        Type: Primary
+        Character: Canthan
+        Profession: Monk
+        Profession_Lock: Unlocked
+        XP: 1000
         Reward: [Gold]
-    }
-    Study Buddy: {
-        Type: Secondary,
-        Character: Canthan,
-        XP: 1500,
+    Study Buddy:
+        Type: Secondary
+        Character: Canthan
+        XP: 1500
         Reward: [Gold, Items]
-    }
-    "Talon's Duel": {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Warrior,
-        Profession_Lock: Unlocked,
-        XP: 1000,
+    "Talon's Duel":
+        Type: Primary
+        Character: Canthan
+        Profession: Warrior
+        Profession_Lock: Unlocked
+        XP: 1000
         Reward: [Gold]
-    }
-    The Agriculturist: {
-        Type: Secondary,
-        Character: Canthan,
-        XP: 1500,
+    The Agriculturist:
+        Type: Secondary
+        Character: Canthan
+        XP: 1500
         Reward: [Gold, Items]
-    }
-    The Bog Beast of Bokku: {
-        Type: Secondary,
-        XP: 2500,
+    The Bog Beast of Bokku:
+        Type: Secondary
+        XP: 2500
         Reward: [Gold, Items]
-    }
-    The Box of Illusions: {
-        Type: Secondary,
-        Character: Canthan,
-        Profession: Mesmer,
-        Profession_Lock: Primary,
-        XP: 2500,
+    The Box of Illusions:
+        Type: Secondary
+        Character: Canthan
+        Profession: Mesmer
+        Profession_Lock: Primary
+        XP: 2500
         Reward: [Gold, Items]
-    }
-    The Captured Son: {
-        Type: Secondary,
-        Character: Canthan,
-        XP: 4000,
+    The Captured Son:
+        Type: Secondary
+        Character: Canthan
+        XP: 4000
         Reward: [Gold, Items]
-    }
-    The Crop Thieves: {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Warrior,
-        Profession_Lock: Unlocked,
-        XP: 1500,
+    The Crop Thieves:
+        Type: Primary
+        Character: Canthan
+        Profession: Warrior
+        Profession_Lock: Unlocked
+        XP: 1500
         Reward: [Gold, Items]
-    }
-    The Kaguchi Brothers: {
-        Type: Secondary,
-        Character: Canthan,
-        Profession: Warrior,
-        Profession_Lock: Primary,
-        XP: 2500,
+    The Kaguchi Brothers:
+        Type: Secondary
+        Character: Canthan
+        Profession: Warrior
+        Profession_Lock: Primary
+        XP: 2500
         Reward: [Gold, Items]
-    }
-    The Naga Source: {
-        Type: Secondary,
-        Character: Canthan,
-        XP: 2500,
+    The Naga Source:
+        Type: Secondary
+        Character: Canthan
+        XP: 2500
         Reward: [Gold, Items]
-    }
-    The Red Frog: {
-        Type: Secondary,
-        Character: Canthan,
-        Profession: Ranger,
-        Profession_Lock: Primary,
-        XP: 2500,
+    The Red Frog:
+        Type: Secondary
+        Character: Canthan
+        Profession: Ranger
+        Profession_Lock: Primary
+        XP: 2500
         Reward: [Gold, Items]
-    }
-    The Rite of Valor: {
-        Type: Secondary,
-        Character: Canthan,
-        XP: 3000,
+    The Rite of Valor:
+        Type: Secondary
+        Character: Canthan
+        XP: 3000
         Reward: [Gold, Items]
-    }
-    The Road Less Traveled: {
-        Type: Primary,
-        Character: Canthan,
-        XP: 1500,
+    The Road Less Traveled:
+        Type: Primary
+        Character: Canthan
+        XP: 1500
         Reward: [Gold]
-    }
-    The Sickened Village: {
-        Type: Secondary,
-        Character: Canthan,
-        Profession: Monk,
-        Profession_Lock: Primary,
-        XP: 2500,
+    The Sickened Village:
+        Type: Secondary
+        Character: Canthan
+        Profession: Monk
+        Profession_Lock: Primary
+        XP: 2500
         Reward: [Gold, Items]
-    }
-    The Siege at Tsumei Village: {
-        Type: Secondary,
-        Character: Canthan,
-        XP: 3500,
+    The Siege at Tsumei Village:
+        Type: Secondary
+        Character: Canthan
+        XP: 3500
         Reward: [Gold, Items]
-    }
-    The Stone of the Elements: {
-        Type: Secondary,
-        Character: Canthan,
-        Profession: Elementalist,
-        Profession_Lock: Primary,
-        XP: 2500,
+    The Stone of the Elements:
+        Type: Secondary
+        Character: Canthan
+        Profession: Elementalist
+        Profession_Lock: Primary
+        XP: 2500
         Reward: [Gold, Items]
-    }
-    The Tengu Accords: {
-        Type: Mini-mission,
+    The Tengu Accords:
+        Type: Mini-mission
         Reward: [Gold]
-    }
-    The Thieving Nanny: {
-        Type: Secondary,
-        Character: Canthan,
-        XP: 2500,
+    The Thieving Nanny:
+        Type: Secondary
+        Character: Canthan
+        XP: 2500
         Reward: [Gold, Items]
-    }
-    The Threat Grows: {
-        Type: Primary,
-        Character: Canthan,
-        XP: 1500,
+    The Threat Grows:
+        Type: Primary
+        Character: Canthan
+        XP: 1500
         Reward: [Gold]
-    }
-    The Yeti Hunt: {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Ranger,
-        Profession_Lock: Unlocked,
-        XP: 1500,
+    The Yeti Hunt:
+        Type: Primary
+        Character: Canthan
+        Profession: Ranger
+        Profession_Lock: Unlocked
+        XP: 1500
         Reward: [Gold, Items]
-    }
-    To Zen Daijun: {
-        Type: Primary,
-        Character: Canthan,
-        XP: 2500,
+    To Zen Daijun:
+        Type: Primary
+        Character: Canthan
+        XP: 2500
         Reward: [Gold, Skill_Points]
-    }
-    To the Rescue: {
-        Wiki: "To_the_Rescue_(Factions_quest)",
-        Type: Primary,
-        Character: Canthan,
-        XP: 2000,
+    To the Rescue:
+        Wiki: "To_the_Rescue_(Factions_quest)"
+        Type: Primary
+        Character: Canthan
+        XP: 2000
         Reward: [Gold]
-    }
-    "Togo's Ultimatum": {
-        Type: Secondary,
-        Character: Canthan,
-        XP: 3000,
+    "Togo's Ultimatum":
+        Type: Secondary
+        Character: Canthan
+        XP: 3000
         Reward: [Gold, Items]
-    }
-    Track Down Ang the Ephemeral: {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Ritualist,
-        Profession_Lock: Unlocked,
-        XP: 600,
+    Track Down Ang the Ephemeral:
+        Type: Primary
+        Character: Canthan
+        Profession: Ritualist
+        Profession_Lock: Unlocked
+        XP: 600
         Reward: [Gold]
-    }
-    Track Down Brother Pe Wan: {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Monk,
-        Profession_Lock: Unlocked,
-        XP: 600,
+    Track Down Brother Pe Wan:
+        Type: Primary
+        Character: Canthan
+        Profession: Monk
+        Profession_Lock: Unlocked
+        XP: 600
         Reward: [Gold]
-    }
-    Track Down Kai Ying: {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Elementalist,
-        Profession_Lock: Unlocked,
-        XP: 600,
+    Track Down Kai Ying:
+        Type: Primary
+        Character: Canthan
+        Profession: Elementalist
+        Profession_Lock: Unlocked
+        XP: 600
         Reward: [Gold]
-    }
-    Track Down Lo Sha: {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Mesmer,
-        Profession_Lock: Unlocked,
-        XP: 600,
+    Track Down Lo Sha:
+        Type: Primary
+        Character: Canthan
+        Profession: Mesmer
+        Profession_Lock: Unlocked
+        XP: 600
         Reward: [Gold]
-    }
-    Track Down Panaku: {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Assassin,
-        Profession_Lock: Unlocked,
-        XP: 600,
+    Track Down Panaku:
+        Type: Primary
+        Character: Canthan
+        Profession: Assassin
+        Profession_Lock: Unlocked
+        XP: 600
         Reward: [Gold]
-    }
-    Track Down Su: {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Necromancer,
-        Profession_Lock: Unlocked,
-        XP: 600,
+    Track Down Su:
+        Type: Primary
+        Character: Canthan
+        Profession: Necromancer
+        Profession_Lock: Unlocked
+        XP: 600
         Reward: [Gold]
-    }
-    Track Down Weng Gha: {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Warrior,
-        Profession_Lock: Unlocked,
-        XP: 600,
+    Track Down Weng Gha:
+        Type: Primary
+        Character: Canthan
+        Profession: Warrior
+        Profession_Lock: Unlocked
+        XP: 600
         Reward: [Gold]
-    }
-    Track Down Zho: {
-        Type: Primary,
-        Character: Canthan,
-        Profession: Ranger,
-        Profession_Lock: Unlocked,
-        XP: 600,
+    Track Down Zho:
+        Type: Primary
+        Character: Canthan
+        Profession: Ranger
+        Profession_Lock: Unlocked
+        XP: 600
         Reward: [Gold]
-    }
-    Warning the Tengu: {
-        Type: Primary,
-        Character: Canthan,
-        XP: 1500,
+    Warning the Tengu:
+        Type: Primary
+        Character: Canthan
+        XP: 1500
         Reward: [Gold]
-    }
-    Warrior Insignia: {
-        Type: Secondary,
-        Character: Canthan,
-        Profession: Warrior,
-        Profession_Lock: Primary,
-        XP: 2500,
+    Warrior Insignia:
+        Type: Secondary
+        Character: Canthan
+        Profession: Warrior
+        Profession_Lock: Primary
+        XP: 2500
         Reward: [Gold, Items]
-    }

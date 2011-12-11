@@ -1,73 +1,59 @@
 Name: Crystal Desert
 Campaign: Prophecies
 Quests:
-    A Belated Betrothal: {
-        Type: Secondary,
-        XP: 1000,
-        Reward: [Skills]
-    }
-    Ancient Secrets: {
-        Type: Secondary,
+    A Belated Betrothal:
+        Type: Secondary
         XP: 1000
-    }
-    Forgotten Wisdom: {
-        Type: Secondary,
-        Character: Tyrian,
-        XP: 1500,
+        Reward: [Skills]
+    Ancient Secrets:
+        Type: Secondary
+        XP: 1000
+    Forgotten Wisdom:
+        Type: Secondary
+        Character: Tyrian
+        XP: 1500
         Reward: [Attribute_Points]
-    }
-    Ghostly Vengeance: {
-        Type: Secondary,
-        XP: 1000,
+    Ghostly Vengeance:
+        Type: Secondary
+        XP: 1000
         Reward: [Skills]
-    }
-    Into the Unknown: {
-        Type: Secondary,
-        XP: 1000,
+    Into the Unknown:
+        Type: Secondary
+        XP: 1000
         Reward: [Skills]
-    }
-    Sands Of Souls: {
-        Type: Secondary,
+    Sands Of Souls:
+        Type: Secondary
         XP: 500
-    }
-    "The Elementalist's Path": {
-        Type: Secondary,
-        XP: 1000,
+    "The Elementalist's Path":
+        Type: Secondary
+        XP: 1000
         Reward: [Profession]
-    }
-    The Forgotten Ones: {
-        Type: Secondary,
-        XP: 1000,
+    The Forgotten Ones:
+        Type: Secondary
+        XP: 1000
         Reward: [Skills]
-    }
-    "The Mesmer's Path": {
-        Type: Secondary,
-        XP: 1000,
+    "The Mesmer's Path":
+        Type: Secondary
+        XP: 1000
         Reward: [Profession]
-    }
-    The Misplaced Sword: {
-        Type: Secondary,
-        Character: Tyrian,
-        XP: 1000,
+    The Misplaced Sword:
+        Type: Secondary
+        Character: Tyrian
+        XP: 1000
         Reward: [Skills]
-    }
-    "The Monk's Path": {
-        Type: Secondary,
-        XP: 1000,
+    "The Monk's Path":
+        Type: Secondary
+        XP: 1000
         Reward: [Profession]
-    }
-    "The Necromancer's Path": {
-        Type: Secondary,
-        XP: 1000,
+    "The Necromancer's Path":
+        Type: Secondary
+        XP: 1000
         Reward: [Profession]
-    }
-    "The Ranger's Path": {
-        Type: Secondary,
-        XP: 1000,
+    "The Ranger's Path":
+        Type: Secondary
+        XP: 1000
         Reward: [Profession]
-    }
-    "The Warrior's Path": {
-        Type: Secondary,
-        XP: 1000,
+    "The Warrior's Path":
+        Type: Secondary
+        XP: 1000
         Reward: [Profession]
-    }

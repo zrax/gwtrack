@@ -1,123 +1,98 @@
 Name: Southern Shiverpeaks
 Campaign: Prophecies
 Quests:
-    Cold One: {
-        Wiki: "Cold_One_(quest)",
-        Type: Secondary,
-        Repeatable: True,
+    Cold One:
+        Wiki: "Cold_One_(quest)"
+        Type: Secondary
+        Repeatable: True
         XP: 1500
-    }
-    Defend Denravi: {
-        Type: Secondary,
+    Defend Denravi:
+        Type: Secondary
         XP: 20000
-    }
-    "Defend Denravi (Hard mode)": {
-        Type: Secondary,
-        XP: 50000,
-        Reward: [Gold, Zaishen]
-    }
-    "Defend Droknar's Forge": {
-        Type: Secondary,
-        XP: 20000
-    }
-    "Defend Droknar's Forge (Hard mode)": {
-        Type: Secondary,
-        XP: 50000,
-        Reward: [Gold, Zaishen]
-    }
-    Defend North Kryta Province: {
-        Type: Secondary,
-        XP: 20000
-    }
-    "Defend North Kryta Province (Hard mode)": {
-        Type: Secondary,
-        XP: 50000,
-        Reward: [Gold, Zaishen]
-    }
-    Fire in the Hole: {
-        Type: Secondary,
-        Repeatable: True,
-        XP: 1500
-    }
-    Gathering Resources: {
-        Type: Secondary,
-        Repeatable: True,
-        XP: 1500
-    }
-    Political Ramifications: {
-        Type: Secondary,
-        Repeatable: True,
-        XP: 6000
-    }
-    Seeking The Seer: {
-        Type: Secondary,
-        XP: 500
-    }
-    Subversive Ideas: {
-        Type: Secondary,
-        Repeatable: True,
-        XP: 6000
-    }
-    Summit Slaves: {
-        Type: Secondary,
-        Repeatable: True,
-        XP: 2000
-    }
-    "Tasca's Reprise": {
-        Type: Secondary,
-        Repeatable: True,
-        XP: 6000
-    }
-    The Final Assault: {
-        Type: Secondary,
-        Repeatable: True,
-        XP: 10000
-    }
-    The Forge Heart: {
-        Type: Secondary,
-        Repeatable: True,
-        XP: 8000
-    }
-    "The Hero's Challenge": {
-        Type: Secondary,
-        Character: Tyrian,
-        XP: 5000,
-        Reward: [Attribute_Points]
-    }
-    "The Hero's Journey": {
-        Type: Secondary,
-        Character: Tyrian,
-        XP: 500
-    }
-    The Last Day Dawns: {
-        Type: Secondary,
-        XP: 20000
-    }
-    "The Last Day Dawns (Hard mode)": {
-        Type: Secondary,
-        XP: 50000,
-        Reward: [Gold, Zaishen]
-    }
-    The Titan Source: {
-        Type: Secondary,
+    "Defend Denravi (Hard mode)":
+        Type: Secondary
         XP: 50000
-    }
-    "The Titan Source (Hard mode)": {
-        Type: Secondary,
-        XP: 75000,
         Reward: [Gold, Zaishen]
-    }
-    "To Sorrow's Furnace": {
-        Type: Secondary,
+    "Defend Droknar's Forge":
+        Type: Secondary
+        XP: 20000
+    "Defend Droknar's Forge (Hard mode)":
+        Type: Secondary
+        XP: 50000
+        Reward: [Gold, Zaishen]
+    Defend North Kryta Province:
+        Type: Secondary
+        XP: 20000
+    "Defend North Kryta Province (Hard mode)":
+        Type: Secondary
+        XP: 50000
+        Reward: [Gold, Zaishen]
+    Fire in the Hole:
+        Type: Secondary
+        Repeatable: True
+        XP: 1500
+    Gathering Resources:
+        Type: Secondary
+        Repeatable: True
+        XP: 1500
+    Political Ramifications:
+        Type: Secondary
+        Repeatable: True
+        XP: 6000
+    Seeking The Seer:
+        Type: Secondary
+        XP: 500
+    Subversive Ideas:
+        Type: Secondary
+        Repeatable: True
+        XP: 6000
+    Summit Slaves:
+        Type: Secondary
+        Repeatable: True
+        XP: 2000
+    "Tasca's Reprise":
+        Type: Secondary
+        Repeatable: True
+        XP: 6000
+    The Final Assault:
+        Type: Secondary
+        Repeatable: True
         XP: 10000
-    }
-    Unruly Slaves: {
-        Type: Secondary,
-        Repeatable: True,
+    The Forge Heart:
+        Type: Secondary
+        Repeatable: True
+        XP: 8000
+    "The Hero's Challenge":
+        Type: Secondary
+        Character: Tyrian
+        XP: 5000
+        Reward: [Attribute_Points]
+    "The Hero's Journey":
+        Type: Secondary
+        Character: Tyrian
+        XP: 500
+    The Last Day Dawns:
+        Type: Secondary
+        XP: 20000
+    "The Last Day Dawns (Hard mode)":
+        Type: Secondary
+        XP: 50000
+        Reward: [Gold, Zaishen]
+    The Titan Source:
+        Type: Secondary
+        XP: 50000
+    "The Titan Source (Hard mode)":
+        Type: Secondary
+        XP: 75000
+        Reward: [Gold, Zaishen]
+    "To Sorrow's Furnace":
+        Type: Secondary
+        XP: 10000
+    Unruly Slaves:
+        Type: Secondary
+        Repeatable: True
         XP: 1500
-    }
-    Wrenches In The Gears: {
-        Type: Secondary,
-        Repeatable: True,
+    Wrenches In The Gears:
+        Type: Secondary
+        Repeatable: True
         XP: 1500
-    }

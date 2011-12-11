@@ -10,7 +10,7 @@ PROFESSION_UNLOCKED = 2
 WIKI_URL = "http://wiki.guildwars.com/wiki/"
 
 HOME_BASE = os.getenv('USERPROFILE') or os.getenv('HOME')
-DATA_BASE = HOME_BASE + os.path.sep + '.gwtrack' + os.path.sep
+DATA_BASE = os.path.join(HOME_BASE, '.gwtrack')
 
 REWARD_GOLD       = 0  # G
 REWARD_ITEMS      = 1  # I
@@ -472,7 +472,7 @@ class TrackGui(QtGui.QMainWindow):
                 fname = dialog.savedName()[0].lower().replace(' ', '_') + '.db'
 
                 # Initialize the database
-                db = sqlite3.connect(DATA_BASE + fname)
+                db = sqlite3.connect(os.path.join(DATA_BASE, fname))
                 csr = db.cursor()
                 csr.execute("CREATE TABLE config (key TEXT, value TEXT)")
                 csr.execute("CREATE TABLE status (quest_name TEXT UNIQUE, state TEXT)")
@@ -493,7 +493,7 @@ class TrackGui(QtGui.QMainWindow):
             # Selected an actual character
             if self.currentChar:
                 self.currentChar.close()
-            self.currentChar = sqlite3.connect(str(DATA_BASE + self.charSelect.itemData(idx).toString()))
+            self.currentChar = sqlite3.connect(os.path.join(DATA_BASE, str(self.charSelect.itemData(idx).toString())))
 
             csr = self.currentChar.cursor()
             csr.execute("SELECT value FROM config WHERE key='Version'")
@@ -596,7 +596,7 @@ if __name__ == '__main__':
         if not char.endswith('.db'):
             continue
 
-        db = sqlite3.connect(DATA_BASE + char)
+        db = sqlite3.connect(os.path.join(DATA_BASE, char))
         csr = db.cursor()
         csr.execute("SELECT value FROM config WHERE key='Name'")
         name = csr.fetchone()[0]

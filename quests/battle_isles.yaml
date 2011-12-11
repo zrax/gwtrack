@@ -1,70 +1,56 @@
 Name: Battle Isles
 Campaign: Core
 Quests:
-    Alliance Battles: {
-        Wiki: "Alliance_Battles_(Zaishen_quest)",
-        Type: Secondary,
-        Repeatable: True,
-        Reward: [Gold, Faction, Zaishen]
-    }
-    Codex Arena: {
-        Wiki: "Codex_Arena_(Zaishen_quest)",
-        Type: Secondary,
-        Repeatable: True,
-        Reward: [Gold, Faction, Zaishen]
-    }
-    Guild versus Guild: {
-        Wiki: "Guild_Versus_Guild_(Zaishen_quest)",
-        Type: Secondary,
-        Repeatable: True,
-        Reward: [Gold, Faction, Zaishen]
-    }
-    The Nameless Masters: {
+    Alliance Battles:
+        Wiki: "Alliance_Battles_(Zaishen_quest)"
         Type: Secondary
-    }
-    The Path of the Zaishen Elite: {
+        Repeatable: True
+        Reward: [Gold, Faction, Zaishen]
+    Codex Arena:
+        Wiki: "Codex_Arena_(Zaishen_quest)"
         Type: Secondary
-    }
-    "The Path to Combat: Codex Arena": {
-        Type: Secondary,
-        XP: 2500,
-        Reward: [Items]
-    }
-    "The Path to Combat: Guild Battles": {
-        Type: Secondary,
-        XP: 2500,
-        Reward: [Items]
-    }
-    "The Path to Combat: Heroes' Ascent": {
-        Type: Secondary,
-        XP: 2500,
-        Reward: [Items]
-    }
-    "The Path to Combat: Random Arenas": {
-        Type: Secondary,
-        XP: 2500,
-        Reward: [Items]
-    }
-    "The Path to Victory: Codex Arena": {
-        Type: Secondary,
-        XP: 5000,
-        Reward: [Items]
-    }
-    "The Path to Victory: Guild Battles": {
-        Type: Secondary,
-        XP: 5000,
-        Reward: [Items]
-    }
-    "The Path to Victory: Heroes' Ascent": {
-        Type: Secondary,
-        XP: 5000,
-        Reward: [Items]
-    }
-    "The Path to Victory: Random Arenas": {
-        Type: Secondary,
-        XP: 5000,
-        Reward: [Items]
-    }
-    The Team Trials: {
+        Repeatable: True
+        Reward: [Gold, Faction, Zaishen]
+    Guild versus Guild:
+        Wiki: "Guild_Versus_Guild_(Zaishen_quest)"
         Type: Secondary
-    }
+        Repeatable: True
+        Reward: [Gold, Faction, Zaishen]
+    The Nameless Masters:
+        Type: Secondary
+    The Path of the Zaishen Elite:
+        Type: Secondary
+    "The Path to Combat: Codex Arena":
+        Type: Secondary
+        XP: 2500
+        Reward: [Items]
+    "The Path to Combat: Guild Battles":
+        Type: Secondary
+        XP: 2500
+        Reward: [Items]
+    "The Path to Combat: Heroes' Ascent":
+        Type: Secondary
+        XP: 2500
+        Reward: [Items]
+    "The Path to Combat: Random Arenas":
+        Type: Secondary
+        XP: 2500
+        Reward: [Items]
+    "The Path to Victory: Codex Arena":
+        Type: Secondary
+        XP: 5000
+        Reward: [Items]
+    "The Path to Victory: Guild Battles":
+        Type: Secondary
+        XP: 5000
+        Reward: [Items]
+    "The Path to Victory: Heroes' Ascent":
+        Type: Secondary
+        XP: 5000
+        Reward: [Items]
+    "The Path to Victory: Random Arenas":
+        Type: Secondary
+        XP: 5000
+        Reward: [Items]
+    The Team Trials:
+        Type: Secondary

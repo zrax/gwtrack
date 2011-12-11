@@ -1,19 +1,16 @@
 Name: Day of the Tengu
 Campaign: Festivals
 Quests:
-    A Common Enemy: {
-        Type: Festival,
-        XP: 1000,
+    A Common Enemy:
+        Type: Festival
+        XP: 1000
         Reward: [Items]
-    }
-    Clear the Roads to Shing Jea Monastery: {
-        Type: Festival,
-        XP: 250,
+    Clear the Roads to Shing Jea Monastery:
+        Type: Festival
+        XP: 250
         Reward: [Items]
-    }
-    Defend Aerie: {
-        Type: Festival,
-        XP: 500,
+    Defend Aerie:
+        Type: Festival
+        XP: 500
         Reward: [Items]
-    }
 

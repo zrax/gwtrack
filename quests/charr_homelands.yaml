@@ -1,102 +1,81 @@
 Name: Charr Homelands
 Campaign: Eye of the North
 Quests:
-    Against the Charr: {
-        Type: Primary,
-        Repeatable: True,
-        XP: 2500,
+    Against the Charr:
+        Type: Primary
+        Repeatable: True
+        XP: 2500
         Reward: [Rank]
-    }
-    Assault on the Stronghold: {
-        Type: Primary,
-        Repeatable: True,
-        XP: 2500,
+    Assault on the Stronghold:
+        Type: Primary
+        Repeatable: True
+        XP: 2500
         Reward: [Rank]
-    }
-    "Be Very, Very Quiet...": {
-        Type: Secondary,
+    "Be Very, Very Quiet...":
+        Type: Secondary
         Reward: [Rank, Skills]
-    }
-    Failure to Communicate: {
-        Type: Secondary,
-        XP: 5000,
+    Failure to Communicate:
+        Type: Secondary
+        XP: 5000
         Reward: [Rank]
-    }
-    Falling Out: {
-        Type: Secondary,
+    Falling Out:
+        Type: Secondary
         Reward: [Rank, Skills]
-    }
-    Fire and Pain: {
-        Type: Secondary,
-        XP: 15000,
+    Fire and Pain:
+        Type: Secondary
+        XP: 15000
         Reward: [Items]
-    }
-    Forbidden Fruit: {
-        Type: Secondary,
+    Forbidden Fruit:
+        Type: Secondary
         Reward: [Gold, Skills]
-    }
-    Forgotten Relics: {
-        Type: Secondary,
+    Forgotten Relics:
+        Type: Secondary
         Reward: [Rank, Skills]
-    }
-    Plan A: {
-        Type: Secondary,
+    Plan A:
+        Type: Secondary
         Reward: [Rank, Skills, Items]
-    }
-    Single Ugly Grawl Seeks Same for Mindless Destruction in Ascalon: {
-        Type: Secondary,
+    Single Ugly Grawl Seeks Same for Mindless Destruction in Ascalon:
+        Type: Secondary
         Reward: [Rank, Skills, Items]
-    }
-    "Special Ops: Dragon's Gullet": {
-        Type: Secondary,
-        Repeatable: True,
+    "Special Ops: Dragon's Gullet":
+        Type: Secondary
+        Repeatable: True
         Reward: [Rank]
-    }
-    "Special Ops: Flame Temple Corridor": {
-        Type: Secondary,
-        Repeatable: True,
+    "Special Ops: Flame Temple Corridor":
+        Type: Secondary
+        Repeatable: True
         Reward: [Rank]
-    }
-    "Special Ops: Grendich Courthouse": {
-        Type: Secondary,
-        Repeatable: True,
+    "Special Ops: Grendich Courthouse":
+        Type: Secondary
+        Repeatable: True
         Reward: [Rank]
-    }
-    "The Assassin's Revenge": {
-        Type: Secondary,
+    "The Assassin's Revenge":
+        Type: Secondary
         Reward: [Rank, Heroes]
-    }
-    The Dawn of Rebellion: {
-        Type: Primary,
-        XP: 2000,
+    The Dawn of Rebellion:
+        Type: Primary
+        XP: 2000
         Reward: [Rank]
-    }
-    The Hunting of the Charr: {
-        Type: Secondary,
+    The Hunting of the Charr:
+        Type: Secondary
         Reward: [Rank, Skills, Items]
-    }
-    The Imploding Past: {
-        Type: Secondary,
-        XP: 10000,
+    The Imploding Past:
+        Type: Secondary
+        XP: 10000
         Reward: [Rank]
-    }
-    The Missing Vanguard: {
-        Type: Secondary,
-        XP: 10000,
+    The Missing Vanguard:
+        Type: Secondary
+        XP: 10000
         Reward: [Rank, Items]
-    }
-    The Smell of Titan in the Morning: {
-        Type: Secondary,
+    The Smell of Titan in the Morning:
+        Type: Secondary
         Reward: [Rank, Skills, Items]
-    }
-    Warband of Brothers: {
-        Type: Primary,
-        Repeatable: True,
-        XP: 2500,
+    Warband of Brothers:
+        Type: Primary
+        Repeatable: True
+        XP: 2500
         Reward: [Rank, Heroes]
-    }
-    What Must Be Done: {
-        Type: Primary,
-        XP: 2000,
+    What Must Be Done:
+        Type: Primary
+        XP: 2000
         Reward: [Rank]
-    }

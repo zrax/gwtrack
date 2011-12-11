@@ -1,145 +1,118 @@
 Name: The Jade Sea
 Campaign: Factions
 Quests:
-    A Letter Home: {
-        Type: Secondary,
-        XP: 3000,
+    A Letter Home:
+        Type: Secondary
+        XP: 3000
         Reward: [Gold, Items, Faction]
-    }
-    "Attack the Kurzicks!": {
-        Type: Secondary,
-        XP: 3000,
+    "Attack the Kurzicks!":
+        Type: Secondary
+        XP: 3000
         Reward: [Gold, Items, Faction]
-    }
-    Befriending the Luxons: {
-        Type: Primary,
-        XP: 10000,
+    Befriending the Luxons:
+        Type: Primary
+        XP: 10000
         Reward: [Gold]
-    }
-    Challenge of Strength: {
-        Type: Secondary,
-        XP: 3000,
+    Challenge of Strength:
+        Type: Secondary
+        XP: 3000
         Reward: [Gold, Items, Faction]
-    }
-    City Under Attack: {
-        Type: Primary,
-        XP: 3000,
+    City Under Attack:
+        Type: Primary
+        XP: 3000
         Reward: [Gold]
-    }
-    Fort Aspenwood: {
-        Wiki: "Fort_Aspenwood_(quest)",
-        Type: Primary,
-        XP: 3000,
+    Fort Aspenwood:
+        Wiki: "Fort_Aspenwood_(quest)"
+        Type: Primary
+        XP: 3000
         Reward: [Gold]
-    }
-    "If It Weren't for Bad Luck....": {
-        Type: Secondary,
-        XP: 3000,
+    "If It Weren't for Bad Luck....":
+        Type: Secondary
+        XP: 3000
         Reward: [Gold, Items, Faction]
-    }
-    "In the Army (Luxon)": {
-        Type: Secondary,
-        Repeatable: True,
-        XP: 2000,
+    "In the Army (Luxon)":
+        Type: Secondary
+        Repeatable: True
+        XP: 2000
         Reward: [Gold, Faction]
-    }
-    Journey to the Whirlpool: {
-        Type: Primary,
-        XP: 4000,
+    Journey to the Whirlpool:
+        Type: Primary
+        XP: 4000
         Reward: [Gold, Skill_Points, Faction]
-    }
-    Luxon Supply Lines: {
-        Type: Secondary,
-        Repeatable: True,
-        XP: 2000,
+    Luxon Supply Lines:
+        Type: Secondary
+        Repeatable: True
+        XP: 2000
         Reward: [Gold, Faction]
-    }
-    Message on a Dragon Scale: {
-        Type: Secondary,
-        XP: 3000,
+    Message on a Dragon Scale:
+        Type: Secondary
+        XP: 3000
         Reward: [Gold, Items, Faction]
-    }
-    "Messages, Messages Everywhere": {
-        Type: Secondary,
-        XP: 4000,
+    "Messages, Messages Everywhere":
+        Type: Secondary
+        XP: 4000
         Reward: [Gold, Items, Faction]
-    }
-    More Cowbell: {
-        Type: Secondary,
-        XP: 3000,
+    More Cowbell:
+        Type: Secondary
+        XP: 3000
         Reward: [Gold, Items, Faction]
-    }
-    Night Raiders: {
-        Type: Secondary,
-        XP: 3000,
+    Night Raiders:
+        Type: Secondary
+        XP: 3000
         Reward: [Gold, Items, Faction]
-    }
-    Outcasts in the Quarry: {
-        Type: Secondary,
-        XP: 3000,
+    Outcasts in the Quarry:
+        Type: Secondary
+        XP: 3000
         Reward: [Gold, Items, Faction]
-    }
-    Protect the Halcyon: {
-        Type: Secondary,
-        XP: 3000,
+    Protect the Halcyon:
+        Type: Secondary
+        XP: 3000
         Reward: [Gold, Items, Faction]
-    }
-    Return of the Yeti: {
-        Type: Secondary,
-        XP: 3000,
+    Return of the Yeti:
+        Type: Secondary
+        XP: 3000
         Reward: [Gold, Items, Faction]
-    }
-    Scout the Coast: {
-        Type: Secondary,
-        Repeatable: True,
-        XP: 2000,
+    Scout the Coast:
+        Type: Secondary
+        Repeatable: True
+        XP: 2000
         Reward: [Gold, Faction]
-    }
-    Scouting Maishang Hills: {
-        Type: Secondary,
-        Repeatable: True,
-        XP: 2000,
+    Scouting Maishang Hills:
+        Type: Secondary
+        Repeatable: True
+        XP: 2000
         Reward: [Gold, Faction]
-    }
-    Stolen Eggs: {
-        Type: Primary,
-        XP: 4000,
+    Stolen Eggs:
+        Type: Primary
+        XP: 4000
         Reward: [Gold, Skill_Points, Faction]
-    }
-    Taking Back the Palace: {
-        Type: Primary,
-        XP: 4000,
+    Taking Back the Palace:
+        Type: Primary
+        XP: 4000
         Reward: [Gold, Skill_Points]
-    }
-    The Dragon Hunter: {
-        Type: Secondary,
-        XP: 3000,
+    The Dragon Hunter:
+        Type: Secondary
+        XP: 3000
         Reward: [Gold, Items, Faction]
-    }
-    The Halcyon Job: {
-        Type: Secondary,
-        XP: 5000,
+    The Halcyon Job:
+        Type: Secondary
+        XP: 5000
         Reward: [Gold, Items, Faction]
-    }
-    The Impossible Sea Monster: {
-        Type: Secondary,
-        XP: 3000,
+    The Impossible Sea Monster:
+        Type: Secondary
+        XP: 3000
         Reward: [Gold, Items, Faction]
-    }
-    The Jade Arena: {
-        Type: Secondary,
-        Repeatable: True,
-        XP: 2000,
+    The Jade Arena:
+        Type: Secondary
+        Repeatable: True
+        XP: 2000
         Reward: [Gold, Faction]
-    }
-    The Jade Quarry: {
-        Wiki: "The_Jade_Quarry_(Luxon_quest)",
-        Type: Primary,
-        XP: 3000,
+    The Jade Quarry:
+        Wiki: "The_Jade_Quarry_(Luxon_quest)"
+        Type: Primary
+        XP: 3000
         Reward: [Gold]
-    }
-    The Zenos Squad: {
-        Type: Secondary,
-        XP: 3000,
+    The Zenos Squad:
+        Type: Secondary
+        XP: 3000
         Reward: [Gold, Items, Faction]
-    }

@@ -1,203 +1,163 @@
 Name: Winds of Change
 Campaign: Others
 Quests:
-    Architect of Corruption: {
-        Type: Secondary,
-        XP: 2000,
+    Architect of Corruption:
+        Type: Secondary
+        XP: 2000
         Reward: [Gold, Items]
-    }
-    "Architect of Corruption (Hard mode)": {
-        Type: Secondary,
-        XP: 5000,
+    "Architect of Corruption (Hard mode)":
+        Type: Secondary
+        XP: 5000
         Reward: [Gold, Items]
-    }
-    Cantha Courier Crisis: {
-        Type: Secondary,
-        XP: 2000,
+    Cantha Courier Crisis:
+        Type: Secondary
+        XP: 2000
         Reward: [Gold, Items]
-    }
-    "Cantha Courier Crisis (Hard mode)": {
-        Type: Secondary,
-        XP: 5000,
+    "Cantha Courier Crisis (Hard mode)":
+        Type: Secondary
+        XP: 5000
         Reward: [Gold, Items]
-    }
-    Cleansing Bukdek Byway: {
-        Type: Secondary,
-        XP: 2000,
+    Cleansing Bukdek Byway:
+        Type: Secondary
+        XP: 2000
         Reward: [Gold, Items]
-    }
-    "Cleansing Bukdek Byway (Hard mode)": {
-        Type: Secondary,
-        XP: 5000,
+    "Cleansing Bukdek Byway (Hard mode)":
+        Type: Secondary
+        XP: 5000
         Reward: [Gold, Items]
-    }
-    Cleansing Haiju Lagoon: {
-        Type: Secondary,
-        XP: 2000,
+    Cleansing Haiju Lagoon:
+        Type: Secondary
+        XP: 2000
         Reward: [Gold, Items]
-    }
-    "Cleansing Haiju Lagoon (Hard mode)": {
-        Type: Secondary,
-        XP: 5000,
+    "Cleansing Haiju Lagoon (Hard mode)":
+        Type: Secondary
+        XP: 5000
         Reward: [Gold, Items]
-    }
-    Cleansing Morostav Trail: {
-        Type: Secondary,
-        XP: 5000,
+    Cleansing Morostav Trail:
+        Type: Secondary
+        XP: 5000
         Reward: [Gold, Items]
-    }
-    "Cleansing Morostav Trail (Hard mode)": {
-        Type: Secondary,
-        XP: 10000,
+    "Cleansing Morostav Trail (Hard mode)":
+        Type: Secondary
+        XP: 10000
         Reward: [Gold, Items]
-    }
-    Cleansing Pongmei Valley: {
-        Type: Secondary,
-        XP: 2000,
+    Cleansing Pongmei Valley:
+        Type: Secondary
+        XP: 2000
         Reward: [Gold, Items]
-    }
-    "Cleansing Pongmei Valley (Hard mode)": {
-        Type: Secondary,
-        XP: 5000,
+    "Cleansing Pongmei Valley (Hard mode)":
+        Type: Secondary
+        XP: 5000
         Reward: [Gold, Items]
-    }
-    "Cleansing Rhea's Crater": {
-        Type: Secondary,
-        XP: 2000,
+    "Cleansing Rhea's Crater":
+        Type: Secondary
+        XP: 2000
         Reward: [Gold, Items]
-    }
-    "Cleansing Rhea's Crater (Hard mode)": {
-        Type: Secondary,
-        XP: 5000,
+    "Cleansing Rhea's Crater (Hard mode)":
+        Type: Secondary
+        XP: 5000
         Reward: [Gold, Items]
-    }
-    "Cleansing Shadow's Passage": {
-        Type: Secondary,
-        XP: 2000,
+    "Cleansing Shadow's Passage":
+        Type: Secondary
+        XP: 2000
         Reward: [Gold, Items]
-    }
-    "Cleansing Shadow's Passage (Hard mode)": {
-        Type: Secondary,
-        XP: 5000,
+    "Cleansing Shadow's Passage (Hard mode)":
+        Type: Secondary
+        XP: 5000
         Reward: [Gold, Items]
-    }
-    Cleansing Shenzun Tunnels: {
-        Type: Secondary,
-        XP: 2000,
+    Cleansing Shenzun Tunnels:
+        Type: Secondary
+        XP: 2000
         Reward: [Gold, Items]
-    }
-    "Cleansing Shenzun Tunnels (Hard mode)": {
-        Type: Secondary,
-        XP: 5000,
+    "Cleansing Shenzun Tunnels (Hard mode)":
+        Type: Secondary
+        XP: 5000
         Reward: [Gold, Items]
-    }
-    Cleansing Zen Daijun: {
-        Type: Secondary,
-        XP: 2000,
+    Cleansing Zen Daijun:
+        Type: Secondary
+        XP: 2000
         Reward: [Gold, Items]
-    }
-    "Cleansing Zen Daijun (Hard mode)": {
-        Type: Secondary,
-        XP: 5000,
+    "Cleansing Zen Daijun (Hard mode)":
+        Type: Secondary
+        XP: 5000
         Reward: [Gold, Items]
-    }
-    Cleansing the Silent Surf: {
-        Type: Secondary,
-        XP: 2000,
+    Cleansing the Silent Surf:
+        Type: Secondary
+        XP: 2000
         Reward: [Gold, Items]
-    }
-    "Cleansing the Silent Surf (Hard mode)": {
-        Type: Secondary,
-        XP: 5000,
+    "Cleansing the Silent Surf (Hard mode)":
+        Type: Secondary
+        XP: 5000
         Reward: [Gold, Items]
-    }
-    Cleansing the Sunjiang District: {
-        Type: Secondary,
-        XP: 2000,
+    Cleansing the Sunjiang District:
+        Type: Secondary
+        XP: 2000
         Reward: [Gold, Items]
-    }
-    "Cleansing the Sunjiang District (Hard mode)": {
-        Type: Secondary,
-        XP: 5000,
+    "Cleansing the Sunjiang District (Hard mode)":
+        Type: Secondary
+        XP: 5000
         Reward: [Gold, Items]
-    }
-    Cleansing the Undercity: {
-        Type: Secondary,
-        XP: 2000,
+    Cleansing the Undercity:
+        Type: Secondary
+        XP: 2000
         Reward: [Gold, Items]
-    }
-    "Cleansing the Undercity (Hard mode)": {
-        Type: Secondary,
-        XP: 5000,
+    "Cleansing the Undercity (Hard mode)":
+        Type: Secondary
+        XP: 5000
         Reward: [Gold, Items]
-    }
-    Intercepting the Am Fah: {
-        Type: Secondary,
-        XP: 2000,
+    Intercepting the Am Fah:
+        Type: Secondary
+        XP: 2000
         Reward: [Gold, Items]
-    }
-    "Intercepting the Am Fah (Hard mode)": {
-        Type: Secondary,
-        XP: 5000,
+    "Intercepting the Am Fah (Hard mode)":
+        Type: Secondary
+        XP: 5000
         Reward: [Gold, Items]
-    }
-    Light My Fire: {
-        Type: Secondary,
-        XP: 2000,
+    Light My Fire:
+        Type: Secondary
+        XP: 2000
         Reward: [Gold, Items]
-    }
-    "Light My Fire (Hard mode)": {
-        Type: Secondary,
-        XP: 5000,
+    "Light My Fire (Hard mode)":
+        Type: Secondary
+        XP: 5000
         Reward: [Gold, Items]
-    }
-    "Rescue at Minister Cho's Estate": {
-        Type: Secondary,
-        XP: 2000,
+    "Rescue at Minister Cho's Estate":
+        Type: Secondary
+        XP: 2000
         Reward: [Gold, Items]
-    }
-    "Rescue at Minister Cho's Estate (Hard mode)": {
-        Type: Secondary,
-        XP: 5000,
+    "Rescue at Minister Cho's Estate (Hard mode)":
+        Type: Secondary
+        XP: 5000
         Reward: [Gold, Items]
-    }
-    The Gangs of Kaineng: {
-        Type: Secondary,
-        XP: 2000,
+    The Gangs of Kaineng:
+        Type: Secondary
+        XP: 2000
         Reward: [Gold, Items]
-    }
-    "The Gangs of Kaineng (Hard mode)": {
-        Type: Secondary,
-        XP: 5000,
+    "The Gangs of Kaineng (Hard mode)":
+        Type: Secondary
+        XP: 5000
         Reward: [Gold, Items]
-    }
-    Tracking the Corruption: {
-        Type: Secondary,
-        XP: 2000,
+    Tracking the Corruption:
+        Type: Secondary
+        XP: 2000
         Reward: [Gold, Items]
-    }
-    "Tracking the Corruption (Hard mode)": {
-        Type: Secondary,
-        XP: 5000,
+    "Tracking the Corruption (Hard mode)":
+        Type: Secondary
+        XP: 5000
         Reward: [Gold, Items]
-    }
-    What Waits in Shadow: {
-        Type: Secondary,
-        XP: 5000,
+    What Waits in Shadow:
+        Type: Secondary
+        XP: 5000
         Reward: [Gold, Items]
-    }
-    "What Waits in Shadow (Hard mode)": {
-        Type: Secondary,
-        XP: 10000,
+    "What Waits in Shadow (Hard mode)":
+        Type: Secondary
+        XP: 10000
         Reward: [Gold, Items]
-    }
-    When Kappa Attack: {
-        Type: Secondary,
-        XP: 2000,
+    When Kappa Attack:
+        Type: Secondary
+        XP: 2000
         Reward: [Gold, Items]
-    }
-    "When Kappa Attack (Hard mode)": {
-        Type: Secondary,
-        XP: 5000,
+    "When Kappa Attack (Hard mode)":
+        Type: Secondary
+        XP: 5000
         Reward: [Gold, Items]
-    }

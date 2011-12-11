@@ -26,7 +26,6 @@ Quests:
         Repeatable: True
         XP: 10000
     Terrorweb Queen:
-        Wiki: "Terrorweb_Queen_(quest)"
         Type: Secondary
         Repeatable: True
         XP: 10000

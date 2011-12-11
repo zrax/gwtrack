@@ -1,6 +1,30 @@
 Name: Winds of Change
 Campaign: Others
 Quests:
+    A Chance Encounter:
+        Type: Secondary
+        XP: 3000
+        Reward: [Gold, Items]
+    "A Chance Encounter (Hard mode)":
+        Type: Secondary
+        XP: 6000
+        Reward: [Gold, Items]
+    A Favor Returned:
+        Type: Secondary
+        XP: 2500
+        Reward: [Gold, Items]
+    "A Favor Returned (Hard mode)":
+        Type: Secondary
+        XP: 5000
+        Reward: [Gold, Items]
+    "A Treaty's a Treaty":
+        Type: Secondary
+        XP: 5000
+        Reward: [Gold, Items]
+    "A Treaty's a Treaty (Hard mode)":
+        Type: Secondary
+        XP: 10000
+        Reward: [Gold, Items, Zaishen]
     Architect of Corruption:
         Type: Secondary
         XP: 2000
@@ -105,6 +129,46 @@ Quests:
         Type: Secondary
         XP: 5000
         Reward: [Gold, Items]
+    Deadly Cargo:
+        Type: Secondary
+        XP: 2500
+        Reward: [Gold, Items]
+    "Deadly Cargo (Hard mode)":
+        Type: Secondary
+        XP: 5000
+        Reward: [Gold, Items]
+    Ever Closer to the Edge:
+        Type: Secondary
+        XP: 2500
+        Reward: [Gold, Items, Faction]
+    "Ever Closer to the Edge (Hard mode)":
+        Type: Secondary
+        XP: 5000
+        Reward: [Gold, Items, Faction]
+    Family Matters:
+        Type: Secondary
+        XP: 2500
+        Reward: [Gold, Items]
+    "Family Matters (Hard mode)":
+        Type: Secondary
+        XP: 5000
+        Reward: [Gold, Items]
+    Free Birds:
+        Type: Secondary
+        XP: 3000
+        Reward: [Gold, Items]
+    "Free Birds (Hard mode)":
+        Type: Secondary
+        XP: 6000
+        Reward: [Gold, Items]
+    Honorable Combat:
+        Type: Secondary
+        XP: 3000
+        Reward: [Gold, Items]
+    "Honorable Combat (Hard mode)":
+        Type: Secondary
+        XP: 6000
+        Reward: [Gold, Items]
     Intercepting the Am Fah:
         Type: Secondary
         XP: 2000
@@ -137,11 +201,43 @@ Quests:
         Type: Secondary
         XP: 5000
         Reward: [Gold, Items]
+    The Rescue Attempt:
+        Type: Secondary
+        XP: 5000
+        Reward: [Gold, Zaishen]
+    "The Rescue Attempt (Hard mode)":
+        Type: Secondary
+        XP: 10000
+        Reward: [Gold, Zaishen]
     Tracking the Corruption:
         Type: Secondary
         XP: 2000
         Reward: [Gold, Items]
     "Tracking the Corruption (Hard mode)":
+        Type: Secondary
+        XP: 5000
+        Reward: [Gold, Items]
+    Trading Blows:
+        Type: Secondary
+        XP: 2500
+        Reward: [Gold, Items, Faction]
+    "Trading Blows (Hard mode)":
+        Type: Secondary
+        XP: 5000
+        Reward: [Gold, Items, Faction]
+    Violence in the Streets:
+        Type: Secondary
+        XP: 2500
+        Reward: [Gold, Items]
+    "Violence in the Streets (Hard mode)":
+        Type: Secondary
+        XP: 5000
+        Reward: [Gold, Items]
+    Warning the Angchu:
+        Type: Secondary
+        XP: 2500
+        Reward: [Gold, Items]
+    "Warning the Angchu (Hard mode)":
         Type: Secondary
         XP: 5000
         Reward: [Gold, Items]

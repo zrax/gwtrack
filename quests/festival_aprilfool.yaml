@@ -6,3 +6,8 @@ Quests:
         Repeatable: True
         XP: 2029
         Reward: [Gold, Rank]
+    "Annihilator 2: Searing Day":
+        Type: Secondary
+        Repeatable: True
+        XP: 2029
+        Reward: [Gold, Rank]

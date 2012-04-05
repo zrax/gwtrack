@@ -33,6 +33,14 @@ Quests:
         Type: Secondary
         XP: 5000
         Reward: [Gold, Items]
+    Calling All Thugs:
+        Type: Secondary
+        XP: 2500
+        Reward: [Gold, Items]
+    "Calling All Thugs (Hard mode)":
+        Type: Secondary
+        XP: 5000
+        Reward: [Gold, Items]
     Cantha Courier Crisis:
         Type: Secondary
         XP: 2000
@@ -153,6 +161,14 @@ Quests:
         Type: Secondary
         XP: 5000
         Reward: [Gold, Items]
+    Finding Jinnai:
+        Type: Secondary
+        XP: 3000
+        Reward: [Gold, Items]
+    "Finding Jinnai (Hard mode)":
+        Type: Secondary
+        XP: 6000
+        Reward: [Gold, Items]
     Free Birds:
         Type: Secondary
         XP: 3000
@@ -185,6 +201,40 @@ Quests:
         Type: Secondary
         XP: 5000
         Reward: [Gold, Items]
+    Memories of Purity:
+        Type: Secondary
+    Ministry of Oppression:
+        Type: Secondary
+        XP: 2500
+        Reward: [Gold, Items]
+    "Ministry of Oppression (Hard mode)":
+        Type: Secondary
+        XP: 5000
+        Reward: [Gold, Items]
+    Raid on Kaineng Center:
+        Type: Secondary
+        XP: 5000
+        Reward: [Gold, Items]
+    "Raid on Kaineng Center (Hard mode)":
+        Type: Secondary
+        XP: 10000
+        Reward: [Gold, Items]
+    Raid on Shing Jea Monastery:
+        Type: Secondary
+        XP: 5000
+        Reward: [Gold, Items]
+    "Raid on Shing Jea Monastery (Hard mode)":
+        Type: Secondary
+        XP: 10000
+        Reward: [Gold, Items]
+    Redemption for the Lost:
+        Type: Secondary
+        XP: 2000
+        Reward: [Gold, Items]
+    "Redemption for the Lost (Hard mode)":
+        Type: Secondary
+        XP: 5000
+        Reward: [Gold, Items]
     "Rescue at Minister Cho's Estate":
         Type: Secondary
         XP: 2000
@@ -193,6 +243,14 @@ Quests:
         Type: Secondary
         XP: 5000
         Reward: [Gold, Items]
+    The Final Confrontation:
+        Type: Secondary
+        XP: 10000
+        Reward: [Items, Hero]
+    "The Final Confrontation (Hard mode)":
+        Type: Secondary
+        XP: 20000
+        Reward: [Items, Hero]
     The Gangs of Kaineng:
         Type: Secondary
         XP: 2000
@@ -209,6 +267,14 @@ Quests:
         Type: Secondary
         XP: 10000
         Reward: [Gold, Zaishen]
+    There Goes the Neighborhood:
+        Type: Secondary
+        XP: 3000
+        Reward: [Gold, Items]
+    "There Goes the Neighborhood (Hard mode)":
+        Type: Secondary
+        XP: 6000
+        Reward: [Gold, Items]
     Tracking the Corruption:
         Type: Secondary
         XP: 2000
@@ -225,6 +291,14 @@ Quests:
         Type: Secondary
         XP: 5000
         Reward: [Gold, Items, Faction]
+    Vassal States:
+        Type: Secondary
+        XP: 2000
+        Reward: [Gold, Items]
+    "Vassal States (Hard mode)":
+        Type: Secondary
+        XP: 5000
+        Reward: [Gold, Items]
     Violence in the Streets:
         Type: Secondary
         XP: 2500

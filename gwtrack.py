@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import os, sys, yaml, sqlite3, locale
 from PyQt4 import QtCore, QtGui, QtWebKit
@@ -37,7 +37,7 @@ class QuestInfo:
         try:
             self.quest_type = info['Type']
         except KeyError:
-            print "%s: Error: No quest type specified" % name
+            print("%s: Error: No quest type specified" % name)
             sys.exit(1)
 
         # Optional fields
@@ -46,12 +46,12 @@ class QuestInfo:
         self.profession = None
         self.profession_lock = PROFESSION_ANY
         self.char_type = None
-        self.reward = [False for i in xrange(REWARD_MAX)]
+        self.reward = [False for i in range(REWARD_MAX)]
 
         try:
             self.repeat = info['Repeatable']
             if type(self.repeat) != bool:
-                print "%s: Error: Invalid value specified for Repeatable: %s" % (name, self.repeat)
+                print("%s: Error: Invalid value specified for Repeatable: %s" % (name, self.repeat))
                 sys.exit(1)
         except KeyError: pass
 
@@ -71,7 +71,7 @@ class QuestInfo:
             elif profession_lock == 'Unlocked':
                 self.profession_lock = PROFESSION_UNLOCKED
             else:
-                print "%s: Error: Unsupported Profession_Lock: %s" % (name, profession_lock)
+                print("%s: Error: Unsupported Profession_Lock: %s" % (name, profession_lock))
                 sys.exit(1)
         except KeyError: pass
 
@@ -148,7 +148,7 @@ class QuestArea:
         try:
             self.campaign = info['Campaign']
         except KeyError:
-            print "%s: Error: No campaign specified" % name
+            print("%s: Error: No campaign specified" % name)
             sys.exit(1)
 
         try:
@@ -158,7 +158,7 @@ class QuestArea:
 
         self.quests = []
         if quest_list is not None:
-            for quest in quest_list.keys():
+            for quest in quest_list:
                 self.quests.append(QuestInfo(quest_list[quest], quest))
         self.quests = sorted(self.quests, key=lambda q: q.name)
 
@@ -210,10 +210,10 @@ class AddCharDialog(QtGui.QDialog):
         buttons.accepted.connect(self.accept)
         buttons.rejected.connect(self.reject)
 
-    def savedName(self):        return (str(self.charName.text()),)
-    def savedType(self):        return (str(self.charType.currentText()),)
-    def savedProfession(self):  return (str(self.profession.currentText()),)
-    def savedProfession2(self): return (str(self.secondProfession.currentText()),)
+    def savedName(self):        return (self.charName.text(),)
+    def savedType(self):        return (self.charType.currentText(),)
+    def savedProfession(self):  return (self.profession.currentText(),)
+    def savedProfession2(self): return (self.secondProfession.currentText(),)
 
 
 class TrackGui(QtGui.QMainWindow):
@@ -337,7 +337,7 @@ class TrackGui(QtGui.QMainWindow):
         self.areas[area.name] = area
 
         # Find or create the campaign group
-        for idx in xrange(self.areaView.topLevelItemCount()):
+        for idx in range(self.areaView.topLevelItemCount()):
             if self.areaView.topLevelItem(idx).text(0) == area.campaign:
                 areaGroup = self.areaView.topLevelItem(idx)
                 break
@@ -361,12 +361,12 @@ class TrackGui(QtGui.QMainWindow):
             return
 
         # Load the quests in the area
-        areaName = str(self.areaView.currentItem().text(0))
+        areaName = self.areaView.currentItem().text(0)
         if areaName not in self.areas:
             return
 
         self.questView.setSortingEnabled(False)
-        for idx in xrange(len(self.areas[areaName].quests)):
+        for idx in range(len(self.areas[areaName].quests)):
             quest = self.areas[areaName].quests[idx]
 
             item = QtGui.QTreeWidgetItem(self.questView)
@@ -413,13 +413,13 @@ class TrackGui(QtGui.QMainWindow):
         if self.currentChar is None:
             return
 
-        areaName = str(self.areaView.currentItem().text(0))
+        areaName = self.areaView.currentItem().text(0)
         if areaName not in self.areas:
             return
 
         csr = self.currentChar.cursor()
         csr.execute("SELECT state FROM status WHERE quest_name=?",
-                    ("%s::%s" % (areaName, str(item.text(0))),))
+                    ("%s::%s" % (areaName, item.text(0)),))
         row = csr.fetchone()
         if row:
             item.setText(7, row[0])
@@ -438,7 +438,7 @@ class TrackGui(QtGui.QMainWindow):
         if not self.questView.currentItem() or not self.currentArea:
             return
 
-        idx = self.questView.currentItem().data(0, QtCore.Qt.UserRole).toInt()[0]
+        idx = int(self.questView.currentItem().data(0, QtCore.Qt.UserRole))
         url = QtCore.QUrl.fromEncoded(WIKI_URL + self.currentArea.quests[idx].wiki)
         self.wikiView.load(url)
 
@@ -466,7 +466,7 @@ class TrackGui(QtGui.QMainWindow):
             self.prof2Select.setIcon(QtGui.QIcon())
 
             self.onAreaChange()
-        elif not self.charSelect.itemData(idx).toString():
+        elif not self.charSelect.itemData(idx):
             # Selected the add character item
             dialog = AddCharDialog(self)
             if dialog.exec_() == QtGui.QDialog.Accepted:
@@ -494,7 +494,7 @@ class TrackGui(QtGui.QMainWindow):
             # Selected an actual character
             if self.currentChar:
                 self.currentChar.close()
-            self.currentChar = sqlite3.connect(os.path.join(DATA_BASE, str(self.charSelect.itemData(idx).toString())))
+            self.currentChar = sqlite3.connect(os.path.join(DATA_BASE, str(self.charSelect.itemData(idx))))
 
             csr = self.currentChar.cursor()
             csr.execute("SELECT value FROM config WHERE key='Version'")
@@ -526,10 +526,10 @@ class TrackGui(QtGui.QMainWindow):
         if item is None or self.currentChar is None:
             return
 
-        areaName = str(self.areaView.currentItem().text(0))
+        areaName = self.areaView.currentItem().text(0)
         if areaName not in self.areas:
             return
-        questName = "%s::%s" % (areaName, str(item.text(0)))
+        questName = "%s::%s" % (areaName, item.text(0))
 
         menu = QtGui.QMenu()
         noState = menu.addAction("(Clear)")

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import os, sys, yaml, sqlite3, locale
-from PyQt4 import QtCore, QtGui, QtWebKit
+from PyQt5 import QtCore, QtGui, QtWidgets, QtWebKitWidgets
 
 PROFESSION_ANY      = 0
 PROFESSION_PRIMARY  = 1
@@ -163,23 +163,23 @@ class QuestArea:
         self.quests = sorted(self.quests, key=lambda q: q.name)
 
 
-class AddCharDialog(QtGui.QDialog):
+class AddCharDialog(QtWidgets.QDialog):
     def __init__(self, parent):
-        QtGui.QDialog.__init__(self, parent)
+        QtWidgets.QDialog.__init__(self, parent)
 
-        layout = QtGui.QGridLayout(self)
-        layout.setMargin(8)
-        layout.addWidget(QtGui.QLabel("Name: ", self), 0, 0)
-        self.charName = QtGui.QLineEdit(self)
+        layout = QtWidgets.QGridLayout(self)
+        layout.setContentsMargins(8, 8, 8, 8)
+        layout.addWidget(QtWidgets.QLabel("Name: ", self), 0, 0)
+        self.charName = QtWidgets.QLineEdit(self)
         layout.addWidget(self.charName, 0, 1)
-        layout.addWidget(QtGui.QLabel("Type: ", self), 1, 0)
-        self.charType = QtGui.QComboBox(self)
+        layout.addWidget(QtWidgets.QLabel("Type: ", self), 1, 0)
+        self.charType = QtWidgets.QComboBox(self)
         self.charType.addItem("Tyrian")
         self.charType.addItem("Canthan")
         self.charType.addItem("Elonian")
         layout.addWidget(self.charType, 1, 1)
-        layout.addWidget(QtGui.QLabel("Profession: ", self), 2, 0)
-        self.profession = QtGui.QComboBox(self)
+        layout.addWidget(QtWidgets.QLabel("Profession: ", self), 2, 0)
+        self.profession = QtWidgets.QComboBox(self)
         self.profession.addItem("Assassin")
         self.profession.addItem("Dervish")
         self.profession.addItem("Elementalist")
@@ -191,8 +191,8 @@ class AddCharDialog(QtGui.QDialog):
         self.profession.addItem("Ritualist")
         self.profession.addItem("Warrior")
         layout.addWidget(self.profession, 2, 1)
-        layout.addWidget(QtGui.QLabel("2nd Profession: ", self), 3, 0)
-        self.secondProfession = QtGui.QComboBox(self)
+        layout.addWidget(QtWidgets.QLabel("2nd Profession: ", self), 3, 0)
+        self.secondProfession = QtWidgets.QComboBox(self)
         self.secondProfession.addItem("Assassin")
         self.secondProfession.addItem("Dervish")
         self.secondProfession.addItem("Elementalist")
@@ -204,7 +204,8 @@ class AddCharDialog(QtGui.QDialog):
         self.secondProfession.addItem("Ritualist")
         self.secondProfession.addItem("Warrior")
         layout.addWidget(self.secondProfession, 3, 1)
-        buttons = QtGui.QDialogButtonBox(QtGui.QDialogButtonBox.Ok | QtGui.QDialogButtonBox.Cancel)
+        buttons = QtWidgets.QDialogButtonBox(QtWidgets.QDialogButtonBox.Ok | \
+                                             QtWidgets.QDialogButtonBox.Cancel)
         layout.addWidget(buttons, 4, 0, 1, 2)
 
         buttons.accepted.connect(self.accept)
@@ -216,24 +217,25 @@ class AddCharDialog(QtGui.QDialog):
     def savedProfession2(self): return (self.secondProfession.currentText(),)
 
 
-class TrackGui(QtGui.QMainWindow):
+class TrackGui(QtWidgets.QMainWindow):
     def __init__(self):
-        QtGui.QMainWindow.__init__(self)
+        QtWidgets.QMainWindow.__init__(self)
         self.setWindowTitle("Guild Wars Quest Tracker")
 
-        base = QtGui.QWidget(self)
-        layout = QtGui.QGridLayout(base)
-        layout.setMargin(0)
+        base = QtWidgets.QWidget(self)
+        layout = QtWidgets.QGridLayout(base)
+        layout.setContentsMargins(0, 0, 0, 0)
 
-        split = QtGui.QSplitter(base)
-        vsplit = QtGui.QSplitter(split)
+        split = QtWidgets.QSplitter(base)
+        vsplit = QtWidgets.QSplitter(split)
         vsplit.setOrientation(QtCore.Qt.Vertical)
-        self.areaView = QtGui.QTreeWidget(split)
+        self.areaView = QtWidgets.QTreeWidget(split)
         self.areaView.setRootIsDecorated(True)
         self.areaView.setHeaderHidden(True)
-        self.questView = QtGui.QTreeWidget(vsplit)
+        self.questView = QtWidgets.QTreeWidget(vsplit)
         self.questView.setRootIsDecorated(False)
-        self.questView.setHeaderLabels(["Quest", "Type", "R", "Profession", "Character", "XP", "Reward", "Status"])
+        self.questView.setHeaderLabels(["Quest", "Type", "R", "Profession",
+                                        "Character", "XP", "Reward", "Status"])
         metrics = QtGui.QFontMetrics(self.questView.headerItem().font(0))
         self.questView.setColumnWidth(0, 240)
         self.questView.setColumnWidth(1, metrics.width("Mini-mission") + 10)
@@ -255,24 +257,24 @@ class TrackGui(QtGui.QMainWindow):
         self.questView.header().setSortIndicator(0, QtCore.Qt.AscendingOrder)
         self.questView.setContextMenuPolicy(QtCore.Qt.CustomContextMenu)
 
-        wikiPane = QtGui.QWidget(vsplit)
-        wikiLayout = QtGui.QGridLayout(wikiPane)
-        wikiLayout.setMargin(0)
-        wikiToolbar = QtGui.QToolBar(wikiPane)
+        wikiPane = QtWidgets.QWidget(vsplit)
+        wikiLayout = QtWidgets.QGridLayout(wikiPane)
+        wikiLayout.setContentsMargins(0, 0, 0, 0)
+        wikiToolbar = QtWidgets.QToolBar(wikiPane)
         self.back = wikiToolbar.addAction(QtGui.QIcon("icons/arrow-left.png"), "Back")
         self.fwd = wikiToolbar.addAction(QtGui.QIcon("icons/arrow-right.png"), "Forward")
         wikiToolbar.addSeparator()
-        self.location = QtGui.QComboBox(wikiPane)
+        self.location = QtWidgets.QComboBox(wikiPane)
         self.location.setEditable(True)
-        self.location.setSizePolicy(QtGui.QSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Fixed))
+        self.location.setSizePolicy(QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Fixed))
         wikiToolbar.addWidget(self.location)
         self.refresh = wikiToolbar.addAction(QtGui.QIcon("icons/view-refresh.png"), "Refresh")
-        wikiFrame = QtGui.QFrame(wikiPane)
-        frameLayout = QtGui.QGridLayout(wikiFrame)
-        frameLayout.setMargin(0)
-        wikiFrame.setFrameShape(QtGui.QFrame.StyledPanel)
-        wikiFrame.setFrameShadow(QtGui.QFrame.Sunken)
-        self.wikiView = QtWebKit.QWebView(wikiFrame)
+        wikiFrame = QtWidgets.QFrame(wikiPane)
+        frameLayout = QtWidgets.QGridLayout(wikiFrame)
+        frameLayout.setContentsMargins(0, 0, 0, 0)
+        wikiFrame.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        wikiFrame.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.wikiView = QtWebKitWidgets.QWebView(wikiFrame)
         frameLayout.addWidget(self.wikiView, 0, 0)
         wikiLayout.addWidget(wikiToolbar, 0, 0)
         wikiLayout.addWidget(wikiFrame, 1, 0)
@@ -286,8 +288,8 @@ class TrackGui(QtGui.QMainWindow):
 
         toolbar = self.addToolBar("MainToolbar")
         toolbar.setToolButtonStyle(QtCore.Qt.ToolButtonTextBesideIcon)
-        toolbar.addWidget(QtGui.QLabel(" Character: ", self))
-        self.charSelect = QtGui.QComboBox(self)
+        toolbar.addWidget(QtWidgets.QLabel(" Character: ", self))
+        self.charSelect = QtWidgets.QComboBox(self)
         self.charSelect.insertSeparator(0)
         self.charSelect.addItem("Add New Character...")
         toolbar.addWidget(self.charSelect)
@@ -342,9 +344,9 @@ class TrackGui(QtGui.QMainWindow):
                 areaGroup = self.areaView.topLevelItem(idx)
                 break
         else:
-            areaGroup = QtGui.QTreeWidgetItem(self.areaView)
+            areaGroup = QtWidgets.QTreeWidgetItem(self.areaView)
             areaGroup.setText(0, area.campaign)
-        item = QtGui.QTreeWidgetItem(areaGroup)
+        item = QtWidgets.QTreeWidgetItem(areaGroup)
         item.setText(0, area.name)
 
     def addChar(self, charName, charType, fileName):
@@ -369,7 +371,7 @@ class TrackGui(QtGui.QMainWindow):
         for idx in range(len(self.areas[areaName].quests)):
             quest = self.areas[areaName].quests[idx]
 
-            item = QtGui.QTreeWidgetItem(self.questView)
+            item = QtWidgets.QTreeWidgetItem(self.questView)
             item.setData(0, QtCore.Qt.UserRole, idx)
             item.setText(0, quest.name)
             item.setText(1, quest.quest_type)
@@ -469,7 +471,7 @@ class TrackGui(QtGui.QMainWindow):
         elif not self.charSelect.itemData(idx):
             # Selected the add character item
             dialog = AddCharDialog(self)
-            if dialog.exec_() == QtGui.QDialog.Accepted:
+            if dialog.exec_() == QtWidgets.QDialog.Accepted:
                 fname = dialog.savedName()[0].lower().replace(' ', '_') + '.db'
 
                 # Initialize the database
@@ -500,7 +502,7 @@ class TrackGui(QtGui.QMainWindow):
             csr.execute("SELECT value FROM config WHERE key='Version'")
             dbver = int(csr.fetchone()[0])
             if dbver > 1:
-                QtGui.QMessageBox.critical(self, "Error", "Error: Character version too new")
+                QtWidgets.QMessageBox.critical(self, "Error", "Error: Character version too new")
                 sys.exit(1)
 
             csr.execute("SELECT value FROM config WHERE key='Profession1'")
@@ -531,7 +533,7 @@ class TrackGui(QtGui.QMainWindow):
             return
         questName = "%s::%s" % (areaName, item.text(0))
 
-        menu = QtGui.QMenu()
+        menu = QtWidgets.QMenu()
         noState = menu.addAction("(Clear)")
         activeState = menu.addAction("Active")
         completeState = menu.addAction("Complete")
@@ -571,7 +573,7 @@ class TrackGui(QtGui.QMainWindow):
 if __name__ == '__main__':
     locale.setlocale(locale.LC_ALL, '')
 
-    app = QtGui.QApplication(sys.argv)
+    app = QtWidgets.QApplication(sys.argv)
     gui = TrackGui()
 
     questList = os.listdir('quests')

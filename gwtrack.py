@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 
-import os, sys, yaml, sqlite3, locale
+import os
+import sys
+import yaml
+import sqlite3
+import locale
 from PyQt5 import QtCore, QtGui, QtWidgets, QtWebKitWidgets
 
 PROFESSION_ANY      = 0
@@ -24,6 +28,7 @@ REWARD_HEROES     = 8  # H
 REWARD_PROFESSION = 9  # 2
 REWARD_MAX        = 10
 
+
 class QuestInfo:
     def __init__(self, info, name):
         self.name = name
@@ -37,71 +42,72 @@ class QuestInfo:
         try:
             self.quest_type = info['Type']
         except KeyError:
-            print("%s: Error: No quest type specified" % name)
+            print("{}: Error: No quest type specified".format(name))
             sys.exit(1)
 
         # Optional fields
-        self.repeat = False
-        self.xp = 0
-        self.profession = None
-        self.profession_lock = PROFESSION_ANY
-        self.char_type = None
-        self.reward = [False for i in range(REWARD_MAX)]
-
         try:
             self.repeat = info['Repeatable']
-            if type(self.repeat) != bool:
-                print("%s: Error: Invalid value specified for Repeatable: %s" % (name, self.repeat))
-                sys.exit(1)
-        except KeyError: pass
+        except KeyError:
+            self.repeat = False
+        if type(self.repeat) != bool:
+            print("{}: Error: Invalid value specified for Repeatable: {}".format(name, self.repeat))
+            sys.exit(1)
 
         try:
             self.xp = info['XP']
-        except KeyError: pass
+        except KeyError:
+            self.xp = 0
 
         try:
             self.profession = info['Profession']
-        except KeyError: pass
+        except KeyError:
+            self.profession = None
+
         try:
             profession_lock = info['Profession_Lock']
-            if profession_lock == 'Any':
-                self.profession_lock = PROFESSION_ANY
-            elif profession_lock == 'Primary':
-                self.profession_lock = PROFESSION_PRIMARY
-            elif profession_lock == 'Unlocked':
-                self.profession_lock = PROFESSION_UNLOCKED
-            else:
-                print("%s: Error: Unsupported Profession_Lock: %s" % (name, profession_lock))
-                sys.exit(1)
-        except KeyError: pass
+        except KeyError:
+            profession_lock = 'Any'
+        if profession_lock == 'Any':
+            self.profession_lock = PROFESSION_ANY
+        elif profession_lock == 'Primary':
+            self.profession_lock = PROFESSION_PRIMARY
+        elif profession_lock == 'Unlocked':
+            self.profession_lock = PROFESSION_UNLOCKED
+        else:
+            print("{}: Error: Unsupported Profession_Lock: {}".format(name, profession_lock))
+            sys.exit(1)
 
         try:
             self.char_type = info['Character']
-        except KeyError: pass
+        except KeyError:
+            self.char_type = None
 
         try:
             reward_list = info['Reward']
-            if 'Gold' in reward_list:
-                self.reward[REWARD_GOLD] = True
-            if 'Items' in reward_list:
-                self.reward[REWARD_ITEMS] = True
-            if 'Skills' in reward_list:
-                self.reward[REWARD_SKILLS] = True
-            if 'Skill_Points' in reward_list:
-                self.reward[REWARD_POINTS] = True
-            if 'Attribute_Points' in reward_list:
-                self.reward[REWARD_ATTRIB] = True
-            if 'Rank' in reward_list:
-                self.reward[REWARD_RANK] = True
-            if 'Faction' in reward_list:
-                self.reward[REWARD_FACTION] = True
-            if 'Zaishen' in reward_list:
-                self.reward[REWARD_ZAISHEN] = True
-            if 'Heroes' in reward_list:
-                self.reward[REWARD_HEROES] = True
-            if 'Profession' in reward_list:
-                self.reward[REWARD_PROFESSION] = True
-        except KeyError: pass
+        except KeyError:
+            reward_list = []
+        self.reward = [False] * REWARD_MAX
+        if 'Gold' in reward_list:
+            self.reward[REWARD_GOLD] = True
+        if 'Items' in reward_list:
+            self.reward[REWARD_ITEMS] = True
+        if 'Skills' in reward_list:
+            self.reward[REWARD_SKILLS] = True
+        if 'Skill_Points' in reward_list:
+            self.reward[REWARD_POINTS] = True
+        if 'Attribute_Points' in reward_list:
+            self.reward[REWARD_ATTRIB] = True
+        if 'Rank' in reward_list:
+            self.reward[REWARD_RANK] = True
+        if 'Faction' in reward_list:
+            self.reward[REWARD_FACTION] = True
+        if 'Zaishen' in reward_list:
+            self.reward[REWARD_ZAISHEN] = True
+        if 'Heroes' in reward_list:
+            self.reward[REWARD_HEROES] = True
+        if 'Profession' in reward_list:
+            self.reward[REWARD_PROFESSION] = True
 
     def rewardString(self):
         conv = ['G' if self.reward[REWARD_GOLD] else ' ',
@@ -148,7 +154,7 @@ class QuestArea:
         try:
             self.campaign = info['Campaign']
         except KeyError:
-            print("%s: Error: No campaign specified" % name)
+            print("{}: Error: No campaign specified".format(name))
             sys.exit(1)
 
         try:
@@ -211,10 +217,17 @@ class AddCharDialog(QtWidgets.QDialog):
         buttons.accepted.connect(self.accept)
         buttons.rejected.connect(self.reject)
 
-    def savedName(self):        return (self.charName.text(),)
-    def savedType(self):        return (self.charType.currentText(),)
-    def savedProfession(self):  return (self.profession.currentText(),)
-    def savedProfession2(self): return (self.secondProfession.currentText(),)
+    def savedName(self):
+        return (self.charName.text(),)
+
+    def savedType(self):
+        return (self.charType.currentText(),)
+
+    def savedProfession(self):
+        return (self.profession.currentText(),)
+
+    def savedProfession2(self):
+        return (self.secondProfession.currentText(),)
 
 
 class TrackGui(QtWidgets.QMainWindow):
@@ -385,7 +398,7 @@ class TrackGui(QtWidgets.QMainWindow):
                 if quest.profession_lock == PROFESSION_PRIMARY:
                     prof += " (P)"
                 elif quest.profession_lock == PROFESSION_UNLOCKED:
-                    prof = "(%s)" % quest.profession
+                    prof = "({})".format(quest.profession)
                 item.setText(3, prof)
                 try:
                     item.setIcon(3, self.icons[quest.profession])
@@ -421,7 +434,7 @@ class TrackGui(QtWidgets.QMainWindow):
 
         csr = self.currentChar.cursor()
         csr.execute("SELECT state FROM status WHERE quest_name=?",
-                    ("%s::%s" % (areaName, item.text(0)),))
+                    ("{}::{}".format(areaName, item.text(0)),))
         row = csr.fetchone()
         if row:
             item.setText(7, row[0])
@@ -468,6 +481,7 @@ class TrackGui(QtWidgets.QMainWindow):
             self.prof2Select.setIcon(QtGui.QIcon())
 
             self.onAreaChange()
+
         elif not self.charSelect.itemData(idx):
             # Selected the add character item
             dialog = AddCharDialog(self)
@@ -492,6 +506,7 @@ class TrackGui(QtWidgets.QMainWindow):
                 self.onCharSelected(idx)
             else:
                 self.charSelect.setCurrentIndex(self.currentCharIdx)
+
         else:
             # Selected an actual character
             if self.currentChar:

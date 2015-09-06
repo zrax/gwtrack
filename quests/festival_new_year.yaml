@@ -21,6 +21,9 @@ Quests:
         Type: Festival
         XP: 5000
         Reward: [Gold, Items]
+    Take My Sister, Please:
+        Type: Festival
+        Reward: [Items]
     The Big Bang:
         Type: Festival
         XP: 5000

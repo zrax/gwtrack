@@ -1,0 +1,19 @@
+Name: "Other Events"
+Campaign: Festivals
+Quests:
+    "Wayfarer's Reverie: Cantha":
+        Type: Secondary
+        XP: 2006
+        Reward: [Gold, Item]
+    "Wayfarer's Reverie: Elona":
+        Type: Secondary
+        XP: 2006
+        Reward: [Gold, Item]
+    "Wayfarer's Reverie: The Far North":
+        Type: Secondary
+        XP: 2007
+        Reward: [Gold, Item]
+    "Wayfarer's Reverie: Tyria":
+        Type: Secondary
+        XP: 2005
+        Reward: [Gold, Item]

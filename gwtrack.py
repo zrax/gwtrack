@@ -5,7 +5,7 @@ import sys
 import yaml
 import sqlite3
 import locale
-from PyQt5 import QtCore, QtGui, QtWidgets, QtWebKitWidgets
+from PyQt5 import QtCore, QtGui, QtWidgets, QtWebEngineWidgets
 
 PROFESSION_ANY      = 0
 PROFESSION_PRIMARY  = 1
@@ -287,7 +287,7 @@ class TrackGui(QtWidgets.QMainWindow):
         frameLayout.setContentsMargins(0, 0, 0, 0)
         wikiFrame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         wikiFrame.setFrameShadow(QtWidgets.QFrame.Sunken)
-        self.wikiView = QtWebKitWidgets.QWebView(wikiFrame)
+        self.wikiView = QtWebEngineWidgets.QWebEngineView(wikiFrame)
         frameLayout.addWidget(self.wikiView, 0, 0)
         wikiLayout.addWidget(wikiToolbar, 0, 0)
         wikiLayout.addWidget(wikiFrame, 1, 0)
@@ -454,7 +454,7 @@ class TrackGui(QtWidgets.QMainWindow):
             return
 
         idx = int(self.questView.currentItem().data(0, QtCore.Qt.UserRole))
-        url = QtCore.QUrl.fromEncoded(WIKI_URL + self.currentArea.quests[idx].wiki)
+        url = QtCore.QUrl.fromEncoded(bytes(WIKI_URL + self.currentArea.quests[idx].wiki, 'utf-8'))
         self.wikiView.load(url)
 
     def onUrlChanged(self, url):

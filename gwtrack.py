@@ -322,6 +322,7 @@ class TrackGui(QtWidgets.QMainWindow):
         self.fwd.triggered.connect(self.wikiView.forward)
         self.refresh.triggered.connect(self.wikiView.reload)
         self.wikiView.urlChanged.connect(self.onUrlChanged)
+        self.location.lineEdit().returnPressed.connect(self.onUrlLoadRequested)
         self.charSelect.activated[int].connect(self.onCharSelected)
 
         self.icons = {
@@ -468,6 +469,11 @@ class TrackGui(QtWidgets.QMainWindow):
                 self.location.removeItem(idx)
             else:
                 idx += 1
+
+    def onUrlLoadRequested(self):
+        url = QtCore.QUrl()
+        url.setUrl(self.location.currentText())
+        self.wikiView.load(url)
 
     def onCharSelected(self, idx):
         if idx < 0:

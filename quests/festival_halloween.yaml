@@ -5,6 +5,9 @@ Quests:
         Type: Festival
         XP: 15000
         Reward: [Gold, Items]
+    Better You Than Me:
+        Type: Festival
+        Reward: [Items]
     Commandeering a Mortal Vessel:
         Type: Festival
         XP: 10000
@@ -13,14 +16,31 @@ Quests:
         Type: Festival
         XP: 15000
         Reward: [Items]
+    "Double Your Pleasure and RUN!":
+        Type: Festival
+        Reward: [Items]
     Every Bit Helps:
         Type: Festival
         Repeatable: True
         XP: 10000
         Reward: [Gold, Items]
+    Evil Residents:
+        Type: Festival
+        Repeatable: False
+        XP: 2000
+        Reward: [Gold, Items]
+    "Evil Residents Code: Harmonica":
+        Type: Festival
+        Repeatable: True
+        XP: 1000
+        Reward: [Gold, Items]
     Heirlooms of the Mad King:
         Type: Festival
         XP: 5000
+        Reward: [Gold, Items]
+    Mad Little Pony:
+        Type: Festival
+        XP: 2000
         Reward: [Gold, Items]
     Open the Flood Gates of Death:
         Type: Festival

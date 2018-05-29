@@ -1,0 +1,77 @@
+Name: Prophecies
+Missions:
+    The Great Northern Wall:
+        Z_XP: 1000
+        Z_Coins: 74
+    Fort Ranik:
+        Z_XP: 1000
+        Z_Coins: 74
+    Ruins of Surmia:
+        Z_XP: 1000
+        Z_Coins: 74
+    Nolani Academy:
+        Z_XP: 1000
+        Z_Coins: 74
+    Borlis Pass:
+        Z_XP: 1000
+        Z_Coins: 74
+    The Frost Gate:
+        Z_XP: 1000
+        Z_Coins: 74
+    Gates of Kryta:
+        Z_XP: 1000
+        Z_Coins: 74
+    "D'Alessio Seaboard":
+        Z_XP: 3000
+        Z_Coins: 100
+    Divinity Coast:
+        Z_XP: 3000
+        Z_Coins: 100
+    The Wilds:
+        Z_XP: 3000
+        Z_Coins: 100
+    Bloodstone Fen:
+        Z_XP: 3000
+        Z_Coins: 100
+    Aurora Glade:
+        Z_XP: 3000
+        Z_Coins: 100
+    Riverside Province:
+        Z_XP: 3000
+        Z_Coins: 100
+    Sanctum Cay:
+        Z_XP: 3000
+        Z_Coins: 100
+    Dunes of Despair:
+        Z_XP: 3000
+        Z_Coins: 100
+    Thirsty River:
+        Z_XP: 3000
+        Z_Coins: 100
+    Elona Reach:
+        Z_XP: 3000
+        Z_Coins: 100
+    Augury Rock:
+        Z_XP: 3000
+        Z_Coins: 100
+    "The Dragon's Lair":
+        Z_XP: 3000
+        Z_Coins: 100
+    Ice Caves of Sorrow:
+        Z_XP: 5000
+        Z_Coins: 150
+    Iron Mines of Moladune:
+        Z_XP: 5000
+        Z_Coins: 150
+    Thunderhead Keep:
+        Z_XP: 5000
+        Z_Coins: 150
+    Ring of Fire:
+        Z_XP: 5000
+        Z_Coins: 150
+    "Abaddon's Mouth":
+        Z_XP: 5000
+        Z_Coins: 150
+    "Hell's Precipice":
+        Z_XP: 5000
+        Z_Coins: 150

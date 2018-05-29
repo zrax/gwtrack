@@ -58,6 +58,9 @@ Quests:
         Type: Festival
         XP: 5000
         Reward: [Items]
+    The Polar Depressed:
+        Type: Festival
+        Reward: [Items]
     The Strength of Snow:
         Type: Festival
         Repeatable: True

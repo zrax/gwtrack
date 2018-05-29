@@ -7,166 +7,12 @@ import sqlite3
 import locale
 from PyQt5 import QtCore, QtGui, QtWidgets, QtWebEngineWidgets
 
-PROFESSION_ANY      = 0
-PROFESSION_PRIMARY  = 1
-PROFESSION_UNLOCKED = 2
-
-WIKI_URL = "http://wiki.guildwars.com/wiki/"
+from gwdata.quests import QuestArea
+from gwdata.missions import MissionArea
+from gwdata.consts import *
 
 HOME_BASE = os.getenv('USERPROFILE') or os.getenv('HOME')
 DATA_BASE = os.path.join(HOME_BASE, '.gwtrack')
-
-REWARD_GOLD       = 0  # G
-REWARD_ITEMS      = 1  # I
-REWARD_SKILLS     = 2  # S
-REWARD_POINTS     = 3  # P
-REWARD_ATTRIB     = 4  # A
-REWARD_RANK       = 5  # R
-REWARD_FACTION    = 6  # F
-REWARD_ZAISHEN    = 7  # Z
-REWARD_HEROES     = 8  # H
-REWARD_PROFESSION = 9  # 2
-REWARD_MAX        = 10
-
-
-class QuestInfo:
-    def __init__(self, info, name):
-        self.name = name
-
-        # Required fields
-        try:
-            self.wiki = info['Wiki']
-        except KeyError:
-            self.wiki = name.replace(' ', '_').replace('?', '%3F')
-
-        try:
-            self.quest_type = info['Type']
-        except KeyError:
-            print("{}: Error: No quest type specified".format(name))
-            sys.exit(1)
-
-        # Optional fields
-        try:
-            self.repeat = info['Repeatable']
-        except KeyError:
-            self.repeat = False
-        if type(self.repeat) != bool:
-            print("{}: Error: Invalid value specified for Repeatable: {}".format(name, self.repeat))
-            sys.exit(1)
-
-        try:
-            self.xp = info['XP']
-        except KeyError:
-            self.xp = 0
-
-        try:
-            self.profession = info['Profession']
-        except KeyError:
-            self.profession = None
-
-        try:
-            profession_lock = info['Profession_Lock']
-        except KeyError:
-            profession_lock = 'Any'
-        if profession_lock == 'Any':
-            self.profession_lock = PROFESSION_ANY
-        elif profession_lock == 'Primary':
-            self.profession_lock = PROFESSION_PRIMARY
-        elif profession_lock == 'Unlocked':
-            self.profession_lock = PROFESSION_UNLOCKED
-        else:
-            print("{}: Error: Unsupported Profession_Lock: {}".format(name, profession_lock))
-            sys.exit(1)
-
-        try:
-            self.char_type = info['Character']
-        except KeyError:
-            self.char_type = None
-
-        try:
-            reward_list = info['Reward']
-        except KeyError:
-            reward_list = []
-        self.reward = [False] * REWARD_MAX
-        if 'Gold' in reward_list:
-            self.reward[REWARD_GOLD] = True
-        if 'Items' in reward_list:
-            self.reward[REWARD_ITEMS] = True
-        if 'Skills' in reward_list:
-            self.reward[REWARD_SKILLS] = True
-        if 'Skill_Points' in reward_list:
-            self.reward[REWARD_POINTS] = True
-        if 'Attribute_Points' in reward_list:
-            self.reward[REWARD_ATTRIB] = True
-        if 'Rank' in reward_list:
-            self.reward[REWARD_RANK] = True
-        if 'Faction' in reward_list:
-            self.reward[REWARD_FACTION] = True
-        if 'Zaishen' in reward_list:
-            self.reward[REWARD_ZAISHEN] = True
-        if 'Heroes' in reward_list:
-            self.reward[REWARD_HEROES] = True
-        if 'Profession' in reward_list:
-            self.reward[REWARD_PROFESSION] = True
-
-    def rewardString(self):
-        conv = ['G' if self.reward[REWARD_GOLD] else ' ',
-                'I' if self.reward[REWARD_ITEMS] else ' ',
-                'S' if self.reward[REWARD_SKILLS] else ' ',
-                'P' if self.reward[REWARD_POINTS] else ' ',
-                'A' if self.reward[REWARD_ATTRIB] else ' ',
-                'R' if self.reward[REWARD_RANK] else ' ',
-                'F' if self.reward[REWARD_FACTION] else ' ',
-                'Z' if self.reward[REWARD_ZAISHEN] else ' ',
-                'H' if self.reward[REWARD_HEROES] else ' ',
-                '2' if self.reward[REWARD_PROFESSION] else ' ']
-        return ''.join(conv)
-
-    def rewardTip(self):
-        conv = []
-        if self.reward[REWARD_GOLD]:
-            conv.append('Gold')
-        if self.reward[REWARD_ITEMS]:
-            conv.append('Items')
-        if self.reward[REWARD_SKILLS]:
-            conv.append('Skills')
-        if self.reward[REWARD_POINTS]:
-            conv.append('Skill Points')
-        if self.reward[REWARD_ATTRIB]:
-            conv.append('Attribute Points')
-        if self.reward[REWARD_RANK]:
-            conv.append('Rank Points')
-        if self.reward[REWARD_FACTION]:
-            conv.append('Faction')
-        if self.reward[REWARD_ZAISHEN]:
-            conv.append('Zaishen Coins')
-        if self.reward[REWARD_HEROES]:
-            conv.append('Heroes')
-        if self.reward[REWARD_PROFESSION]:
-            conv.append('Profession')
-        return ', '.join(conv)
-
-
-class QuestArea:
-    def __init__(self, info, name):
-        self.name = name
-
-        try:
-            self.campaign = info['Campaign']
-        except KeyError:
-            print("{}: Error: No campaign specified".format(name))
-            sys.exit(1)
-
-        try:
-            quest_list = info['Quests']
-        except KeyError:
-            quest_list = None
-
-        self.quests = []
-        if quest_list is not None:
-            for quest in quest_list:
-                self.quests.append(QuestInfo(quest_list[quest], quest))
-        self.quests = sorted(self.quests, key=lambda q: q.name)
 
 
 class AddCharDialog(QtWidgets.QDialog):
@@ -245,7 +91,9 @@ class TrackGui(QtWidgets.QMainWindow):
         self.areaView = QtWidgets.QTreeWidget(split)
         self.areaView.setRootIsDecorated(True)
         self.areaView.setHeaderHidden(True)
-        self.questView = QtWidgets.QTreeWidget(vsplit)
+        self.qlistStack = QtWidgets.QStackedWidget(vsplit)
+
+        self.questView = QtWidgets.QTreeWidget(self.qlistStack)
         self.questView.setRootIsDecorated(False)
         self.questView.setHeaderLabels(["Quest", "Type", "R", "Profession",
                                         "Character", "XP", "Reward", "Status"])
@@ -257,6 +105,7 @@ class TrackGui(QtWidgets.QMainWindow):
         self.questView.setColumnWidth(4, metrics.width("Canthan") + 30)
         self.questView.setColumnWidth(5, metrics.width("50,000") + 10)
         self.questView.setColumnWidth(7, metrics.width("Complete") + 10)
+        self.qlistStack.addWidget(self.questView)
 
         fontSize = self.questView.headerItem().font(0).pointSize()
         if sys.platform == 'darwin':
@@ -269,6 +118,25 @@ class TrackGui(QtWidgets.QMainWindow):
         self.questView.setColumnWidth(6, metrics.width("XXXXXXXXXX") + 10)
         self.questView.header().setSortIndicator(0, QtCore.Qt.AscendingOrder)
         self.questView.setContextMenuPolicy(QtCore.Qt.CustomContextMenu)
+
+        self.missionView = QtWidgets.QTreeWidget(self.qlistStack)
+        self.missionView.setRootIsDecorated(False)
+        self.missionView.setHeaderLabels(["Mission", "Rank Type", "Rank",
+                                          "ZM XP", "ZM Rank", "ZM Coins",
+                                          "Status", "Hard Mode"])
+        metrics = QtGui.QFontMetrics(self.missionView.headerItem().font(0))
+        self.missionView.setColumnWidth(0, 260)
+        self.missionView.setColumnWidth(1, metrics.width("Lightbringer") + 40)
+        self.missionView.setColumnWidth(2, metrics.width("--- (100)") + 10)
+        self.missionView.setColumnWidth(3, metrics.width("ZM XP") + 20)
+        self.missionView.setColumnWidth(4, metrics.width("ZM Rank") + 20)
+        self.missionView.setColumnWidth(5, metrics.width("ZM Coins") + 20)
+        self.missionView.setColumnWidth(6, metrics.width("Standard") + 30)
+        self.missionView.setColumnWidth(7, metrics.width("Standard") + 30)
+        self.qlistStack.addWidget(self.missionView)
+
+        self.missionView.header().setSortIndicator(0, QtCore.Qt.AscendingOrder)
+        self.missionView.setContextMenuPolicy(QtCore.Qt.CustomContextMenu)
 
         wikiPane = QtWidgets.QWidget(vsplit)
         wikiLayout = QtWidgets.QGridLayout(wikiPane)
@@ -292,7 +160,7 @@ class TrackGui(QtWidgets.QMainWindow):
         wikiLayout.addWidget(wikiToolbar, 0, 0)
         wikiLayout.addWidget(wikiFrame, 1, 0)
 
-        vsplit.addWidget(self.questView)
+        vsplit.addWidget(self.qlistStack)
         vsplit.addWidget(wikiPane)
         split.addWidget(self.areaView)
         split.addWidget(vsplit)
@@ -310,7 +178,8 @@ class TrackGui(QtWidgets.QMainWindow):
         self.profSelect = toolbar.addAction("")
         self.prof2Select = toolbar.addAction("")
 
-        self.areas = {}
+        self.questAreas = {}
+        self.missionAreas = {}
         self.currentArea = None
         self.currentChar = None
         self.currentCharIdx = -1
@@ -318,6 +187,8 @@ class TrackGui(QtWidgets.QMainWindow):
         self.areaView.itemSelectionChanged.connect(self.onAreaChange)
         self.questView.itemSelectionChanged.connect(self.onQuestChange)
         self.questView.customContextMenuRequested.connect(self.onQuestMenu)
+        self.missionView.itemSelectionChanged.connect(self.onMissionChange)
+        self.missionView.customContextMenuRequested.connect(self.onMissionMenu)
         self.back.triggered.connect(self.wikiView.back)
         self.fwd.triggered.connect(self.wikiView.forward)
         self.refresh.triggered.connect(self.wikiView.reload)
@@ -342,7 +213,12 @@ class TrackGui(QtWidgets.QMainWindow):
 
             'Tyrian':       QtGui.QIcon("icons/Tyria.png"),
             'Canthan':      QtGui.QIcon("icons/Cantha.png"),
-            'Elonian':      QtGui.QIcon("icons/Elona.png")
+            'Elonian':      QtGui.QIcon("icons/Elona.png"),
+
+            'Kurzick':      QtGui.QIcon("icons/Kurzick.png"),
+            'Luxon':        QtGui.QIcon("icons/Luxon.png"),
+            'Sunspear':     QtGui.QIcon("icons/Sunspear.jpg"),
+            'Lightbringer': QtGui.QIcon("icons/Lightbringer.jpg"),
         }
 
     def closeEvent(self, event):
@@ -350,18 +226,40 @@ class TrackGui(QtWidgets.QMainWindow):
             self.currentChar.close()
 
     def addArea(self, area):
-        self.areas[area.name] = area
+        if isinstance(area, QuestArea):
+            self.questAreas[area.name] = area
 
-        # Find or create the campaign group
-        for idx in range(self.areaView.topLevelItemCount()):
-            if self.areaView.topLevelItem(idx).text(0) == area.campaign:
-                areaGroup = self.areaView.topLevelItem(idx)
-                break
+            # Find or create the campaign group
+            for idx in range(self.areaView.topLevelItemCount()):
+                groupItem = self.areaView.topLevelItem(idx)
+                if groupItem.data(0, QtCore.Qt.UserRole) == TREE_TYPE_CAMPAIGN \
+                        and groupItem.text(0) == area.campaign:
+                    areaGroup = groupItem
+                    break
+            else:
+                areaGroup = QtWidgets.QTreeWidgetItem(self.areaView)
+                areaGroup.setText(0, area.campaign)
+                areaGroup.setData(0, QtCore.Qt.UserRole, TREE_TYPE_CAMPAIGN)
+
+        elif isinstance(area, MissionArea):
+            self.missionAreas[area.name] = area
+
+            for idx in range(self.areaView.topLevelItemCount()):
+                groupItem = self.areaView.topLevelItem(idx)
+                if groupItem.data(0, QtCore.Qt.UserRole) == TREE_TYPE_MISSIONS:
+                    areaGroup = groupItem
+                    break
+            else:
+                areaGroup = QtWidgets.QTreeWidgetItem(self.areaView)
+                areaGroup.setText(0, "Missions")
+                areaGroup.setData(0, QtCore.Qt.UserRole, TREE_TYPE_MISSIONS)
+
         else:
-            areaGroup = QtWidgets.QTreeWidgetItem(self.areaView)
-            areaGroup.setText(0, area.campaign)
+            raise RuntimeError('addArea called with invalid object')
+
         item = QtWidgets.QTreeWidgetItem(areaGroup)
         item.setText(0, area.name)
+        item.setData(0, QtCore.Qt.UserRole, TREE_TYPE_AREA)
 
     def addChar(self, charName, charType, fileName):
         idx = self.charSelect.count() - 2
@@ -371,19 +269,52 @@ class TrackGui(QtWidgets.QMainWindow):
             self.charSelect.insertItem(idx, charName, fileName)
         return idx
 
+    def getCurrentArea(self):
+        currentItem = self.areaView.currentItem()
+        if not currentItem or currentItem.data(0, QtCore.Qt.UserRole) != TREE_TYPE_AREA:
+            return None
+
+        parentItem = currentItem.parent()
+        if parentItem is None:
+            return None
+
+        areaName = currentItem.text(0)
+        try:
+            areaType = currentItem.parent().data(0, QtCore.Qt.UserRole)
+            if areaType == TREE_TYPE_CAMPAIGN:
+                return self.questAreas[areaName]
+            elif areaType == TREE_TYPE_MISSIONS:
+                return self.missionAreas[areaName]
+        except KeyError:
+            return None
+
     def onAreaChange(self):
         self.questView.clear()
-        if not self.areaView.currentItem():
+        self.missionView.clear()
+        self.currentArea = self.getCurrentArea()
+        if self.currentArea is None:
             return
 
+        if isinstance(self.currentArea, QuestArea):
+            self.qlistStack.setCurrentWidget(self.questView)
+            self.loadQuests()
+        elif isinstance(self.currentArea, MissionArea):
+            self.qlistStack.setCurrentWidget(self.missionView)
+            self.loadMissions()
+
+    def formatNum(self, value, hm_value = None):
+        text = '---'
+        if value:
+            text = locale.format("%d", value, grouping=True)
+        if hm_value:
+            text += ' ({})'.format(self.formatNum(hm_value))
+        return text
+
+    def loadQuests(self):
         # Load the quests in the area
-        areaName = self.areaView.currentItem().text(0)
-        if areaName not in self.areas:
-            return
-
         self.questView.setSortingEnabled(False)
-        for idx in range(len(self.areas[areaName].quests)):
-            quest = self.areas[areaName].quests[idx]
+        for idx in range(len(self.currentArea.quests)):
+            quest = self.currentArea.quests[idx]
 
             item = QtWidgets.QTreeWidgetItem(self.questView)
             item.setData(0, QtCore.Qt.UserRole, idx)
@@ -409,10 +340,7 @@ class TrackGui(QtWidgets.QMainWindow):
                 try:
                     item.setIcon(4, self.icons[quest.char_type])
                 except KeyError: pass
-            if quest.xp:
-                item.setText(5, locale.format("%d", quest.xp, grouping=True))
-            else:
-                item.setText(5, "---")
+            item.setText(5, self.formatNum(quest.xp))
             item.setText(6, quest.rewardString())
             item.setStatusTip(6, quest.rewardTip())
             item.setFont(6, self.fixed_font)
@@ -420,22 +348,46 @@ class TrackGui(QtWidgets.QMainWindow):
             item.setTextAlignment(5, QtCore.Qt.AlignRight)
             item.setTextAlignment(7, QtCore.Qt.AlignHCenter)
 
-            self.updateStatus(item)
+            self.updateQuestStatus(item)
 
         self.questView.setSortingEnabled(True)
-        self.currentArea = self.areas[areaName]
 
-    def updateStatus(self, item):
-        if self.currentChar is None:
-            return
+    def loadMissions(self):
+        # Load the missions in the campaign
+        self.missionView.setSortingEnabled(False)
+        for idx in range(len(self.currentArea.missions)):
+            mission = self.currentArea.missions[idx]
 
-        areaName = self.areaView.currentItem().text(0)
-        if areaName not in self.areas:
+            item = QtWidgets.QTreeWidgetItem(self.missionView)
+            item.setData(0, QtCore.Qt.UserRole, idx)
+            item.setText(0, mission.name)
+            item.setText(1, mission.rank_type)
+            try:
+                item.setIcon(1, self.icons[mission.rank_type])
+            except KeyError: pass
+            item.setText(2, self.formatNum(mission.rank, mission.hm_rank))
+            item.setText(3, self.formatNum(mission.z_xp))
+            item.setText(4, self.formatNum(mission.z_rank))
+            item.setText(5, self.formatNum(mission.z_coins))
+
+            item.setTextAlignment(2, QtCore.Qt.AlignRight)
+            item.setTextAlignment(3, QtCore.Qt.AlignRight)
+            item.setTextAlignment(4, QtCore.Qt.AlignRight)
+            item.setTextAlignment(5, QtCore.Qt.AlignRight)
+            item.setTextAlignment(6, QtCore.Qt.AlignHCenter)
+            item.setTextAlignment(7, QtCore.Qt.AlignHCenter)
+
+            self.updateMissionStatus(item)
+
+        self.missionView.setSortingEnabled(True)
+
+    def updateQuestStatus(self, item):
+        if self.currentChar is None or self.currentArea is None:
             return
 
         csr = self.currentChar.cursor()
         csr.execute("SELECT state FROM status WHERE quest_name=?",
-                    ("{}::{}".format(areaName, item.text(0)),))
+                    ("{}::{}".format(self.currentArea.name, item.text(0)),))
         row = csr.fetchone()
         if row:
             item.setText(7, row[0])
@@ -450,12 +402,54 @@ class TrackGui(QtWidgets.QMainWindow):
             else:
                 item.setBackground(7, item.background(0))
 
+    def updateMissionStatus(self, item):
+        if self.currentChar is None or self.currentArea is None:
+            return
+
+        csr = self.currentChar.cursor()
+        csr.execute("SELECT state FROM status WHERE quest_name=?",
+                    ("Mission!{}::{}".format(self.currentArea.name, item.text(0)),))
+        row = csr.fetchone()
+        if row:
+            item.setText(6, row[0])
+            if row[0] == 'Master':
+                item.setBackground(6, QtGui.QColor(0xC0, 0xE0, 0xC0))
+            elif row[0] == 'Expert':
+                item.setBackground(6, QtGui.QColor(0xFF, 0xE0, 0xC0))
+            elif row[0] == 'Standard':
+                item.setBackground(6, QtGui.QColor(0xFF, 0xFF, 0xC0))
+            else:
+                item.setBackground(6, item.background(0))
+
+        csr = self.currentChar.cursor()
+        csr.execute("SELECT state FROM status WHERE quest_name=?",
+                    ("Mission_HM!{}::{}".format(self.currentArea.name, item.text(0)),))
+        row = csr.fetchone()
+        if row:
+            item.setText(7, row[0])
+            if row[0] == 'Master':
+                item.setBackground(7, QtGui.QColor(0xC0, 0xE0, 0xC0))
+            elif row[0] == 'Expert':
+                item.setBackground(7, QtGui.QColor(0xFF, 0xE0, 0xC0))
+            elif row[0] == 'Standard':
+                item.setBackground(7, QtGui.QColor(0xFF, 0xFF, 0xC0))
+            else:
+                item.setBackground(7, item.background(0))
+
     def onQuestChange(self):
         if not self.questView.currentItem() or not self.currentArea:
             return
 
         idx = int(self.questView.currentItem().data(0, QtCore.Qt.UserRole))
         url = QtCore.QUrl.fromEncoded(bytes(WIKI_URL + self.currentArea.quests[idx].wiki, 'utf-8'))
+        self.wikiView.load(url)
+
+    def onMissionChange(self):
+        if not self.missionView.currentItem() or not self.currentArea:
+            return
+
+        idx = int(self.missionView.currentItem().data(0, QtCore.Qt.UserRole))
+        url = QtCore.QUrl.fromEncoded(bytes(WIKI_URL + self.currentArea.missions[idx].wiki, 'utf-8'))
         self.wikiView.load(url)
 
     def onUrlChanged(self, url):
@@ -546,13 +540,10 @@ class TrackGui(QtWidgets.QMainWindow):
 
     def onQuestMenu(self, pos):
         item = self.questView.itemAt(pos)
-        if item is None or self.currentChar is None:
+        if item is None or self.currentChar is None or self.currentArea is None:
             return
 
-        areaName = self.areaView.currentItem().text(0)
-        if areaName not in self.areas:
-            return
-        questName = "%s::%s" % (areaName, item.text(0))
+        questName = "{}::{}".format(self.currentArea.name, item.text(0))
 
         menu = QtWidgets.QMenu()
         noState = menu.addAction("(Clear)")
@@ -562,33 +553,73 @@ class TrackGui(QtWidgets.QMainWindow):
         naState = menu.addAction("N/A")
         action = menu.exec_(self.questView.viewport().mapToGlobal(pos))
 
-        if action == noState:
+        def updateQuestState(state):
             csr = self.currentChar.cursor()
             csr.execute("REPLACE INTO status (quest_name, state) VALUES (?, ?)",
-                        (questName, ""))
-            self.currentChar.commit()
-        elif action == activeState:
-            csr = self.currentChar.cursor()
-            csr.execute("REPLACE INTO status (quest_name, state) VALUES (?, ?)",
-                        (questName, "Active"))
-            self.currentChar.commit()
-        elif action == completeState:
-            csr = self.currentChar.cursor()
-            csr.execute("REPLACE INTO status (quest_name, state) VALUES (?, ?)",
-                        (questName, "Complete"))
-            self.currentChar.commit()
-        elif action == doneState:
-            csr = self.currentChar.cursor()
-            csr.execute("REPLACE INTO status (quest_name, state) VALUES (?, ?)",
-                        (questName, "Done"))
-            self.currentChar.commit()
-        elif action == naState:
-            csr = self.currentChar.cursor()
-            csr.execute("REPLACE INTO status (quest_name, state) VALUES (?, ?)",
-                        (questName, "N/A"))
+                        (questName, state))
             self.currentChar.commit()
 
-        self.updateStatus(item)
+        if action == noState:
+            updateQuestState("")
+        elif action == activeState:
+            updateQuestState("Active")
+        elif action == completeState:
+            updateQuestState("Complete")
+        elif action == doneState:
+            updateQuestState("Done")
+        elif action == naState:
+            updateQuestState("N/A")
+
+        self.updateQuestStatus(item)
+
+    def onMissionMenu(self, pos):
+        item = self.missionView.itemAt(pos)
+        if item is None or self.currentChar is None or self.currentArea is None:
+            return
+
+        missionName = "Mission!{}::{}".format(self.currentArea.name, item.text(0))
+        missionHMName = "Mission_HM!{}::{}".format(self.currentArea.name, item.text(0))
+
+        menu = QtWidgets.QMenu()
+        header = menu.addAction("Normal Mode")
+        header.setEnabled(False)
+        nmClearState = menu.addAction("(Clear)")
+        nmStandardState = menu.addAction("Standard")
+        nmExpertState = menu.addAction("Expert")
+        nmMasterState = menu.addAction("Master")
+        menu.addSeparator()
+        header = menu.addAction("Hard Mode")
+        header.setEnabled(False)
+        hmClearState = menu.addAction("(Clear)")
+        hmStandardState = menu.addAction("Standard")
+        hmExpertState = menu.addAction("Expert")
+        hmMasterState = menu.addAction("Master")
+        action = menu.exec_(self.questView.viewport().mapToGlobal(pos))
+
+        def updateMissionState(state, hm):
+            csr = self.currentChar.cursor()
+            csr.execute("REPLACE INTO status (quest_name, state) VALUES (?, ?)",
+                        (missionHMName if hm else missionName, state))
+            self.currentChar.commit()
+
+        if action == nmClearState:
+            updateMissionState("", False)
+        elif action == nmStandardState:
+            updateMissionState("Standard", False)
+        elif action == nmExpertState:
+            updateMissionState("Expert", False)
+        elif action == nmMasterState:
+            updateMissionState("Master", False)
+        elif action == hmClearState:
+            updateMissionState("", True)
+        elif action == hmStandardState:
+            updateMissionState("Standard", True)
+        elif action == hmExpertState:
+            updateMissionState("Expert", True)
+        elif action == hmMasterState:
+            updateMissionState("Master", True)
+
+        self.updateMissionStatus(item)
 
 
 if __name__ == '__main__':
@@ -602,15 +633,27 @@ if __name__ == '__main__':
         if not quest.endswith('.yaml'):
             continue
 
-        qf = open('quests/' + quest, 'rb')
-        info = yaml.load(qf)
+        with open('quests/' + quest, 'rb') as qf:
+            info = yaml.load(qf)
         if 'Name' in info:
             area_name = info['Name']
         else:
-            area_name = quest
+            area_name = quest.replace('.yaml', '')
         gui.addArea(QuestArea(info, area_name))
-        qf.close()
     gui.areaView.sortItems(0, QtCore.Qt.AscendingOrder)
+
+    missionList = os.listdir('missions')
+    for mission in missionList:
+        if not mission.endswith('.yaml'):
+            continue
+
+        with open('missions/' + mission, 'rb') as mf:
+            info = yaml.load(mf)
+        if 'Name' in info:
+            area_name = info['Name']
+        else:
+            area_name = mission.replace('.yaml', '')
+        gui.addArea(MissionArea(info, area_name))
 
     if not os.path.exists(DATA_BASE):
         os.mkdir(DATA_BASE)

@@ -1,0 +1,69 @@
+Name: Factions
+Missions:
+    "Minister Cho's Estate":
+        Z_XP: 1000
+        Z_Coins: 74
+    Zen Daijun:
+        Z_XP: 1000
+        Z_Coins: 74
+    Vizunah Square (Local Quarter):
+        Wiki: Vizunah_Square
+        Z_XP: 3000
+        Z_Coins: 100
+    Vizunah Square (Foreign Quarter):
+        Wiki: Vizunah_Square
+        Z_XP: 3000
+        Z_Coins: 100
+    Nahpui Quarter:
+        Z_XP: 3000
+        Z_Coins: 100
+    Tahnnakai Temple:
+        Z_XP: 3000
+        Z_Coins: 100
+    Arborstone:
+        Type: Kurzick
+        Rank: 1000
+        Z_XP: 5000
+        Z_Rank: 2500
+        Z_Coins: 150
+    Boreas Seabed:
+        Type: Luxon
+        Rank: 1000
+        Z_XP: 5000
+        Z_Rank: 2500
+        Z_Coins: 150
+    Sunjiang District:
+        Z_XP: 5000
+        Z_Coins: 150
+    Gyala Hatchery:
+        Type: Luxon
+        Rank: 1000
+        Z_XP: 5000
+        Z_Rank: 2500
+        Z_Coins: 150
+    The Eternal Grove:
+        Type: Kurzick
+        Rank: 1000
+        Z_XP: 5000
+        Z_Rank: 2500
+        Z_Coins: 150
+    Unwaking Waters (Kurzick):
+        Wiki: Unwaking_Waters
+        Type: Kurzick
+        Rank: 1000
+        Z_XP: 5000
+        Z_Rank: 2500
+        Z_Coins: 150
+    Unwaking Waters (Luxon):
+        Wiki: Unwaking_Waters
+        Type: Luxon
+        Rank: 1000
+        Z_XP: 5000
+        Z_Rank: 2500
+        Z_Coins: 150
+    Raisu Palace:
+        Z_XP: 5000
+        Z_Coins: 150
+    Imperial Sanctum:
+        Z_XP: 5000
+        Z_Coins: 150

@@ -9,6 +9,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets, QtWebEngineWidgets
 
 from gwdata.quests import QuestArea
 from gwdata.missions import MissionArea
+from gwdata.skills import SkillArea
 from gwdata.consts import *
 
 HOME_BASE = os.getenv('USERPROFILE') or os.getenv('HOME')
@@ -79,7 +80,7 @@ class AddCharDialog(QtWidgets.QDialog):
 class TrackGui(QtWidgets.QMainWindow):
     def __init__(self):
         QtWidgets.QMainWindow.__init__(self)
-        self.setWindowTitle("Guild Wars Quest Tracker")
+        self.setWindowTitle("Guild Wars Progress Tracker")
 
         base = QtWidgets.QWidget(self)
         layout = QtWidgets.QGridLayout(base)
@@ -138,6 +139,20 @@ class TrackGui(QtWidgets.QMainWindow):
         self.missionView.header().setSortIndicator(0, QtCore.Qt.AscendingOrder)
         self.missionView.setContextMenuPolicy(QtCore.Qt.CustomContextMenu)
 
+        self.skillView = QtWidgets.QTreeWidget(self.qlistStack)
+        self.skillView.setRootIsDecorated(False)
+        self.skillView.setHeaderLabels(["Elite Skill", "Profession", "Attribute",
+                                        "Status"])
+        metrics = QtGui.QFontMetrics(self.skillView.headerItem().font(0))
+        self.skillView.setColumnWidth(0, 300)
+        self.skillView.setColumnWidth(1, metrics.width("Necromancer") + 40)
+        self.skillView.setColumnWidth(2, metrics.width("Wilderness Survival") + 20)
+        self.skillView.setColumnWidth(3, metrics.width("Unlocked") + 30)
+        self.qlistStack.addWidget(self.skillView)
+
+        self.skillView.header().setSortIndicator(0, QtCore.Qt.AscendingOrder)
+        self.skillView.setContextMenuPolicy(QtCore.Qt.CustomContextMenu)
+
         wikiPane = QtWidgets.QWidget(vsplit)
         wikiLayout = QtWidgets.QGridLayout(wikiPane)
         wikiLayout.setContentsMargins(0, 0, 0, 0)
@@ -180,6 +195,7 @@ class TrackGui(QtWidgets.QMainWindow):
 
         self.questAreas = {}
         self.missionAreas = {}
+        self.skillAreas = {}
         self.currentArea = None
         self.currentChar = None
         self.currentCharIdx = -1
@@ -189,6 +205,8 @@ class TrackGui(QtWidgets.QMainWindow):
         self.questView.customContextMenuRequested.connect(self.onQuestMenu)
         self.missionView.itemSelectionChanged.connect(self.onMissionChange)
         self.missionView.customContextMenuRequested.connect(self.onMissionMenu)
+        self.skillView.itemSelectionChanged.connect(self.onSkillChange)
+        self.skillView.customContextMenuRequested.connect(self.onSkillMenu)
         self.back.triggered.connect(self.wikiView.back)
         self.fwd.triggered.connect(self.wikiView.forward)
         self.refresh.triggered.connect(self.wikiView.reload)
@@ -254,6 +272,19 @@ class TrackGui(QtWidgets.QMainWindow):
                 areaGroup.setText(0, "Missions")
                 areaGroup.setData(0, QtCore.Qt.UserRole, TREE_TYPE_MISSIONS)
 
+        elif isinstance(area, SkillArea):
+            self.skillAreas[area.name] = area
+
+            for idx in range(self.areaView.topLevelItemCount()):
+                groupItem = self.areaView.topLevelItem(idx)
+                if groupItem.data(0, QtCore.Qt.UserRole) == TREE_TYPE_SKILLS:
+                    areaGroup = groupItem
+                    break
+            else:
+                areaGroup = QtWidgets.QTreeWidgetItem(self.areaView)
+                areaGroup.setText(0, "Skill Hunter")
+                areaGroup.setData(0, QtCore.Qt.UserRole, TREE_TYPE_SKILLS)
+
         else:
             raise RuntimeError('addArea called with invalid object')
 
@@ -285,6 +316,8 @@ class TrackGui(QtWidgets.QMainWindow):
                 return self.questAreas[areaName]
             elif areaType == TREE_TYPE_MISSIONS:
                 return self.missionAreas[areaName]
+            elif areaType == TREE_TYPE_SKILLS:
+                return self.skillAreas[areaName]
         except KeyError:
             return None
 
@@ -301,6 +334,9 @@ class TrackGui(QtWidgets.QMainWindow):
         elif isinstance(self.currentArea, MissionArea):
             self.qlistStack.setCurrentWidget(self.missionView)
             self.loadMissions()
+        elif isinstance(self.currentArea, SkillArea):
+            self.qlistStack.setCurrentWidget(self.skillView)
+            self.loadSkills()
 
     def formatNum(self, value, hm_value = None):
         text = '---'
@@ -381,6 +417,34 @@ class TrackGui(QtWidgets.QMainWindow):
 
         self.missionView.setSortingEnabled(True)
 
+    def loadSkills(self):
+        # Load the skills in the campaign
+        self.skillView.setSortingEnabled(False)
+        for idx in range(len(self.currentArea.skills)):
+            skill = self.currentArea.skills[idx]
+
+            item = QtWidgets.QTreeWidgetItem(self.skillView)
+            item.setData(0, QtCore.Qt.UserRole, idx)
+            item.setText(0, skill.name)
+            if skill.profession is not None:
+                item.setText(1, skill.profession)
+                try:
+                    item.setIcon(1, self.icons[skill.profession])
+                except KeyError: pass
+            else:
+                item.setText(1, '---')
+            if skill.attribute is not None:
+                item.setText(2, skill.attribute)
+            else:
+                item.setText(2, '---')
+
+            item.setTextAlignment(3, QtCore.Qt.AlignHCenter)
+
+            self.updateSkillStatus(item)
+
+        self.skillView.setSortingEnabled(True)
+
+
     def updateQuestStatus(self, item):
         if self.currentChar is None or self.currentArea is None:
             return
@@ -436,6 +500,23 @@ class TrackGui(QtWidgets.QMainWindow):
             else:
                 item.setBackground(7, item.background(0))
 
+    def updateSkillStatus(self, item):
+        if self.currentChar is None or self.currentArea is None:
+            return
+
+        csr = self.currentChar.cursor()
+        csr.execute("SELECT state FROM status WHERE quest_name=?",
+                    ("Skill!{}::{}".format(self.currentArea.name, item.text(0)),))
+        row = csr.fetchone()
+        if row:
+            item.setText(6, row[0])
+            if row[0] == 'Known':
+                item.setBackground(6, QtGui.QColor(0xC0, 0xE0, 0xC0))
+            elif row[0] == 'Unlocked':
+                item.setBackground(6, QtGui.QColor(0xC0, 0xE0, 0xFF))
+            else:
+                item.setBackground(6, item.background(0))
+
     def onQuestChange(self):
         if not self.questView.currentItem() or not self.currentArea:
             return
@@ -450,6 +531,14 @@ class TrackGui(QtWidgets.QMainWindow):
 
         idx = int(self.missionView.currentItem().data(0, QtCore.Qt.UserRole))
         url = QtCore.QUrl.fromEncoded(bytes(WIKI_URL + self.currentArea.missions[idx].wiki, 'utf-8'))
+        self.wikiView.load(url)
+
+    def onSkillChange(self):
+        if not self.skillView.currentItem() or not self.currentArea:
+            return
+
+        idx = int(self.skillView.currentItem().data(0, QtCore.Qt.UserRole))
+        url = QtCore.QUrl.fromEncoded(bytes(WIKI_URL + self.currentArea.skills[idx].wiki, 'utf-8'))
         self.wikiView.load(url)
 
     def onUrlChanged(self, url):
@@ -621,6 +710,34 @@ class TrackGui(QtWidgets.QMainWindow):
 
         self.updateMissionStatus(item)
 
+    def onSkillMenu(self, pos):
+        item = self.skillView.itemAt(pos)
+        if item is None or self.currentChar is None or self.currentArea is None:
+            return
+
+        skillName = "Skill!{}::{}".format(self.currentArea.name, item.text(0))
+
+        menu = QtWidgets.QMenu()
+        noState = menu.addAction("(Clear)")
+        unlockedState = menu.addAction("Unlocked")
+        knownState = menu.addAction("Known")
+        action = menu.exec_(self.questView.viewport().mapToGlobal(pos))
+
+        def updateSkillState(state):
+            csr = self.currentChar.cursor()
+            csr.execute("REPLACE INTO status (quest_name, state) VALUES (?, ?)",
+                        (skillName, state))
+            self.currentChar.commit()
+
+        if action == noState:
+            updateSkillState("")
+        elif action == unlockedState:
+            updateSkillState("Unlocked")
+        elif action == knownState:
+            updateSkillState("Known")
+
+        self.updateQuestStatus(item)
+
 
 if __name__ == '__main__':
     locale.setlocale(locale.LC_ALL, '')
@@ -654,6 +771,19 @@ if __name__ == '__main__':
         else:
             area_name = mission.replace('.yaml', '')
         gui.addArea(MissionArea(info, area_name))
+
+    skillList = os.listdir('skills')
+    for skill in skillList:
+        if not skill.endswith('.yaml'):
+            continue
+
+        with open('skills/' + skill, 'rb') as sf:
+            info = yaml.load(sf)
+        if 'Name' in info:
+            area_name = info['Name']
+        else:
+            area_name = skill.replace('.yaml', '')
+        gui.addArea(SkillArea(info, area_name))
 
     if not os.path.exists(DATA_BASE):
         os.mkdir(DATA_BASE)

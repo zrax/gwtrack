@@ -1,0 +1,180 @@
+Name: Prophecies
+Skills:
+    "Bull's Charge":
+        Profession: Warrior
+        Attribute: Strength
+    Panic:
+        Profession: Mesmer
+        Attribute: Domination Magic
+    Peace and Harmony:
+        Profession: Monk
+        Attribute: Divine Favor
+    Fevered Dreams:
+        Profession: Mesmer
+        Attribute: Illusion Magic
+    Illusionary Weaponry:
+        Profession: Mesmer
+        Attribute: Illusion Magic
+    Ineptitude:
+        Profession: Mesmer
+        Attribute: Illusion Magic
+    Migraine:
+        Profession: Mesmer
+        Attribute: Illusion Magic
+    Keystone Signet:
+        Profession: Mesmer
+        Attribute: Fast Casting
+    Mantra of Recall:
+        Profession: Mesmer
+        Attribute: Inspiration Magic
+    Earth Shaker:
+        Profession: Warrior
+        Attribute: Hammer Mastery
+    Ward Against Harm:
+        Profession: Elementalist
+        Attribute: Water Magic
+    Signet of Midnight:
+        Profession: Mesmer
+    Life Transfer:
+        Profession: Necromancer
+        Attribute: Blood Magic
+    Order of the Vampire:
+        Profession: Necromancer
+        Attribute: Blood Magic
+    Soul Leech:
+        Profession: Necromancer
+        Attribute: Blood Magic
+    Glimmering Mark:
+        Profession: Elementalist
+        Attribute: Air Magic
+    Dwarven Battle Stance:
+        Profession: Warrior
+        Attribute: Strength
+    Mind Shock:
+        Profession: Elementalist
+        Attribute: Air Magic
+    Thunderclap:
+        Profession: Elementalist
+        Attribute: Air Magic
+    Punishing Shot:
+        Profession: Ranger
+        Attribute: Marksmanship
+    Aura of Faith:
+        Profession: Monk
+        Attribute: Protection Prayers
+    Life Barrier:
+        Profession: Monk
+        Attribute: Protection Prayers
+    Unyielding Aura:
+        Profession: Monk
+        Attribute: Divine Favor
+    Wither:
+        Profession: Necromancer
+        Attribute: Curses
+    Eviscerate:
+        Profession: Warrior
+        Attribute: Axe Mastery
+    Defy Pain:
+        Profession: Warrior
+        Attribute: Strength
+    Flourish:
+        Profession: Warrior
+        Attribute: Strength
+    "Gladiator's Defense":
+        Profession: Warrior
+        Attribute: Tactics
+    Skull Crack:
+        Profession: Warrior
+    Practiced Stance:
+        Profession: Ranger
+        Attribute: Expertise
+    Incendiary Arrows:
+        Profession: Ranger
+        Attribute: Wilderness Survival
+    "Melandru's Arrows":
+        Profession: Ranger
+        Attribute: Wilderness Survival
+    Greater Conflagration:
+        Profession: Ranger
+        Attribute: Wilderness Survival
+    Melandru's Resilience:
+        Profession: Ranger
+        Attribute: Wilderness Survival
+    Mark of Protection:
+        Profession: Monk
+        Attribute: Protection Prayers
+    Restore Condition:
+        Profession: Monk
+        Attribute: Protection Prayers
+    Shield of Judgment:
+        Profession: Monk
+        Attribute: Smiting Prayers
+    Virulence:
+        Profession: Necromancer
+        Attribute: Death Magic
+    Ether Renewal:
+        Profession: Elementalist
+        Attribute: Energy Storage
+    Water Trident:
+        Profession: Elementalist
+        Attribute: Water Magic
+    Glyph of Energy:
+        Profession: Elementalist
+        Attribute: Energy Storage
+    Mist Form:
+        Profession: Elementalist
+        Attribute: Water Magic
+    Glyph of Renewal:
+        Profession: Elementalist
+    Spiteful Spirit:
+        Profession: Necromancer
+        Attribute: Curses
+    Power Block:
+        Profession: Mesmer
+        Attribute: Domination Magic
+    Offering of Blood:
+        Profession: Necromancer
+        Attribute: Blood Magic
+    Healing Hands:
+        Profession: Monk
+        Attribute: Healing Prayers
+    Amity:
+        Profession: Monk
+        Attribute: Protection Prayers
+    Shield of Deflection:
+        Profession: Monk
+        Attribute: Protection Prayers
+    Ether Prodigy:
+        Profession: Elementalist
+        Attribute: Energy Storage
+    "Marksman's Wager":
+        Profession: Ranger
+        Attribute: Expertise
+    Backbreaker:
+        Profession: Warrior
+        Attribute: Hammer Mastery
+    Aura of the Lich:
+        Profession: Necromancer
+        Attribute: Death Magic
+    "Warrior's Endurance":
+        Profession: Warrior
+        Attribute: Strength
+    Well of Power:
+        Profession: Necromancer
+        Attribute: Blood Magic
+    Feast of Corruption:
+        Profession: Necromancer
+        Attribute: Curses
+    "Victory is Mine!":
+        Wiki: "%22Victory_Is_Mine%21%22"
+        Profession: Warrior
+        Attribute: Tactics
+    Poison Arrow:
+        Profession: Ranger
+        Attribute: Wilderness Survival
+    Crippling Shot:
+        Profession: Ranger
+        Attribute: Marksmanship
+    Oath Shot:
+        Profession: Ranger
+        Attribute: Expertise

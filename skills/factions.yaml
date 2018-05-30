@@ -1,0 +1,267 @@
+Name: Factions
+Skills:
+    Expel Hexes:
+        Profession: Mesmer
+    Shatter Storm:
+        Profession: Mesmer
+    Healing Burst:
+        Profession: Monk
+        Attribute: Healing Prayers
+    "Cultist's Fervor":
+        Profession: Necromancer
+        Attribute: Blood Magic
+    Spoil Victor:
+        Profession: Necromancer
+        Attribute: Blood Magic
+    Gust:
+        Profession: Elementalist
+        Attribute: Air Magic
+    Empathic Removal:
+        Profession: Monk
+    Life Sheath:
+        Profession: Monk
+        Attribute: Protection Prayers
+    Heal as One:
+        Profession: Ranger
+        Attribute: Beast Mastery
+    Boon Signet:
+        Profession: Monk
+        Attribute: Divine Favor
+    Lacerate:
+        Profession: Ranger
+        Attribute: Beast Mastery
+    Blessed Light:
+        Profession: Monk
+        Attribute: Divine Favor
+    Withdraw Hexes:
+        Profession: Monk
+        Attribute: Divine Favor
+    Healing Light:
+        Profession: Monk
+        Attribute: Healing Prayers
+    Shockwave:
+        Profession: Elementalist
+        Attribute: Earth Magic
+    Grasping Was Kuurong:
+        Profession: Ritualist
+        Attribute: Channeling Magic
+    Quivering Blade:
+        Profession: Warrior
+        Attribute: Swordsmanship
+    Consume Soul:
+        Profession: Ritualist
+        Attribute: Spawning Power
+    Forceful Blow:
+        Profession: Warrior
+        Attribute: Hammer Mastery
+    "Coward!":
+        Wiki: "%22Coward%21%22"
+        Profession: Warrior
+    Famine:
+        Profession: Ranger
+        Attribute: Wilderness Survival
+    Order of Apostasy:
+        Profession: Necromancer
+        Attribute: Curses
+    "Trapper's Focus":
+        Profession: Ranger
+        Attribute: Expertise
+    Discord:
+        Profession: Necromancer
+        Attribute: Death Magic
+    Second Wind:
+        Profession: Elementalist
+    Shatterstone:
+        Profession: Elementalist
+        Attribute: Water Magic
+    Energy Boon:
+        Profession: Elementalist
+        Attribute: Energy Storage
+    Shadow Shroud:
+        Profession: Assassin
+        Attribute: Shadow Arts
+    Unsteady Ground:
+        Profession: Elementalist
+        Attribute: Earth Magic
+    "Melandru's Shot":
+        Profession: Ranger
+        Attribute: Marksmanship
+    Palm Strike:
+        Profession: Assassin
+        Attribute: Critical Strikes
+    Seeping Wound:
+        Profession: Assassin
+        Attribute: Critical Strikes
+    Shove:
+        Profession: Warrior
+        Attribute: Tactics
+    Spirit Channeling:
+        Profession: Ritualist
+        Attribute: Spawning Power
+    Dark Apostasy:
+        Profession: Assassin
+        Attribute: Critical Strikes
+    "Assassin's Promise":
+        Profession: Assassin
+        Attribute: Deadly Arts
+    Siphon Strength:
+        Profession: Assassin
+        Attribute: Deadly Arts
+    Whirling Axe:
+        Profession: Warrior
+        Attribute: Axe Mastery
+    Enraged Smash:
+        Profession: Warrior
+        Attribute: Hammer Mastery
+    Enraged Lunge:
+        Profession: Ranger
+        Attribute: Beast Mastery
+    Broad Head Arrow:
+        Profession: Ranger
+        Attribute: Marksmanship
+    Equinox:
+        Profession: Ranger
+        Attribute: Wilderness Survival
+    Star Burst:
+        Profession: Elementalist
+        Attribute: Fire Magic
+    "Locust's Fury":
+        Profession: Assassin
+        Attribute: Critical Strikes
+    Moebius Strike:
+        Profession: Assassin
+        Attribute: Dagger Mastery
+    Temple Strike:
+        Profession: Assassin
+        Attribute: Dagger Mastery
+    Shroud of Silence:
+        Profession: Assassin
+        Attribute: Deadly Arts
+    Clamor of Souls:
+        Profession: Ritualist
+        Attribute: Channeling Magic
+    Attuned Was Songkai:
+        Profession: Ritualist
+        Attribute: Spawning Power
+    Signet of Spirits:
+        Profession: Ritualist
+        Attribute: Channeling Magic
+    Wanderlust:
+        Profession: Ritualist
+        Attribute: Communing
+    Weapon of Quickening:
+        Profession: Ritualist
+        Attribute: Communing
+    Preservation:
+        Profession: Ritualist
+        Attribute: Restoration Magic
+    Tranquil Was Tanasen:
+        Profession: Ritualist
+        Attribute: Restoration Magic
+    Vengeful Was Khanhei:
+        Profession: Ritualist
+        Attribute: Restoration Magic
+    Ritual Lord:
+        Profession: Ritualist
+        Attribute: Spawning Power
+    Soul Twisting:
+        Profession: Ritualist
+        Attribute: Spawning Power
+    Double Dragon:
+        Profession: Elementalist
+        Attribute: Fire Magic
+    Air of Enchantment:
+        Profession: Monk
+        Attribute: Protection Prayers
+    Wail of Doom:
+        Profession: Necromancer
+        Attribute: Soul Reaping
+    Mirror of Ice:
+        Profession: Elementalist
+        Attribute: Water Magic
+    Defiant Was Xinrae:
+        Profession: Ritualist
+        Attribute: Restoration Magic
+    Way of the Empty Palm:
+        Profession: Assassin
+        Attribute: Deadly Arts
+    Beguiling Haze:
+        Profession: Assassin
+        Attribute: Shadow Arts
+    Aura of Displacement:
+        Profession: Assassin
+    Ride the Lightning:
+        Profession: Elementalist
+        Attribute: Air Magic
+    "Archer's Signet":
+        Profession: Ranger
+        Attribute: Expertise
+    Glass Arrows:
+        Profession: Ranger
+        Attribute: Expertise
+    Animate Flesh Golem:
+        Profession: Necromancer
+        Attribute: Death Magic
+    Dragon Slash:
+        Profession: Warrior
+        Attribute: Swordsmanship
+    Triple Chop:
+        Profession: Warrior
+        Attribute: Axe Mastery
+    Vampiric Spirit:
+        Profession: Necromancer
+        Attribute: Blood Magic
+    Icy Veins:
+        Profession: Necromancer
+        Attribute: Soul Reaping
+    Spirit Light Weapon:
+        Profession: Ritualist
+        Attribute: Restoration Magic
+    Flashing Blades:
+        Profession: Assassin
+        Attribute: Dagger Mastery
+    Word of Censure:
+        Profession: Monk
+        Attribute: Smiting Prayers
+    Weaken Knees:
+        Profession: Necromancer
+        Attribute: Curses
+    Auspicious Parry:
+        Profession: Warrior
+        Attribute: Tactics
+    Soul Bind:
+        Profession: Necromancer
+        Attribute: Curses
+    Psychic Instability:
+        Profession: Mesmer
+        Attribute: Fast Casting
+    Psychic Distraction:
+        Profession: Mesmer
+        Attribute: Domination Magic
+    Arcane Languor:
+        Profession: Mesmer
+        Attribute: Fast Casting
+    Stolen Speed:
+        Profession: Mesmer
+        Attribute: Fast Casting
+    Shared Burden:
+        Profession: Mesmer
+        Attribute: Illusion Magic
+    Recurring Insecurity:
+        Profession: Mesmer
+        Attribute: Illusion Magic
+    "Lyssa's Aura":
+        Profession: Mesmer
+        Attribute: Inspiration Magic
+    Power Leech:
+        Profession: Mesmer
+        Attribute: Inspiration Magic
+    Ray of Judgment:
+        Profession: Monk
+        Attribute: Smiting Prayers
+    Shadow Form:
+        Profession: Assassin
+        Attribute: Shadow Arts
+    Primal Rage:
+        Profession: Warrior
+        Attribute: Strength

@@ -1,0 +1,329 @@
+Name: Nightfall
+Skills:
+    Tease:
+        Profession: Mesmer
+        Attribute: Inspiration Magic
+    Invoke Lightning:
+        Profession: Elementalist
+        Attribute: Air Magic
+    Ravenous Gaze:
+        Profession: Necromancer
+        Attribute: Blood Magic
+    "Reaper's Mark":
+        Profession: Necromancer
+        Attribute: Soul Reaping
+    Signet of Suffering:
+        Profession: Necromancer
+        Attribute: Blood Magic
+    Anthem of Fury:
+        Profession: Paragon
+        Attribute: Leadership
+    Signet of Removal:
+        Profession: Monk
+    Light of Deliverance:
+        Profession: Monk
+        Attribute: Healing Prayers
+    "Spirit's Strength":
+        Profession: Ritualist
+        Attribute: Spawning Power
+    Decapitate:
+        Profession: Warrior
+        Attribute: Axe Mastery
+    Headbutt:
+        Profession: Warrior
+        Attribute: Strength
+    Crippling Slash:
+        Profession: Warrior
+        Attribute: Swordsmanship
+    Quicksand:
+        Profession: Ranger
+        Attribute: Wilderness Survival
+    Pain of Disenchantment:
+        Profession: Necromancer
+        Attribute: Curses
+    Order of Undeath:
+        Profession: Necromancer
+        Attribute: Death Magic
+    Stone Sheath:
+        Profession: Elementalist
+        Attribute: Earth Magic
+    Depravity:
+        Profession: Necromancer
+        Attribute: Curses
+    Toxic Chill:
+        Profession: Necromancer
+        Attribute: Death Magic
+    Sandstorm:
+        Profession: Elementalist
+        Attribute: Earth Magic
+    Ether Prism:
+        Profession: Elementalist
+        Attribute: Energy Storage
+    Jagged Bones:
+        Profession: Necromancer
+        Attribute: Death Magic
+    Mind Blast:
+        Profession: Elementalist
+        Attribute: Fire Magic
+    Divert Hexes:
+        Profession: Monk
+        Attribute: Protection Prayers
+    "Defender's Zeal":
+        Profession: Monk
+        Attribute: Smiting Prayers
+    Shattering Assault:
+        Profession: Assassin
+        Attribute: Critical Strikes
+    Corrupt Enchantment:
+        Profession: Necromancer
+        Attribute: Curses
+    Hidden Caltrops:
+        Profession: Assassin
+        Attribute: Shadow Arts
+    Anthem of Guidance:
+        Profession: Paragon
+        Attribute: Command
+    Crippling Anthem:
+        Profession: Paragon
+        Attribute: Command
+    "The Power Is Yours!":
+        Wiki: "%22The_Power_Is_Yours%21%22"
+        Profession: Paragon
+        Attribute: Motivation
+    Magehunter Strike:
+        Profession: Warrior
+        Attribute: Strength
+    Mark of Insecurity:
+        Profession: Assassin
+        Attribute: Deadly Arts
+    Prepared Shot:
+        Profession: Ranger
+        Attribute: Marksmanship
+    Magebane Shot:
+        Profession: Ranger
+    Rampage as One:
+        Profession: Ranger
+        Attribute: Beast Mastery
+    Savannah Heat:
+        Profession: Elementalist
+        Attribute: Fire Magic
+    Smoke Trap:
+        Profession: Ranger
+        Attribute: Wilderness Survival
+    "Soldier's Fury":
+        Profession: Paragon
+        Attribute: Leadership
+    Song of Purification:
+        Profession: Paragon
+        Attribute: Motivation
+    Strike as One:
+        Profession: Ranger
+        Attribute: Beast Mastery
+    Stunning Strike:
+        Profession: Paragon
+        Attribute: Spear Mastery
+    "Magehunter's Smash":
+        Profession: Warrior
+        Attribute: Hammer Mastery
+    Charging Strike:
+        Profession: Warrior
+        Attribute: Strength
+    Burning Arrow:
+        Profession: Ranger
+        Attribute: Marksmanship
+    Searing Flames:
+        Profession: Elementalist
+        Attribute: Fire Magic
+    "Fox's Promise":
+        Profession: Assassin
+        Attribute: Dagger Mastery
+    Way of the Assassin:
+        Profession: Assassin
+        Attribute: Critical Strikes
+    "Caretaker's Charge":
+        Profession: Ritualist
+        Attribute: Channeling Magic
+    Weapon of Fury:
+        Profession: Ritualist
+        Attribute: Channeling Magic
+    "Wielder's Zeal":
+        Profession: Ritualist
+        Attribute: Spawning Power
+    Angelic Bond:
+        Profession: Paragon
+        Attribute: Leadership
+    Defensive Anthem:
+        Profession: Paragon
+        Attribute: Leadership
+    Cruel Spear:
+        Profession: Paragon
+        Attribute: Spear Mastery
+    Cautery Signet:
+        Profession: Paragon
+    Avatar of Balthazar:
+        Profession: Dervish
+        Attribute: Mysticism
+    Avatar of Grenth:
+        Profession: Dervish
+        Attribute: Mysticism
+    Avatar of Melandru:
+        Profession: Dervish
+        Attribute: Mysticism
+    "Reaper's Sweep":
+        Profession: Dervish
+        Attribute: Scythe Mastery
+    "Scribe's Insight":
+        Profession: Monk
+        Attribute: Divine Favor
+    Glimmer of Light:
+        Profession: Monk
+        Attribute: Healing Prayers
+    "Healer's Covenant":
+        Profession: Monk
+        Attribute: Healing Prayers
+    "Balthazar's Pendulum":
+        Profession: Monk
+        Attribute: Smiting Prayers
+    Weapon of Remedy:
+        Profession: Ritualist
+        Attribute: Restoration Magic
+    Reclaim Essence:
+        Profession: Ritualist
+        Attribute: Spawning Power
+    "Xinrae's Weapon":
+        Profession: Ritualist
+        Attribute: Restoration Magic
+    Assault Enchantments:
+        Profession: Assassin
+    Shadow Prison:
+        Profession: Assassin
+        Attribute: Deadly Arts
+    Shadow Meld:
+        Profession: Assassin
+    Vow of Strength:
+        Profession: Dervish
+        Attribute: Earth Prayers
+    Pious Renewal:
+        Profession: Dervish
+        Attribute: Mysticism
+    Vow of Silence:
+        Profession: Dervish
+        Attribute: Mysticism
+    "Grenth's Grasp":
+        Profession: Dervish
+        Attribute: Wind Prayers
+    Zealous Vow:
+        Profession: Dervish
+        Attribute: Wind Prayers
+    Destructive Was Glaive:
+        Profession: Ritualist
+        Attribute: Channeling Magic
+    "Expert's Dexterity":
+        Profession: Ranger
+        Attribute: Expertise
+    Steady Stance:
+        Profession: Warrior
+        Attribute: Tactics
+    "Wastrel's Collapse":
+        Profession: Assassin
+    Onslaught:
+        Profession: Dervish
+        Attribute: Wind Prayers
+    Wounding Strike:
+        Profession: Dervish
+        Attribute: Scythe Mastery
+    Infuriating Heat:
+        Profession: Ranger
+        Attribute: Expertise
+    "It's Just a Flesh Wound.":
+        Wiki: "%22It%27s_Just_a_Flesh_Wound.%22"
+        Profession: Paragon
+        Attribute: Motivation
+    Focused Anger:
+        Profession: Paragon
+        Attribute: Leadership
+    Blinding Surge:
+        Profession: Elementalist
+        Attribute: Air Magic
+    "Soldier's Stance":
+        Profession: Warrior
+        Attribute: Tactics
+    Signet of Ghostly Might:
+        Profession: Ritualist
+        Attribute: Communing
+    Arcane Zeal:
+        Profession: Dervish
+        Attribute: Mysticism
+    Offering of Spirit:
+        Profession: Ritualist
+        Attribute: Channeling Magic
+    Golden Skull Strike:
+        Profession: Assassin
+        Attribute: Dagger Mastery
+    "You're All Alone!":
+        Wiki: "%22You%27re All Alone%21%22"
+        Profession: Warrior
+    Rage of the Ntouka:
+        Profession: Warrior
+        Attribute: Strength
+    Contagion:
+        Profession: Necromancer
+        Attribute: Death Magic
+    Avatar of Lyssa:
+        Profession: Dervish
+        Attribute: Mysticism
+    "Healer's Boon":
+        Profession: Monk
+        Attribute: Divine Favor
+    Avatar of Dwayna:
+        Profession: Dervish
+        Attribute: Mysticism
+    Zealous Benediction:
+        Profession: Monk
+        Attribute: Protection Prayers
+    Ebon Dust Aura:
+        Profession: Dervish
+        Attribute: Earth Prayers
+    "Enchanter's Conundrum":
+        Profession: Mesmer
+        Attribute: Domination Magic
+    Hex Eater Vortex:
+        Profession: Mesmer
+        Attribute: Domination Magic
+    Power Flux:
+        Profession: Mesmer
+        Attribute: Domination Magic
+    Simple Thievery:
+        Profession: Mesmer
+        Attribute: Domination Magic
+    Visions of Regret:
+        Profession: Mesmer
+        Attribute: Domination Magic
+    Symbols of Inspiration:
+        Profession: Mesmer
+        Attribute: Fast Casting
+    Air of Disenchantment:
+        Profession: Mesmer
+        Attribute: Illusion Magic
+    Extend Conditions:
+        Profession: Mesmer
+        Attribute: Inspiration Magic
+    "Scavenger's Focus":
+        Profession: Ranger
+        Attribute: Wilderness Survival
+    Song of Restoration:
+        Profession: Paragon
+        Attribute: Motivation
+    "Incoming!":
+        Wiki: "%22Incoming%21%22"
+        Profession: Paragon
+        Attribute: Command
+    Master of Magic:
+        Profession: Elementalist
+        Attribute: Energy Storage
+    Signet of Illusions:
+        Profession: Mesmer
+        Attribute: Illusion Magic
+    Icy Shackles:
+        Profession: Elementalist
+        Attribute: Water Magic

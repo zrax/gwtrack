@@ -1,0 +1,89 @@
+Name: Core
+Skills:
+    Ferocious Strike:
+        Profession: Ranger
+        Attribute: Beast Mastery
+    Signet of Judgment:
+        Profession: Monk
+        Attribute: Smiting Prayers
+    Barrage:
+        Profession: Ranger
+        Attribute: Marksmanship
+    Quick Shot:
+        Profession: Ranger
+    Devastating Hammer:
+        Profession: Warrior
+        Attribute: Hammer Mastery
+    Plague Signet:
+        Profession: Necromancer
+        Attribute: Curses
+    Cleave:
+        Profession: Warrior
+        Attribute: Axe Mastery
+    Battle Rage:
+        Profession: Warrior
+        Attribute: Strength
+    Tainted Flesh:
+        Profession: Necromancer
+        Attribute: Death Magic
+    Elemental Attunement:
+        Profession: Elementalist
+        Attribute: Energy Storage
+    Spike Trap:
+        Profession: Ranger
+        Attribute: Wilderness Survival
+    Mind Burn:
+        Profession: Elementalist
+        Attribute: Fire Magic
+    Mind Freeze:
+        Profession: Elementalist
+        Attribute: Water Magic
+    Obsidian Flesh:
+        Profession: Elementalist
+        Attribute: Earth Magic
+    Lightning Surge:
+        Profession: Elementalist
+        Attribute: Air Magic
+    "Grenth's Balance":
+        Profession: Necromancer
+    Blood is Power:
+        Profession: Necromancer
+        Attribute: Blood Magic
+    Mantra of Recovery:
+        Profession: Mesmer
+        Attribute: Fast Casting
+    Hundred Blades:
+        Profession: Warrior
+        Attribute: Swordsmanship
+    Escape:
+        Profession: Ranger
+        Attribute: Expertise
+    Lingering Curse:
+        Profession: Necromancer
+        Attribute: Curses
+    "Charge!":
+        Wiki: "%22Charge%21%22"
+        Profession: Warrior
+        Attribute: Tactics
+    Spell Breaker:
+        Profession: Monk
+        Attribute: Divine Favor
+    Echo:
+        Profession: Mesmer
+    Energy Surge:
+        Profession: Mesmer
+        Attribute: Domination Magic
+    Shield of Regeneration:
+        Profession: Monk
+        Attribute: Protection Prayers
+    Martyr:
+        Profession: Monk
+    Crippling Anguish:
+        Profession: Mesmer
+        Attribute: Illusion Magic
+    Energy Drain:
+        Profession: Mesmer
+        Attribute: Inspiration Magic
+    Word of Healing:
+        Profession: Monk
+        Attribute: Healing Prayers

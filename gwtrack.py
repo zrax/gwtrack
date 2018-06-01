@@ -587,13 +587,13 @@ class TrackGui(QtWidgets.QMainWindow):
                     ("Skill!{}::{}".format(self.currentArea.name, item.text(0)),))
         row = csr.fetchone()
         if row:
-            item.setText(6, row[0])
+            item.setText(3, row[0])
             if row[0] == 'Known':
-                item.setBackground(6, QtGui.QColor(0xC0, 0xE0, 0xC0))
+                item.setBackground(3, QtGui.QColor(0xC0, 0xE0, 0xC0))
             elif row[0] == 'Unlocked':
-                item.setBackground(6, QtGui.QColor(0xC0, 0xE0, 0xFF))
+                item.setBackground(3, QtGui.QColor(0xC0, 0xE0, 0xFF))
             else:
-                item.setBackground(6, item.background(0))
+                item.setBackground(3, item.background(0))
 
     def updateVanquishStatus(self, item):
         if self.currentChar is None or self.currentArea is None:
@@ -837,7 +837,7 @@ class TrackGui(QtWidgets.QMainWindow):
         elif action == knownState:
             updateSkillState("Known")
 
-        self.updateQuestStatus(item)
+        self.updateSkillStatus(item)
 
     def onVanquishMenu(self, pos):
         item = self.vanquishView.itemAt(pos)

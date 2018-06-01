@@ -10,6 +10,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets, QtWebEngineWidgets
 from gwdata.quests import QuestArea
 from gwdata.missions import MissionArea
 from gwdata.skills import SkillArea
+from gwdata.vanquish import VanquishArea
 from gwdata.consts import *
 
 HOME_BASE = os.getenv('USERPROFILE') or os.getenv('HOME')
@@ -153,6 +154,25 @@ class TrackGui(QtWidgets.QMainWindow):
         self.skillView.header().setSortIndicator(0, QtCore.Qt.AscendingOrder)
         self.skillView.setContextMenuPolicy(QtCore.Qt.CustomContextMenu)
 
+        self.vanquishView = QtWidgets.QTreeWidget(self.qlistStack)
+        self.vanquishView.setRootIsDecorated(False)
+        self.vanquishView.setHeaderLabels(["Explorable Area", "Foes", "Bonus Rank",
+                                           "ZV XP", "ZV Rank", "ZV Rank Type",
+                                           "ZV Coins", "Status"])
+        metrics = QtGui.QFontMetrics(self.vanquishView.headerItem().font(0))
+        self.vanquishView.setColumnWidth(0, 240)
+        self.vanquishView.setColumnWidth(1, metrics.width("999 - 999") + 10)
+        self.vanquishView.setColumnWidth(2, metrics.width("Lightbringer") + 40)
+        self.vanquishView.setColumnWidth(3, metrics.width("ZV XP") + 20)
+        self.vanquishView.setColumnWidth(4, metrics.width("ZV Rank") + 20)
+        self.vanquishView.setColumnWidth(5, metrics.width("Lightbringer") + 40)
+        self.vanquishView.setColumnWidth(6, metrics.width("ZV Coins") + 20)
+        self.vanquishView.setColumnWidth(7, metrics.width("Done") + 30)
+        self.qlistStack.addWidget(self.vanquishView)
+
+        self.vanquishView.header().setSortIndicator(0, QtCore.Qt.AscendingOrder)
+        self.vanquishView.setContextMenuPolicy(QtCore.Qt.CustomContextMenu)
+
         wikiPane = QtWidgets.QWidget(vsplit)
         wikiLayout = QtWidgets.QGridLayout(wikiPane)
         wikiLayout.setContentsMargins(0, 0, 0, 0)
@@ -196,6 +216,7 @@ class TrackGui(QtWidgets.QMainWindow):
         self.questAreas = {}
         self.missionAreas = {}
         self.skillAreas = {}
+        self.vanquishAreas = {}
         self.currentArea = None
         self.currentChar = None
         self.currentCharIdx = -1
@@ -207,6 +228,8 @@ class TrackGui(QtWidgets.QMainWindow):
         self.missionView.customContextMenuRequested.connect(self.onMissionMenu)
         self.skillView.itemSelectionChanged.connect(self.onSkillChange)
         self.skillView.customContextMenuRequested.connect(self.onSkillMenu)
+        self.vanquishView.itemSelectionChanged.connect(self.onVanquishChange)
+        self.vanquishView.customContextMenuRequested.connect(self.onVanquishMenu)
         self.back.triggered.connect(self.wikiView.back)
         self.fwd.triggered.connect(self.wikiView.forward)
         self.refresh.triggered.connect(self.wikiView.reload)
@@ -237,6 +260,10 @@ class TrackGui(QtWidgets.QMainWindow):
             'Luxon':        QtGui.QIcon("icons/Luxon.png"),
             'Sunspear':     QtGui.QIcon("icons/Sunspear.jpg"),
             'Lightbringer': QtGui.QIcon("icons/Lightbringer.jpg"),
+            'Asura':        QtGui.QIcon("icons/Asura.png"),
+            'Dwarf':        QtGui.QIcon("icons/Dwarf.png"),
+            'Norn':         QtGui.QIcon("icons/Norn.png"),
+            'Vanguard':     QtGui.QIcon("icons/Vanguard.png"),
         }
 
     def closeEvent(self, event):
@@ -285,6 +312,19 @@ class TrackGui(QtWidgets.QMainWindow):
                 areaGroup.setText(0, "Skill Hunter")
                 areaGroup.setData(0, QtCore.Qt.UserRole, TREE_TYPE_SKILLS)
 
+        elif isinstance(area, VanquishArea):
+            self.vanquishAreas[area.name] = area
+
+            for idx in range(self.areaView.topLevelItemCount()):
+                groupItem = self.areaView.topLevelItem(idx)
+                if groupItem.data(0, QtCore.Qt.UserRole) == TREE_TYPE_VANQUISH:
+                    areaGroup = groupItem
+                    break
+            else:
+                areaGroup = QtWidgets.QTreeWidgetItem(self.areaView)
+                areaGroup.setText(0, "Vanquisher")
+                areaGroup.setData(0, QtCore.Qt.UserRole, TREE_TYPE_VANQUISH)
+
         else:
             raise RuntimeError('addArea called with invalid object')
 
@@ -318,12 +358,16 @@ class TrackGui(QtWidgets.QMainWindow):
                 return self.missionAreas[areaName]
             elif areaType == TREE_TYPE_SKILLS:
                 return self.skillAreas[areaName]
+            elif areaType == TREE_TYPE_VANQUISH:
+                return self.vanquishAreas[areaName]
         except KeyError:
             return None
 
     def onAreaChange(self):
         self.questView.clear()
         self.missionView.clear()
+        self.skillView.clear()
+        self.vanquishView.clear()
         self.currentArea = self.getCurrentArea()
         if self.currentArea is None:
             return
@@ -337,6 +381,9 @@ class TrackGui(QtWidgets.QMainWindow):
         elif isinstance(self.currentArea, SkillArea):
             self.qlistStack.setCurrentWidget(self.skillView)
             self.loadSkills()
+        elif isinstance(self.currentArea, VanquishArea):
+            self.qlistStack.setCurrentWidget(self.vanquishView)
+            self.loadVanquishAreas()
 
     def formatNum(self, value, hm_value = None):
         text = '---'
@@ -444,6 +491,37 @@ class TrackGui(QtWidgets.QMainWindow):
 
         self.skillView.setSortingEnabled(True)
 
+    def loadVanquishAreas(self):
+        # Load the Explorable Areas in the campaign
+        self.vanquishView.setSortingEnabled(False)
+        for idx in range(len(self.currentArea.areas)):
+            vq_area = self.currentArea.areas[idx]
+
+            item = QtWidgets.QTreeWidgetItem(self.vanquishView)
+            item.setData(0, QtCore.Qt.UserRole, idx)
+            item.setText(0, vq_area.name)
+            item.setText(1, '{} - {}'.format(vq_area.min_foes, vq_area.max_foes))
+            item.setText(2, vq_area.rank_type)
+            try:
+                item.setIcon(2, self.icons[vq_area.rank_type])
+            except KeyError: pass
+            item.setText(3, self.formatNum(vq_area.z_xp))
+            item.setText(4, self.formatNum(vq_area.z_rank))
+            item.setText(5, vq_area.z_rank_type)
+            try:
+                item.setIcon(5, self.icons[vq_area.z_rank_type])
+            except KeyError: pass
+            item.setText(6, self.formatNum(vq_area.z_coins))
+
+            item.setTextAlignment(1, QtCore.Qt.AlignRight)
+            item.setTextAlignment(3, QtCore.Qt.AlignRight)
+            item.setTextAlignment(4, QtCore.Qt.AlignRight)
+            item.setTextAlignment(6, QtCore.Qt.AlignRight)
+            item.setTextAlignment(7, QtCore.Qt.AlignHCenter)
+
+            self.updateVanquishStatus(item)
+
+        self.vanquishView.setSortingEnabled(True)
 
     def updateQuestStatus(self, item):
         if self.currentChar is None or self.currentArea is None:
@@ -517,6 +595,21 @@ class TrackGui(QtWidgets.QMainWindow):
             else:
                 item.setBackground(6, item.background(0))
 
+    def updateVanquishStatus(self, item):
+        if self.currentChar is None or self.currentArea is None:
+            return
+
+        csr = self.currentChar.cursor()
+        csr.execute("SELECT state FROM status WHERE quest_name=?",
+                    ("Vanquish!{}::{}".format(self.currentArea.name, item.text(0)),))
+        row = csr.fetchone()
+        if row:
+            item.setText(7, row[0])
+            if row[0] == 'Done':
+                item.setBackground(7, QtGui.QColor(0xC0, 0xE0, 0xC0))
+            else:
+                item.setBackground(7, item.background(0))
+
     def onQuestChange(self):
         if not self.questView.currentItem() or not self.currentArea:
             return
@@ -539,6 +632,14 @@ class TrackGui(QtWidgets.QMainWindow):
 
         idx = int(self.skillView.currentItem().data(0, QtCore.Qt.UserRole))
         url = QtCore.QUrl.fromEncoded(bytes(WIKI_URL + self.currentArea.skills[idx].wiki, 'utf-8'))
+        self.wikiView.load(url)
+
+    def onVanquishChange(self):
+        if not self.vanquishView.currentItem() or not self.currentArea:
+            return
+
+        idx = int(self.vanquishView.currentItem().data(0, QtCore.Qt.UserRole))
+        url = QtCore.QUrl.fromEncoded(bytes(WIKI_URL + self.currentArea.areas[idx].wiki, 'utf-8'))
         self.wikiView.load(url)
 
     def onUrlChanged(self, url):
@@ -738,6 +839,31 @@ class TrackGui(QtWidgets.QMainWindow):
 
         self.updateQuestStatus(item)
 
+    def onVanquishMenu(self, pos):
+        item = self.vanquishView.itemAt(pos)
+        if item is None or self.currentChar is None or self.currentArea is None:
+            return
+
+        vqAreaName = "Vanquish!{}::{}".format(self.currentArea.name, item.text(0))
+
+        menu = QtWidgets.QMenu()
+        noState = menu.addAction("(Clear)")
+        doneState = menu.addAction("Done")
+        action = menu.exec_(self.questView.viewport().mapToGlobal(pos))
+
+        def updateVanquishState(state):
+            csr = self.currentChar.cursor()
+            csr.execute("REPLACE INTO status (quest_name, state) VALUES (?, ?)",
+                        (vqAreaName, state))
+            self.currentChar.commit()
+
+        if action == noState:
+            updateVanquishState("")
+        elif action == doneState:
+            updateVanquishState("Done")
+
+        self.updateVanquishStatus(item)
+
 
 if __name__ == '__main__':
     locale.setlocale(locale.LC_ALL, '')
@@ -784,6 +910,19 @@ if __name__ == '__main__':
         else:
             area_name = skill.replace('.yaml', '')
         gui.addArea(SkillArea(info, area_name))
+
+    zvAreaList = os.listdir('vanquish')
+    for area in zvAreaList:
+        if not area.endswith('.yaml'):
+            continue
+
+        with open('vanquish/' + area, 'rb') as sf:
+            info = yaml.load(sf)
+        if 'Name' in info:
+            area_name = info['Name']
+        else:
+            area_name = area.replace('.yaml', '')
+        gui.addArea(VanquishArea(info, area_name))
 
     if not os.path.exists(DATA_BASE):
         os.mkdir(DATA_BASE)

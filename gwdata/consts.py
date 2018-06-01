@@ -18,5 +18,6 @@ TREE_TYPE_AREA     = 0
 TREE_TYPE_CAMPAIGN = 1
 TREE_TYPE_MISSIONS = 2
 TREE_TYPE_SKILLS   = 3
+TREE_TYPE_VANQUISH = 4
 
 WIKI_URL = "https://wiki.guildwars.com/wiki/"

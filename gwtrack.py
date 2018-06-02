@@ -228,6 +228,7 @@ class TrackGui(QtWidgets.QMainWindow):
         self.setCentralWidget(base)
 
         toolbar = self.addToolBar("MainToolbar")
+        toolbar.toggleViewAction().setEnabled(False)
         toolbar.setToolButtonStyle(QtCore.Qt.ToolButtonTextBesideIcon)
         toolbar.addWidget(QtWidgets.QLabel(" Character: ", self))
         self.charSelect = QtWidgets.QComboBox(self)
@@ -477,7 +478,7 @@ class TrackGui(QtWidgets.QMainWindow):
             item.setText(3, self.formatNum(vq_area.z_xp))
             item.setText(4, self.formatNum(vq_area.z_rank))
             item.setText(5, vq_area.z_rank_type)
-            item.setIcon(5, IconProvider(vq_area.z_rank_type))
+            item.setIcon(5, IconProvider.icon(vq_area.z_rank_type))
             item.setText(6, self.formatNum(vq_area.z_coins))
 
             item.setTextAlignment(1, QtCore.Qt.AlignRight)

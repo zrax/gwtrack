@@ -759,12 +759,6 @@ class TrackGui(QtWidgets.QMainWindow):
         hmMasterState = menu.addAction("Master")
         action = menu.exec_(self.questView.viewport().mapToGlobal(pos))
 
-        def updateMissionState(state, hm):
-            csr = self.currentChar.cursor()
-            csr.execute("REPLACE INTO status (quest_name, state) VALUES (?, ?)",
-                        (missionHMName if hm else missionName, state))
-            self.currentChar.commit()
-
         if action == nmClearState:
             self.saveQuestState(missionName, "")
         elif action == nmStandardState:

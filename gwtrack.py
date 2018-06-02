@@ -17,6 +17,48 @@ HOME_BASE = os.getenv('USERPROFILE') or os.getenv('HOME')
 DATA_BASE = os.path.join(HOME_BASE, '.gwtrack')
 
 
+class IconProvider:
+    _instance = None
+
+    def __init__(self):
+        self.icons = {
+            'q_pri':        QtGui.QIcon("icons/Tango-quest-icon-primary.png"),
+            'q_rep':        QtGui.QIcon("icons/Tango-quest-icon-repeatable.png"),
+
+            'Assassin':     QtGui.QIcon("icons/Assassin-tango-icon-20.png"),
+            'Dervish':      QtGui.QIcon("icons/Dervish-tango-icon-20.png"),
+            'Elementalist': QtGui.QIcon("icons/Elementalist-tango-icon-20.png"),
+            'Mesmer':       QtGui.QIcon("icons/Mesmer-tango-icon-20.png"),
+            'Monk':         QtGui.QIcon("icons/Monk-tango-icon-20.png"),
+            'Necromancer':  QtGui.QIcon("icons/Necromancer-tango-icon-20.png"),
+            'Paragon':      QtGui.QIcon("icons/Paragon-tango-icon-20.png"),
+            'Ranger':       QtGui.QIcon("icons/Ranger-tango-icon-20.png"),
+            'Ritualist':    QtGui.QIcon("icons/Ritualist-tango-icon-20.png"),
+            'Warrior':      QtGui.QIcon("icons/Warrior-tango-icon-20.png"),
+
+            'Tyrian':       QtGui.QIcon("icons/Tyria.png"),
+            'Canthan':      QtGui.QIcon("icons/Cantha.png"),
+            'Elonian':      QtGui.QIcon("icons/Elona.png"),
+
+            'Kurzick':      QtGui.QIcon("icons/Kurzick.png"),
+            'Luxon':        QtGui.QIcon("icons/Luxon.png"),
+            'Sunspear':     QtGui.QIcon("icons/Sunspear.jpg"),
+            'Lightbringer': QtGui.QIcon("icons/Lightbringer.jpg"),
+            'Asura':        QtGui.QIcon("icons/Asura.png"),
+            'Dwarf':        QtGui.QIcon("icons/Dwarf.png"),
+            'Norn':         QtGui.QIcon("icons/Norn.png"),
+            'Vanguard':     QtGui.QIcon("icons/Vanguard.png"),
+        }
+
+    @staticmethod
+    def icon(name):
+        if IconProvider._instance is None:
+            IconProvider._instance = IconProvider()
+        try:
+            return IconProvider._instance.icons[name]
+        except KeyError:
+            return QtGui.QIcon()
+
 class AddCharDialog(QtWidgets.QDialog):
     def __init__(self, parent):
         QtWidgets.QDialog.__init__(self, parent)
@@ -28,19 +70,18 @@ class AddCharDialog(QtWidgets.QDialog):
         layout.addWidget(self.charName, 0, 1)
         layout.addWidget(QtWidgets.QLabel("Type: ", self), 1, 0)
         self.charType = QtWidgets.QComboBox(self)
-        self.charType.addItem("Tyrian")
-        self.charType.addItem("Canthan")
-        self.charType.addItem("Elonian")
+        for char in ["Tyrian", "Canthan", "Elonian"]:
+            self.charType.addItem(IconProvider.icon(char), char)
         layout.addWidget(self.charType, 1, 1)
         layout.addWidget(QtWidgets.QLabel("Profession: ", self), 2, 0)
         self.profession = QtWidgets.QComboBox(self)
         for prof in ALL_PROFESSIONS:
-            self.profession.addItem(prof)
+            self.profession.addItem(IconProvider.icon(prof), prof)
         layout.addWidget(self.profession, 2, 1)
         layout.addWidget(QtWidgets.QLabel("2nd Profession: ", self), 3, 0)
         self.secondProfession = QtWidgets.QComboBox(self)
         for prof in ALL_PROFESSIONS:
-            self.secondProfession.addItem(prof)
+            self.secondProfession.addItem(IconProvider.icon(prof), prof)
         layout.addWidget(self.secondProfession, 3, 1)
         buttons = QtWidgets.QDialogButtonBox(QtWidgets.QDialogButtonBox.Ok | \
                                              QtWidgets.QDialogButtonBox.Cancel)
@@ -221,35 +262,6 @@ class TrackGui(QtWidgets.QMainWindow):
         self.location.lineEdit().returnPressed.connect(self.onUrlLoadRequested)
         self.charSelect.activated[int].connect(self.onCharSelected)
 
-        self.icons = {
-            'q_pri':        QtGui.QIcon("icons/Tango-quest-icon-primary.png"),
-            'q_rep':        QtGui.QIcon("icons/Tango-quest-icon-repeatable.png"),
-
-            'Assassin':     QtGui.QIcon("icons/Assassin-tango-icon-20.png"),
-            'Dervish':      QtGui.QIcon("icons/Dervish-tango-icon-20.png"),
-            'Elementalist': QtGui.QIcon("icons/Elementalist-tango-icon-20.png"),
-            'Mesmer':       QtGui.QIcon("icons/Mesmer-tango-icon-20.png"),
-            'Monk':         QtGui.QIcon("icons/Monk-tango-icon-20.png"),
-            'Necromancer':  QtGui.QIcon("icons/Necromancer-tango-icon-20.png"),
-            'Paragon':      QtGui.QIcon("icons/Paragon-tango-icon-20.png"),
-            'Ranger':       QtGui.QIcon("icons/Ranger-tango-icon-20.png"),
-            'Ritualist':    QtGui.QIcon("icons/Ritualist-tango-icon-20.png"),
-            'Warrior':      QtGui.QIcon("icons/Warrior-tango-icon-20.png"),
-
-            'Tyrian':       QtGui.QIcon("icons/Tyria.png"),
-            'Canthan':      QtGui.QIcon("icons/Cantha.png"),
-            'Elonian':      QtGui.QIcon("icons/Elona.png"),
-
-            'Kurzick':      QtGui.QIcon("icons/Kurzick.png"),
-            'Luxon':        QtGui.QIcon("icons/Luxon.png"),
-            'Sunspear':     QtGui.QIcon("icons/Sunspear.jpg"),
-            'Lightbringer': QtGui.QIcon("icons/Lightbringer.jpg"),
-            'Asura':        QtGui.QIcon("icons/Asura.png"),
-            'Dwarf':        QtGui.QIcon("icons/Dwarf.png"),
-            'Norn':         QtGui.QIcon("icons/Norn.png"),
-            'Vanguard':     QtGui.QIcon("icons/Vanguard.png"),
-        }
-
     def closeEvent(self, event):
         if self.currentChar:
             self.currentChar.close()
@@ -296,10 +308,7 @@ class TrackGui(QtWidgets.QMainWindow):
 
     def addChar(self, charName, charType, fileName):
         idx = self.charSelect.count() - 2
-        try:
-            self.charSelect.insertItem(idx, self.icons[charType], charName, fileName)
-        except KeyError:
-            self.charSelect.insertItem(idx, charName, fileName)
+        self.charSelect.insertItem(idx, IconProvider.icon(charType), charName, fileName)
         return idx
 
     def getCurrentArea(self):
@@ -366,9 +375,9 @@ class TrackGui(QtWidgets.QMainWindow):
             item.setText(0, quest.name)
             item.setText(1, quest.quest_type)
             if quest.quest_type == 'Primary':
-                item.setIcon(1, self.icons['q_pri'])
+                item.setIcon(1, IconProvider.icon('q_pri'))
             if quest.repeat:
-                item.setIcon(2, self.icons['q_rep'])
+                item.setIcon(2, IconProvider.icon('q_rep'))
                 item.setStatusTip(2, "Repeatable")
             if quest.profession is not None:
                 prof = quest.profession
@@ -377,14 +386,10 @@ class TrackGui(QtWidgets.QMainWindow):
                 elif quest.profession_lock == PROFESSION_UNLOCKED:
                     prof = "({})".format(quest.profession)
                 item.setText(3, prof)
-                try:
-                    item.setIcon(3, self.icons[quest.profession])
-                except KeyError: pass
+                item.setIcon(3, IconProvider.icon(quest.profession))
             if quest.char_type is not None:
                 item.setText(4, quest.char_type)
-                try:
-                    item.setIcon(4, self.icons[quest.char_type])
-                except KeyError: pass
+                item.setIcon(4, IconProvider.icon(quest.char_type))
             item.setText(5, self.formatNum(quest.xp))
             item.setText(6, quest.rewardString())
             item.setStatusTip(6, quest.rewardTip())
@@ -407,9 +412,7 @@ class TrackGui(QtWidgets.QMainWindow):
             item.setData(0, QtCore.Qt.UserRole, idx)
             item.setText(0, mission.name)
             item.setText(1, mission.rank_type)
-            try:
-                item.setIcon(1, self.icons[mission.rank_type])
-            except KeyError: pass
+            item.setIcon(1, IconProvider.icon(mission.rank_type))
             item.setText(2, self.formatNum(mission.rank, mission.hm_rank))
             item.setText(3, self.formatNum(mission.z_xp))
             item.setText(4, self.formatNum(mission.z_rank))
@@ -437,9 +440,7 @@ class TrackGui(QtWidgets.QMainWindow):
             item.setText(0, skill.name)
             if skill.profession is not None:
                 item.setText(1, skill.profession)
-                try:
-                    item.setIcon(1, self.icons[skill.profession])
-                except KeyError: pass
+                item.setIcon(1, IconProvider.icon(skill.profession))
             else:
                 item.setText(1, '---')
             if skill.attribute is not None:
@@ -464,15 +465,11 @@ class TrackGui(QtWidgets.QMainWindow):
             item.setText(0, vq_area.name)
             item.setText(1, '{} - {}'.format(vq_area.min_foes, vq_area.max_foes))
             item.setText(2, vq_area.rank_type)
-            try:
-                item.setIcon(2, self.icons[vq_area.rank_type])
-            except KeyError: pass
+            item.setIcon(2, IconProvider.icon(vq_area.rank_type))
             item.setText(3, self.formatNum(vq_area.z_xp))
             item.setText(4, self.formatNum(vq_area.z_rank))
             item.setText(5, vq_area.z_rank_type)
-            try:
-                item.setIcon(5, self.icons[vq_area.z_rank_type])
-            except KeyError: pass
+            item.setIcon(5, IconProvider(vq_area.z_rank_type))
             item.setText(6, self.formatNum(vq_area.z_coins))
 
             item.setTextAlignment(1, QtCore.Qt.AlignRight)
@@ -675,17 +672,11 @@ class TrackGui(QtWidgets.QMainWindow):
             csr.execute("SELECT value FROM config WHERE key='Profession1'")
             prof = csr.fetchone()[0]
             self.profSelect.setText(prof)
-            try:
-                self.profSelect.setIcon(self.icons[prof])
-            except KeyError:
-                self.profSelect.setIcon(QtGui.QIcon())
+            self.profSelect.setIcon(IconProvider.icon(prof))
             csr.execute("SELECT value FROM config WHERE key='Profession2'")
             prof = csr.fetchone()[0]
             self.prof2Select.setText(prof)
-            try:
-                self.prof2Select.setIcon(self.icons[prof])
-            except KeyError:
-                self.prof2Select.setIcon(QtGui.QIcon())
+            self.prof2Select.setIcon(IconProvider.icon(prof))
 
             self.onAreaChange()
         self.currentCharIdx = idx

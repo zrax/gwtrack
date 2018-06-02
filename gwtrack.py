@@ -238,6 +238,14 @@ class TrackGui(QtWidgets.QMainWindow):
         self.profSelect = toolbar.addAction("")
         self.prof2Select = toolbar.addAction("")
 
+        # Profession 2 can be changed at any time
+        toolbar.widgetForAction(self.prof2Select).setPopupMode(QtWidgets.QToolButton.InstantPopup)
+        profMenu = QtWidgets.QMenu(self)
+        for prof in ALL_PROFESSIONS:
+            action = profMenu.addAction(IconProvider.icon(prof), prof)
+            action.triggered.connect(lambda checked, prof=prof: self.updateProfession2(prof))
+        self.prof2Select.setMenu(profMenu)
+
         self.questAreas = {}
         self.missionAreas = {}
         self.skillAreas = {}
@@ -568,6 +576,17 @@ class TrackGui(QtWidgets.QMainWindow):
                 item.setBackground(7, QtGui.QColor(0xC0, 0xE0, 0xC0))
             else:
                 item.setBackground(7, item.background(0))
+
+    def updateProfession2(self, prof):
+        if self.currentChar is None:
+            return
+
+        csr = self.currentChar.cursor()
+        csr.execute("UPDATE config SET value=? WHERE key='Profession2'", (prof,))
+        self.currentChar.commit()
+
+        self.prof2Select.setText(prof)
+        self.prof2Select.setIcon(IconProvider.icon(prof))
 
     def onQuestChange(self):
         if not self.questView.currentItem() or not self.currentArea:

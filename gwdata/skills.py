@@ -1,3 +1,5 @@
+from .consts import TREE_TYPE_SKILLS
+
 class SkillInfo:
     def __init__(self, info, name):
         self.name = name
@@ -34,3 +36,9 @@ class SkillArea:
             for skill in skill_list:
                 self.skills.append(SkillInfo(skill_list[skill], skill))
         self.skills = sorted(self.skills, key=lambda q: q.name)
+
+    def treeType(self):
+        return TREE_TYPE_SKILLS
+
+    def treeTitle(self):
+        return "Skill Hunter"

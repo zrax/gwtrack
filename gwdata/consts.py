@@ -2,6 +2,19 @@ PROFESSION_ANY      = 0
 PROFESSION_PRIMARY  = 1
 PROFESSION_UNLOCKED = 2
 
+ALL_PROFESSIONS = [
+    "Assassin",
+    "Dervish",
+    "Elementalist",
+    "Mesmer",
+    "Monk",
+    "Necromancer",
+    "Paragon",
+    "Ranger",
+    "Ritualist",
+    "Warrior",
+]
+
 REWARD_GOLD       = 0  # G
 REWARD_ITEMS      = 1  # I
 REWARD_SKILLS     = 2  # S

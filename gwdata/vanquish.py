@@ -1,3 +1,5 @@
+from .consts import TREE_TYPE_VANQUISH
+
 class VanquishInfo:
     def __init__(self, info, name):
         self.name = name
@@ -59,3 +61,9 @@ class VanquishArea:
             for area in area_list:
                 self.areas.append(VanquishInfo(area_list[area], area))
         self.areas = sorted(self.areas, key=lambda q: q.name)
+
+    def treeType(self):
+        return TREE_TYPE_VANQUISH
+
+    def treeTitle(self):
+        return "Vanquisher"

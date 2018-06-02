@@ -1,3 +1,5 @@
+from .consts import TREE_TYPE_MISSIONS
+
 class MissionInfo:
     def __init__(self, info, name):
         self.name = name
@@ -54,3 +56,9 @@ class MissionArea:
             for mission in mission_list:
                 self.missions.append(MissionInfo(mission_list[mission], mission))
         self.missions = sorted(self.missions, key=lambda q: q.name)
+
+    def treeType(self):
+        return TREE_TYPE_MISSIONS
+
+    def treeTitle(self):
+        return "Missions"

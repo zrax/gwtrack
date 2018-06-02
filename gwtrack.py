@@ -34,29 +34,13 @@ class AddCharDialog(QtWidgets.QDialog):
         layout.addWidget(self.charType, 1, 1)
         layout.addWidget(QtWidgets.QLabel("Profession: ", self), 2, 0)
         self.profession = QtWidgets.QComboBox(self)
-        self.profession.addItem("Assassin")
-        self.profession.addItem("Dervish")
-        self.profession.addItem("Elementalist")
-        self.profession.addItem("Mesmer")
-        self.profession.addItem("Monk")
-        self.profession.addItem("Necromancer")
-        self.profession.addItem("Paragon")
-        self.profession.addItem("Ranger")
-        self.profession.addItem("Ritualist")
-        self.profession.addItem("Warrior")
+        for prof in ALL_PROFESSIONS:
+            self.profession.addItem(prof)
         layout.addWidget(self.profession, 2, 1)
         layout.addWidget(QtWidgets.QLabel("2nd Profession: ", self), 3, 0)
         self.secondProfession = QtWidgets.QComboBox(self)
-        self.secondProfession.addItem("Assassin")
-        self.secondProfession.addItem("Dervish")
-        self.secondProfession.addItem("Elementalist")
-        self.secondProfession.addItem("Mesmer")
-        self.secondProfession.addItem("Monk")
-        self.secondProfession.addItem("Necromancer")
-        self.secondProfession.addItem("Paragon")
-        self.secondProfession.addItem("Ranger")
-        self.secondProfession.addItem("Ritualist")
-        self.secondProfession.addItem("Warrior")
+        for prof in ALL_PROFESSIONS:
+            self.secondProfession.addItem(prof)
         layout.addWidget(self.secondProfession, 3, 1)
         buttons = QtWidgets.QDialogButtonBox(QtWidgets.QDialogButtonBox.Ok | \
                                              QtWidgets.QDialogButtonBox.Cancel)
@@ -286,47 +270,25 @@ class TrackGui(QtWidgets.QMainWindow):
                 areaGroup.setText(0, area.campaign)
                 areaGroup.setData(0, QtCore.Qt.UserRole, TREE_TYPE_CAMPAIGN)
 
-        elif isinstance(area, MissionArea):
-            self.missionAreas[area.name] = area
-
-            for idx in range(self.areaView.topLevelItemCount()):
-                groupItem = self.areaView.topLevelItem(idx)
-                if groupItem.data(0, QtCore.Qt.UserRole) == TREE_TYPE_MISSIONS:
-                    areaGroup = groupItem
-                    break
-            else:
-                areaGroup = QtWidgets.QTreeWidgetItem(self.areaView)
-                areaGroup.setText(0, "Missions")
-                areaGroup.setData(0, QtCore.Qt.UserRole, TREE_TYPE_MISSIONS)
-
-        elif isinstance(area, SkillArea):
-            self.skillAreas[area.name] = area
-
-            for idx in range(self.areaView.topLevelItemCount()):
-                groupItem = self.areaView.topLevelItem(idx)
-                if groupItem.data(0, QtCore.Qt.UserRole) == TREE_TYPE_SKILLS:
-                    areaGroup = groupItem
-                    break
-            else:
-                areaGroup = QtWidgets.QTreeWidgetItem(self.areaView)
-                areaGroup.setText(0, "Skill Hunter")
-                areaGroup.setData(0, QtCore.Qt.UserRole, TREE_TYPE_SKILLS)
-
-        elif isinstance(area, VanquishArea):
-            self.vanquishAreas[area.name] = area
-
-            for idx in range(self.areaView.topLevelItemCount()):
-                groupItem = self.areaView.topLevelItem(idx)
-                if groupItem.data(0, QtCore.Qt.UserRole) == TREE_TYPE_VANQUISH:
-                    areaGroup = groupItem
-                    break
-            else:
-                areaGroup = QtWidgets.QTreeWidgetItem(self.areaView)
-                areaGroup.setText(0, "Vanquisher")
-                areaGroup.setData(0, QtCore.Qt.UserRole, TREE_TYPE_VANQUISH)
-
         else:
-            raise RuntimeError('addArea called with invalid object')
+            if isinstance(area, MissionArea):
+                self.missionAreas[area.name] = area
+            elif isinstance(area, SkillArea):
+                self.skillAreas[area.name] = area
+            elif isinstance(area, VanquishArea):
+                self.vanquishAreas[area.name] = area
+            else:
+                raise RuntimeError('addArea called with invalid object')
+
+            for idx in range(self.areaView.topLevelItemCount()):
+                groupItem = self.areaView.topLevelItem(idx)
+                if groupItem.data(0, QtCore.Qt.UserRole) == area.treeType():
+                    areaGroup = groupItem
+                    break
+            else:
+                areaGroup = QtWidgets.QTreeWidgetItem(self.areaView)
+                areaGroup.setText(0, area.treeTitle())
+                areaGroup.setData(0, QtCore.Qt.UserRole, area.treeType())
 
         item = QtWidgets.QTreeWidgetItem(areaGroup)
         item.setText(0, area.name)
@@ -728,6 +690,12 @@ class TrackGui(QtWidgets.QMainWindow):
             self.onAreaChange()
         self.currentCharIdx = idx
 
+    def saveQuestState(self, questName, state):
+        csr = self.currentChar.cursor()
+        csr.execute("REPLACE INTO status (quest_name, state) VALUES (?, ?)",
+                    (questName, state))
+        self.currentChar.commit()
+
     def onQuestMenu(self, pos):
         item = self.questView.itemAt(pos)
         if item is None or self.currentChar is None or self.currentArea is None:
@@ -743,22 +711,16 @@ class TrackGui(QtWidgets.QMainWindow):
         naState = menu.addAction("N/A")
         action = menu.exec_(self.questView.viewport().mapToGlobal(pos))
 
-        def updateQuestState(state):
-            csr = self.currentChar.cursor()
-            csr.execute("REPLACE INTO status (quest_name, state) VALUES (?, ?)",
-                        (questName, state))
-            self.currentChar.commit()
-
         if action == noState:
-            updateQuestState("")
+            self.saveQuestState(questName, "")
         elif action == activeState:
-            updateQuestState("Active")
+            self.saveQuestState(questName, "Active")
         elif action == completeState:
-            updateQuestState("Complete")
+            self.saveQuestState(questName, "Complete")
         elif action == doneState:
-            updateQuestState("Done")
+            self.saveQuestState(questName, "Done")
         elif action == naState:
-            updateQuestState("N/A")
+            self.saveQuestState(questName, "N/A")
 
         self.updateQuestStatus(item)
 
@@ -793,21 +755,21 @@ class TrackGui(QtWidgets.QMainWindow):
             self.currentChar.commit()
 
         if action == nmClearState:
-            updateMissionState("", False)
+            self.saveQuestState(missionName, "")
         elif action == nmStandardState:
-            updateMissionState("Standard", False)
+            self.saveQuestState(missionName, "Standard")
         elif action == nmExpertState:
-            updateMissionState("Expert", False)
+            self.saveQuestState(missionName, "Expert")
         elif action == nmMasterState:
-            updateMissionState("Master", False)
+            self.saveQuestState(missionName, "Master")
         elif action == hmClearState:
-            updateMissionState("", True)
+            self.saveQuestState(missionHMName, "")
         elif action == hmStandardState:
-            updateMissionState("Standard", True)
+            self.saveQuestState(missionHMName, "Standard")
         elif action == hmExpertState:
-            updateMissionState("Expert", True)
+            self.saveQuestState(missionHMName, "Expert")
         elif action == hmMasterState:
-            updateMissionState("Master", True)
+            self.saveQuestState(missionHMName, "Master")
 
         self.updateMissionStatus(item)
 
@@ -824,18 +786,12 @@ class TrackGui(QtWidgets.QMainWindow):
         knownState = menu.addAction("Known")
         action = menu.exec_(self.questView.viewport().mapToGlobal(pos))
 
-        def updateSkillState(state):
-            csr = self.currentChar.cursor()
-            csr.execute("REPLACE INTO status (quest_name, state) VALUES (?, ?)",
-                        (skillName, state))
-            self.currentChar.commit()
-
         if action == noState:
-            updateSkillState("")
+            self.saveQuestState(skillName, "")
         elif action == unlockedState:
-            updateSkillState("Unlocked")
+            self.saveQuestState(skillName, "Unlocked")
         elif action == knownState:
-            updateSkillState("Known")
+            self.saveQuestState(skillName, "Known")
 
         self.updateSkillStatus(item)
 
@@ -851,16 +807,10 @@ class TrackGui(QtWidgets.QMainWindow):
         doneState = menu.addAction("Done")
         action = menu.exec_(self.questView.viewport().mapToGlobal(pos))
 
-        def updateVanquishState(state):
-            csr = self.currentChar.cursor()
-            csr.execute("REPLACE INTO status (quest_name, state) VALUES (?, ?)",
-                        (vqAreaName, state))
-            self.currentChar.commit()
-
         if action == noState:
-            updateVanquishState("")
+            self.saveQuestState(vqAreaName, "")
         elif action == doneState:
-            updateVanquishState("Done")
+            self.saveQuestState(vqAreaName, "Done")
 
         self.updateVanquishStatus(item)
 

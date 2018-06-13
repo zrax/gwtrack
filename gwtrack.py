@@ -5,7 +5,10 @@ import sys
 import yaml
 import sqlite3
 import locale
-from PyQt5 import QtCore, QtGui, QtWidgets, QtWebEngineWidgets
+try:
+    from PySide2 import QtCore, QtGui, QtWidgets, QtWebEngineWidgets
+except ImportError:
+    from PyQt5 import QtCore, QtGui, QtWidgets, QtWebEngineWidgets
 
 from gwdata.quests import QuestArea
 from gwdata.missions import MissionArea
@@ -61,7 +64,7 @@ class IconProvider:
 
 class AddCharDialog(QtWidgets.QDialog):
     def __init__(self, parent):
-        QtWidgets.QDialog.__init__(self, parent)
+        super(AddCharDialog, self).__init__(parent)
 
         layout = QtWidgets.QGridLayout(self)
         layout.setContentsMargins(8, 8, 8, 8)
@@ -105,7 +108,7 @@ class AddCharDialog(QtWidgets.QDialog):
 
 class TrackGui(QtWidgets.QMainWindow):
     def __init__(self):
-        QtWidgets.QMainWindow.__init__(self)
+        super(TrackGui, self).__init__()
         self.setWindowTitle("Guild Wars Progress Tracker")
 
         base = QtWidgets.QWidget(self)
@@ -244,7 +247,7 @@ class TrackGui(QtWidgets.QMainWindow):
         profMenu = QtWidgets.QMenu(self)
         for prof in ALL_PROFESSIONS:
             action = profMenu.addAction(IconProvider.icon(prof), prof)
-            action.triggered.connect(lambda checked, prof=prof: self.updateProfession2(prof))
+            action.triggered.connect(lambda checked=False, prof=prof: self.updateProfession2(prof))
         self.prof2Select.setMenu(profMenu)
 
         self.questAreas = {}

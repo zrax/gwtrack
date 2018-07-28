@@ -230,6 +230,10 @@ class TrackGui(QtWidgets.QMainWindow):
         layout.addWidget(split, 0, 0)
         self.setCentralWidget(base)
 
+        # The default layouts no longer compute sanely in Qt 5.11
+        split.setSizes([260, 815])
+        vsplit.setSizes([160, 520])
+
         toolbar = self.addToolBar("MainToolbar")
         toolbar.toggleViewAction().setEnabled(False)
         toolbar.setToolButtonStyle(QtCore.Qt.ToolButtonTextBesideIcon)
@@ -273,6 +277,9 @@ class TrackGui(QtWidgets.QMainWindow):
         self.wikiView.urlChanged.connect(self.onUrlChanged)
         self.location.lineEdit().returnPressed.connect(self.onUrlLoadRequested)
         self.charSelect.activated[int].connect(self.onCharSelected)
+
+    def sizeHint(self):
+        return QtCore.QSize(1080, 720)
 
     def closeEvent(self, event):
         if self.currentChar:

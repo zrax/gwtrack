@@ -129,12 +129,12 @@ class TrackGui(QtWidgets.QMainWindow):
                                         "Character", "XP", "Reward", "Status"])
         metrics = QtGui.QFontMetrics(self.questView.headerItem().font(0))
         self.questView.setColumnWidth(0, 240)
-        self.questView.setColumnWidth(1, metrics.width("Mini-mission") + 10)
+        self.questView.setColumnWidth(1, metrics.boundingRect("Mini-mission").width() + 10)
         self.questView.setColumnWidth(2, 20)
-        self.questView.setColumnWidth(3, metrics.width("Necromancer (P)") + 30)
-        self.questView.setColumnWidth(4, metrics.width("Canthan") + 30)
-        self.questView.setColumnWidth(5, metrics.width("50,000") + 10)
-        self.questView.setColumnWidth(7, metrics.width("Complete") + 10)
+        self.questView.setColumnWidth(3, metrics.boundingRect("Necromancer (P)").width() + 30)
+        self.questView.setColumnWidth(4, metrics.boundingRect("Canthan").width() + 30)
+        self.questView.setColumnWidth(5, metrics.boundingRect("50,000").width() + 10)
+        self.questView.setColumnWidth(7, metrics.boundingRect("Complete").width() + 10)
         self.qlistStack.addWidget(self.questView)
 
         fontSize = self.questView.headerItem().font(0).pointSize()
@@ -145,7 +145,7 @@ class TrackGui(QtWidgets.QMainWindow):
         else:
             self.fixed_font = QtGui.QFont('Monospace', fontSize)
         metrics = QtGui.QFontMetrics(self.fixed_font)
-        self.questView.setColumnWidth(6, metrics.width("XXXXXXXXXX") + 10)
+        self.questView.setColumnWidth(6, metrics.boundingRect("XXXXXXXXXX").width() + 10)
         self.questView.header().setSortIndicator(0, QtCore.Qt.AscendingOrder)
         self.questView.setContextMenuPolicy(QtCore.Qt.CustomContextMenu)
 
@@ -156,13 +156,13 @@ class TrackGui(QtWidgets.QMainWindow):
                                           "Status", "Hard Mode"])
         metrics = QtGui.QFontMetrics(self.missionView.headerItem().font(0))
         self.missionView.setColumnWidth(0, 260)
-        self.missionView.setColumnWidth(1, metrics.width("Lightbringer") + 40)
-        self.missionView.setColumnWidth(2, metrics.width("--- (100)") + 10)
-        self.missionView.setColumnWidth(3, metrics.width("ZM XP") + 20)
-        self.missionView.setColumnWidth(4, metrics.width("ZM Rank") + 20)
-        self.missionView.setColumnWidth(5, metrics.width("ZM Coins") + 20)
-        self.missionView.setColumnWidth(6, metrics.width("Standard") + 30)
-        self.missionView.setColumnWidth(7, metrics.width("Standard") + 30)
+        self.missionView.setColumnWidth(1, metrics.boundingRect("Lightbringer").width() + 40)
+        self.missionView.setColumnWidth(2, metrics.boundingRect("--- (100)").width() + 10)
+        self.missionView.setColumnWidth(3, metrics.boundingRect("ZM XP").width() + 20)
+        self.missionView.setColumnWidth(4, metrics.boundingRect("ZM Rank").width() + 20)
+        self.missionView.setColumnWidth(5, metrics.boundingRect("ZM Coins").width() + 20)
+        self.missionView.setColumnWidth(6, metrics.boundingRect("Standard").width() + 30)
+        self.missionView.setColumnWidth(7, metrics.boundingRect("Standard").width() + 30)
         self.qlistStack.addWidget(self.missionView)
 
         self.missionView.header().setSortIndicator(0, QtCore.Qt.AscendingOrder)
@@ -174,9 +174,9 @@ class TrackGui(QtWidgets.QMainWindow):
                                         "Status"])
         metrics = QtGui.QFontMetrics(self.skillView.headerItem().font(0))
         self.skillView.setColumnWidth(0, 300)
-        self.skillView.setColumnWidth(1, metrics.width("Necromancer") + 40)
-        self.skillView.setColumnWidth(2, metrics.width("Wilderness Survival") + 20)
-        self.skillView.setColumnWidth(3, metrics.width("Unlocked") + 30)
+        self.skillView.setColumnWidth(1, metrics.boundingRect("Necromancer").width() + 40)
+        self.skillView.setColumnWidth(2, metrics.boundingRect("Wilderness Survival").width() + 20)
+        self.skillView.setColumnWidth(3, metrics.boundingRect("Unlocked").width() + 30)
         self.qlistStack.addWidget(self.skillView)
 
         self.skillView.header().setSortIndicator(0, QtCore.Qt.AscendingOrder)
@@ -189,13 +189,13 @@ class TrackGui(QtWidgets.QMainWindow):
                                            "ZV Coins", "Status"])
         metrics = QtGui.QFontMetrics(self.vanquishView.headerItem().font(0))
         self.vanquishView.setColumnWidth(0, 240)
-        self.vanquishView.setColumnWidth(1, metrics.width("999 - 999") + 10)
-        self.vanquishView.setColumnWidth(2, metrics.width("Lightbringer") + 40)
-        self.vanquishView.setColumnWidth(3, metrics.width("ZV XP") + 20)
-        self.vanquishView.setColumnWidth(4, metrics.width("ZV Rank") + 20)
-        self.vanquishView.setColumnWidth(5, metrics.width("Lightbringer") + 40)
-        self.vanquishView.setColumnWidth(6, metrics.width("ZV Coins") + 20)
-        self.vanquishView.setColumnWidth(7, metrics.width("Done") + 30)
+        self.vanquishView.setColumnWidth(1, metrics.boundingRect("999 - 999").width() + 10)
+        self.vanquishView.setColumnWidth(2, metrics.boundingRect("Lightbringer").width() + 40)
+        self.vanquishView.setColumnWidth(3, metrics.boundingRect("ZV XP").width() + 20)
+        self.vanquishView.setColumnWidth(4, metrics.boundingRect("ZV Rank").width() + 20)
+        self.vanquishView.setColumnWidth(5, metrics.boundingRect("Lightbringer").width() + 40)
+        self.vanquishView.setColumnWidth(6, metrics.boundingRect("ZV Coins").width() + 20)
+        self.vanquishView.setColumnWidth(7, metrics.boundingRect("Done").width() + 30)
         self.qlistStack.addWidget(self.vanquishView)
 
         self.vanquishView.header().setSortIndicator(0, QtCore.Qt.AscendingOrder)
@@ -378,7 +378,7 @@ class TrackGui(QtWidgets.QMainWindow):
     def formatNum(self, value, hm_value = None):
         text = '---'
         if value:
-            text = locale.format("%d", value, grouping=True)
+            text = locale.format_string("%d", value, grouping=True)
         if hm_value:
             text += ' ({})'.format(self.formatNum(hm_value))
         return text
@@ -842,7 +842,7 @@ if __name__ == '__main__':
             continue
 
         with open('quests/' + quest, 'rb') as qf:
-            info = yaml.load(qf)
+            info = yaml.safe_load(qf)
         if 'Name' in info:
             area_name = info['Name']
         else:
@@ -856,7 +856,7 @@ if __name__ == '__main__':
             continue
 
         with open('missions/' + mission, 'rb') as mf:
-            info = yaml.load(mf)
+            info = yaml.safe_load(mf)
         if 'Name' in info:
             area_name = info['Name']
         else:
@@ -869,7 +869,7 @@ if __name__ == '__main__':
             continue
 
         with open('skills/' + skill, 'rb') as sf:
-            info = yaml.load(sf)
+            info = yaml.safe_load(sf)
         if 'Name' in info:
             area_name = info['Name']
         else:
@@ -882,7 +882,7 @@ if __name__ == '__main__':
             continue
 
         with open('vanquish/' + area, 'rb') as sf:
-            info = yaml.load(sf)
+            info = yaml.safe_load(sf)
         if 'Name' in info:
             area_name = info['Name']
         else:

@@ -87,3 +87,33 @@ Skills:
     Word of Healing:
         Profession: Monk
         Attribute: Healing Prayers
+    Soul Taker:
+        Profession: Necromancer
+        Attribute: Soul Reaping
+    Over the Limit:
+        Profession: Elementalist
+        Attribute: Energy Storage
+    Seven Weapons Stance:
+        Profession: Warrior
+        Attribute: Strength
+    Shadow Theft:
+        Profession: Assassin
+        Attribute: Critical Strikes
+    Weapons of Three Forges:
+        Profession: Ritualist
+        Attribute: Spawning Power
+    Judgement Strike:
+        Profession: Monk
+        Attribute: Divine Favor
+    Heroic Refrain:
+        Profession: Paragon
+        Attribute: Leadership
+    "Together as one!":
+        Profession: Ranger
+        Attribute: Expertise
+    Time Ward:
+        Profession: Mesmer
+        Attribute: Fast Casting
+    Vow of Revolution:
+        Profession: Dervish
+        Attribute: Mysticism

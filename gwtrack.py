@@ -27,6 +27,7 @@ class IconProvider:
         self.icons = {
             'q_pri':        QtGui.QIcon("icons/Tango-quest-icon-primary.png"),
             'q_rep':        QtGui.QIcon("icons/Tango-quest-icon-repeatable.png"),
+            'q_app':        QtGui.QIcon("icons/Skill-point-tango-icon-20.png"),
 
             'Assassin':     QtGui.QIcon("icons/Assassin-tango-icon-20.png"),
             'Dervish':      QtGui.QIcon("icons/Dervish-tango-icon-20.png"),
@@ -65,6 +66,7 @@ class IconProvider:
 class AddCharDialog(QtWidgets.QDialog):
     def __init__(self, parent):
         super(AddCharDialog, self).__init__(parent)
+        self.setWindowTitle("Add Character")
 
         layout = QtWidgets.QGridLayout(self)
         layout.setContentsMargins(8, 8, 8, 8)
@@ -110,6 +112,7 @@ class TrackGui(QtWidgets.QMainWindow):
     def __init__(self):
         super(TrackGui, self).__init__()
         self.setWindowTitle("Guild Wars Progress Tracker")
+        self.setWindowIcon(IconProvider.icon('q_app'))
 
         base = QtWidgets.QWidget(self)
         layout = QtWidgets.QGridLayout(base)

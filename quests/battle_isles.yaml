@@ -33,6 +33,7 @@ Quests:
         XP: 2500
         Reward: [Items]
     "The Path to Combat: Random Arenas":
+        Wiki: "The_Path_to_Combat:_Random_Arena"
         Type: Secondary
         XP: 2500
         Reward: [Items]

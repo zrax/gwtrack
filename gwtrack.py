@@ -6,9 +6,9 @@ import yaml
 import sqlite3
 import locale
 try:
-    from PySide2 import QtCore, QtGui, QtWidgets, QtWebEngineWidgets
+    from PySide6 import QtCore, QtGui, QtWidgets, QtWebEngineWidgets
 except ImportError:
-    from PyQt5 import QtCore, QtGui, QtWidgets, QtWebEngineWidgets
+    from PyQt6 import QtCore, QtGui, QtWidgets, QtWebEngineWidgets
 
 from gwdata.quests import QuestArea
 from gwdata.missions import MissionArea

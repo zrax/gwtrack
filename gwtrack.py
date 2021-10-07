@@ -242,19 +242,21 @@ class TrackGui(QtWidgets.QMainWindow):
 
         toolbar = self.addToolBar("MainToolbar")
         toolbar.toggleViewAction().setEnabled(False)
-        toolbar.setToolButtonStyle(Qt.ToolButtonStyle.ToolButtonTextBesideIcon)
         toolbar.addWidget(QtWidgets.QLabel(" Character: ", self))
         self.charSelect = QtWidgets.QComboBox(self)
         self.charSelect.insertSeparator(0)
         self.charSelect.addItem("Add New Character...")
         toolbar.addWidget(self.charSelect)
         toolbar.addSeparator()
-        self.profSelect = toolbar.addAction("")
-        self.prof2Select = toolbar.addAction("")
+        self.profSelect = QtWidgets.QToolButton(self)
+        self.profSelect.setToolButtonStyle(Qt.ToolButtonStyle.ToolButtonTextBesideIcon)
+        self.prof2Select = QtWidgets.QToolButton(self)
+        self.prof2Select.setToolButtonStyle(Qt.ToolButtonStyle.ToolButtonTextBesideIcon)
+        toolbar.addWidget(self.profSelect)
+        toolbar.addWidget(self.prof2Select)
 
         # Profession 2 can be changed at any time
-        toolbar.widgetForAction(self.prof2Select).setPopupMode(
-                    QtWidgets.QToolButton.ToolButtonPopupMode.InstantPopup)
+        self.prof2Select.setPopupMode(QtWidgets.QToolButton.ToolButtonPopupMode.InstantPopup)
         profMenu = QtWidgets.QMenu(self)
         for prof in ALL_PROFESSIONS:
             action = profMenu.addAction(IconProvider.icon(prof), prof)

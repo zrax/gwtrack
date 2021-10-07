@@ -671,7 +671,7 @@ class TrackGui(QtWidgets.QMainWindow):
         elif not self.charSelect.itemData(idx):
             # Selected the add character item
             dialog = AddCharDialog(self)
-            if dialog.exec_() == QtWidgets.QDialog.DialogCode.Accepted:
+            if dialog.exec() == QtWidgets.QDialog.DialogCode.Accepted:
                 fname = dialog.savedName()[0].lower().replace(' ', '_') + '.db'
 
                 # Initialize the database
@@ -737,7 +737,7 @@ class TrackGui(QtWidgets.QMainWindow):
         completeState = menu.addAction("Complete")
         doneState = menu.addAction("Done")
         naState = menu.addAction("N/A")
-        action = menu.exec_(self.questView.viewport().mapToGlobal(pos))
+        action = menu.exec(self.questView.viewport().mapToGlobal(pos))
 
         if action == noState:
             self.saveQuestState(questName, "")
@@ -774,7 +774,7 @@ class TrackGui(QtWidgets.QMainWindow):
         hmStandardState = menu.addAction("Standard")
         hmExpertState = menu.addAction("Expert")
         hmMasterState = menu.addAction("Master")
-        action = menu.exec_(self.questView.viewport().mapToGlobal(pos))
+        action = menu.exec(self.questView.viewport().mapToGlobal(pos))
 
         if action == nmClearState:
             self.saveQuestState(missionName, "")
@@ -806,7 +806,7 @@ class TrackGui(QtWidgets.QMainWindow):
         noState = menu.addAction("(Clear)")
         unlockedState = menu.addAction("Unlocked")
         knownState = menu.addAction("Known")
-        action = menu.exec_(self.questView.viewport().mapToGlobal(pos))
+        action = menu.exec(self.questView.viewport().mapToGlobal(pos))
 
         if action == noState:
             self.saveQuestState(skillName, "")
@@ -827,7 +827,7 @@ class TrackGui(QtWidgets.QMainWindow):
         menu = QtWidgets.QMenu()
         noState = menu.addAction("(Clear)")
         doneState = menu.addAction("Done")
-        action = menu.exec_(self.questView.viewport().mapToGlobal(pos))
+        action = menu.exec(self.questView.viewport().mapToGlobal(pos))
 
         if action == noState:
             self.saveQuestState(vqAreaName, "")
@@ -918,4 +918,4 @@ if __name__ == '__main__':
         gui.onCharSelected(0)
 
     gui.show()
-    sys.exit(app.exec_())
+    sys.exit(app.exec())

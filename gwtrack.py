@@ -16,6 +16,8 @@ from gwdata.skills import SkillArea
 from gwdata.vanquish import VanquishArea
 from gwdata.consts import *
 
+Qt = QtCore.Qt
+
 HOME_BASE = os.getenv('USERPROFILE') or os.getenv('HOME')
 DATA_BASE = os.path.join(HOME_BASE, '.gwtrack')
 
@@ -88,8 +90,8 @@ class AddCharDialog(QtWidgets.QDialog):
         for prof in ALL_PROFESSIONS:
             self.secondProfession.addItem(IconProvider.icon(prof), prof)
         layout.addWidget(self.secondProfession, 3, 1)
-        buttons = QtWidgets.QDialogButtonBox(QtWidgets.QDialogButtonBox.Ok | \
-                                             QtWidgets.QDialogButtonBox.Cancel)
+        buttons = QtWidgets.QDialogButtonBox(QtWidgets.QDialogButtonBox.StandardButton.Ok | \
+                                             QtWidgets.QDialogButtonBox.StandardButton.Cancel)
         layout.addWidget(buttons, 4, 0, 1, 2)
 
         buttons.accepted.connect(self.accept)
@@ -120,7 +122,7 @@ class TrackGui(QtWidgets.QMainWindow):
 
         split = QtWidgets.QSplitter(base)
         vsplit = QtWidgets.QSplitter(split)
-        vsplit.setOrientation(QtCore.Qt.Vertical)
+        vsplit.setOrientation(Qt.Orientation.Vertical)
         self.areaView = QtWidgets.QTreeWidget(split)
         self.areaView.setRootIsDecorated(True)
         self.areaView.setHeaderHidden(True)
@@ -149,8 +151,8 @@ class TrackGui(QtWidgets.QMainWindow):
             self.fixed_font = QtGui.QFont('Monospace', fontSize)
         metrics = QtGui.QFontMetrics(self.fixed_font)
         self.questView.setColumnWidth(6, metrics.boundingRect("XXXXXXXXXX").width() + 10)
-        self.questView.header().setSortIndicator(0, QtCore.Qt.AscendingOrder)
-        self.questView.setContextMenuPolicy(QtCore.Qt.CustomContextMenu)
+        self.questView.header().setSortIndicator(0, Qt.SortOrder.AscendingOrder)
+        self.questView.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
 
         self.missionView = QtWidgets.QTreeWidget(self.qlistStack)
         self.missionView.setRootIsDecorated(False)
@@ -168,8 +170,8 @@ class TrackGui(QtWidgets.QMainWindow):
         self.missionView.setColumnWidth(7, metrics.boundingRect("Standard").width() + 30)
         self.qlistStack.addWidget(self.missionView)
 
-        self.missionView.header().setSortIndicator(0, QtCore.Qt.AscendingOrder)
-        self.missionView.setContextMenuPolicy(QtCore.Qt.CustomContextMenu)
+        self.missionView.header().setSortIndicator(0, Qt.SortOrder.AscendingOrder)
+        self.missionView.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
 
         self.skillView = QtWidgets.QTreeWidget(self.qlistStack)
         self.skillView.setRootIsDecorated(False)
@@ -182,8 +184,8 @@ class TrackGui(QtWidgets.QMainWindow):
         self.skillView.setColumnWidth(3, metrics.boundingRect("Unlocked").width() + 30)
         self.qlistStack.addWidget(self.skillView)
 
-        self.skillView.header().setSortIndicator(0, QtCore.Qt.AscendingOrder)
-        self.skillView.setContextMenuPolicy(QtCore.Qt.CustomContextMenu)
+        self.skillView.header().setSortIndicator(0, Qt.SortOrder.AscendingOrder)
+        self.skillView.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
 
         self.vanquishView = QtWidgets.QTreeWidget(self.qlistStack)
         self.vanquishView.setRootIsDecorated(False)
@@ -201,8 +203,8 @@ class TrackGui(QtWidgets.QMainWindow):
         self.vanquishView.setColumnWidth(7, metrics.boundingRect("Done").width() + 30)
         self.qlistStack.addWidget(self.vanquishView)
 
-        self.vanquishView.header().setSortIndicator(0, QtCore.Qt.AscendingOrder)
-        self.vanquishView.setContextMenuPolicy(QtCore.Qt.CustomContextMenu)
+        self.vanquishView.header().setSortIndicator(0, Qt.SortOrder.AscendingOrder)
+        self.vanquishView.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
 
         wikiPane = QtWidgets.QWidget(vsplit)
         wikiLayout = QtWidgets.QGridLayout(wikiPane)
@@ -213,14 +215,15 @@ class TrackGui(QtWidgets.QMainWindow):
         wikiToolbar.addSeparator()
         self.location = QtWidgets.QComboBox(wikiPane)
         self.location.setEditable(True)
-        self.location.setSizePolicy(QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Fixed))
+        self.location.setSizePolicy(QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Expanding,
+                                                          QtWidgets.QSizePolicy.Policy.Fixed))
         wikiToolbar.addWidget(self.location)
         self.refresh = wikiToolbar.addAction(QtGui.QIcon("icons/view-refresh.png"), "Refresh")
         wikiFrame = QtWidgets.QFrame(wikiPane)
         frameLayout = QtWidgets.QGridLayout(wikiFrame)
         frameLayout.setContentsMargins(0, 0, 0, 0)
-        wikiFrame.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        wikiFrame.setFrameShadow(QtWidgets.QFrame.Sunken)
+        wikiFrame.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        wikiFrame.setFrameShadow(QtWidgets.QFrame.Shadow.Sunken)
         self.wikiView = QtWebEngineWidgets.QWebEngineView(wikiFrame)
         frameLayout.addWidget(self.wikiView, 0, 0)
         wikiLayout.addWidget(wikiToolbar, 0, 0)
@@ -239,7 +242,7 @@ class TrackGui(QtWidgets.QMainWindow):
 
         toolbar = self.addToolBar("MainToolbar")
         toolbar.toggleViewAction().setEnabled(False)
-        toolbar.setToolButtonStyle(QtCore.Qt.ToolButtonTextBesideIcon)
+        toolbar.setToolButtonStyle(Qt.ToolButtonStyle.ToolButtonTextBesideIcon)
         toolbar.addWidget(QtWidgets.QLabel(" Character: ", self))
         self.charSelect = QtWidgets.QComboBox(self)
         self.charSelect.insertSeparator(0)
@@ -250,7 +253,8 @@ class TrackGui(QtWidgets.QMainWindow):
         self.prof2Select = toolbar.addAction("")
 
         # Profession 2 can be changed at any time
-        toolbar.widgetForAction(self.prof2Select).setPopupMode(QtWidgets.QToolButton.InstantPopup)
+        toolbar.widgetForAction(self.prof2Select).setPopupMode(
+                    QtWidgets.QToolButton.ToolButtonPopupMode.InstantPopup)
         profMenu = QtWidgets.QMenu(self)
         for prof in ALL_PROFESSIONS:
             action = profMenu.addAction(IconProvider.icon(prof), prof)
@@ -295,14 +299,14 @@ class TrackGui(QtWidgets.QMainWindow):
             # Find or create the campaign group
             for idx in range(self.areaView.topLevelItemCount()):
                 groupItem = self.areaView.topLevelItem(idx)
-                if groupItem.data(0, QtCore.Qt.UserRole) == TREE_TYPE_CAMPAIGN \
+                if groupItem.data(0, Qt.ItemDataRole.UserRole) == TREE_TYPE_CAMPAIGN \
                         and groupItem.text(0) == area.campaign:
                     areaGroup = groupItem
                     break
             else:
                 areaGroup = QtWidgets.QTreeWidgetItem(self.areaView)
                 areaGroup.setText(0, area.campaign)
-                areaGroup.setData(0, QtCore.Qt.UserRole, TREE_TYPE_CAMPAIGN)
+                areaGroup.setData(0, Qt.ItemDataRole.UserRole, TREE_TYPE_CAMPAIGN)
 
         else:
             if isinstance(area, MissionArea):
@@ -316,17 +320,17 @@ class TrackGui(QtWidgets.QMainWindow):
 
             for idx in range(self.areaView.topLevelItemCount()):
                 groupItem = self.areaView.topLevelItem(idx)
-                if groupItem.data(0, QtCore.Qt.UserRole) == area.treeType():
+                if groupItem.data(0, Qt.ItemDataRole.UserRole) == area.treeType():
                     areaGroup = groupItem
                     break
             else:
                 areaGroup = QtWidgets.QTreeWidgetItem(self.areaView)
                 areaGroup.setText(0, area.treeTitle())
-                areaGroup.setData(0, QtCore.Qt.UserRole, area.treeType())
+                areaGroup.setData(0, Qt.ItemDataRole.UserRole, area.treeType())
 
         item = QtWidgets.QTreeWidgetItem(areaGroup)
         item.setText(0, area.name)
-        item.setData(0, QtCore.Qt.UserRole, TREE_TYPE_AREA)
+        item.setData(0, Qt.ItemDataRole.UserRole, TREE_TYPE_AREA)
 
     def addChar(self, charName, charType, fileName):
         idx = self.charSelect.count() - 2
@@ -335,7 +339,7 @@ class TrackGui(QtWidgets.QMainWindow):
 
     def getCurrentArea(self):
         currentItem = self.areaView.currentItem()
-        if not currentItem or currentItem.data(0, QtCore.Qt.UserRole) != TREE_TYPE_AREA:
+        if not currentItem or currentItem.data(0, Qt.ItemDataRole.UserRole) != TREE_TYPE_AREA:
             return None
 
         parentItem = currentItem.parent()
@@ -344,7 +348,7 @@ class TrackGui(QtWidgets.QMainWindow):
 
         areaName = currentItem.text(0)
         try:
-            areaType = currentItem.parent().data(0, QtCore.Qt.UserRole)
+            areaType = currentItem.parent().data(0, Qt.ItemDataRole.UserRole)
             if areaType == TREE_TYPE_CAMPAIGN:
                 return self.questAreas[areaName]
             elif areaType == TREE_TYPE_MISSIONS:
@@ -393,7 +397,7 @@ class TrackGui(QtWidgets.QMainWindow):
             quest = self.currentArea.quests[idx]
 
             item = QtWidgets.QTreeWidgetItem(self.questView)
-            item.setData(0, QtCore.Qt.UserRole, idx)
+            item.setData(0, Qt.ItemDataRole.UserRole, idx)
             item.setText(0, quest.name)
             item.setText(1, quest.quest_type)
             if quest.quest_type == 'Primary':
@@ -417,8 +421,8 @@ class TrackGui(QtWidgets.QMainWindow):
             item.setStatusTip(6, quest.rewardTip())
             item.setFont(6, self.fixed_font)
 
-            item.setTextAlignment(5, QtCore.Qt.AlignRight)
-            item.setTextAlignment(7, QtCore.Qt.AlignHCenter)
+            item.setTextAlignment(5, Qt.AlignmentFlag.AlignRight)
+            item.setTextAlignment(7, Qt.AlignmentFlag.AlignHCenter)
 
             self.updateQuestStatus(item)
 
@@ -431,7 +435,7 @@ class TrackGui(QtWidgets.QMainWindow):
             mission = self.currentArea.missions[idx]
 
             item = QtWidgets.QTreeWidgetItem(self.missionView)
-            item.setData(0, QtCore.Qt.UserRole, idx)
+            item.setData(0, Qt.ItemDataRole.UserRole, idx)
             item.setText(0, mission.name)
             item.setText(1, mission.rank_type)
             item.setIcon(1, IconProvider.icon(mission.rank_type))
@@ -440,12 +444,12 @@ class TrackGui(QtWidgets.QMainWindow):
             item.setText(4, self.formatNum(mission.z_rank))
             item.setText(5, self.formatNum(mission.z_coins))
 
-            item.setTextAlignment(2, QtCore.Qt.AlignRight)
-            item.setTextAlignment(3, QtCore.Qt.AlignRight)
-            item.setTextAlignment(4, QtCore.Qt.AlignRight)
-            item.setTextAlignment(5, QtCore.Qt.AlignRight)
-            item.setTextAlignment(6, QtCore.Qt.AlignHCenter)
-            item.setTextAlignment(7, QtCore.Qt.AlignHCenter)
+            item.setTextAlignment(2, Qt.AlignmentFlag.AlignRight)
+            item.setTextAlignment(3, Qt.AlignmentFlag.AlignRight)
+            item.setTextAlignment(4, Qt.AlignmentFlag.AlignRight)
+            item.setTextAlignment(5, Qt.AlignmentFlag.AlignRight)
+            item.setTextAlignment(6, Qt.AlignmentFlag.AlignHCenter)
+            item.setTextAlignment(7, Qt.AlignmentFlag.AlignHCenter)
 
             self.updateMissionStatus(item)
 
@@ -458,7 +462,7 @@ class TrackGui(QtWidgets.QMainWindow):
             skill = self.currentArea.skills[idx]
 
             item = QtWidgets.QTreeWidgetItem(self.skillView)
-            item.setData(0, QtCore.Qt.UserRole, idx)
+            item.setData(0, Qt.ItemDataRole.UserRole, idx)
             item.setText(0, skill.name)
             if skill.profession is not None:
                 item.setText(1, skill.profession)
@@ -470,7 +474,7 @@ class TrackGui(QtWidgets.QMainWindow):
             else:
                 item.setText(2, '---')
 
-            item.setTextAlignment(3, QtCore.Qt.AlignHCenter)
+            item.setTextAlignment(3, Qt.AlignmentFlag.AlignHCenter)
 
             self.updateSkillStatus(item)
 
@@ -483,7 +487,7 @@ class TrackGui(QtWidgets.QMainWindow):
             vq_area = self.currentArea.areas[idx]
 
             item = QtWidgets.QTreeWidgetItem(self.vanquishView)
-            item.setData(0, QtCore.Qt.UserRole, idx)
+            item.setData(0, Qt.ItemDataRole.UserRole, idx)
             item.setText(0, vq_area.name)
             item.setText(1, '{} - {}'.format(vq_area.min_foes, vq_area.max_foes))
             item.setText(2, vq_area.rank_type)
@@ -494,11 +498,11 @@ class TrackGui(QtWidgets.QMainWindow):
             item.setIcon(5, IconProvider.icon(vq_area.z_rank_type))
             item.setText(6, self.formatNum(vq_area.z_coins))
 
-            item.setTextAlignment(1, QtCore.Qt.AlignRight)
-            item.setTextAlignment(3, QtCore.Qt.AlignRight)
-            item.setTextAlignment(4, QtCore.Qt.AlignRight)
-            item.setTextAlignment(6, QtCore.Qt.AlignRight)
-            item.setTextAlignment(7, QtCore.Qt.AlignHCenter)
+            item.setTextAlignment(1, Qt.AlignmentFlag.AlignRight)
+            item.setTextAlignment(3, Qt.AlignmentFlag.AlignRight)
+            item.setTextAlignment(4, Qt.AlignmentFlag.AlignRight)
+            item.setTextAlignment(6, Qt.AlignmentFlag.AlignRight)
+            item.setTextAlignment(7, Qt.AlignmentFlag.AlignHCenter)
 
             self.updateVanquishStatus(item)
 
@@ -606,7 +610,7 @@ class TrackGui(QtWidgets.QMainWindow):
         if not self.questView.currentItem() or not self.currentArea:
             return
 
-        idx = int(self.questView.currentItem().data(0, QtCore.Qt.UserRole))
+        idx = int(self.questView.currentItem().data(0, Qt.ItemDataRole.UserRole))
         url = QtCore.QUrl.fromEncoded(bytes(WIKI_URL + self.currentArea.quests[idx].wiki, 'utf-8'))
         self.wikiView.load(url)
 
@@ -614,7 +618,7 @@ class TrackGui(QtWidgets.QMainWindow):
         if not self.missionView.currentItem() or not self.currentArea:
             return
 
-        idx = int(self.missionView.currentItem().data(0, QtCore.Qt.UserRole))
+        idx = int(self.missionView.currentItem().data(0, Qt.ItemDataRole.UserRole))
         url = QtCore.QUrl.fromEncoded(bytes(WIKI_URL + self.currentArea.missions[idx].wiki, 'utf-8'))
         self.wikiView.load(url)
 
@@ -622,7 +626,7 @@ class TrackGui(QtWidgets.QMainWindow):
         if not self.skillView.currentItem() or not self.currentArea:
             return
 
-        idx = int(self.skillView.currentItem().data(0, QtCore.Qt.UserRole))
+        idx = int(self.skillView.currentItem().data(0, Qt.ItemDataRole.UserRole))
         url = QtCore.QUrl.fromEncoded(bytes(WIKI_URL + self.currentArea.skills[idx].wiki, 'utf-8'))
         self.wikiView.load(url)
 
@@ -630,7 +634,7 @@ class TrackGui(QtWidgets.QMainWindow):
         if not self.vanquishView.currentItem() or not self.currentArea:
             return
 
-        idx = int(self.vanquishView.currentItem().data(0, QtCore.Qt.UserRole))
+        idx = int(self.vanquishView.currentItem().data(0, Qt.ItemDataRole.UserRole))
         url = QtCore.QUrl.fromEncoded(bytes(WIKI_URL + self.currentArea.areas[idx].wiki, 'utf-8'))
         self.wikiView.load(url)
 
@@ -667,7 +671,7 @@ class TrackGui(QtWidgets.QMainWindow):
         elif not self.charSelect.itemData(idx):
             # Selected the add character item
             dialog = AddCharDialog(self)
-            if dialog.exec_() == QtWidgets.QDialog.Accepted:
+            if dialog.exec_() == QtWidgets.QDialog.DialogCode.Accepted:
                 fname = dialog.savedName()[0].lower().replace(' ', '_') + '.db'
 
                 # Initialize the database
@@ -851,7 +855,7 @@ if __name__ == '__main__':
         else:
             area_name = quest.replace('.yaml', '')
         gui.addArea(QuestArea(info, area_name))
-    gui.areaView.sortItems(0, QtCore.Qt.AscendingOrder)
+    gui.areaView.sortItems(0, Qt.SortOrder.AscendingOrder)
 
     missionList = os.listdir('missions')
     for mission in missionList:
